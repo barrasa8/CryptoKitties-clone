@@ -176,3 +176,32 @@
     z-index: -1;
     position: absolute;
 }
+.a-left-arm{
+    background-color: black;
+    width: 60px;
+    height: 95px;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-left: 1px;
+    position: absolute;
+    transform: rotate(-27deg);
+}
+.a-right-arm{
+    background-color: black;
+    width: 60px;
+    height: 95px;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-left: 130px;
+    transform: rotate(22deg);
+    position: absolute;
+}
+.a-legs{
+    background-color: black;
+    width: 190px;
+    height: 67px;
+    border-radius: 50%;
+    margin-top: 306px;
+    position: absolute;
+    transform: rotate(180deg);
+}
