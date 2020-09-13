@@ -197,11 +197,107 @@
     position: absolute;
 }
 .a-legs{
-    background-color: black;
-    width: 190px;
-    height: 67px;
-    border-radius: 50%;
-    margin-top: 306px;
+    width: 480px;
+    height: 66px;
+    margin-top: 250px;
     position: absolute;
     transform: rotate(180deg);
+    z-index: -3;
 }
+.a-left-leg{
+    background-color: black;
+    width: 131px;
+    height: 67px;
+    border-radius: 50% 30% 50% 30%;
+    margin-left: 239px;
+    margin-top: -51px;
+    position: absolute;
+    transform: rotate(182deg);
+}
+.a-right-leg{
+    background-color: black;
+    width: 131px;
+    height: 67px;
+    border-radius: 50% 30% 50% 30%;
+    margin-left: 92px;
+    margin-top: -51px;
+    position: absolute;
+    transform: rotate(6deg);
+}
+.a-left-foot{
+    background-color: black;
+    width: 101px;
+    height: 60px;
+    border-radius: 50% 30% 50% 30%;
+    margin-left: 313px;
+    margin-top: -34px;
+    position: absolute;
+    transform: rotate(69deg);
+}
+.a-right-foot{
+    background-color: black;
+    width: 101px;
+    height: 60px;
+    border-radius: 50% 30% 50% 30%;
+    margin-left: 60px;
+    margin-top: -29px;
+    position: absolute;
+    transform: rotate(118deg);
+}
+.a-left-toes{
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+.a-left-toe-1{
+    margin-left: 388px;
+    margin-top: 17px;
+}
+.a-left-toe-2{
+    margin-left: 377px;
+    margin-top: 24px;
+}
+.a-left-toe-3{
+    margin-left: 364px;
+    margin-top: 26px;
+}
+.a-left-heel{
+    background-color: white;
+    width: 30px;
+    height: 37px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 350px;
+    margin-top: -30px;
+    transform: rotate(-22deg);
+}
+.a-right-toes{
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+.a-right-toe-1{
+    margin-left: 80px;
+    margin-top: 25px;
+}
+.a-right-toe-2{
+    margin-left: 91px;
+    margin-top: 32px;
+}
+.a-right-toe-3{
+    margin-left: 104px;
+    margin-top: 35px;
+}
+.a-right-heel{
+    background-color: white;
+    width: 30px;
+    height: 37px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 97px;
+    margin-top: -30px;
+    transform: rotate(19deg);
