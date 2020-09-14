@@ -1,0 +1,126 @@
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy Pandas </title>
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/mystyle.css">
+    <link rel="stylesheet" href="assets/css/panda.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="stylesheet" href="assets/css/factory.css">
+    <link rel="stylesheet" href="assets/css/frontend.css">
+    </head>
+    <body>
+        <div class="container p-5" style="margin-top: 12vh;margin-bottom: 10vh;">
+            <div align="center">
+                <h1 class="c-black">Pandas-Factory</h1>
+                <p class="c-black">Create your custom Panda</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 pandaBox m-2 light-b-shadow">
+                    <div class="a-container">
+                        <div class="a-ears">
+                            <div class="a-left-ear">
+                                <div class="a-left-inner-ear"></div>
+                            </div>
+                            <div class="a-right-ear">
+                                <div class="a-right-inner-ear"></div>
+                            </div>
+                        </div>
+                        <div class="a-head">
+                            <div class="a-eyes">
+                                <div class="a-left-eye-patch">
+                                    <div class="a-left-eye">
+                                        <div class="a-left-pupil">
+                                            <div class="a-left-pupil-spark"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-right-eye-patch">
+                                    <div class="a-right-eye">
+                                        <div class="a-right-pupil">
+                                            <div class="a-right-pupil-spark"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="a-nose"></div>
+                            <div class="a-mouth"></div>
+                        </div>
+                        <div class="a-arms">
+                            <div class="a-left-arm"></div>
+                            <div class="a-right-arm"></div>
+                        </div>
+                        <div class="a-body"></div>
+                        <div class="a-legs">
+                            <div class="a-left-leg"></div>  
+                            <div class="a-left-foot"></div>
+                            <div class="a-left-toes a-left-toe-1"></div>
+                            <div class="a-left-toes a-left-toe-2"></div>
+                            <div class="a-left-toes a-left-toe-3"></div>
+                            <div class="a-left-heel"></div>
+                            <div class="a-right-leg"></div>  
+                            <div class="a-right-foot"></div>
+                            <div class="a-right-toes a-right-toe-1"></div>
+                            <div class="a-right-toes a-right-toe-2"></div>
+                            <div class="a-right-toes a-right-toe-3"></div>
+                            <div class="a-right-heel"></div>
+                        </div>                        
+                    </div>
+        
+                    <br>
+                    <div class="dnaDiv" id="catDNA">
+                        <b>
+                            DNA:
+                            <!-- Colors -->
+                            <span id="dnaarmleg"></span>
+                            <span id="dnaeyepatch"></span>
+                            <span id="dnainnerearfoot"></span>
+                            <span id="dnaheadbody"></span>
+                        
+                            <!-- Pandatributes -->
+                            <span id="dnashape"></span>
+                            <span id="dnadecoration"></span>
+                            <span id="dnadecorationMid"></span>
+                            <span id="dnadecorationSides"></span>
+                            <span id="dnadanimation"></span>
+                            <span id="dnaspecial"></span>
+                        </b>
+                    </div>
+                </div>
+                <div class="col-lg-6 pandattributes m-1 light-b-shadow">
+
+                    <!-- Panda colors -->
+                    <div id="pandaColors">
+                        <div class="form-group">
+                            <label for="formControlRange"><b>Arm and legs</b><span class="badge badge-dark ml-2" id="armlegcode"></span></label>
+                            <input type="range" min="10" max="98" class="form-control-range" id="armlegcolor">
+                            <br>
+                            <label for="formControlRange"><b>Eye patches</b><span class="badge badge-dark ml-2" id="eyepatchcode"></span></label>
+                            <input type="range" min="10" max="98" class="form-control-range" id="eyepatchcolor">
+                            <br>
+                            <label for="formControlRange"><b>Inner ear, foot and nose</b><span class="badge badge-dark ml-2" id="innerearfootcode"></span></label>
+                            <input type="range" min="10" max="98" class="form-control-range" id="innerearfootcolor">
+                            <br>
+                            <label for="formControlRange"><b>Head and body</b><span class="badge badge-dark ml-2" id="headbodycode"></span></label>
+                            <input type="range" min="10" max="98" class="form-control-range" id="headbodycodecolor">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <footer align="left">
+            <p>Ivan on Tech Academy Bootcamp July 2020</p>
+        </footer>
+
+    </body>
+    <script src="assets/js/colors.js"></script>
+    <script src="assets/js/pandaSettings.js"></script>
+    <script src="assets/js/pandaFactory.js"></script>
+
+</html>
