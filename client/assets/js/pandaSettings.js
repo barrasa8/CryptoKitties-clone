@@ -22,12 +22,12 @@ $( document ).ready(function() {
   $('#dnainnerearfoot').html(defaultDNA.dnainnerearfoot);
   $('#dnaheadbody').html(defaultDNA.dnaheadbody);
     
-//   $('#dnashape').html(defaultDNA.eyesShape)
-//   $('#dnadecoration').html(defaultDNA.decorationPattern)
-//   $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
-//   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
-//   $('#dnaanimation').html(defaultDNA.animation)
-//   $('#dnaspecial').html(defaultDNA.lastNum)
+  $('#dnashape').html(defaultDNA.eyesShape)
+  $('#dnadecoration').html(defaultDNA.decorationPattern)
+  $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
+  $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
+  $('#dnaanimation').html(defaultDNA.animation)
+  $('#dnaspecial').html(defaultDNA.lastNum)
 
   renderPanda(defaultDNA)
 });
