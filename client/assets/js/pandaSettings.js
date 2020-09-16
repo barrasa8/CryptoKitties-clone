@@ -7,8 +7,8 @@ var defaultDNA = {
     "dnainnerearfoot" : 54,
     "dnaheadbody" : 10,
     //Pandatributes
-    "eyesShape" : 1,
-    "decorationPattern" : 1,
+    "dnaeyeshape" : 1,
+    "dnamouthshape" : 1,
     "decorationMidcolor" : 13,
     "decorationSidescolor" : 13,
     "animation" :  1,
@@ -22,8 +22,8 @@ $( document ).ready(function() {
   $('#dnainnerearfoot').html(defaultDNA.dnainnerearfoot);
   $('#dnaheadbody').html(defaultDNA.dnaheadbody);
     
-  $('#dnashape').html(defaultDNA.eyesShape)
-  $('#dnadecoration').html(defaultDNA.decorationPattern)
+  $('#dnaeyeshape').html(defaultDNA.dnaeyeshape)
+  $('#dnamouthshape').html(defaultDNA.dnamouthshape)
   $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
   $('#dnaanimation').html(defaultDNA.animation)
@@ -38,8 +38,8 @@ function getDna(){
     dna += $('#dnaeyepatch').html()
     dna += $('#dnainnerearfoot').html()
     dna += $('#dnaheadbody').html()
-    dna += $('#dnashape').html()
-    dna += $('#dnadecoration').html()
+    dna += $('#dnaeyeshape').html()
+    dna += $('#dnamouthshape').html()
     dna += $('#dnadecorationMid').html()
     dna += $('#dnadecorationSides').html()
     dna += $('#dnaanimation').html()
@@ -57,6 +57,10 @@ function renderPanda(dna){
     $('#innerearfootcolor').val(dna.dnainnerearfoot)
     headBodyColor(colors[dna.dnaheadbody],dna.dnaheadbody)
     $('#headbodycodecolor').val(dna.dnaheadbody)
+    eyeShape(dna.dnaeyeshape)
+    $('#eyeshape').val(dna.dnaeyeshape)
+    mouthShape(dna.dnamouthshape)
+    $('#mouthshape').val(dna.dnamouthshape)    
 }
 
 // Changing Panda colors
@@ -79,3 +83,14 @@ $('#headbodycodecolor').change(()=>{
   var colorVal = $('#headbodycodecolor').val()
   headBodyColor(colors[colorVal],colorVal)
 })
+
+$('#eyeshape').change(()=>{
+  var expression = parseInt($('#eyeshape').val())
+  eyeShape(expression)
+})
+
+$('#mouthshape').change(()=>{
+  var expression = parseInt($('#mouthshape').val())
+  mouthShape(expression)
+})
+

@@ -42,29 +42,72 @@ function headBodyColor(color,code) {
 //###################################################
 //Functions below will be used later on in the project
 //###################################################
-function eyeVariation(num) {
 
-    $('#dnashape').html(num)
+function eyeShape(num) {
+    $('#dnaeyeshape').html(num)
     switch (num) {
         case 1:
-            normalEyes()
-            $('#eyeName').html('Basic')
+            normalEye()
+            $('#eyeshapename').html('Normal')
+            break
+        case 2:
+            shyEye()
+            $('#eyeshapename').html('Shy')
             break
     }
 }
 
-function decorationVariation(num) {
-    $('#dnadecoration').html(num)
+function mouthShape(num) {
+    $('#dnamouthshape').html(num)
     switch (num) {
         case 1:
-            $('#decorationName').html('Basic')
-            normaldecoration()
+            normalMouth()
+            $('#mouthshapename').html('Normal')
             break
+        case 2:
+            happyMouth()
+            $('#mouthshapename').html('Happy')
+            break
+        case 3:
+            sadMouth()
+            $('#mouthshapename').html('Sad')
+            break  
+        case 4:
+            surpriseMouth()
+            $('#mouthshapename').html('Surprise')
+            break                        
     }
 }
 
-async function normalEyes() {
-    await $('.cat__eye').find('span').css('border', 'none')
+function normalEye() {
+    $('#lEye,#lPupil,#rEye,#rPupil').removeClass()
+    $('#lEye').addClass('a-left-eye')
+    $('#lPupil').addClass('a-left-pupil , a-left-pupil-normal')
+    $('#rEye').addClass('a-right-eye')
+    $('#rPupil').addClass('a-right-pupil , a-right-pupil-normal')
+}
+function shyEye() {
+    $('#lEye,#lPupil,#rEye,#rPupil').removeClass()
+    $('#lEye').addClass('a-left-eye-shy a-left-eye')
+    $('#lPupil').addClass('a-left-pupil a-left-pupil-shy')
+    $('#rEye').addClass('a-right-eye-shy a-right-eye')
+    $('#rPupil').addClass('a-right-pupil a-right-pupil-shy')
+}
+function normalMouth() {
+    $('#mouth').removeClass()
+    $('#mouth').addClass('a-mouth')
+}
+function happyMouth() {
+    $('#mouth').removeClass()
+    $('#mouth').addClass('a-mouth a-mouth-happy')
+}
+function sadMouth() {
+    $('#mouth').removeClass()
+    $('#mouth').addClass('a-mouth a-mouth-sad')
+}
+function surpriseMouth() {
+    $('#mouth').removeClass()
+    $('#mouth').addClass('a-mouth-surprise')
 }
 
 async function normaldecoration() {

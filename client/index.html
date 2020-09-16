@@ -57,22 +57,22 @@
                         <div class="a-head">
                             <div class="a-eyes">
                                 <div class="a-left-eye-patch">
-                                    <div class="a-left-eye">
-                                        <div class="a-left-pupil a-left-pupil-normal">
+                                    <div class="a-left-eye" id="lEye">
+                                        <div class="a-left-pupil a-left-pupil-normal" id="lPupil">
                                             <div class="a-left-pupil-spark"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="a-right-eye-patch">
-                                    <div class="a-right-eye">
-                                        <div class="a-right-pupil a-right-pupil-normal">
+                                    <div class="a-right-eye" id="rEye">
+                                        <div class="a-right-pupil a-right-pupil-normal" id="rPupil">
                                             <div class="a-right-pupil-spark"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="a-nose"></div>
-                            <div class="a-mouth"></div>
+                            <div class="a-mouth" id="mouth"></div>
                         </div>
                         <div class="a-arms">
                             <div class="a-left-arm"></div>
@@ -106,8 +106,8 @@
                             <span id="dnaheadbody"></span>
                         
                             <!-- Pandatributes -->
-                            <span id="dnashape"></span>
-                            <span id="dnadecoration"></span>
+                            <span id="dnaeyeshape"></span>
+                            <span id="dnamouthshape"></span>
                             <span id="dnadecorationMid"></span>
                             <span id="dnadecorationSides"></span>
                             <span id="dnadanimation"></span>
@@ -131,6 +131,12 @@
                             <br>
                             <label for="formControlRange"><b>Head and body</b><span class="badge badge-dark ml-2" id="headbodycode"></span></label>
                             <input type="range" min="10" max="98" class="form-control-range" id="headbodycodecolor">
+                            <br>
+                            <label for="formControlRange"><b>Eye Shape</b><span class="badge badge-dark ml-2" id="eyeshapename"></span></label>
+                            <input type="range" min="1" max="4" class="form-control-range" id="eyeshape">
+                            <br>
+                            <label for="formControlRange"><b>Mouth Shape</b><span class="badge badge-dark ml-2" id="mouthshapename"></span></label>
+                            <input type="range" min="1" max="4" class="form-control-range" id="mouthshape">
                         </div>
                     </div>
                 </div>

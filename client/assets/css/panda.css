@@ -350,16 +350,16 @@ body{
 
 
 
-/*Expression*/
+/*Eye Shape*/
 .a-left-pupil-normal{
     margin-top: 5px;
     margin-left: 6px;
 }
 .a-right-pupil-normal{
-    margin-top: 2px;
+    margin-top: 1px;
     margin-left: 6px;
 }
-/* shy*/
+/* Eye shy*/
 .a-left-pupil-shy{
     margin-left: 0px;
     margin-top: 0px;
@@ -374,14 +374,20 @@ body{
 .a-left-eye-shy{
     border-top: 6px black solid;
 }
+/*Mouth shape*/
 /*Sad*/
 .a-mouth-sad{
     transform: rotate(180deg);
 }
 /*Surprise*/
-.a-mouth-surprise{
+.a-mouth-happy{
     height: 35px;
-    border-top: 0;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 1px;
+}
+.a-mouth-surprise{
+    border: 3px solid black;
+    width: 27px;
+    height: 33px;
+    margin-top: 4px;
+    margin-left: 59px;
+    border-radius: 50%;
 }
