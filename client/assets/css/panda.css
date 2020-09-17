@@ -15,7 +15,7 @@ body{
     height: 500px;
     justify-content: center;
     align-content: center;
-    margin-top: -10px;
+    margin-top: 98px;
     display: flex;
 }
 .a-head{
@@ -206,6 +206,45 @@ body{
     transform: rotate(22deg);
     position: absolute;
 }
+.a-rings{
+    width: 60px;
+    height: 60px;
+    margin-top: 111px;
+    margin-left: 68px;
+    display: flex;
+    justify-content: center;
+}
+.a-ring-left{
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 60px;
+    background: white;
+}
+.a-ring-middle{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 82px;
+    background: white;
+}
+.a-ring-right{
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 106px;
+    background: white;
+}
+
 .a-legs{
     width: 480px;
     height: 66px;
@@ -373,6 +412,23 @@ body{
 }
 .a-left-eye-shy{
     border-top: 6px black solid;
+}
+/*Eye thinker*/
+.a-left-pupil-thinker-right{
+    margin-top: 1px;
+    margin-left: 6px;
+}
+.a-right-pupil-thinker-right{
+    margin-top: 6px;
+    margin-left: 1px;
+}
+.a-right-pupil-thinker-left{
+    margin-top: 4px;
+    margin-left: 6px;
+}
+.a-left-pupil-thinker-left{
+    margin-top: 0px;
+    margin-left: 1px;
 }
 /*Mouth shape*/
 /*Sad*/

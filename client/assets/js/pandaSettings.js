@@ -9,8 +9,8 @@ var defaultDNA = {
     //Pandatributes
     "dnaeyeshape" : 1,
     "dnamouthshape" : 1,
-    "decorationMidcolor" : 13,
-    "decorationSidescolor" : 13,
+    "decorationMidcolor" : 19,
+    "decorationSidescolor" : 8,
     "animation" :  1,
     "lastNum" :  1
     }
@@ -60,7 +60,11 @@ function renderPanda(dna){
     eyeShape(dna.dnaeyeshape)
     $('#eyeshape').val(dna.dnaeyeshape)
     mouthShape(dna.dnamouthshape)
-    $('#mouthshape').val(dna.dnamouthshape)    
+    $('#mouthshape').val(dna.dnamouthshape) 
+    decorationMidColor(colors[dna.decorationMidcolor],dna.decorationMidcolor)
+    $('#middledecorationcolor').val(dna.decorationMidcolor)  
+    decorationOutterColor(colors[dna.decorationSidescolor],dna.decorationSidescolor)
+    $('#outterdecorationcolor').val(dna.decorationSidescolor)          
 }
 
 // Changing Panda colors
@@ -93,4 +97,15 @@ $('#mouthshape').change(()=>{
   var expression = parseInt($('#mouthshape').val())
   mouthShape(expression)
 })
+
+$('#middledecorationcolor').change(()=>{
+  var colorVal = $('#middledecorationcolor').val()
+  decorationMidColor(colors[colorVal],colorVal)
+})
+
+$('#outterdecorationcolor').change(()=>{
+  var colorVal = $('#outterdecorationcolor').val()
+  decorationOutterColor(colors[colorVal],colorVal)
+})
+
 
