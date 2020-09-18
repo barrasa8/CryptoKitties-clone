@@ -64,7 +64,10 @@ function renderPanda(dna){
     decorationMidColor(colors[dna.decorationMidcolor],dna.decorationMidcolor)
     $('#middledecorationcolor').val(dna.decorationMidcolor)  
     decorationOutterColor(colors[dna.decorationSidescolor],dna.decorationSidescolor)
-    $('#outterdecorationcolor').val(dna.decorationSidescolor)          
+    $('#outterdecorationcolor').val(dna.decorationSidescolor) 
+    animation(dna.animation)
+    $('#animationnumber').val(dna.animation) 
+
 }
 
 // Changing Panda colors
@@ -108,4 +111,8 @@ $('#outterdecorationcolor').change(()=>{
   decorationOutterColor(colors[colorVal],colorVal)
 })
 
+$('#animationnumber').change(()=>{
+  var animationNumber = parseInt($('#animationnumber').val())
+  animation(animationNumber)
+})
 

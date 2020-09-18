@@ -8,6 +8,7 @@
     <script src="assets/bootstrap/js/popper.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/mystyle.css">
     <link rel="stylesheet" href="assets/css/panda.css">
     <link rel="stylesheet" href="assets/css/colors.css">
@@ -47,14 +48,14 @@
                             </div>
                         </div>
                         <div class="a-ears">
-                            <div class="a-left-ear">
+                            <div class="a-left-ear" id="lEar">
                                 <div class="a-left-inner-ear"></div>
                             </div>
-                            <div class="a-right-ear">
+                            <div class="a-right-ear" id="rEar">
                                 <div class="a-right-inner-ear"></div>
                             </div>
                         </div>
-                        <div class="a-head">
+                        <div class="a-head" id="head">
                             <div class="a-eyes">
                                 <div class="a-left-eye-patch">
                                     <div class="a-left-eye" id="lEye">
@@ -71,7 +72,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="a-nose"></div>
+                            <div class="a-nose" id="nose"></div>
                             <div class="a-mouth" id="mouth"></div>
                         </div>
                         <div class="a-arms">
@@ -113,7 +114,7 @@
                             <span id="dnamouthshape"></span>
                             <span id="dnadecorationMid"></span>
                             <span id="dnadecorationSides"></span>
-                            <span id="dnadanimation"></span>
+                            <span id="dnaanimation"></span>
                             <span id="dnaspecial"></span>
                         </b>
                     </div>
@@ -141,11 +142,20 @@
                             <label for="formControlRange"><b>Mouth Shape</b><span class="badge badge-dark ml-2" id="mouthshapename"></span></label>
                             <input type="range" min="1" max="4" class="form-control-range" id="mouthshape">
                             <br>
-                            <label for="formControlRange"><b>Middle decoration</b><span class="badge badge-dark ml-2" id="middledecorationcode"></span></label>
-                            <input type="range" min="10" max="98" class="form-control-range" id="middledecorationcolor">
+                            <label for="formControlRange"><b>Pattern Decoration</b></label>
+                            <div class=row>
+                                <div class="col-lg-5">
+                                    <label for="formControlRange"><b>Middle</b><span class="badge badge-dark ml-2" id="middledecorationcode"></span></label>
+                                    <input type="range" min="10" max="98" class="form-control-range" id="middledecorationcolor">
+                                </div>
+                                <div class="col-lg-5">
+                                    <label for="formControlRange"><b>Sides</b><span class="badge badge-dark ml-2" id="outterdecorationcode"></span></label>
+                                    <input type="range" min="10" max="98" class="form-control-range" id="outterdecorationcolor">
+                                </div>
+                            </div>
                             <br>
-                            <label for="formControlRange"><b>Side decoration</b><span class="badge badge-dark ml-2" id="outterdecorationcode"></span></label>
-                            <input type="range" min="10" max="98" class="form-control-range" id="outterdecorationcolor">
+                            <label for="formControlRange"><b>Animation</b><span class="badge badge-dark ml-2" id="animationname"></span></label>
+                            <input type="range" min="1" max="4" class="form-control-range" id="animationnumber">
                         </div>
                     </div>
                 </div>

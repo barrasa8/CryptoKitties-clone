@@ -1,0 +1,59 @@
+@keyframes moveHead{
+    from{
+        transform: rotate(-10deg);
+    }
+    to{
+        transform: rotate(10deg);
+    }
+}
+@keyframes moveHeadLeftEar{
+    from{
+        margin-left: -16px;
+        margin-top: 21px;
+        transform: rotate(145deg);
+    }
+    to{
+        margin-left: 14px;
+        margin-top: -6px;
+        transform: rotate(165deg);
+    }
+}
+@keyframes moveHeadRighttEar{
+    from{
+        margin-left: 77px;
+        margin-top: -11px;
+        transform: rotate(16deg);
+    }
+    to{
+        margin-left: 113px;
+        margin-top: 16px;
+        transform: rotate(36deg);
+    }
+}
+@keyframes moveNose{
+    from{
+        margin-left:62px;
+    }
+    to{
+        margin-left:66px;
+    }
+}
+
+.headMove{
+    animation: 2s moveHead infinite;
+    animation-direction: alternate;
+}
+.headLeftEarMove{
+    animation: 2s moveHeadLeftEar infinite;
+    animation-direction: alternate;
+}
+.headRightEarMove{
+    animation: 2s moveHeadRighttEar infinite;
+    animation-direction: alternate;
+}
+.noseMove{
+    animation: 1s moveNose infinite;
+    animation-direction: alternate;
+}
+
+

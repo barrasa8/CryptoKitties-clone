@@ -99,6 +99,24 @@ function mouthShape(num) {
     }
 }
 
+function animation(num) {
+    $('#dnaanimation').html(num)
+    switch (num) {
+        case 1:
+            noMove()
+            $('#animationname').html('Off')
+            break
+        case 2:
+            moveHead()
+            $('#animationname').html('Head')
+            break                     
+        case 3:
+            moveNose()
+            $('#animationname').html('Nose')
+            break   
+    }
+}
+
 function normalEye() {
     $('#lEye,#lPupil,#rEye,#rPupil').removeClass()
     $('#lEye').addClass('a-left-eye')
@@ -139,11 +157,21 @@ function surpriseMouth() {
     $('#mouth').removeClass()
     $('#mouth').addClass('a-mouth-surprise')
 }
-
-async function normaldecoration() {
-    //Remove all style from other decorations
-    //In this way we can also use normalDecoration() to reset the decoration style
-    $('.animal__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
-    $('.animal__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
-    $('.animal__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+function noMove(){
+    $('#lEar').removeClass("headLeftEarMove")
+    $('#rEar').removeClass("headRightEarMove")
+    $('#head').removeClass("headMove")
+    $('#nose').removeClass("noseMove") 
 }
+function moveHead(){
+    $('#lEar').addClass("headLeftEarMove")
+    $('#rEar').addClass("headRightEarMove")
+    $('#head').addClass("headMove")
+}
+function moveNose(){
+    $('#lEar').removeClass("headLeftEarMove")
+    $('#rEar').removeClass("headRightEarMove")
+    $('#head').removeClass("headMove")
+    $('#nose').addClass("noseMove")
+}
+
