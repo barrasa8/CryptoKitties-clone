@@ -107,13 +107,30 @@ function animation(num) {
             $('#animationname').html('Off')
             break
         case 2:
+            noMove()
             moveHead()
             $('#animationname').html('Head')
             break                     
         case 3:
+            noMove()
             moveNose()
             $('#animationname').html('Nose')
             break   
+        case 4:
+            noMove()
+            moveLeftFoot()
+            $('#animationname').html('Left Foot')
+            break   
+        case 5:
+            noMove()
+            moveRightFoot()
+            $('#animationname').html('Right Foot')
+            break  
+        case 6:
+            noMove()
+            moveBothFeet()
+            $('#animationname').html('Booth Feet')
+            break                   
     }
 }
 
@@ -158,10 +175,35 @@ function surpriseMouth() {
     $('#mouth').addClass('a-mouth-surprise')
 }
 function noMove(){
-    $('#lEar').removeClass("headLeftEarMove")
-    $('#rEar').removeClass("headRightEarMove")
-    $('#head').removeClass("headMove")
-    $('#nose').removeClass("noseMove") 
+    $('#lEar').removeClass()
+    $('#rEar').removeClass()
+    $('#head').removeClass()
+    $('#nose').removeClass()
+    $('#lFoot').removeClass()
+    $('#lFootToe1').removeClass()
+    $('#lFootToe2').removeClass()
+    $('#lFootToe3').removeClass()
+    $('#lFootHeel').removeClass()
+    $('#rFoot').removeClass()
+    $('#rFootToe1').removeClass()
+    $('#rFootToe2').removeClass()
+    $('#rFootToe3').removeClass()
+    $('#rFootHeel').removeClass()
+    //Add initial classes
+    $('#lEar').addClass("a-left-ear")
+    $('#rEar').addClass("a-right-ear")
+    $('#head').addClass("a-head")
+    $('#nose').addClass("a-nose") 
+    $('#lFoot').addClass("a-left-foot")
+    $('#lFootToe1').addClass("a-left-toes a-left-toe-1")
+    $('#lFootToe2').addClass("a-left-toes a-left-toe-2")
+    $('#lFootToe3').addClass("a-left-toes a-left-toe-3")
+    $('#lFootHeel').addClass("a-left-heel")
+    $('#rFoot').addClass("a-right-foot")
+    $('#rFootToe1').addClass("a-right-toes a-right-toe-1")
+    $('#rFootToe2').addClass("a-right-toes a-right-toe-2")
+    $('#rFootToe3').addClass("a-right-toes a-right-toe-3")
+    $('#rFootHeel').addClass("a-right-heel")
 }
 function moveHead(){
     $('#lEar').addClass("headLeftEarMove")
@@ -169,9 +211,26 @@ function moveHead(){
     $('#head').addClass("headMove")
 }
 function moveNose(){
-    $('#lEar').removeClass("headLeftEarMove")
-    $('#rEar').removeClass("headRightEarMove")
-    $('#head').removeClass("headMove")
     $('#nose').addClass("noseMove")
+}
+function moveLeftFoot(){
+    $('#lFoot').addClass("leftFootMove")
+    $('#lFootToe1').addClass("leftFootToe1Move")
+    $('#lFootToe2').addClass("leftFootToe2Move")
+    $('#lFootToe3').addClass("leftFootToe3Move")
+    $('#lFootHeel').addClass("leftHeelMove")
+
+}
+function moveRightFoot(){
+    $('#rFoot').addClass("rightFootMove")
+    $('#rFootToe1').addClass("rightFootToe1Move")
+    $('#rFootToe2').addClass("rightFootToe2Move")
+    $('#rFootToe3').addClass("rightFootToe3Move")
+    $('#rFootHeel').addClass("rightHeelMove")
+
+}
+function moveBothFeet(){
+    moveLeftFoot()
+    moveRightFoot()
 }
 
