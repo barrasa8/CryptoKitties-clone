@@ -234,3 +234,24 @@ function moveBothFeet(){
     moveRightFoot()
 }
 
+$("#default-panda-button").click(function(){
+    let defaultDna = JSON.parse(localStorage.getItem('defaultDna'))
+    renderPanda(defaultDna)
+})
+
+$("#random-panda-button").click(function(){
+    let randomDNA = {
+        "dnaarmleg" : Math.floor(Math.random()*89)+10,
+        "dnaeyepatch" : Math.floor(Math.random()*89)+10,
+        "dnainnerearfoot" : Math.floor(Math.random()*89)+10,
+        "dnaheadbody" : Math.floor(Math.random()*89)+10,
+        //Pandatributes
+        "dnaeyeshape" : Math.floor(Math.random()*4)+1,
+        "dnamouthshape" : Math.floor(Math.random()*4)+1,
+        "decorationMidcolor" : Math.floor(Math.random()*89)+10,
+        "decorationSidescolor" : Math.floor(Math.random()*89)+10,
+        "animation" :  Math.floor(Math.random()*6)+1,
+        "lastNum" :  1
+        }
+    renderPanda(randomDNA)
+})

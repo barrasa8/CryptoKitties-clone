@@ -1,5 +1,12 @@
-
 var colors = Object.values(allColors())
+
+//Local Storage
+if (typeof(Storage) !== "undefined") {
+  // Code for localStorage/sessionStorage.
+  localStorage.setItem("defaultDNA","");
+} else {
+window.alert("Sorry, no local storage");
+}
 
 var defaultDNA = {
     "dnaarmleg" : 51,
@@ -14,6 +21,8 @@ var defaultDNA = {
     "animation" :  1,
     "lastNum" :  1
     }
+
+  localStorage.setItem("defaultDna",JSON.stringify(defaultDNA))
 
 // when page load
 $( document ).ready(function() {

@@ -120,47 +120,67 @@
                     </div>
                 </div>
                 <div class="col-lg-6 pandattributes m-1 light-b-shadow">
-
-                    <!-- Panda colors -->
-                    <div id="pandaColors">
-                        <div class="form-group">
-                            <label for="formControlRange"><b>Arm and legs</b><span class="badge badge-dark ml-2" id="armlegcode"></span></label>
-                            <input type="range" min="10" max="98" class="form-control-range" id="armlegcolor">
-                            <br>
-                            <label for="formControlRange"><b>Eye patches</b><span class="badge badge-dark ml-2" id="eyepatchcode"></span></label>
-                            <input type="range" min="10" max="98" class="form-control-range" id="eyepatchcolor">
-                            <br>
-                            <label for="formControlRange"><b>Inner ear, foot and nose</b><span class="badge badge-dark ml-2" id="innerearfootcode"></span></label>
-                            <input type="range" min="10" max="98" class="form-control-range" id="innerearfootcolor">
-                            <br>
-                            <label for="formControlRange"><b>Head and body</b><span class="badge badge-dark ml-2" id="headbodycode"></span></label>
-                            <input type="range" min="10" max="98" class="form-control-range" id="headbodycodecolor">
-                            <br>
-                            <label for="formControlRange"><b>Eye Shape</b><span class="badge badge-dark ml-2" id="eyeshapename"></span></label>
-                            <input type="range" min="1" max="4" class="form-control-range" id="eyeshape">
-                            <br>
-                            <label for="formControlRange"><b>Mouth Shape</b><span class="badge badge-dark ml-2" id="mouthshapename"></span></label>
-                            <input type="range" min="1" max="4" class="form-control-range" id="mouthshape">
-                            <br>
-                            <label for="formControlRange"><b>Pattern Decoration</b></label>
-                            <div class=row>
-                                <div class="col-lg-5">
-                                    <label for="formControlRange"><b>Middle</b><span class="badge badge-dark ml-2" id="middledecorationcode"></span></label>
-                                    <input type="range" min="10" max="98" class="form-control-range" id="middledecorationcolor">
-                                </div>
-                                <div class="col-lg-5">
-                                    <label for="formControlRange"><b>Sides</b><span class="badge badge-dark ml-2" id="outterdecorationcode"></span></label>
-                                    <input type="range" min="10" max="98" class="form-control-range" id="outterdecorationcolor">
-                                </div>
+                    <nav class="nav nav-pills nav-justified">
+                        <a class="nav-item nav-link active" data-toggle="tab" href="#panda-colors">Color</a>
+                        <a class="nav-item nav-link" data-toggle="tab" href="#panda-attributes">Attributes</a>
+                    </nav>
+                    <br>
+                    <div class="tab-content">
+                        <!-- Panda colors -->
+                        <div id="panda-colors" class="tab-pane fade show active">
+                            <div class="form-group">
+                                <label for="formControlRange"><b>Arm and legs</b><span class="badge badge-dark ml-2" id="armlegcode"></span></label>
+                                <input type="range" min="10" max="98" class="form-control-range" id="armlegcolor">
+                                <br>
+                                <label for="formControlRange"><b>Eye patches</b><span class="badge badge-dark ml-2" id="eyepatchcode"></span></label>
+                                <input type="range" min="10" max="98" class="form-control-range" id="eyepatchcolor">
+                                <br>
+                                <label for="formControlRange"><b>Inner ear, foot and nose</b><span class="badge badge-dark ml-2" id="innerearfootcode"></span></label>
+                                <input type="range" min="10" max="98" class="form-control-range" id="innerearfootcolor">
+                                <br>
+                                <label for="formControlRange"><b>Head and body</b><span class="badge badge-dark ml-2" id="headbodycode"></span></label>
+                                <input type="range" min="10" max="98" class="form-control-range" id="headbodycodecolor">
+                                <br>
                             </div>
-                            <br>
-                            <label for="formControlRange"><b>Animation</b><span class="badge badge-dark ml-2" id="animationname"></span></label>
-                            <input type="range" min="1" max="6" class="form-control-range" id="animationnumber">
+                        </div>
+                        <!-- Panda attributes -->
+                        <div id="panda-attributes" class="tab-pane fade">
+                            <div class="form-group">
+                                <label for="formControlRange"><b>Eye Shape</b><span class="badge badge-dark ml-2" id="eyeshapename"></span></label>
+                                <input type="range" min="1" max="4" class="form-control-range" id="eyeshape">
+                                <br>
+                                <label for="formControlRange"><b>Mouth Shape</b><span class="badge badge-dark ml-2" id="mouthshapename"></span></label>
+                                <input type="range" min="1" max="4" class="form-control-range" id="mouthshape">
+                                <br>
+                                <label for="formControlRange"><b>Pattern Decoration</b></label>
+                                <div class=row>
+                                    <div class="col-lg-5">
+                                        <label for="formControlRange"><b>Middle</b><span class="badge badge-dark ml-2" id="middledecorationcode"></span></label>
+                                        <input type="range" min="10" max="98" class="form-control-range" id="middledecorationcolor">
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <label for="formControlRange"><b>Sides</b><span class="badge badge-dark ml-2" id="outterdecorationcode"></span></label>
+                                        <input type="range" min="10" max="98" class="form-control-range" id="outterdecorationcolor">
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="formControlRange"><b>Animation</b><span class="badge badge-dark ml-2" id="animationname"></span></label>
+                                <input type="range" min="1" max="6" class="form-control-range" id="animationnumber">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
+            <div class="row justify-content-center">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-success" id="default-panda-button">Default Panda</button>
+                    <button type="button" class="btn btn-success" id="random-panda-button">Random Panda</button>
+                    <button type="button" class="btn btn-success" id="create-panda-button">Create Panda</button>
+                </div>
+            </div>
+
         </div>
         <footer align="left">
             <p>Ivan on Tech Academy Bootcamp July 2020</p>
