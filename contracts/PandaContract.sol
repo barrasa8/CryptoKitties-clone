@@ -1,9 +1,10 @@
 pragma solidity ^0.5.12;
 
 import "./IERC721.sol";
+import "./Ownable.sol";
 //import './Safemath.sol';
 
-contract PandaContract is IERC721{
+contract PandaContract is IERC721, Ownable{
 
     //using SafeMath for uint256;
 
@@ -17,11 +18,12 @@ contract PandaContract is IERC721{
 
     Panda[] pandas;
 
+    event Birth(address _owner,uint256 PandaId, uint256 mumId, uint256 dadId, uint256 genes); 
+
     //private variables
     mapping (address => uint256) private _OwnerAnimalCount;
-    address[]  private _PandaOwner;
+    mapping(uint256 => address) private _PandaOwner;
     address ContractAddress;
-    uint256 private _TotalSupply;
     string  private _TokenName;
     string private _TokenSymbol;
     
@@ -29,6 +31,29 @@ contract PandaContract is IERC721{
         ContractAddress = msg.sender;
         _TokenName= "CryptoPanda";
         _TokenSymbol = "CP";
+    }
+
+    function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {
+        return _CreatePanda(0,0,_genes,0,owner);
+    }
+
+    function _CreatePanda(uint256 _mumId,uint256 _dadId,uint256 _genes,uint256 _generation,address _owner) private returns (uint256){
+        Panda memory _panda = Panda({
+            genes: _genes,
+            birthTime:uint64(now),
+            mumId:uint32(_mumId),
+            dadId:uint32(_dadId),
+            generation:uint16(_generation)
+        });
+
+        uint256 newPandaId = pandas.push(_panda)-1;
+
+        _transfer(address(0), _owner, newPandaId);
+
+        emit Birth(_owner, newPandaId, _mumId, _dadId, _genes);
+
+        return newPandaId;
+
     }
 
     /**
@@ -52,7 +77,7 @@ contract PandaContract is IERC721{
      * @dev Returns the total number of tokens in circulation.
      */
     function totalSupply() external view returns (uint256 total){
-        return _TotalSupply;
+        return pandas.length;
     }
 
     /*
@@ -77,7 +102,6 @@ contract PandaContract is IERC721{
      * - `tokenId` must exist.
      */
     function ownerOf(uint256 _tokenId) external view returns (address owner){
-        require(_PandaOwner.length > _tokenId);
         return _PandaOwner[_tokenId];
     }
 
@@ -98,14 +122,21 @@ contract PandaContract is IERC721{
         require( _to != ContractAddress);
         require(_PandaOwner[_tokenId] == msg.sender);
 
+        _transfer(msg.sender,_to,_tokenId);
+    }
+
+    function _transfer(address _from,address _to, uint256 _tokenId) internal {
         uint256 toAnimalCount = _OwnerAnimalCount[_to];
         _OwnerAnimalCount[_to] = toAnimalCount +1;
         _PandaOwner[_tokenId]=_to;
-        _OwnerAnimalCount[msg.sender]= _OwnerAnimalCount[msg.sender]-1;
+
+        if(_from != address(0) ){
+            _OwnerAnimalCount[_from]= _OwnerAnimalCount[_from]-1;
+        }
 
         assert(_PandaOwner[_tokenId]==_to && _OwnerAnimalCount[_to] == toAnimalCount+1);
 
-        emit Transfer(msg.sender, _to,  _tokenId);
+        emit Transfer(_from, _to,  _tokenId);
     }
 }
 
