@@ -56,6 +56,19 @@ contract PandaContract is IERC721, Ownable{
 
     }
 
+    function getPanda(uint256 tokenId) public view returns(uint256 genes,uint64 birthTime,uint32 mumId,uint32 dadId,uint16 generation) 
+    {
+        require(pandas.length > tokenId);
+
+        genes       =pandas[tokenId].genes;
+        birthTime   =pandas[tokenId].birthTime;
+        mumId       =pandas[tokenId].mumId;
+        dadId       =pandas[tokenId].dadId;
+        generation  =pandas[tokenId].generation;
+
+        return (genes,birthTime,mumId,dadId,generation);
+    }
+
     /**
      * @dev Emitted when `tokenId` token is transfered from `from` to `to`.
      */
