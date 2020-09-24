@@ -8,6 +8,8 @@ contract PandaContract is IERC721, Ownable{
 
     //using SafeMath for uint256;
 
+    uint8 public constant CREATION_GEN_LIMIT = 0 ;
+
     struct Panda{
         uint256 genes;
         uint64 birthTime;
@@ -18,22 +20,26 @@ contract PandaContract is IERC721, Ownable{
 
     Panda[] pandas;
 
+    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
+    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
     event Birth(address _owner,uint256 PandaId, uint256 mumId, uint256 dadId, uint256 genes); 
 
     //private variables
     mapping (address => uint256) private _OwnerAnimalCount;
     mapping(uint256 => address) private _PandaOwner;
-    address ContractAddress;
     string  private _TokenName;
     string private _TokenSymbol;
     
     constructor() public{
-        ContractAddress = msg.sender;
         _TokenName= "CryptoPanda";
         _TokenSymbol = "CP";
     }
 
+    uint8 gen0Counter= 0;
+
     function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {
+        require( gen0Counter < CREATION_GEN_LIMIT);
+        gen0Counter++;
         return _CreatePanda(0,0,_genes,0,owner);
     }
 
@@ -53,7 +59,21 @@ contract PandaContract is IERC721, Ownable{
         emit Birth(_owner, newPandaId, _mumId, _dadId, _genes);
 
         return newPandaId;
+    }
 
+    function getPandaArray (address PandaOwnerAddress) public view returns (uint256[] memory ){
+        uint256[] memory _pandaArray;
+        uint256 numberOfPandasOwned = _OwnerAnimalCount[PandaOwnerAddress];
+        uint256 pandasFoundCount=0;
+
+        for(uint256 i=0; i< pandas.length || pandasFoundCount == numberOfPandasOwned; i++){
+          if(_PandaOwner[i]==msg.sender){
+            _pandaArray[pandasFoundCount]=i;
+            pandasFoundCount++;
+          }
+        }
+
+        return _pandaArray;
     }
 
     function getPanda(uint256 tokenId) public view returns(uint256 genes,uint64 birthTime,uint32 mumId,uint32 dadId,uint16 generation) 
@@ -69,15 +89,7 @@ contract PandaContract is IERC721, Ownable{
         return (genes,birthTime,mumId,dadId,generation);
     }
 
-    /**
-     * @dev Emitted when `tokenId` token is transfered from `from` to `to`.
-     */
-    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
-
-    /**
-     * @dev Emitted when `owner` enables `approved` to manage the `tokenId` token.
-     */
-    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
+    
 
     /**
      * @dev Returns the number of tokens in ``owner``'s account.
@@ -119,35 +131,24 @@ contract PandaContract is IERC721, Ownable{
     }
 
 
-     /* @dev Transfers `tokenId` token from `msg.sender` to `to`.
-     *
-     *
-     * Requirements:
-     *
-     * - `to` cannot be the zero address.
-     * - `to` can not be the contract address.
-     * - `tokenId` token must be owned by `msg.sender`.
-     *
-     * Emits a {Transfer} event.
-     */
+     /* @dev Transfers `tokenId` token from `msg.sender` to `to`.   */
     function transfer(address _to, uint256 _tokenId) external{
         require( _to != address(0));
-        require( _to != ContractAddress);
+        require( _to != owner);
         require(_PandaOwner[_tokenId] == msg.sender);
 
         _transfer(msg.sender,_to,_tokenId);
     }
 
     function _transfer(address _from,address _to, uint256 _tokenId) internal {
-        uint256 toAnimalCount = _OwnerAnimalCount[_to];
-        _OwnerAnimalCount[_to] = toAnimalCount +1;
+        _OwnerAnimalCount[_to]++;
         _PandaOwner[_tokenId]=_to;
 
         if(_from != address(0) ){
-            _OwnerAnimalCount[_from]= _OwnerAnimalCount[_from]-1;
+            _OwnerAnimalCount[_from]--;
         }
 
-        assert(_PandaOwner[_tokenId]==_to && _OwnerAnimalCount[_to] == toAnimalCount+1);
+        assert(_PandaOwner[_tokenId]==_to);
 
         emit Transfer(_from, _to,  _tokenId);
     }
