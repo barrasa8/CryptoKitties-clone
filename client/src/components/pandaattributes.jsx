@@ -1,33 +1,17 @@
 import React, { Component } from "react";
-import { Tab , Nav} from "react-bootstrap";
-import  "./pandaattributes.css"
-
-
+import { Tab, Nav } from "react-bootstrap";
+import "./pandaattributes.css";
 
 class PandaAttributes extends Component {
   constructor(props) {
     super(props);
   }
-  
-  handleChange= ({target})=>{
-    console.log(target.value)
 
-    const _dna =  {
-      dnaarmleg: target.value,
-      dnaeyepatch: 53,
-      dnainnerearfoot: 54,
-      dnaheadbody: 10,
-      //Pandatributes
-      dnaeyeshape: 1,
-      dnamouthshape: 1,
-      decorationMidcolor: 19,
-      decorationSidescolor: 8,
-      animation: 1,
-      lastNum: 9,
-    }
+  HandleSliderChange = ({ target }) => {
+    console.log(target.value);
 
-    this.props.changeFunction(target.name,target.value)
-  }
+    this.props.SliderChange(target.name, target.value);
+  };
 
   render() {
     return (
@@ -48,7 +32,7 @@ class PandaAttributes extends Component {
           <Tab.Content>
             <Tab.Pane eventKey="panda-colors">
               <div className="form-group">
-                <label >
+                <label>
                   <b>Arm and legs</b>
                   <span
                     className="badge badge-dark ml-2"
@@ -62,10 +46,10 @@ class PandaAttributes extends Component {
                   max="98"
                   className="form-control-range"
                   id="armlegcolor"
-                  onChange={this.handleChange.bind(this)}
+                  onChange={this.HandleSliderChange.bind(this)}
                 />
                 <br />
-                <label >
+                <label>
                   <b>Eye patches</b>
                   <span
                     className="badge badge-dark ml-2"
@@ -73,14 +57,16 @@ class PandaAttributes extends Component {
                   ></span>
                 </label>
                 <input
+                  name="dnaeyepatch"
                   type="range"
                   min="10"
                   max="98"
                   className="form-control-range"
                   id="eyepatchcolor"
+                  onChange={this.HandleSliderChange.bind(this)}
                 />
                 <br />
-                <label >
+                <label>
                   <b>Inner ear, foot and nose</b>
                   <span
                     className="badge badge-dark ml-2"
@@ -88,14 +74,16 @@ class PandaAttributes extends Component {
                   ></span>
                 </label>
                 <input
+                  name="dnainnerearfoot"
                   type="range"
                   min="10"
                   max="98"
                   className="form-control-range"
                   id="innerearfootcolor"
+                  onChange={this.HandleSliderChange.bind(this)}
                 />
                 <br />
-                <label >
+                <label>
                   <b>Head and body</b>
                   <span
                     className="badge badge-dark ml-2"
@@ -103,18 +91,20 @@ class PandaAttributes extends Component {
                   ></span>
                 </label>
                 <input
+                  name="dnaheadbody"
                   type="range"
                   min="10"
                   max="98"
                   className="form-control-range"
                   id="headbodycodecolor"
+                  onChange={this.HandleSliderChange.bind(this)}
                 />
                 <br />
               </div>
             </Tab.Pane>
             <Tab.Pane eventKey="panda-attributes">
               <div className="form-group">
-                <label >
+                <label>
                   <b>Eye Shape</b>
                   <span
                     className="badge badge-dark ml-2"
@@ -122,14 +112,16 @@ class PandaAttributes extends Component {
                   ></span>
                 </label>
                 <input
+                  name="dnaeyeshape"
                   type="range"
                   min="1"
                   max="4"
                   className="form-control-range"
                   id="eyeshape"
+                  onChange={this.HandleSliderChange.bind(this)}
                 />
                 <br />
-                <label >
+                <label>
                   <b>Mouth Shape</b>
                   <span
                     className="badge badge-dark ml-2"
@@ -137,19 +129,21 @@ class PandaAttributes extends Component {
                   ></span>
                 </label>
                 <input
+                  name="dnamouthshape"
                   type="range"
                   min="1"
                   max="4"
                   className="form-control-range"
                   id="mouthshape"
+                  onChange={this.HandleSliderChange.bind(this)}
                 />
                 <br />
-                <label >
+                <label>
                   <b>Pattern Decoration</b>
                 </label>
                 <div className="row">
                   <div className="col-lg-5">
-                    <label >
+                    <label>
                       <b>Middle</b>
                       <span
                         className="badge badge-dark ml-2"
@@ -157,15 +151,17 @@ class PandaAttributes extends Component {
                       ></span>
                     </label>
                     <input
+                      name="decorationMidcolor"
                       type="range"
                       min="10"
                       max="98"
                       className="form-control-range"
                       id="middledecorationcolor"
+                      onChange={this.HandleSliderChange.bind(this)}
                     />
                   </div>
                   <div className="col-lg-5">
-                    <label >
+                    <label>
                       <b>Sides</b>
                       <span
                         className="badge badge-dark ml-2"
@@ -173,16 +169,18 @@ class PandaAttributes extends Component {
                       ></span>
                     </label>
                     <input
+                      name="decorationSidescolor"
                       type="range"
                       min="10"
                       max="98"
                       className="form-control-range"
                       id="outterdecorationcolor"
+                      onChange={this.HandleSliderChange.bind(this)}
                     />
                   </div>
                 </div>
                 <br />
-                <label >
+                <label>
                   <b>Animation</b>
                   <span
                     className="badge badge-dark ml-2"
@@ -190,11 +188,13 @@ class PandaAttributes extends Component {
                   ></span>
                 </label>
                 <input
+                  name="animation"
                   type="range"
                   min="1"
                   max="6"
                   className="form-control-range"
                   id="animationnumber"
+                  onChange={this.HandleSliderChange.bind(this)}
                 />
               </div>
             </Tab.Pane>

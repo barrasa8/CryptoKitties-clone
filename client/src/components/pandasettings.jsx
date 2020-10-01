@@ -43,21 +43,16 @@ class pandaSettings extends Component {
     });
   };
 
-  changeFunction = (_dnaProperty,_dna) => {
+  SliderChange = (_dnaProperty,_dna) => {
     console.log(
       "this is the DNA from slider " + _dnaProperty + "  " + JSON.stringify(_dna)
     );
-
     this.setState((prevState) => ({
       dna: {
         ...prevState.dna,
-        dnaarmleg: _dna,
+        [_dnaProperty]: _dna,
       },
     }));
-
-    // this.setState({
-    //   dna: _dna,
-    // });
     console.log("change function triggered" + JSON.stringify(this.state.dna));
   };
 
@@ -66,7 +61,7 @@ class pandaSettings extends Component {
       <Container fluid>
         <Row className="justify-content-md-center">
           <PandaCard dna={this.state.dna} />
-          <PandaAttributes changeFunction={this.changeFunction} />
+          <PandaAttributes SliderChange={this.SliderChange} />
         </Row>
         <br />
         <Row>
