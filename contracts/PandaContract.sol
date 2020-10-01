@@ -61,20 +61,20 @@ contract PandaContract is IERC721, Ownable{
         return newPandaId;
     }
 
-    function getPandaArray (address PandaOwnerAddress) public view returns (uint256[] memory ){
-        uint256[] memory _pandaArray;
-        uint256 numberOfPandasOwned = _OwnerAnimalCount[PandaOwnerAddress];
-        uint256 pandasFoundCount=0;
+    // function getPandaArray (address PandaOwnerAddress) public view returns (uint256[] memory ){
+    //     uint256[] memory _pandaArray;
+    //     uint256 numberOfPandasOwned = _OwnerAnimalCount[PandaOwnerAddress];
+    //     uint256 pandasFoundCount=0;
 
-        for(uint256 i=0; i< pandas.length || pandasFoundCount == numberOfPandasOwned; i++){
-          if(_PandaOwner[i]==msg.sender){
-            _pandaArray[pandasFoundCount]=i;
-            pandasFoundCount++;
-          }
-        }
+    //     for(uint256 i=0; i< pandas.length || pandasFoundCount == numberOfPandasOwned; i++){
+    //       if(_PandaOwner[i]==msg.sender){
+    //         _pandaArray[pandasFoundCount]=i;
+    //         pandasFoundCount++;
+    //       }
+    //     }
 
-        return _pandaArray;
-    }
+    //     return _pandaArray;
+    // }
 
     function getPanda(uint256 tokenId) public view returns(uint256 genes,uint64 birthTime,uint32 mumId,uint32 dadId,uint16 generation) 
     {
