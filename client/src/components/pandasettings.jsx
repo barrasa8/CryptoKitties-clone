@@ -45,7 +45,7 @@ class pandaSettings extends Component {
 
   setDefaultPandaDna = () => {
     this.setState({
-      dna:defaultDna
+      dna:defaultDna.dna
     });
     console.log(JSON.stringify(this.state.dna))
   };
