@@ -7,6 +7,22 @@ import { Container } from "react-bootstrap";
 import PandaCard from "./pandacard";
 import PandaAttributes from "./pandaattributes";
 
+const defaultDna= {
+  dna: {
+    dnaarmleg: 51,
+    dnaeyepatch: 53,
+    dnainnerearfoot: 54,
+    dnaheadbody: 10,
+    //Pandatributes
+    dnaeyeshape: 1,
+    dnamouthshape: 1,
+    decorationMidcolor: 19,
+    decorationSidescolor: 8,
+    animation: 1,
+    lastNum: 9,
+  }
+}
+
 class pandaSettings extends Component {
   constructor() {
     super();
@@ -29,31 +45,18 @@ class pandaSettings extends Component {
 
   setDefaultPandaDna = () => {
     this.setState({
-      dnaarmleg: 51,
-      dnaeyepatch: 53,
-      dnainnerearfoot: 54,
-      dnaheadbody: 10,
-      //Pandatributes
-      dnaeyeshape: 1,
-      dnamouthshape: 1,
-      decorationMidcolor: 19,
-      decorationSidescolor: 8,
-      animation: 1,
-      lastNum: 1,
+      dna:defaultDna
     });
+    console.log(JSON.stringify(this.state.dna))
   };
 
   SliderChange = (_dnaProperty,_dna) => {
-    console.log(
-      "this is the DNA from slider " + _dnaProperty + "  " + JSON.stringify(_dna)
-    );
     this.setState((prevState) => ({
       dna: {
         ...prevState.dna,
         [_dnaProperty]: _dna,
       },
     }));
-    console.log("change function triggered" + JSON.stringify(this.state.dna));
   };
 
   render() {
