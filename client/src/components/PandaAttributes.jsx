@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Tab, Nav } from "react-bootstrap";
-import "./pandaattributes.css";
+import "./PandaAttributes.css";
 
 class PandaAttributes extends Component {
   constructor(props) {

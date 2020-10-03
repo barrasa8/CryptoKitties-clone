@@ -1,3 +1,45 @@
+import { allColors } from '../js/colors';
+import styled from 'styled-components'
+import { moveHead, moveHeadLeftEar, moveHeadRighttEar, moveNose
+,moveLeftFoot,moveLeftToe1,moveLeftToe2,moveLeftToe3
+,moveLeftHeel,moveRightFoot,moveRightToe1,moveRightToe2,moveRightToe3
+,moveRightHeel} from './StyledAnimations';
+
+/*
+set of available colors
+*/
+const colors = Object.values(allColors());
+
+/**
+ * Style of Panda
+ */
+export const StyledPanda = styled.div`
+
+/**********************************************************
+color variables
+*********************************************************/
+/* colors[props.dna.headColor] */
+
+.a-left-leg,.a-right-leg,.a-left-foot,.a-right-foot,.a-left-arm,.a-right-arm,.a-arms{
+    background: #${props => colors[props.dna.dnaarmleg-10]}
+}
+.a-left-eye-patch,.a-right-eye-patch{
+    background: #${props => colors[props.dna.dnaeyepatch-10]}
+}
+.a-left-inner-ear,.a-right-inner-ear,.a-left-toe-1,.a-left-toe-2,.a-left-toe-3,.a-left-heel,.a-right-toe-1,.a-right-toe-2,.a-right-toe-3,.a-right-heel,.a-nose{
+    background: #${props => colors[props.dna.dnainnerearfoot-10]}
+}
+.a-body,.a-head,.a-left-ear,.a-right-ear{
+    background: #${props => colors[props.dna.dnaheadbody-10]}
+}
+.a-ring-middle{
+    background: #${props => colors[props.dna.decorationMidcolor-10]}
+}
+.a-ring-left,.a-ring-right{
+    background: #${props => colors[props.dna.decorationSidescolor-10]}
+}
+
+
 .a-container{
   
     justify-content: center;
@@ -5,7 +47,6 @@
     display: flex;
 }
 .a-head{
-    background-color: white;
     width: 150px;
     height: 135px;
     border-radius: 50%;
@@ -19,7 +60,6 @@
     position: relative;
 }
 .a-left-eye-patch{
-    background-color: black;
     width: 35px;
     height: 35px;
     margin-left:27px;
@@ -27,7 +67,6 @@
     transform: rotate(-20deg);
 }
 .a-right-eye-patch{
-    background-color: black;
     width: 35px;
     height: 35px;
     margin-left:27px;
@@ -86,7 +125,6 @@
     position: absolute;
 }
 .a-nose{
-    background-color: black;
     width: 20px;
     height: 14px;
     margin-left: 64px;
@@ -110,7 +148,6 @@
     z-index: 1;
 }
 .a-left-ear{
-    background-color: black;
     width: 51px;
     height: 43px;
     margin-left: 3px;
@@ -120,7 +157,6 @@
     
 }
 .a-right-ear{
-    background-color: black;
     width: 51px;
     height: 43px;
     margin-left: 100px;
@@ -129,7 +165,6 @@
     position: absolute;
 }
 .a-left-inner-ear{
-    background-color: white;
     width: 31px;
     height: 26px;
     margin-left: 9px;
@@ -140,7 +175,6 @@
     z-index: 1;
 }
 .a-right-inner-ear{
-    background-color: white;
     width: 31px;
     height: 23px;
     margin-left: 9px;
@@ -151,7 +185,6 @@
     z-index: 1;
 }
 .a-body{
-    background-color: white;
     width: 198px;
     height: 209px;
     border-radius: 50%;
@@ -161,7 +194,6 @@
     position: absolute;
 }
 .a-arms{
-    background-color: black;
     width: 190px;
     height: 67px;
     border-radius: 50%;
@@ -174,7 +206,6 @@
     position: absolute;
 }
 .a-left-arm{
-    background-color: black;
     width: 60px;
     height: 95px;
     border-radius: 50%;
@@ -184,7 +215,6 @@
     transform: rotate(-27deg);
 }
 .a-right-arm{
-    background-color: black;
     width: 60px;
     height: 95px;
     border-radius: 50%;
@@ -209,7 +239,6 @@
     position: absolute;
     margin-top: 11px;
     margin-left: 60px;
-    background: white;
 }
 .a-ring-middle{
     width: 25px;
@@ -219,7 +248,6 @@
     position: absolute;
     margin-top: 15px;
     margin-left: 82px;
-    background: white;
 }
 .a-ring-right{
     width: 23px;
@@ -229,7 +257,6 @@
     position: absolute;
     margin-top: 11px;
     margin-left: 106px;
-    background: white;
 }
 
 .a-legs{
@@ -241,7 +268,6 @@
     z-index: 3;
 }
 .a-left-leg{
-    background-color: black;
     width: 131px;
     height: 67px;
     border-radius: 50% 30% 50% 30%;
@@ -251,7 +277,6 @@
     transform: rotate(182deg);
 }
 .a-right-leg{
-    background-color: black;
     width: 131px;
     height: 67px;
     border-radius: 50% 30% 50% 30%;
@@ -261,7 +286,6 @@
     transform: rotate(6deg);
 }
 .a-left-foot{
-    background-color: black;
     width: 101px;
     height: 60px;
     border-radius: 50% 30% 50% 30%;
@@ -271,7 +295,6 @@
     transform: rotate(69deg);
 }
 .a-right-foot{
-    background-color: black;
     width: 101px;
     height: 60px;
     border-radius: 50% 30% 50% 30%;
@@ -281,7 +304,6 @@
     transform: rotate(118deg);
 }
 .a-left-toes{
-    background-color: white;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -300,7 +322,6 @@
     margin-top: 26px;
 }
 .a-left-heel{
-    background-color: white;
     width: 30px;
     height: 37px;
     border-radius: 50%;
@@ -310,7 +331,6 @@
     transform: rotate(-22deg);
 }
 .a-right-toes{
-    background-color: white;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -329,7 +349,6 @@
     margin-top: 35px;
 }
 .a-right-heel{
-    background-color: white;
     width: 30px;
     height: 37px;
     border-radius: 50%;
@@ -434,3 +453,62 @@
     margin-left: 59px;
     border-radius: 50%;
 }
+/*Animations*/
+.headMove{
+    animation: 2s ${moveHead} infinite;
+    animation-direction: alternate;
+}
+.headLeftEarMove{
+    animation: 2s ${moveHeadLeftEar} infinite;
+    animation-direction: alternate;
+}
+.headRightEarMove{
+    animation: 2s ${moveHeadRighttEar} infinite;
+    animation-direction: alternate;
+}
+.noseMove{
+    animation: 1s ${moveNose} infinite;
+    animation-direction: alternate;
+}
+.leftFootMove{
+    animation: 2s ${moveLeftFoot} infinite;
+    animation-direction: alternate;
+}
+.leftFootToe1Move{
+    animation: 2s ${moveLeftToe1} infinite;
+    animation-direction: alternate;
+}
+.leftFootToe2Move{
+    animation: 2s ${moveLeftToe2} infinite;
+    animation-direction: alternate;
+}
+.leftFootToe3Move{
+    animation: 2s ${moveLeftToe3} infinite;
+    animation-direction: alternate;
+}
+.leftHeelMove{
+    animation: 2s ${moveLeftHeel} infinite;
+    animation-direction: alternate;
+}
+.rightFootMove{
+    animation: 2s ${moveRightFoot} infinite;
+    animation-direction: alternate;
+}
+.rightFootToe1Move{
+    animation: 2s ${moveRightToe1} infinite;
+    animation-direction: alternate;
+}
+.rightFootToe2Move{
+    animation: 2s ${moveRightToe2} infinite;
+    animation-direction: alternate;
+}
+.rightFootToe3Move{
+    animation: 2s ${moveRightToe3} infinite;
+    animation-direction: alternate;
+}
+.rightHeelMove{
+    animation: 2s ${moveRightHeel} infinite;
+    animation-direction: alternate;
+}
+
+`

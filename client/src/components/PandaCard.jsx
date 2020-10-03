@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Panda from "./panda"
-import DnaBadge from "./dnabadge"
+import Panda from "./Panda"
+import DnaBadge from "./DnaBadge"
 
-import "./pandacard.css"
+import "./PandaCard.css"
 
-class pandaCard extends Component {
+class PandaCard extends Component {
     constructor(props) {
         super(props);
       }
@@ -18,4 +18,4 @@ class pandaCard extends Component {
     }
 }
  
-export default pandaCard;
+export default PandaCard;

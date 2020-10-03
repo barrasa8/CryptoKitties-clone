@@ -4,8 +4,8 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 
-import PandaCard from "./pandacard";
-import PandaAttributes from "./pandaattributes";
+import PandaCard from "./PandaCard";
+import PandaAttributes from "./PandaAttributes";
 
 const defaultDna= {
   dna: {
@@ -23,7 +23,7 @@ const defaultDna= {
   }
 }
 
-class pandaSettings extends Component {
+class PandaSettings extends Component {
   constructor() {
     super();
     this.state = {
@@ -85,4 +85,4 @@ class pandaSettings extends Component {
   }
 }
 
-export default pandaSettings;
+export default PandaSettings;

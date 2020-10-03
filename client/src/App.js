@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import PandaContract from "./contracts/PandaContract.json";
 import getWeb3 from "./getWeb3";
-// import { Row } from "react-bootstrap";
-// import { Col } from "react-bootstrap";
 
 
-import PandaSettings from "./components/pandasettings";
+import PandaSettings from "./components/PandaSettings";
 
 import "./App.css";
 

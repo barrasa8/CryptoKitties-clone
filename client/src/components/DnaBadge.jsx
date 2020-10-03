@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import "./dnabadge.css";
+import "./DnaBadge.css";
 
-class dnaBadge extends Component {
+class DnaBadge extends Component {
 
     constructor(props) {
         super(props);
-      }
-
-      componentDidUpdate(prevProps){
-        console.log("dnaBadge is updated" + JSON.stringify(this.props.dna))
-        if(this.props.dna !== prevProps.dna){ this.render()}
       }
 
   render() {
@@ -35,4 +30,4 @@ class dnaBadge extends Component {
   }
 }
 
-export default dnaBadge;
+export default DnaBadge;

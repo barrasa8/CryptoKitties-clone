@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class randomPandaButton extends Component {
+class RandomPandaButton extends Component {
     state = {  }
     render() { 
         return ( 
@@ -9,4 +9,4 @@ class randomPandaButton extends Component {
     }
 }
  
-export default randomPandaButton;
+export default RandomPandaButton;
