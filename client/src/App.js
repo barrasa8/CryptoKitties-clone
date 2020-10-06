@@ -49,15 +49,15 @@ class App extends Component {
     }
   };
 
-  runExample = async () => {
-    const { accounts, contract } = this.state;
+  // runExample = async () => {
+  //   const { accounts, contract } = this.state;
 
-    // Stores a given value, 5 by default.
-    const name = await contract.methods.name().call();
+  //   // Stores a given value, 5 by default.
+  //   const name = await contract.methods.name().call();
 
-    // Update state with the result.
-    this.setState({ storageValue: name });
-  };
+  //   // Update state with the result.
+  //   this.setState({ storageValue: name });
+  // };
 
 
   render() {
@@ -72,7 +72,7 @@ class App extends Component {
           <br />
           <h4 id="panda-created-message"></h4>
         </div>
-          <PandaSettings/>
+          <PandaSettings />
       </div>
     );
   }

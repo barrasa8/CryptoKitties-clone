@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Tab, Nav } from "react-bootstrap";
-import "./PandaAttributes.css";
+import "../assets/css/PandaAttributes.css";
 
 class PandaAttributes extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class PandaAttributes extends Component {
                   <span
                     className="badge badge-dark ml-2"
                     id="armlegcode"
-                  ></span>
+                  >{this.props.dna.dnaarmleg}</span>
                 </label>
                 <input
                   name="dnaarmleg"
@@ -53,7 +53,7 @@ class PandaAttributes extends Component {
                   <span
                     className="badge badge-dark ml-2"
                     id="eyepatchcode"
-                  ></span>
+                  >{this.props.dna.dnaeyepatch}</span>
                 </label>
                 <input
                   name="dnaeyepatch"
@@ -71,7 +71,7 @@ class PandaAttributes extends Component {
                   <span
                     className="badge badge-dark ml-2"
                     id="innerearfootcode"
-                  ></span>
+                  >{this.props.dna.dnainnerearfoot}</span>
                 </label>
                 <input
                   name="dnainnerearfoot"
@@ -89,7 +89,7 @@ class PandaAttributes extends Component {
                   <span
                     className="badge badge-dark ml-2"
                     id="headbodycode"
-                  ></span>
+                  >{this.props.dna.dnaheadbody}</span>
                 </label>
                 <input
                   name="dnaheadbody"
@@ -111,7 +111,7 @@ class PandaAttributes extends Component {
                   <span
                     className="badge badge-dark ml-2"
                     id="eyeshapename"
-                  ></span>
+                  >{this.props.eyeShapeName}</span>
                 </label>
                 <input
                   name="dnaeyeshape"
@@ -129,7 +129,7 @@ class PandaAttributes extends Component {
                   <span
                     className="badge badge-dark ml-2"
                     id="mouthshapename"
-                  ></span>
+                  >{this.props.mouthShapeName}</span>
                 </label>
                 <input
                   name="dnamouthshape"
@@ -152,7 +152,7 @@ class PandaAttributes extends Component {
                       <span
                         className="badge badge-dark ml-2"
                         id="middledecorationcode"
-                      ></span>
+                      >{this.props.dna.decorationMidcolor}</span>
                     </label>
                     <input
                       name="decorationMidcolor"
@@ -171,7 +171,7 @@ class PandaAttributes extends Component {
                       <span
                         className="badge badge-dark ml-2"
                         id="outterdecorationcode"
-                      ></span>
+                      >{this.props.dna.decorationSidescolor}</span>
                     </label>
                     <input
                       name="decorationSidescolor"
@@ -191,7 +191,7 @@ class PandaAttributes extends Component {
                   <span
                     className="badge badge-dark ml-2"
                     id="animationname"
-                  ></span>
+                  >{this.props.animationName}</span>
                 </label>
                 <input
                   name="animation"

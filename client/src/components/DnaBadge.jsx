@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./DnaBadge.css";
+import "../assets/css/DnaBadge.css";
 
 class DnaBadge extends Component {
 
