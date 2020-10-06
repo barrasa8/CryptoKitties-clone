@@ -47,7 +47,7 @@ class PandaSettings extends Component {
     this.setState({
       dna:defaultDna.dna
     });
-    console.log(JSON.stringify(this.state.dna))
+    // console.log(JSON.stringify(this.state.dna))
   };
 
   SliderChange = (_dnaProperty,_dna) => {
@@ -64,7 +64,7 @@ class PandaSettings extends Component {
       <Container fluid>
         <Row className="justify-content-md-center">
           <PandaCard dna={this.state.dna} />
-          <PandaAttributes SliderChange={this.SliderChange} />
+          <PandaAttributes dna={this.state.dna} SliderChange={this.SliderChange} />
         </Row>
         <br />
         <Row>

@@ -8,8 +8,6 @@ class PandaAttributes extends Component {
   }
 
   HandleSliderChange = ({ target }) => {
-    console.log(target.value);
-
     this.props.SliderChange(target.name, target.value);
   };
 
@@ -41,6 +39,7 @@ class PandaAttributes extends Component {
                 </label>
                 <input
                   name="dnaarmleg"
+                  value={this.props.dna.dnaarmleg}
                   type="range"
                   min="10"
                   max="98"
@@ -58,6 +57,7 @@ class PandaAttributes extends Component {
                 </label>
                 <input
                   name="dnaeyepatch"
+                  value={this.props.dna.dnaeyepatch}
                   type="range"
                   min="10"
                   max="98"
@@ -75,6 +75,7 @@ class PandaAttributes extends Component {
                 </label>
                 <input
                   name="dnainnerearfoot"
+                  value={this.props.dna.dnainnerearfoot}
                   type="range"
                   min="10"
                   max="98"
@@ -92,6 +93,7 @@ class PandaAttributes extends Component {
                 </label>
                 <input
                   name="dnaheadbody"
+                  value={this.props.dna.dnaheadbody}
                   type="range"
                   min="10"
                   max="98"
@@ -113,6 +115,7 @@ class PandaAttributes extends Component {
                 </label>
                 <input
                   name="dnaeyeshape"
+                  value={this.props.dna.dnaeyeshape}
                   type="range"
                   min="1"
                   max="4"
@@ -130,6 +133,7 @@ class PandaAttributes extends Component {
                 </label>
                 <input
                   name="dnamouthshape"
+                  value={this.props.dna.dnamouthshape}
                   type="range"
                   min="1"
                   max="4"
@@ -152,6 +156,7 @@ class PandaAttributes extends Component {
                     </label>
                     <input
                       name="decorationMidcolor"
+                      value={this.props.dna.decorationMidcolor}
                       type="range"
                       min="10"
                       max="98"
@@ -170,6 +175,7 @@ class PandaAttributes extends Component {
                     </label>
                     <input
                       name="decorationSidescolor"
+                      value={this.props.dna.decorationSidescolor}
                       type="range"
                       min="10"
                       max="98"
@@ -189,6 +195,7 @@ class PandaAttributes extends Component {
                 </label>
                 <input
                   name="animation"
+                  value={this.props.dna.animation}
                   type="range"
                   min="1"
                   max="6"
