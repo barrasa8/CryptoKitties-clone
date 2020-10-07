@@ -51,6 +51,45 @@ class PandaSettings extends Component {
     };
   }
 
+  getDna = ()=>{
+      var dna = ''
+      dna += this.state.dna.dnaarmleg;
+      dna += this.state.dna.dnaeyepatch;
+      dna += this.state.dna.dnainnerearfoot;
+      dna += this.state.dna.dnaheadbody;
+      dna += this.state.dna.dnaeyeshape;
+      dna += this.state.dna.dnamouthshape;
+      dna += this.state.dna.decorationMidcolor;
+      dna += this.state.dna.decorationSidescolor;
+      dna += this.state.dna.animation;
+      dna += this.state.dna.lastNum;
+
+      return parseInt(dna)
+  }
+  
+
+  createPandaGen0 = ()=>  (  
+    // this.props.contract.methods.createPandaGen0(this.getDna()).send({from: this.props.accounts[0]})
+    console.log(this.props.accounts[0] )
+    );
+
+//   eventBirth = () =>{
+//     this.props.contract.events.Birth({},(error,event)=>{
+//     if(error){
+//         console.log(error)
+//     }else{
+//         console.log(event); 
+//         console.log(event.returnValues.genes)
+//         // $("#panda-created-message").css("background","rgba(0, 163, 0, 0.3)");
+//         // $("#panda-created-message").html("Your Panda is Alive: Owner:"+event.returnValues._owner+", ID:"+event.returnValues.PandaId+" , Genes:"+event.returnValues.genes 
+//         // +", MumID:"+ event.returnValues.mumId+", DadID:"+ event.returnValues.dadId )
+
+//         console.log(this.props.contract.methods.getPandaArray(this.props.accounts[0]).call());
+//     } 
+//     })
+// }
+
+
   setDefaultPandaDna = () => {
     this.setState({
       dna: defaultDna.dna,
@@ -128,6 +167,7 @@ class PandaSettings extends Component {
               type="button"
               className="btn btn-danger"
               id="random-panda-button"
+              onClick={this.createPandaGen0}
             >
               Create Panda
             </button>

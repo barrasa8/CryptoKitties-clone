@@ -49,16 +49,6 @@ class App extends Component {
     }
   };
 
-  // runExample = async () => {
-  //   const { accounts, contract } = this.state;
-
-  //   // Stores a given value, 5 by default.
-  //   const name = await contract.methods.name().call();
-
-  //   // Update state with the result.
-  //   this.setState({ storageValue: name });
-  // };
-
 
   render() {
     if (!this.state.web3) {
@@ -72,7 +62,7 @@ class App extends Component {
           <br />
           <h4 id="panda-created-message"></h4>
         </div>
-          <PandaSettings />
+          <PandaSettings contract ={this.state.contract} accounts={this.state.accounts}/>
       </div>
     );
   }
