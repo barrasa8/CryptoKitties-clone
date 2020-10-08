@@ -8,7 +8,7 @@ contract PandaContract is IERC721, Ownable{
 
     //using SafeMath for uint256;
 
-    uint8 public constant CREATION_GEN_LIMIT = 0 ;
+    uint8 public constant CREATION_GEN_LIMIT = 100 ;
 
     struct Panda{
         uint256 genes;
@@ -38,7 +38,7 @@ contract PandaContract is IERC721, Ownable{
     uint8 gen0Counter= 0;
 
     function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {
-        require( gen0Counter < CREATION_GEN_LIMIT);
+        require( gen0Counter < CREATION_GEN_LIMIT,"Gen 0 Limit reached (10 pandas limit)");
         gen0Counter++;
         return _CreatePanda(0,0,_genes,0,owner);
     }

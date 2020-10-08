@@ -11,6 +11,8 @@ import { allEyeVariations } from "../assets/js/shapes";
 import { allMouthVariations } from "../assets/js/shapes";
 import { allAnimations } from "../assets/js/animations";
 
+import "../assets/css/factory.css"
+
 const eyeShapes = allEyeVariations();
 const mouthShapes = allMouthVariations();
 const animations = allAnimations();
@@ -29,6 +31,7 @@ const defaultDna = {
     animation: 1,
     lastNum: 9,
   },
+  
 };
 
 class PandaSettings extends Component {
@@ -46,9 +49,21 @@ class PandaSettings extends Component {
         decorationMidcolor: 19,
         decorationSidescolor: 8,
         animation: 1,
-        lastNum: 9,
+        lastNum: 9
       },
+      BirthEvent: {
+        owner: 0,
+        PandaId:0,
+        mumId:0,
+        dadId:0,
+        genes:0
+      }
     };
+
+  }
+
+  componentDidMount(){
+    this.eventBirth()
   }
 
   getDna = ()=>{
@@ -67,27 +82,36 @@ class PandaSettings extends Component {
       return parseInt(dna)
   }
   
+  eventBirth = () =>{
+    this.props.contract.events.Birth({},(error,event)=>{
+    if(error){
+        console.log(error)
+    }else{
+        this.setState((prevState) => ({
+          BirthEvent: {
+            ...prevState.BirthEvent,
+            owner: event.returnValues._owner,
+            PandaId:event.returnValues.PandaId,
+            mumId:0,
+            dadId:0,
+            genes:event.returnValues.genes
+          },
+        }));
+    } 
+    })
+  }
 
   createPandaGen0 = ()=>  (  
-    // this.props.contract.methods.createPandaGen0(this.getDna()).send({from: this.props.accounts[0]})
-    console.log(this.props.accounts[0] )
+    this.props.contract.methods.createPandaGen0(this.getDna()).send({from: this.props.accounts[0]},(error, txHash)=>{
+        if(error){
+          console.log(error)
+        }else{
+            console.log(txHash)   
+        }
+    })
     );
 
-//   eventBirth = () =>{
-//     this.props.contract.events.Birth({},(error,event)=>{
-//     if(error){
-//         console.log(error)
-//     }else{
-//         console.log(event); 
-//         console.log(event.returnValues.genes)
-//         // $("#panda-created-message").css("background","rgba(0, 163, 0, 0.3)");
-//         // $("#panda-created-message").html("Your Panda is Alive: Owner:"+event.returnValues._owner+", ID:"+event.returnValues.PandaId+" , Genes:"+event.returnValues.genes 
-//         // +", MumID:"+ event.returnValues.mumId+", DadID:"+ event.returnValues.dadId )
-
-//         console.log(this.props.contract.methods.getPandaArray(this.props.accounts[0]).call());
-//     } 
-//     })
-// }
+ 
 
 
   setDefaultPandaDna = () => {
@@ -129,6 +153,13 @@ class PandaSettings extends Component {
   render() {
     return (
       <Container fluid>
+        <Row className="justify-content-md-center">
+        <h5 id="panda-created-message">
+              {this.state.BirthEvent.genes>0 ? 
+              "Your Panda is Alive: Owner:"+this.state.BirthEvent.owner+", PandaID:"+this.state.BirthEvent.PandaId+" , Genes:"+this.state.BirthEvent.genes 
+              :""}
+        </h5>
+        </Row>
         <Row className="justify-content-md-center">
           <PandaCard dna={this.state.dna} />
           <PandaAttributes
