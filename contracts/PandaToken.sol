@@ -34,14 +34,14 @@ contract PandaToken is IERC721, Ownable{
    /**
      * @dev Returns the number of tokens in ``owner``'s account.
      */
-    function balanceOf(address owner) external view returns (uint256 balance){
+    function balanceOf(address owner) public view returns (uint256 balance){
         return _OwnerAnimalCount[owner];
     }
 
     /*
      * @dev Returns the total number of tokens in circulation.
      */
-    function totalSupply() external view returns (uint256 total){
+    function totalSupply() public view returns (uint256 total){
         return pandas.length;
     }
 
