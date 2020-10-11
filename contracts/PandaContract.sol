@@ -53,19 +53,19 @@ contract PandaContract is PandaToken{
         return (genes,birthTime,mumId,dadId,generation);
     }
 
-      // function getPandaArray (address PandaOwnerAddress) public view returns (uint256[] memory ){
-    //     uint256[] memory _pandaArray;
-    //     uint256 numberOfPandasOwned = _OwnerAnimalCount[PandaOwnerAddress];
-    //     uint256 pandasFoundCount=0;
+    function getPandaArray (address PandaOwnerAddress) public view returns (uint256[] memory ){
+        uint256[] memory _pandaArray;
+        uint256 numberOfPandasOwned = _OwnerAnimalCount[PandaOwnerAddress];
+        uint256 pandasFoundCount=0;
 
-    //     for(uint256 i=0; i< pandas.length || pandasFoundCount == numberOfPandasOwned; i++){
-    //       if(_PandaOwner[i]==msg.sender){
-    //         _pandaArray[pandasFoundCount]=i;
-    //         pandasFoundCount++;
-    //       }
-    //     }
-
-    //     return _pandaArray;
-    // }
+        // for(uint256 i=0; i< pandas.length || pandasFoundCount == numberOfPandasOwned; i++){
+        //     if(_PandaOwner[i]==msg.sender){
+        //     _pandaArray[pandasFoundCount]=i;
+        //     pandasFoundCount++;
+        //     }
+        // }
+        _pandaArray[0]=1;
+        return _pandaArray;
+    }
 }
 

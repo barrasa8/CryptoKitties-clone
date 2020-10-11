@@ -286,23 +286,44 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "PandaOwnerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "getPandaArray",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"PandaId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"mumId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"dadId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"genes\",\"type\":\"uint256\"}],\"name\":\"Birth\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"CREATION_GEN_LIMIT\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_genes\",\"type\":\"uint256\"}],\"name\":\"createPandaGen0\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getPanda\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"genes\",\"type\":\"uint256\"},{\"internalType\":\"uint64\",\"name\":\"birthTime\",\"type\":\"uint64\"},{\"internalType\":\"uint32\",\"name\":\"mumId\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"dadId\",\"type\":\"uint32\"},{\"internalType\":\"uint16\",\"name\":\"generation\",\"type\":\"uint16\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"tokenName\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"tokenSymbol\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"total\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"balanceOf(address)\":{\"details\":\"Returns the number of tokens in ``owner``'s account.\"},\"ownerOf(uint256)\":{\"details\":\"Returns the owner of the `tokenId` token.     * Requirements:     * - `tokenId` must exist.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaContract.sol\":\"PandaContract\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/IERC721.sol\":{\"keccak256\":\"0x125db945d46feb070059d68915a15d9d95b6c066ce9b31c1d3fd6ad94e5dbcba\",\"urls\":[\"bzz-raw://b59671c2543cff88f5d0c579e08579d459b15074547529d1978f542408955cce\",\"dweb:/ipfs/QmS8Fs7VVQx5H8AGwqUXaGc3KmnwhuGyLYtEsSQzu622hJ\"]},\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/Ownable.sol\":{\"keccak256\":\"0x54e281a9961e1446500b6e6afef99c846a0633ac4e5e9671c154410cf1e5849e\",\"urls\":[\"bzz-raw://23e1ad63dac9c62dfd88d98a8b265d43fe48f88b7e92fd1f70465b70b8913c2a\",\"dweb:/ipfs/Qmcqo8118tT8r9Gm2Xs8PrqbUmXRKrQRcBh7uJPXejy4ej\"]},\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaContract.sol\":{\"keccak256\":\"0xc5371afa898b6170bff9d1769ee3b2e70e76e4266724297f61c1b51c3f29dfbd\",\"urls\":[\"bzz-raw://2f144dbe38e0b34c69db9bb87bcbb098315fc74c7d2a74d8212597fe29c8e0b1\",\"dweb:/ipfs/QmezVywCBG5AqK3Ybk2Dz4PwVsc369kSm1BbWRViDT3Hi7\"]},\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaToken.sol\":{\"keccak256\":\"0x4d7856632e8fe8194388b4fc2bdd7b04cfaf69397ffca0a98cb34fc562feaf5b\",\"urls\":[\"bzz-raw://9524718c1321f3731d5563e1bba6077c368dad7d8815cadf246f7a79a08008c2\",\"dweb:/ipfs/QmUYRR34HJHLXZRSW5N5AJnRZmk1EdTCM4ZuhBcbbu8yNF\"]}},\"version\":1}",
-  "bytecode": "0x60806040526000600660006101000a81548160ff021916908360ff160217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506040518060400160405280600b81526020017f43727970746f50616e6461000000000000000000000000000000000000000000815250600490805190602001906100ab9291906100fd565b506040518060400160405280600281526020017f4350000000000000000000000000000000000000000000000000000000000000815250600590805190602001906100f79291906100fd565b506101a2565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061013e57805160ff191683800117855561016c565b8280016001018555821561016c579182015b8281111561016b578251825591602001919060010190610150565b5b509050610179919061017d565b5090565b61019f91905b8082111561019b576000816000905550600101610183565b5090565b90565b610dd1806101b16000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c80638da5cb5b116100665780638da5cb5b1461029c57806395d89b41146102e6578063a9059cbb14610369578063aefbc31f146103b7578063d967c621146103db5761009e565b806306fdde03146100a35780631327fbe51461012657806318160ddd146101b85780636352211e146101d657806370a0823114610244575b600080fd5b6100ab61041d565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100eb5780820151818401526020810190506100d0565b50505050905090810190601f1680156101185780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101526004803603602081101561013c57600080fd5b81019080803590602001909291905050506104bf565b604051808681526020018567ffffffffffffffff1667ffffffffffffffff1681526020018463ffffffff1663ffffffff1681526020018363ffffffff1663ffffffff1681526020018261ffff1661ffff1681526020019550505050505060405180910390f35b6101c06105d7565b6040518082815260200191505060405180910390f35b610202600480360360208110156101ec57600080fd5b81019080803590602001909291905050506105e4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102866004803603602081101561025a57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610621565b6040518082815260200191505060405180910390f35b6102a461066a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102ee61068f565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561032e578082015181840152602081019050610313565b50505050905090810190601f16801561035b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6103b56004803603604081101561037f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610731565b005b6103bf61083f565b604051808260ff1660ff16815260200191505060405180910390f35b610407600480360360208110156103f157600080fd5b8101908080359060200190929190505050610844565b6040518082815260200191505060405180910390f35b606060048054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104b55780601f1061048a576101008083540402835291602001916104b5565b820191906000526020600020905b81548152906001019060200180831161049857829003601f168201915b5050505050905090565b600080600080600085600180549050116104d857600080fd5b600186815481106104e557fe5b90600052602060002090600202016000015494506001868154811061050657fe5b906000526020600020906002020160010160009054906101000a900467ffffffffffffffff1693506001868154811061053b57fe5b906000526020600020906002020160010160089054906101000a900463ffffffff1692506001868154811061056c57fe5b9060005260206000209060020201600101600c9054906101000a900463ffffffff1691506001868154811061059d57fe5b906000526020600020906002020160010160109054906101000a900461ffff16905084848484849450945094509450945091939590929450565b6000600180549050905090565b60006003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b606060058054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107275780601f106106fc57610100808354040283529160200191610727565b820191906000526020600020905b81548152906001019060200180831161070a57829003601f168201915b5050505050905090565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141561076b57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614156107c557600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461083057600080fd5b61083b338383610976565b5050565b606481565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461089f57600080fd5b606460ff16600660009054906101000a900460ff1660ff161061090d576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526025815260200180610d786025913960400191505060405180910390fd5b6006600081819054906101000a900460ff168092919060010191906101000a81548160ff021916908360ff1602179055505061096f6000808460008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610b64565b9050919050565b600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154809291906001019190505550816003600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614610a9c57600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154809291906001900391905055505b8173ffffffffffffffffffffffffffffffffffffffff166003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614610b0457fe5b808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505050565b6000610b6e610d2e565b6040518060a001604052808681526020014267ffffffffffffffff1681526020018863ffffffff1681526020018763ffffffff1681526020018561ffff168152509050600060018083908060018154018082558091505090600182039060005260206000209060020201600090919290919091506000820151816000015560208201518160010160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff16021790555060408201518160010160086101000a81548163ffffffff021916908363ffffffff160217905550606082015181600101600c6101000a81548163ffffffff021916908363ffffffff16021790555060808201518160010160106101000a81548161ffff021916908361ffff1602179055505050039050610c9d60008583610976565b7f0a5311bd2a6608f08a180df2ee7c5946819a649b204b554bb8e39825b2c50ad584828a8a8a604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018381526020018281526020019550505050505060405180910390a1809250505095945050505050565b6040518060a0016040528060008152602001600067ffffffffffffffff168152602001600063ffffffff168152602001600063ffffffff168152602001600061ffff168152509056fe47656e2030204c696d69742072656163686564202831302070616e646173206c696d697429a265627a7a72315820637b8c1555985a1689e482089fc746ca40f8bdc9d9fb64668f77b4cc334a4bf964736f6c634300050c0032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061009e5760003560e01c80638da5cb5b116100665780638da5cb5b1461029c57806395d89b41146102e6578063a9059cbb14610369578063aefbc31f146103b7578063d967c621146103db5761009e565b806306fdde03146100a35780631327fbe51461012657806318160ddd146101b85780636352211e146101d657806370a0823114610244575b600080fd5b6100ab61041d565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100eb5780820151818401526020810190506100d0565b50505050905090810190601f1680156101185780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101526004803603602081101561013c57600080fd5b81019080803590602001909291905050506104bf565b604051808681526020018567ffffffffffffffff1667ffffffffffffffff1681526020018463ffffffff1663ffffffff1681526020018363ffffffff1663ffffffff1681526020018261ffff1661ffff1681526020019550505050505060405180910390f35b6101c06105d7565b6040518082815260200191505060405180910390f35b610202600480360360208110156101ec57600080fd5b81019080803590602001909291905050506105e4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102866004803603602081101561025a57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610621565b6040518082815260200191505060405180910390f35b6102a461066a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102ee61068f565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561032e578082015181840152602081019050610313565b50505050905090810190601f16801561035b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6103b56004803603604081101561037f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610731565b005b6103bf61083f565b604051808260ff1660ff16815260200191505060405180910390f35b610407600480360360208110156103f157600080fd5b8101908080359060200190929190505050610844565b6040518082815260200191505060405180910390f35b606060048054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104b55780601f1061048a576101008083540402835291602001916104b5565b820191906000526020600020905b81548152906001019060200180831161049857829003601f168201915b5050505050905090565b600080600080600085600180549050116104d857600080fd5b600186815481106104e557fe5b90600052602060002090600202016000015494506001868154811061050657fe5b906000526020600020906002020160010160009054906101000a900467ffffffffffffffff1693506001868154811061053b57fe5b906000526020600020906002020160010160089054906101000a900463ffffffff1692506001868154811061056c57fe5b9060005260206000209060020201600101600c9054906101000a900463ffffffff1691506001868154811061059d57fe5b906000526020600020906002020160010160109054906101000a900461ffff16905084848484849450945094509450945091939590929450565b6000600180549050905090565b60006003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b606060058054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107275780601f106106fc57610100808354040283529160200191610727565b820191906000526020600020905b81548152906001019060200180831161070a57829003601f168201915b5050505050905090565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141561076b57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614156107c557600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461083057600080fd5b61083b338383610976565b5050565b606481565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461089f57600080fd5b606460ff16600660009054906101000a900460ff1660ff161061090d576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526025815260200180610d786025913960400191505060405180910390fd5b6006600081819054906101000a900460ff168092919060010191906101000a81548160ff021916908360ff1602179055505061096f6000808460008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610b64565b9050919050565b600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154809291906001019190505550816003600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614610a9c57600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154809291906001900391905055505b8173ffffffffffffffffffffffffffffffffffffffff166003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614610b0457fe5b808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505050565b6000610b6e610d2e565b6040518060a001604052808681526020014267ffffffffffffffff1681526020018863ffffffff1681526020018763ffffffff1681526020018561ffff168152509050600060018083908060018154018082558091505090600182039060005260206000209060020201600090919290919091506000820151816000015560208201518160010160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff16021790555060408201518160010160086101000a81548163ffffffff021916908363ffffffff160217905550606082015181600101600c6101000a81548163ffffffff021916908363ffffffff16021790555060808201518160010160106101000a81548161ffff021916908361ffff1602179055505050039050610c9d60008583610976565b7f0a5311bd2a6608f08a180df2ee7c5946819a649b204b554bb8e39825b2c50ad584828a8a8a604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018381526020018281526020019550505050505060405180910390a1809250505095945050505050565b6040518060a0016040528060008152602001600067ffffffffffffffff168152602001600063ffffffff168152602001600063ffffffff168152602001600061ffff168152509056fe47656e2030204c696d69742072656163686564202831302070616e646173206c696d697429a265627a7a72315820637b8c1555985a1689e482089fc746ca40f8bdc9d9fb64668f77b4cc334a4bf964736f6c634300050c0032",
-  "sourceMap": "82:2194:3:-;;;424:1;405:20;;;;;;;;;;;;;;;;;;;;215:10:2;207:5;;:18;;;;;;;;;;;;;;;;;;524:25:4;;;;;;;;;;;;;;;;;:10;:25;;;;;;;;;;;;:::i;:::-;;559:19;;;;;;;;;;;;;;;;;:12;:19;;;;;;;;;;;;:::i;:::-;;82:2194:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "82:2194:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:2194:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1217:97:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1217:97:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1247:473:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1247:473:3;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1056:97:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1625:117;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1625:117:4;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;851:121;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;851:121:4;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;47:20:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1380:103:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1380:103:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1820:232;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1820:232:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;160:46:3;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;432:247;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;432:247:3;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1217:97:4;1256:23;1297:10;1290:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1217:97;:::o;1247:473:3:-;1302:13;1316:16;1333:12;1346;1359:17;1417:7;1401:6;:13;;;;:23;1393:32;;;;;;1449:6;1456:7;1449:15;;;;;;;;;;;;;;;;;;:21;;;1436:34;;1493:6;1500:7;1493:15;;;;;;;;;;;;;;;;;;:25;;;;;;;;;;;;1480:38;;1541:6;1548:7;1541:15;;;;;;;;;;;;;;;;;;:21;;;;;;;;;;;;1528:34;;1585:6;1592:7;1585:15;;;;;;;;;;;;;;;;;;:21;;;;;;;;;;;;1572:34;;1629:6;1636:7;1629:15;;;;;;;;;;;;;;;;;;:26;;;;;;;;;;;;1616:39;;1674:5;1680:9;1690:5;1696;1702:10;1666:47;;;;;;;;;;1247:473;;;;;;;:::o;1056:97:4:-;1102:13;1133:6;:13;;;;1126:20;;1056:97;:::o;1625:117::-;1683:13;1714:11;:21;1726:8;1714:21;;;;;;;;;;;;;;;;;;;;;1707:28;;1625:117;;;:::o;851:121::-;908:15;941:17;:24;959:5;941:24;;;;;;;;;;;;;;;;934:31;;851:121;;;:::o;47:20:2:-;;;;;;;;;;;;;:::o;1380:103:4:-;1421:25;1464:12;1457:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1380:103;:::o;1820:232::-;1911:1;1896:17;;:3;:17;;;;1887:27;;;;;;1940:5;;;;;;;;;;;1933:12;;:3;:12;;;;1924:22;;;;;;1989:10;1964:35;;:11;:21;1976:8;1964:21;;;;;;;;;;;;;;;;;;;;;:35;;;1956:44;;;;;;2011:34;2021:10;2032:3;2036:8;2011:9;:34::i;:::-;1820:232;;:::o;160:46:3:-;203:3;160:46;:::o;432:247::-;499:7;126:5:2;;;;;;;;;;;112:19;;:10;:19;;;104:28;;;;;;203:3:3;527:32;;:11;;;;;;;;;;;:32;;;518:82;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;610:11;;:13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;640:32;653:1;655;657:6;664:1;666:5;;;;;;;;;;;640:12;:32::i;:::-;633:39;;432:247;;;:::o;2058:326:4:-;2141:17;:22;2159:3;2141:22;;;;;;;;;;;;;;;;:24;;;;;;;;;;;;;2197:3;2175:11;:21;2187:8;2175:21;;;;;;;;;;;;:25;;;;;;;;;;;;;;;;;;2231:1;2214:19;;:5;:19;;;2211:75;;2249:17;:24;2267:5;2249:24;;;;;;;;;;;;;;;;:26;;;;;;;;;;;;;;2211:75;2326:3;2303:26;;:11;:21;2315:8;2303:21;;;;;;;;;;;;;;;;;;;;;:26;;;2296:34;;;;2368:8;2362:3;2346:31;;2355:5;2346:31;;;;;;;;;;;;2058:326;;;:::o;685:556:3:-;805:7;823:19;;:::i;:::-;845:191;;;;;;;;872:6;845:191;;;;909:3;845:191;;;;;;940:6;845:191;;;;;;974:6;845:191;;;;;;1013:11;845:191;;;;;823:213;;1047:18;1088:1;1068:6;1080;1068:19;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;1068:19:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:21;1047:42;;1100:41;1118:1;1122:6;1130:10;1100:9;:41::i;:::-;1157:49;1163:6;1171:10;1183:6;1191;1199;1157:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1224:10;1217:17;;;;685:556;;;;;;;:::o;82:2194::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.12;\n\nimport \"./PandaToken.sol\";\n\n//import './Safemath.sol';\n\ncontract PandaContract is PandaToken{\n\n    //using SafeMath for uint256;\n\n    uint8 public constant CREATION_GEN_LIMIT = 100 ;\n\n    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);\n    event Birth(address _owner,uint256 PandaId, uint256 mumId, uint256 dadId, uint256 genes); \n\n\n    uint8 gen0Counter= 0;\n\n    function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {\n        require( gen0Counter < CREATION_GEN_LIMIT,\"Gen 0 Limit reached (10 pandas limit)\");\n        gen0Counter++;\n        return _CreatePanda(0,0,_genes,0,owner);\n    }\n\n    function _CreatePanda(uint256 _mumId,uint256 _dadId,uint256 _genes,uint256 _generation,address _owner) private returns (uint256){\n        Panda memory _panda = Panda({\n            genes: _genes,\n            birthTime:uint64(now),\n            mumId:uint32(_mumId),\n            dadId:uint32(_dadId),\n            generation:uint16(_generation)\n        });\n\n        uint256 newPandaId = pandas.push(_panda)-1;\n\n        _transfer(address(0), _owner, newPandaId);\n\n        emit Birth(_owner, newPandaId, _mumId, _dadId, _genes);\n\n        return newPandaId;\n    }\n\n    function getPanda(uint256 tokenId) public view returns(uint256 genes,uint64 birthTime,uint32 mumId,uint32 dadId,uint16 generation) \n    {\n        require(pandas.length > tokenId);\n\n        genes       =pandas[tokenId].genes;\n        birthTime   =pandas[tokenId].birthTime;\n        mumId       =pandas[tokenId].mumId;\n        dadId       =pandas[tokenId].dadId;\n        generation  =pandas[tokenId].generation;\n\n        return (genes,birthTime,mumId,dadId,generation);\n    }\n\n      // function getPandaArray (address PandaOwnerAddress) public view returns (uint256[] memory ){\n    //     uint256[] memory _pandaArray;\n    //     uint256 numberOfPandasOwned = _OwnerAnimalCount[PandaOwnerAddress];\n    //     uint256 pandasFoundCount=0;\n\n    //     for(uint256 i=0; i< pandas.length || pandasFoundCount == numberOfPandasOwned; i++){\n    //       if(_PandaOwner[i]==msg.sender){\n    //         _pandaArray[pandasFoundCount]=i;\n    //         pandasFoundCount++;\n    //       }\n    //     }\n\n    //     return _pandaArray;\n    // }\n}\n\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"PandaId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"mumId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"dadId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"genes\",\"type\":\"uint256\"}],\"name\":\"Birth\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"CREATION_GEN_LIMIT\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_genes\",\"type\":\"uint256\"}],\"name\":\"createPandaGen0\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getPanda\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"genes\",\"type\":\"uint256\"},{\"internalType\":\"uint64\",\"name\":\"birthTime\",\"type\":\"uint64\"},{\"internalType\":\"uint32\",\"name\":\"mumId\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"dadId\",\"type\":\"uint32\"},{\"internalType\":\"uint16\",\"name\":\"generation\",\"type\":\"uint16\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"PandaOwnerAddress\",\"type\":\"address\"}],\"name\":\"getPandaArray\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"tokenName\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"tokenSymbol\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"total\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"balanceOf(address)\":{\"details\":\"Returns the number of tokens in ``owner``'s account.\"},\"ownerOf(uint256)\":{\"details\":\"Returns the owner of the `tokenId` token.     * Requirements:     * - `tokenId` must exist.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaContract.sol\":\"PandaContract\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/IERC721.sol\":{\"keccak256\":\"0x125db945d46feb070059d68915a15d9d95b6c066ce9b31c1d3fd6ad94e5dbcba\",\"urls\":[\"bzz-raw://b59671c2543cff88f5d0c579e08579d459b15074547529d1978f542408955cce\",\"dweb:/ipfs/QmS8Fs7VVQx5H8AGwqUXaGc3KmnwhuGyLYtEsSQzu622hJ\"]},\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/Ownable.sol\":{\"keccak256\":\"0x54e281a9961e1446500b6e6afef99c846a0633ac4e5e9671c154410cf1e5849e\",\"urls\":[\"bzz-raw://23e1ad63dac9c62dfd88d98a8b265d43fe48f88b7e92fd1f70465b70b8913c2a\",\"dweb:/ipfs/Qmcqo8118tT8r9Gm2Xs8PrqbUmXRKrQRcBh7uJPXejy4ej\"]},\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaContract.sol\":{\"keccak256\":\"0x4af31b2e1c584de03686dfa79a0a0c4653611ddd6f2de4f879d4940c9fd69bed\",\"urls\":[\"bzz-raw://ec98bbcde36c1c57d9674f77e137b25f6d7600f414c77d1d9bd917fee5f5ce3c\",\"dweb:/ipfs/QmVfe5xkCFe3Hg3hFmBrWNfjitSZgpUMPpBp4awpaZR3Uz\"]},\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaToken.sol\":{\"keccak256\":\"0x0571589da50d093e68c38455bb46df43a713dd850a329dcd69483073d3924a9a\",\"urls\":[\"bzz-raw://3aae8250469c6b60d277fad0655b0165d788562e06fced3385db422a1bd43b46\",\"dweb:/ipfs/QmebY73cN58ypv1JEwkgD86p2N4ht2npKm3DD3oTBhTfrZ\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000600660006101000a81548160ff021916908360ff160217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506040518060400160405280600b81526020017f43727970746f50616e6461000000000000000000000000000000000000000000815250600490805190602001906100ab9291906100fd565b506040518060400160405280600281526020017f4350000000000000000000000000000000000000000000000000000000000000815250600590805190602001906100f79291906100fd565b506101a2565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061013e57805160ff191683800117855561016c565b8280016001018555821561016c579182015b8281111561016b578251825591602001919060010190610150565b5b509050610179919061017d565b5090565b61019f91905b8082111561019b576000816000905550600101610183565b5090565b90565b610ee7806101b16000396000f3fe608060405234801561001057600080fd5b50600436106100a95760003560e01c806370a082311161007157806370a08231146102e85780638da5cb5b1461034057806395d89b411461038a578063a9059cbb1461040d578063aefbc31f1461045b578063d967c6211461047f576100a9565b806306fdde03146100ae5780631327fbe51461013157806318160ddd146101c357806352cf4a2e146101e15780636352211e1461027a575b600080fd5b6100b66104c1565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f65780820151818401526020810190506100db565b50505050905090810190601f1680156101235780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61015d6004803603602081101561014757600080fd5b8101908080359060200190929190505050610563565b604051808681526020018567ffffffffffffffff1667ffffffffffffffff1681526020018463ffffffff1663ffffffff1681526020018363ffffffff1663ffffffff1681526020018261ffff1661ffff1681526020019550505050505060405180910390f35b6101cb61067b565b6040518082815260200191505060405180910390f35b610223600480360360208110156101f757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610688565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561026657808201518184015260208101905061024b565b505050509050019250505060405180910390f35b6102a66004803603602081101561029057600080fd5b81019080803590602001909291905050506106fa565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61032a600480360360208110156102fe57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610737565b6040518082815260200191505060405180910390f35b610348610780565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6103926107a5565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156103d25780820151818401526020810190506103b7565b50505050905090810190601f1680156103ff5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6104596004803603604081101561042357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610847565b005b610463610955565b604051808260ff1660ff16815260200191505060405180910390f35b6104ab6004803603602081101561049557600080fd5b810190808035906020019092919050505061095a565b6040518082815260200191505060405180910390f35b606060048054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105595780601f1061052e57610100808354040283529160200191610559565b820191906000526020600020905b81548152906001019060200180831161053c57829003601f168201915b5050505050905090565b6000806000806000856001805490501161057c57600080fd5b6001868154811061058957fe5b9060005260206000209060020201600001549450600186815481106105aa57fe5b906000526020600020906002020160010160009054906101000a900467ffffffffffffffff169350600186815481106105df57fe5b906000526020600020906002020160010160089054906101000a900463ffffffff1692506001868154811061061057fe5b9060005260206000209060020201600101600c9054906101000a900463ffffffff1691506001868154811061064157fe5b906000526020600020906002020160010160109054906101000a900461ffff16905084848484849450945094509450945091939590929450565b6000600180549050905090565b6060806000600260008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008090506001836000815181106106e357fe5b602002602001018181525050829350505050919050565b60006003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b606060058054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561083d5780601f106108125761010080835404028352916020019161083d565b820191906000526020600020905b81548152906001019060200180831161082057829003601f168201915b5050505050905090565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141561088157600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614156108db57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461094657600080fd5b610951338383610a8c565b5050565b606481565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146109b557600080fd5b606460ff16600660009054906101000a900460ff1660ff1610610a23576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526025815260200180610e8e6025913960400191505060405180910390fd5b6006600081819054906101000a900460ff168092919060010191906101000a81548160ff021916908360ff16021790555050610a856000808460008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610c7a565b9050919050565b600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154809291906001019190505550816003600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614610bb257600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154809291906001900391905055505b8173ffffffffffffffffffffffffffffffffffffffff166003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614610c1a57fe5b808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505050565b6000610c84610e44565b6040518060a001604052808681526020014267ffffffffffffffff1681526020018863ffffffff1681526020018763ffffffff1681526020018561ffff168152509050600060018083908060018154018082558091505090600182039060005260206000209060020201600090919290919091506000820151816000015560208201518160010160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff16021790555060408201518160010160086101000a81548163ffffffff021916908363ffffffff160217905550606082015181600101600c6101000a81548163ffffffff021916908363ffffffff16021790555060808201518160010160106101000a81548161ffff021916908361ffff1602179055505050039050610db360008583610a8c565b7f0a5311bd2a6608f08a180df2ee7c5946819a649b204b554bb8e39825b2c50ad584828a8a8a604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018381526020018281526020019550505050505060405180910390a1809250505095945050505050565b6040518060a0016040528060008152602001600067ffffffffffffffff168152602001600063ffffffff168152602001600063ffffffff168152602001600061ffff168152509056fe47656e2030204c696d69742072656163686564202831302070616e646173206c696d697429a265627a7a72315820a5f30a8c2db5af73cb1114e46dfb739d8ee5815fd1c955507207f060c2b4a26564736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a95760003560e01c806370a082311161007157806370a08231146102e85780638da5cb5b1461034057806395d89b411461038a578063a9059cbb1461040d578063aefbc31f1461045b578063d967c6211461047f576100a9565b806306fdde03146100ae5780631327fbe51461013157806318160ddd146101c357806352cf4a2e146101e15780636352211e1461027a575b600080fd5b6100b66104c1565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f65780820151818401526020810190506100db565b50505050905090810190601f1680156101235780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61015d6004803603602081101561014757600080fd5b8101908080359060200190929190505050610563565b604051808681526020018567ffffffffffffffff1667ffffffffffffffff1681526020018463ffffffff1663ffffffff1681526020018363ffffffff1663ffffffff1681526020018261ffff1661ffff1681526020019550505050505060405180910390f35b6101cb61067b565b6040518082815260200191505060405180910390f35b610223600480360360208110156101f757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610688565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561026657808201518184015260208101905061024b565b505050509050019250505060405180910390f35b6102a66004803603602081101561029057600080fd5b81019080803590602001909291905050506106fa565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61032a600480360360208110156102fe57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610737565b6040518082815260200191505060405180910390f35b610348610780565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6103926107a5565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156103d25780820151818401526020810190506103b7565b50505050905090810190601f1680156103ff5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6104596004803603604081101561042357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610847565b005b610463610955565b604051808260ff1660ff16815260200191505060405180910390f35b6104ab6004803603602081101561049557600080fd5b810190808035906020019092919050505061095a565b6040518082815260200191505060405180910390f35b606060048054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105595780601f1061052e57610100808354040283529160200191610559565b820191906000526020600020905b81548152906001019060200180831161053c57829003601f168201915b5050505050905090565b6000806000806000856001805490501161057c57600080fd5b6001868154811061058957fe5b9060005260206000209060020201600001549450600186815481106105aa57fe5b906000526020600020906002020160010160009054906101000a900467ffffffffffffffff169350600186815481106105df57fe5b906000526020600020906002020160010160089054906101000a900463ffffffff1692506001868154811061061057fe5b9060005260206000209060020201600101600c9054906101000a900463ffffffff1691506001868154811061064157fe5b906000526020600020906002020160010160109054906101000a900461ffff16905084848484849450945094509450945091939590929450565b6000600180549050905090565b6060806000600260008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008090506001836000815181106106e357fe5b602002602001018181525050829350505050919050565b60006003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b606060058054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561083d5780601f106108125761010080835404028352916020019161083d565b820191906000526020600020905b81548152906001019060200180831161082057829003601f168201915b5050505050905090565b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141561088157600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614156108db57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461094657600080fd5b610951338383610a8c565b5050565b606481565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146109b557600080fd5b606460ff16600660009054906101000a900460ff1660ff1610610a23576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526025815260200180610e8e6025913960400191505060405180910390fd5b6006600081819054906101000a900460ff168092919060010191906101000a81548160ff021916908360ff16021790555050610a856000808460008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610c7a565b9050919050565b600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154809291906001019190505550816003600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614610bb257600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154809291906001900391905055505b8173ffffffffffffffffffffffffffffffffffffffff166003600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614610c1a57fe5b808273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef60405160405180910390a4505050565b6000610c84610e44565b6040518060a001604052808681526020014267ffffffffffffffff1681526020018863ffffffff1681526020018763ffffffff1681526020018561ffff168152509050600060018083908060018154018082558091505090600182039060005260206000209060020201600090919290919091506000820151816000015560208201518160010160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff16021790555060408201518160010160086101000a81548163ffffffff021916908363ffffffff160217905550606082015181600101600c6101000a81548163ffffffff021916908363ffffffff16021790555060808201518160010160106101000a81548161ffff021916908361ffff1602179055505050039050610db360008583610a8c565b7f0a5311bd2a6608f08a180df2ee7c5946819a649b204b554bb8e39825b2c50ad584828a8a8a604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018381526020018281526020019550505050505060405180910390a1809250505095945050505050565b6040518060a0016040528060008152602001600067ffffffffffffffff168152602001600063ffffffff168152602001600063ffffffff168152602001600061ffff168152509056fe47656e2030204c696d69742072656163686564202831302070616e646173206c696d697429a265627a7a72315820a5f30a8c2db5af73cb1114e46dfb739d8ee5815fd1c955507207f060c2b4a26564736f6c634300050c0032",
+  "sourceMap": "82:2203:3:-;;;424:1;405:20;;;;;;;;;;;;;;;;;;;;215:10:2;207:5;;:18;;;;;;;;;;;;;;;;;;526:25:4;;;;;;;;;;;;;;;;;:10;:25;;;;;;;;;;;;:::i;:::-;;561:19;;;;;;;;;;;;;;;;;:12;:19;;;;;;;;;;;;:::i;:::-;;82:2203:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "82:2203:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:2203:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1219:97:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1219:97:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1247:473:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1247:473:3;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1058:97:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1726:557:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1726:557:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1726:557:3;;;;;;;;;;;;;;;;;1627:117:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1627:117:4;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;853:121;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;853:121:4;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;47:20:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1382:103:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1382:103:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1822:232;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1822:232:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;160:46:3;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;432:247;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;432:247:3;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1219:97:4;1258:23;1299:10;1292:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1219:97;:::o;1247:473:3:-;1302:13;1316:16;1333:12;1346;1359:17;1417:7;1401:6;:13;;;;:23;1393:32;;;;;;1449:6;1456:7;1449:15;;;;;;;;;;;;;;;;;;:21;;;1436:34;;1493:6;1500:7;1493:15;;;;;;;;;;;;;;;;;;:25;;;;;;;;;;;;1480:38;;1541:6;1548:7;1541:15;;;;;;;;;;;;;;;;;;:21;;;;;;;;;;;;1528:34;;1585:6;1592:7;1585:15;;;;;;;;;;;;;;;;;;:21;;;;;;;;;;;;1572:34;;1629:6;1636:7;1629:15;;;;;;;;;;;;;;;;;;:26;;;;;;;;;;;;1616:39;;1674:5;1680:9;1690:5;1696;1702:10;1666:47;;;;;;;;;;1247:473;;;;;;;:::o;1058:97:4:-;1104:13;1135:6;:13;;;;1128:20;;1058:97;:::o;1726:557:3:-;1798:16;1826:28;1864:27;1894:17;:36;1912:17;1894:36;;;;;;;;;;;;;;;;1864:66;;1940:24;1965:1;1940:26;;2247:1;2232:11;2244:1;2232:14;;;;;;;;;;;;;:16;;;;;2265:11;2258:18;;;;;1726:557;;;:::o;1627:117:4:-;1685:13;1716:11;:21;1728:8;1716:21;;;;;;;;;;;;;;;;;;;;;1709:28;;1627:117;;;:::o;853:121::-;910:15;943:17;:24;961:5;943:24;;;;;;;;;;;;;;;;936:31;;853:121;;;:::o;47:20:2:-;;;;;;;;;;;;;:::o;1382:103:4:-;1423:25;1466:12;1459:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1382:103;:::o;1822:232::-;1913:1;1898:17;;:3;:17;;;;1889:27;;;;;;1942:5;;;;;;;;;;;1935:12;;:3;:12;;;;1926:22;;;;;;1991:10;1966:35;;:11;:21;1978:8;1966:21;;;;;;;;;;;;;;;;;;;;;:35;;;1958:44;;;;;;2013:34;2023:10;2034:3;2038:8;2013:9;:34::i;:::-;1822:232;;:::o;160:46:3:-;203:3;160:46;:::o;432:247::-;499:7;126:5:2;;;;;;;;;;;112:19;;:10;:19;;;104:28;;;;;;203:3:3;527:32;;:11;;;;;;;;;;;:32;;;518:82;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;610:11;;:13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;640:32;653:1;655;657:6;664:1;666:5;;;;;;;;;;;640:12;:32::i;:::-;633:39;;432:247;;;:::o;2060:326:4:-;2143:17;:22;2161:3;2143:22;;;;;;;;;;;;;;;;:24;;;;;;;;;;;;;2199:3;2177:11;:21;2189:8;2177:21;;;;;;;;;;;;:25;;;;;;;;;;;;;;;;;;2233:1;2216:19;;:5;:19;;;2213:75;;2251:17;:24;2269:5;2251:24;;;;;;;;;;;;;;;;:26;;;;;;;;;;;;;;2213:75;2328:3;2305:26;;:11;:21;2317:8;2305:21;;;;;;;;;;;;;;;;;;;;;:26;;;2298:34;;;;2370:8;2364:3;2348:31;;2357:5;2348:31;;;;;;;;;;;;2060:326;;;:::o;685:556:3:-;805:7;823:19;;:::i;:::-;845:191;;;;;;;;872:6;845:191;;;;909:3;845:191;;;;;;940:6;845:191;;;;;;974:6;845:191;;;;;;1013:11;845:191;;;;;823:213;;1047:18;1088:1;1068:6;1080;1068:19;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;1068:19:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:21;1047:42;;1100:41;1118:1;1122:6;1130:10;1100:9;:41::i;:::-;1157:49;1163:6;1171:10;1183:6;1191;1199;1157:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1224:10;1217:17;;;;685:556;;;;;;;:::o;82:2203::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.12;\n\nimport \"./PandaToken.sol\";\n\n//import './Safemath.sol';\n\ncontract PandaContract is PandaToken{\n\n    //using SafeMath for uint256;\n\n    uint8 public constant CREATION_GEN_LIMIT = 100 ;\n\n    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);\n    event Birth(address _owner,uint256 PandaId, uint256 mumId, uint256 dadId, uint256 genes); \n\n\n    uint8 gen0Counter= 0;\n\n    function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {\n        require( gen0Counter < CREATION_GEN_LIMIT,\"Gen 0 Limit reached (10 pandas limit)\");\n        gen0Counter++;\n        return _CreatePanda(0,0,_genes,0,owner);\n    }\n\n    function _CreatePanda(uint256 _mumId,uint256 _dadId,uint256 _genes,uint256 _generation,address _owner) private returns (uint256){\n        Panda memory _panda = Panda({\n            genes: _genes,\n            birthTime:uint64(now),\n            mumId:uint32(_mumId),\n            dadId:uint32(_dadId),\n            generation:uint16(_generation)\n        });\n\n        uint256 newPandaId = pandas.push(_panda)-1;\n\n        _transfer(address(0), _owner, newPandaId);\n\n        emit Birth(_owner, newPandaId, _mumId, _dadId, _genes);\n\n        return newPandaId;\n    }\n\n    function getPanda(uint256 tokenId) public view returns(uint256 genes,uint64 birthTime,uint32 mumId,uint32 dadId,uint16 generation) \n    {\n        require(pandas.length > tokenId);\n\n        genes       =pandas[tokenId].genes;\n        birthTime   =pandas[tokenId].birthTime;\n        mumId       =pandas[tokenId].mumId;\n        dadId       =pandas[tokenId].dadId;\n        generation  =pandas[tokenId].generation;\n\n        return (genes,birthTime,mumId,dadId,generation);\n    }\n\n    function getPandaArray (address PandaOwnerAddress) public view returns (uint256[] memory ){\n        uint256[] memory _pandaArray;\n        uint256 numberOfPandasOwned = _OwnerAnimalCount[PandaOwnerAddress];\n        uint256 pandasFoundCount=0;\n\n        // for(uint256 i=0; i< pandas.length || pandasFoundCount == numberOfPandasOwned; i++){\n        //     if(_PandaOwner[i]==msg.sender){\n        //     _pandaArray[pandasFoundCount]=i;\n        //     pandasFoundCount++;\n        //     }\n        // }\n        _pandaArray[0]=1;\n        return _pandaArray;\n    }\n}\n\n",
   "sourcePath": "/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaContract.sol",
   "ast": {
     "absolutePath": "/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaContract.sol",
     "exportedSymbols": {
       "PandaContract": [
-        298
+        330
       ]
     },
-    "id": 299,
+    "id": 331,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -321,8 +342,8 @@
         "file": "./PandaToken.sol",
         "id": 115,
         "nodeType": "ImportDirective",
-        "scope": 299,
-        "sourceUnit": 488,
+        "scope": 331,
+        "sourceUnit": 520,
         "src": "26:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -336,10 +357,10 @@
               "id": 116,
               "name": "PandaToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 487,
+              "referencedDeclaration": 519,
               "src": "108:10:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_PandaToken_$487",
+                "typeIdentifier": "t_contract$_PandaToken_$519",
                 "typeString": "contract PandaToken"
               }
             },
@@ -351,15 +372,15 @@
         "contractDependencies": [
           54,
           112,
-          487
+          519
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 298,
+        "id": 330,
         "linearizedBaseContracts": [
-          298,
-          487,
+          330,
+          519,
           112,
           54
         ],
@@ -371,7 +392,7 @@
             "id": 120,
             "name": "CREATION_GEN_LIMIT",
             "nodeType": "VariableDeclaration",
-            "scope": 298,
+            "scope": 330,
             "src": "160:46:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -663,7 +684,7 @@
             "id": 143,
             "name": "gen0Counter",
             "nodeType": "VariableDeclaration",
-            "scope": 298,
+            "scope": 330,
             "src": "405:20:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -790,10 +811,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        692,
-                        693
+                        724,
+                        725
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "518:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1085,7 +1106,7 @@
               ],
               "src": "498:9:3"
             },
-            "scope": 298,
+            "scope": 330,
             "src": "432:247:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1112,7 +1133,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Panda_$317_memory_ptr",
+                        "typeIdentifier": "t_struct$_Panda_$349_memory_ptr",
                         "typeString": "struct PandaToken.Panda"
                       },
                       "typeName": {
@@ -1120,10 +1141,10 @@
                         "id": 186,
                         "name": "Panda",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 317,
+                        "referencedDeclaration": 349,
                         "src": "823:5:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage_ptr",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage_ptr",
                           "typeString": "struct PandaToken.Panda"
                         }
                       },
@@ -1157,7 +1178,7 @@
                             "name": "now",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 691,
+                            "referencedDeclaration": 723,
                             "src": "909:3:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -1380,10 +1401,10 @@
                       "name": "Panda",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 317,
+                      "referencedDeclaration": 349,
                       "src": "845:5:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_Panda_$317_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_Panda_$349_storage_ptr_$",
                         "typeString": "type(struct PandaToken.Panda storage pointer)"
                       }
                     },
@@ -1403,7 +1424,7 @@
                     "nodeType": "FunctionCall",
                     "src": "845:191:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Panda_$317_memory",
+                      "typeIdentifier": "t_struct$_Panda_$349_memory",
                       "typeString": "struct PandaToken.Panda memory"
                     }
                   },
@@ -1466,7 +1487,7 @@
                           "referencedDeclaration": 187,
                           "src": "1080:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Panda_$317_memory_ptr",
+                            "typeIdentifier": "t_struct$_Panda_$349_memory_ptr",
                             "typeString": "struct PandaToken.Panda memory"
                           }
                         }
@@ -1474,7 +1495,7 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_struct$_Panda_$317_memory_ptr",
+                            "typeIdentifier": "t_struct$_Panda_$349_memory_ptr",
                             "typeString": "struct PandaToken.Panda memory"
                           }
                         ],
@@ -1484,10 +1505,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1068:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -1501,7 +1522,7 @@
                         "referencedDeclaration": null,
                         "src": "1068:11:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Panda_$317_storage_$returns$_t_uint256_$",
+                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Panda_$349_storage_$returns$_t_uint256_$",
                           "typeString": "function (struct PandaToken.Panda storage ref) returns (uint256)"
                         }
                       },
@@ -1654,7 +1675,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 486,
+                      "referencedDeclaration": 518,
                       "src": "1100:9:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -2000,7 +2021,7 @@
               ],
               "src": "804:9:3"
             },
-            "scope": 298,
+            "scope": 330,
             "src": "685:556:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2035,10 +2056,10 @@
                             "name": "pandas",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 320,
+                            "referencedDeclaration": 352,
                             "src": "1401:6:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                               "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                             }
                           },
@@ -2089,10 +2110,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        692,
-                        693
+                        724,
+                        725
                       ],
-                      "referencedDeclaration": 692,
+                      "referencedDeclaration": 724,
                       "src": "1393:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2150,10 +2171,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1449:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -2178,7 +2199,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1449:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -2189,7 +2210,7 @@
                       "lValueRequested": false,
                       "memberName": "genes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 308,
+                      "referencedDeclaration": 340,
                       "src": "1449:21:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2239,10 +2260,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1493:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -2267,7 +2288,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1493:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -2278,7 +2299,7 @@
                       "lValueRequested": false,
                       "memberName": "birthTime",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 310,
+                      "referencedDeclaration": 342,
                       "src": "1493:25:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint64",
@@ -2328,10 +2349,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1541:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -2356,7 +2377,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1541:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -2367,7 +2388,7 @@
                       "lValueRequested": false,
                       "memberName": "mumId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 312,
+                      "referencedDeclaration": 344,
                       "src": "1541:21:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint32",
@@ -2417,10 +2438,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1585:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -2445,7 +2466,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1585:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -2456,7 +2477,7 @@
                       "lValueRequested": false,
                       "memberName": "dadId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 314,
+                      "referencedDeclaration": 346,
                       "src": "1585:21:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint32",
@@ -2506,10 +2527,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1629:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -2534,7 +2555,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1629:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -2545,7 +2566,7 @@
                       "lValueRequested": false,
                       "memberName": "generation",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 316,
+                      "referencedDeclaration": 348,
                       "src": "1629:26:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint16",
@@ -2829,27 +2850,404 @@
               ],
               "src": "1301:76:3"
             },
-            "scope": 298,
+            "scope": 330,
             "src": "1247:473:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 328,
+              "nodeType": "Block",
+              "src": "1816:467:3",
+              "statements": [
+                {
+                  "assignments": [
+                    308
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 308,
+                      "name": "_pandaArray",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 328,
+                      "src": "1826:28:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                        "typeString": "uint256[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 306,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1826:7:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 307,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1826:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[]"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 309,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1826:28:3"
+                },
+                {
+                  "assignments": [
+                    311
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 311,
+                      "name": "numberOfPandasOwned",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 328,
+                      "src": "1864:27:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 310,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1864:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 315,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 312,
+                      "name": "_OwnerAnimalCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 356,
+                      "src": "1894:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 314,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 313,
+                      "name": "PandaOwnerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 299,
+                      "src": "1912:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1894:36:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1864:66:3"
+                },
+                {
+                  "assignments": [
+                    317
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 317,
+                      "name": "pandasFoundCount",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 328,
+                      "src": "1940:24:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 316,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1940:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 319,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "hexValue": "30",
+                    "id": 318,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1965:1:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1940:26:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 324,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 320,
+                        "name": "_pandaArray",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 308,
+                        "src": "2232:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
+                      },
+                      "id": 322,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 321,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2244:1:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2232:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 323,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2247:1:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "2232:16:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 325,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2232:16:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 326,
+                    "name": "_pandaArray",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 308,
+                    "src": "2265:11:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                      "typeString": "uint256[] memory"
+                    }
+                  },
+                  "functionReturnParameters": 304,
+                  "id": 327,
+                  "nodeType": "Return",
+                  "src": "2258:18:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 329,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPandaArray",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 300,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 299,
+                  "name": "PandaOwnerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 329,
+                  "src": "1750:25:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 298,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1750:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1749:27:3"
+            },
+            "returnParameters": {
+              "id": 304,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 303,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 329,
+                  "src": "1798:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 301,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1798:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 302,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1798:9:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1797:19:3"
+            },
+            "scope": 330,
+            "src": "1726:557:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 299,
-        "src": "82:2194:3"
+        "scope": 331,
+        "src": "82:2203:3"
       }
     ],
-    "src": "0:2278:3"
+    "src": "0:2287:3"
   },
   "legacyAST": {
     "absolutePath": "/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaContract.sol",
     "exportedSymbols": {
       "PandaContract": [
-        298
+        330
       ]
     },
-    "id": 299,
+    "id": 331,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -2868,8 +3266,8 @@
         "file": "./PandaToken.sol",
         "id": 115,
         "nodeType": "ImportDirective",
-        "scope": 299,
-        "sourceUnit": 488,
+        "scope": 331,
+        "sourceUnit": 520,
         "src": "26:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2883,10 +3281,10 @@
               "id": 116,
               "name": "PandaToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 487,
+              "referencedDeclaration": 519,
               "src": "108:10:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_PandaToken_$487",
+                "typeIdentifier": "t_contract$_PandaToken_$519",
                 "typeString": "contract PandaToken"
               }
             },
@@ -2898,15 +3296,15 @@
         "contractDependencies": [
           54,
           112,
-          487
+          519
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 298,
+        "id": 330,
         "linearizedBaseContracts": [
-          298,
-          487,
+          330,
+          519,
           112,
           54
         ],
@@ -2918,7 +3316,7 @@
             "id": 120,
             "name": "CREATION_GEN_LIMIT",
             "nodeType": "VariableDeclaration",
-            "scope": 298,
+            "scope": 330,
             "src": "160:46:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3210,7 +3608,7 @@
             "id": 143,
             "name": "gen0Counter",
             "nodeType": "VariableDeclaration",
-            "scope": 298,
+            "scope": 330,
             "src": "405:20:3",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3337,10 +3735,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        692,
-                        693
+                        724,
+                        725
                       ],
-                      "referencedDeclaration": 693,
+                      "referencedDeclaration": 725,
                       "src": "518:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3632,7 +4030,7 @@
               ],
               "src": "498:9:3"
             },
-            "scope": 298,
+            "scope": 330,
             "src": "432:247:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3659,7 +4057,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Panda_$317_memory_ptr",
+                        "typeIdentifier": "t_struct$_Panda_$349_memory_ptr",
                         "typeString": "struct PandaToken.Panda"
                       },
                       "typeName": {
@@ -3667,10 +4065,10 @@
                         "id": 186,
                         "name": "Panda",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 317,
+                        "referencedDeclaration": 349,
                         "src": "823:5:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage_ptr",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage_ptr",
                           "typeString": "struct PandaToken.Panda"
                         }
                       },
@@ -3704,7 +4102,7 @@
                             "name": "now",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 691,
+                            "referencedDeclaration": 723,
                             "src": "909:3:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -3927,10 +4325,10 @@
                       "name": "Panda",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 317,
+                      "referencedDeclaration": 349,
                       "src": "845:5:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_Panda_$317_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_Panda_$349_storage_ptr_$",
                         "typeString": "type(struct PandaToken.Panda storage pointer)"
                       }
                     },
@@ -3950,7 +4348,7 @@
                     "nodeType": "FunctionCall",
                     "src": "845:191:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Panda_$317_memory",
+                      "typeIdentifier": "t_struct$_Panda_$349_memory",
                       "typeString": "struct PandaToken.Panda memory"
                     }
                   },
@@ -4013,7 +4411,7 @@
                           "referencedDeclaration": 187,
                           "src": "1080:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Panda_$317_memory_ptr",
+                            "typeIdentifier": "t_struct$_Panda_$349_memory_ptr",
                             "typeString": "struct PandaToken.Panda memory"
                           }
                         }
@@ -4021,7 +4419,7 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_struct$_Panda_$317_memory_ptr",
+                            "typeIdentifier": "t_struct$_Panda_$349_memory_ptr",
                             "typeString": "struct PandaToken.Panda memory"
                           }
                         ],
@@ -4031,10 +4429,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1068:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -4048,7 +4446,7 @@
                         "referencedDeclaration": null,
                         "src": "1068:11:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Panda_$317_storage_$returns$_t_uint256_$",
+                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Panda_$349_storage_$returns$_t_uint256_$",
                           "typeString": "function (struct PandaToken.Panda storage ref) returns (uint256)"
                         }
                       },
@@ -4201,7 +4599,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 486,
+                      "referencedDeclaration": 518,
                       "src": "1100:9:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -4547,7 +4945,7 @@
               ],
               "src": "804:9:3"
             },
-            "scope": 298,
+            "scope": 330,
             "src": "685:556:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -4582,10 +4980,10 @@
                             "name": "pandas",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 320,
+                            "referencedDeclaration": 352,
                             "src": "1401:6:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                               "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                             }
                           },
@@ -4636,10 +5034,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        692,
-                        693
+                        724,
+                        725
                       ],
-                      "referencedDeclaration": 692,
+                      "referencedDeclaration": 724,
                       "src": "1393:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4697,10 +5095,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1449:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -4725,7 +5123,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1449:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -4736,7 +5134,7 @@
                       "lValueRequested": false,
                       "memberName": "genes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 308,
+                      "referencedDeclaration": 340,
                       "src": "1449:21:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -4786,10 +5184,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1493:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -4814,7 +5212,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1493:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -4825,7 +5223,7 @@
                       "lValueRequested": false,
                       "memberName": "birthTime",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 310,
+                      "referencedDeclaration": 342,
                       "src": "1493:25:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint64",
@@ -4875,10 +5273,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1541:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -4903,7 +5301,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1541:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -4914,7 +5312,7 @@
                       "lValueRequested": false,
                       "memberName": "mumId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 312,
+                      "referencedDeclaration": 344,
                       "src": "1541:21:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint32",
@@ -4964,10 +5362,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1585:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -4992,7 +5390,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1585:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -5003,7 +5401,7 @@
                       "lValueRequested": false,
                       "memberName": "dadId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 314,
+                      "referencedDeclaration": 346,
                       "src": "1585:21:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint32",
@@ -5053,10 +5451,10 @@
                           "name": "pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 352,
                           "src": "1629:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$317_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$349_storage_$dyn_storage",
                             "typeString": "struct PandaToken.Panda storage ref[] storage ref"
                           }
                         },
@@ -5081,7 +5479,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1629:15:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$317_storage",
+                          "typeIdentifier": "t_struct$_Panda_$349_storage",
                           "typeString": "struct PandaToken.Panda storage ref"
                         }
                       },
@@ -5092,7 +5490,7 @@
                       "lValueRequested": false,
                       "memberName": "generation",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 316,
+                      "referencedDeclaration": 348,
                       "src": "1629:26:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint16",
@@ -5376,18 +5774,395 @@
               ],
               "src": "1301:76:3"
             },
-            "scope": 298,
+            "scope": 330,
             "src": "1247:473:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 328,
+              "nodeType": "Block",
+              "src": "1816:467:3",
+              "statements": [
+                {
+                  "assignments": [
+                    308
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 308,
+                      "name": "_pandaArray",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 328,
+                      "src": "1826:28:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                        "typeString": "uint256[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 306,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1826:7:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 307,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1826:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[]"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 309,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1826:28:3"
+                },
+                {
+                  "assignments": [
+                    311
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 311,
+                      "name": "numberOfPandasOwned",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 328,
+                      "src": "1864:27:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 310,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1864:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 315,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 312,
+                      "name": "_OwnerAnimalCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 356,
+                      "src": "1894:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 314,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 313,
+                      "name": "PandaOwnerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 299,
+                      "src": "1912:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1894:36:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1864:66:3"
+                },
+                {
+                  "assignments": [
+                    317
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 317,
+                      "name": "pandasFoundCount",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 328,
+                      "src": "1940:24:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 316,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1940:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 319,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "hexValue": "30",
+                    "id": 318,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1965:1:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1940:26:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 324,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 320,
+                        "name": "_pandaArray",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 308,
+                        "src": "2232:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
+                      },
+                      "id": 322,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 321,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2244:1:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2232:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 323,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2247:1:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "2232:16:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 325,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2232:16:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 326,
+                    "name": "_pandaArray",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 308,
+                    "src": "2265:11:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                      "typeString": "uint256[] memory"
+                    }
+                  },
+                  "functionReturnParameters": 304,
+                  "id": 327,
+                  "nodeType": "Return",
+                  "src": "2258:18:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 329,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPandaArray",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 300,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 299,
+                  "name": "PandaOwnerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 329,
+                  "src": "1750:25:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 298,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1750:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1749:27:3"
+            },
+            "returnParameters": {
+              "id": 304,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 303,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 329,
+                  "src": "1798:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 301,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1798:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 302,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1798:9:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1797:19:3"
+            },
+            "scope": 330,
+            "src": "1726:557:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 299,
-        "src": "82:2194:3"
+        "scope": 331,
+        "src": "82:2203:3"
       }
     ],
-    "src": "0:2278:3"
+    "src": "0:2287:3"
   },
   "compiler": {
     "name": "solc",
@@ -5485,12 +6260,13 @@
         }
       },
       "links": {},
-      "address": "0x1529A7C5339c0ed5F4259daDC1Da23d68b947d58",
-      "transactionHash": "0x23e52d9e0b3f41d733f0a5b65606e722199820b9bb09fd92e9afaf9e7ab0b546"
+      "address": "0x10b493364F56C0c42f99c271bD92a6acf18be7FD",
+      "transactionHash": "0xbbdcad334360834c1c24e0dcd0c7ae252fb89b63736eccb65f596027012361f9"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-10-10T12:17:28.243Z",
+  "updatedAt": "2020-10-10T12:54:21.353Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {
       "balanceOf(address)": {

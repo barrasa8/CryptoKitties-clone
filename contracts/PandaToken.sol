@@ -16,8 +16,8 @@ contract PandaToken is IERC721, Ownable{
     Panda[] pandas;
 
     //private variables
-    mapping (address => uint256) private _OwnerAnimalCount;
-    mapping(uint256 => address) private _PandaOwner;
+    mapping (address => uint256) internal _OwnerAnimalCount;
+    mapping(uint256 => address) internal _PandaOwner;
     string  private _TokenName;
     string private _TokenSymbol;
     
