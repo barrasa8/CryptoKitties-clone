@@ -2,24 +2,10 @@ pragma solidity ^0.5.12;
 
 import "./Ownable.sol";
 import "./IERC721.sol";
+import "./PandaStorage.sol";
 
-contract PandaToken is IERC721, Ownable{
+contract PandaToken is IERC721, Ownable, PandaStorage{
 
-    struct Panda{
-        uint256 genes;
-        uint64 birthTime;
-        uint32 mumId;
-        uint32 dadId;
-        uint16 generation;
-    }
-
-    Panda[] pandas;
-
-    //private variables
-    mapping (address => uint256) internal _OwnerAnimalCount;
-    mapping(uint256 => address) internal _PandaOwner;
-    string  private _TokenName;
-    string private _TokenSymbol;
     
     constructor() public{
         _TokenName= "CryptoPanda";
@@ -42,7 +28,7 @@ contract PandaToken is IERC721, Ownable{
      * @dev Returns the total number of tokens in circulation.
      */
     function totalSupply() public view returns (uint256 total){
-        return pandas.length;
+        return _pandas.length;
     }
 
     /*

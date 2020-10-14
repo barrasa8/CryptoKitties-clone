@@ -6,10 +6,6 @@ import "./PandaToken.sol";
 
 contract PandaContract is PandaToken{
 
-    //using SafeMath for uint256;
-
-    uint8 public constant CREATION_GEN_LIMIT = 100 ;
-
     event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
     event Birth(address _owner,uint256 PandaId, uint256 mumId, uint256 dadId, uint256 genes); 
 
@@ -17,7 +13,7 @@ contract PandaContract is PandaToken{
     uint8 gen0Counter= 0;
 
     function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {
-        require( gen0Counter < CREATION_GEN_LIMIT,"Gen 0 Limit reached (10 pandas limit)");
+        require( gen0Counter < CREATION_GEN_LIMIT,"Gen 0 Limit reached (10 _pandas limit)");
         gen0Counter++;
         return _CreatePanda(0,0,_genes,0,owner);
     }
@@ -31,7 +27,7 @@ contract PandaContract is PandaToken{
             generation:uint16(_generation)
         });
 
-        uint256 newPandaId = pandas.push(_panda)-1;
+        uint256 newPandaId = _pandas.push(_panda)-1;
 
         _transfer(address(0), _owner, newPandaId);
 
@@ -42,18 +38,18 @@ contract PandaContract is PandaToken{
 
     function getPanda(uint256 tokenId) public view returns(uint256 genes,uint64 birthTime,uint32 mumId,uint32 dadId,uint16 generation) 
     {
-        require(pandas.length > tokenId);
+        require(_pandas.length > tokenId);
 
-        genes       =pandas[tokenId].genes;
-        birthTime   =pandas[tokenId].birthTime;
-        mumId       =pandas[tokenId].mumId;
-        dadId       =pandas[tokenId].dadId;
-        generation  =pandas[tokenId].generation;
+        genes       =_pandas[tokenId].genes;
+        birthTime   =_pandas[tokenId].birthTime;
+        mumId       =_pandas[tokenId].mumId;
+        dadId       =_pandas[tokenId].dadId;
+        generation  =_pandas[tokenId].generation;
 
         return (genes,birthTime,mumId,dadId,generation);
     }
 
-    function pandasOfOwner (address PandaOwnerAddress) public view returns (uint256[] memory ){
+    function _pandasOfOwner (address PandaOwnerAddress) public view returns (uint256[] memory ){
         uint256 numberOfPandasOwned = balanceOf(PandaOwnerAddress);
 
         if( numberOfPandasOwned == 0){
