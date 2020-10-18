@@ -2,15 +2,20 @@ pragma solidity ^0.5.12;
 
 import "./PandaToken.sol";
 
-//import './Safemath.sol';
+import "@openzeppelin/upgrades/contracts/Initializable.sol";
 
-contract PandaContract is PandaToken{
+contract PandaContract is Initializable , PandaToken {
 
     event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
     event Birth(address _owner,uint256 PandaId, uint256 mumId, uint256 dadId, uint256 genes); 
 
 
-    uint8 gen0Counter= 0;
+    uint8 gen0Counter;
+
+    function initialize() public initializer {
+        PandaToken.initialize("CryptoPanda","CP");
+        gen0Counter= 0;
+    }
 
     function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {
         require( gen0Counter < CREATION_GEN_LIMIT,"Gen 0 Limit reached (10 _pandas limit)");

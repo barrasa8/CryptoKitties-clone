@@ -1,6 +1,8 @@
 pragma solidity 0.5.12;
 
-contract Ownable{
+import "@openzeppelin/upgrades/contracts/Initializable.sol";
+
+contract Ownable is Initializable{
     address public owner;
 
     modifier onlyOwner(){
@@ -8,7 +10,7 @@ contract Ownable{
         _; //Continue execution
     }
 
-    constructor() public{
+    function initialize() public initializer {
         owner = msg.sender;
     }
 }

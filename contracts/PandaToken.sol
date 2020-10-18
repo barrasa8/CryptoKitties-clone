@@ -4,12 +4,14 @@ import "./Ownable.sol";
 import "./IERC721.sol";
 import "./PandaStorage.sol";
 
-contract PandaToken is IERC721, Ownable, PandaStorage{
+import "@openzeppelin/upgrades/contracts/Initializable.sol";
 
-    
-    constructor() public{
-        _TokenName= "CryptoPanda";
-        _TokenSymbol = "CP";
+contract PandaToken is Initializable, IERC721, Ownable, PandaStorage{
+
+    function initialize(string memory _tName, string memory _tSymbol) public initializer {
+        Ownable.initialize();
+        _TokenName= _tName;
+        _TokenSymbol = _tSymbol;
     }
 
     /**

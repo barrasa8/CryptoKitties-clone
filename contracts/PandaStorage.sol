@@ -1,6 +1,7 @@
 pragma solidity ^0.5.12;
 
 contract PandaStorage {
+    
     struct Panda{
         uint256 genes;
         uint64 birthTime;
@@ -17,6 +18,6 @@ contract PandaStorage {
     string  internal _TokenName;
     string internal _TokenSymbol;
 
-    uint8 internal constant CREATION_GEN_LIMIT = 100 ;
+    uint8 internal  CREATION_GEN_LIMIT ;
     
 }
