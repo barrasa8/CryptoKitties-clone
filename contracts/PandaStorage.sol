@@ -12,12 +12,14 @@ contract PandaStorage {
 
     Panda[] internal _pandas;
 
+    uint8 gen0Counter;
+
     //private variables
     mapping (address => uint256) internal _OwnerAnimalCount;
     mapping(uint256 => address) internal _PandaOwner;
-    string  internal _TokenName;
+    string  internal _TokenName ;
     string internal _TokenSymbol;
 
-    uint8 internal  CREATION_GEN_LIMIT ;
+    uint8 internal  CREATION_GEN_LIMIT = 100 ;
     
 }

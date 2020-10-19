@@ -10,7 +10,7 @@ contract Ownable is Initializable{
         _; //Continue execution
     }
 
-    function initialize() public initializer {
+    constructor() public  {
         owner = msg.sender;
     }
 }

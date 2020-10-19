@@ -1,33 +1,35 @@
 pragma solidity ^0.5.12;
-// import "./PandaStorage.sol";
+import "./PandaStorage.sol";
 import "./Ownable.sol";
 
-contract PandaProxy is Ownable{
+contract PandaProxy is Ownable , PandaStorage{
      
-    struct Panda{
-        uint256 genes;
-        uint64 birthTime;
-        uint32 mumId;
-        uint32 dadId;
-        uint16 generation;
-    }
+    // struct Panda{
+    //     uint256 genes;
+    //     uint64 birthTime;
+    //     uint32 mumId;
+    //     uint32 dadId;
+    //     uint16 generation;
+    // }
 
-    Panda[] internal _pandas;
+    // Panda[] internal _pandas;
 
-    //private variables
-    mapping (address => uint256) internal _OwnerAnimalCount;
-    mapping(uint256 => address) internal _PandaOwner;
-    string  internal _TokenName;
-    string internal _TokenSymbol;
+    // //private variables
+    // mapping (address => uint256) internal _OwnerAnimalCount;
+    // mapping(uint256 => address) internal _PandaOwner;
+    // string  internal _TokenName;
+    // string internal _TokenSymbol;
 
-    uint8 internal constant CREATION_GEN_LIMIT =100; 
+    // uint8 internal constant CREATION_GEN_LIMIT =100; 
      
      
     address currentAddress;
 
   constructor(address _currentAddress) public {
     currentAddress = _currentAddress;
-    Ownable.initialize();
+     _TokenName= "ProxyCryptoPanda";
+     _TokenSymbol = "CP";
+    // Ownable.initialize();
   }
   function upgrade(address _newAddress) public onlyOwner {
     currentAddress = _newAddress;
