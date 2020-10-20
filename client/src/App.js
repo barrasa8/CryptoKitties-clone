@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PandaContract from "./contracts/PandaContract.json";
+import PandaProxy from "./contracts/PandaProxy.json";
 import getWeb3 from "./getWeb3";
 
 
@@ -31,9 +32,9 @@ class App extends Component {
 
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = PandaContract.networks[networkId];
+      const deployedNetwork = PandaProxy.networks[networkId];//PandaContract.networks[networkId];
       const instance = new web3.eth.Contract(
-        PandaContract.abi,
+        PandaProxy.abi,//PandaContract.abi,
         deployedNetwork && deployedNetwork.address
       );
 

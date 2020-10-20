@@ -8,7 +8,7 @@ contract PandaProxy is Ownable , PandaStorage{
 
   constructor(address _currentAddress) public {
     currentAddress = _currentAddress;
-    _TokenName= "ProxyCryptoPanda";
+    _TokenName= "CryptoPanda";
     _TokenSymbol = "CP";
     Ownable.initialize();
   }
