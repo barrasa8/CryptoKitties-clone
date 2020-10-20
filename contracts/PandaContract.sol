@@ -10,17 +10,13 @@ contract PandaContract is Initializable , PandaToken {
     event Birth(address _owner,uint256 PandaId, uint256 mumId, uint256 dadId, uint256 genes); 
 
 
-    
-
-    constructor() public  {
-        // PandaToken.initialize("CryptoPanda","CP");
+    function initialize() public initializer{
+        PandaToken.initialize("CryptoPanda","CP");
         gen0Counter= 0;
     }
 
-    
-
     function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {
-        require( gen0Counter < CREATION_GEN_LIMIT,"Gen 0 Limit reached (10 _pandas limit)");
+        require( gen0Counter < CREATION_GEN_LIMIT,"Gen 0 Limit reached (10 pandas limit)");
         gen0Counter++;
         return _CreatePanda(0,0,_genes,0,owner);
     }

@@ -20,6 +20,6 @@ contract PandaStorage {
     string  internal _TokenName ;
     string internal _TokenSymbol;
 
-    uint8 internal  CREATION_GEN_LIMIT = 100 ;
+    uint8 internal  CREATION_GEN_LIMIT = 10 ;
     
 }

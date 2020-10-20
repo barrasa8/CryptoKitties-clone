@@ -8,10 +8,10 @@ import "@openzeppelin/upgrades/contracts/Initializable.sol";
 
 contract PandaToken is Initializable, IERC721, Ownable, PandaStorage{
 
-    constructor() public  {
-        // Ownable.initialize();
-        _TokenName= "CryptoPanda";
-        _TokenSymbol = "CP";
+    function initialize(string memory _tName, string memory _tSymbol) public initializer{
+        Ownable.initialize();
+        _TokenName= _tName;
+        _TokenSymbol = _tSymbol;
     }
 
     /**

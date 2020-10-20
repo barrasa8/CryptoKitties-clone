@@ -1,25 +1,25 @@
 {
   "contractName": "PandaStorage",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaStorage.sol\":\"PandaStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaStorage.sol\":{\"keccak256\":\"0xa84c903b4a4ca795b8a4c4ec89b1d7ff0b05524d154a492d7e15d2670fbebd3f\",\"urls\":[\"bzz-raw://6c0d4c003fa12d2996b74451daa6b008ff6d3cebe20c28b8325ff1b0f136511d\",\"dweb:/ipfs/QmQzcNk8i7cB3jDPYvJRdqAcqKTuc1znu8SfCuo11R92cc\"]}},\"version\":1}",
-  "bytecode": "0x60806040526064600660006101000a81548160ff021916908360ff160217905550348015602b57600080fd5b50603e8060396000396000f3fe6080604052600080fdfea265627a7a72315820460c245c20be3a894b9cafd0fd42f0e3dc3a2ca53961b0e73da585a00254935a64736f6c634300050c0032",
-  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820460c245c20be3a894b9cafd0fd42f0e3dc3a2ca53961b0e73da585a00254935a64736f6c634300050c0032",
-  "sourceMap": "26:490:5:-;;;504:3;467:40;;;;;;;;;;;;;;;;;;;;26:490;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:490:5;;;;;;;",
-  "deployedSourceMap": "26:490:5:-;;;;;",
-  "source": "pragma solidity ^0.5.12;\n\ncontract PandaStorage {\n    \n    struct Panda{\n        uint256 genes;\n        uint64 birthTime;\n        uint32 mumId;\n        uint32 dadId;\n        uint16 generation;\n    }\n\n    Panda[] internal _pandas;\n\n    uint8 gen0Counter;\n\n    //private variables\n    mapping (address => uint256) internal _OwnerAnimalCount;\n    mapping(uint256 => address) internal _PandaOwner;\n    string  internal _TokenName ;\n    string internal _TokenSymbol;\n\n    uint8 internal  CREATION_GEN_LIMIT = 100 ;\n    \n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaStorage.sol\":\"PandaStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaStorage.sol\":{\"keccak256\":\"0x2d0d47b32b1c064437544b56524e6b6d98aa8df5e7ad39d284d04749db46bdbb\",\"urls\":[\"bzz-raw://44c21e4dd1775de4d67ed31953024ae2770d9212eb311c209c6fc6459339546b\",\"dweb:/ipfs/QmSoF2D9RyaNFQthssi5ynDgfF2a5AyAP497msf4KWfGko\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600a600660006101000a81548160ff021916908360ff160217905550348015602b57600080fd5b50603e8060396000396000f3fe6080604052600080fdfea265627a7a723158201288410e87acbff185789b71265c55842c30e26856f09f36cda14caed7e2079764736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158201288410e87acbff185789b71265c55842c30e26856f09f36cda14caed7e2079764736f6c634300050c0032",
+  "sourceMap": "26:489:5:-;;;504:2;467:39;;;;;;;;;;;;;;;;;;;;26:489;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:489:5;;;;;;;",
+  "deployedSourceMap": "26:489:5:-;;;;;",
+  "source": "pragma solidity ^0.5.12;\n\ncontract PandaStorage {\n    \n    struct Panda{\n        uint256 genes;\n        uint64 birthTime;\n        uint32 mumId;\n        uint32 dadId;\n        uint16 generation;\n    }\n\n    Panda[] internal _pandas;\n\n    uint8 gen0Counter;\n\n    //private variables\n    mapping (address => uint256) internal _OwnerAnimalCount;\n    mapping(uint256 => address) internal _PandaOwner;\n    string  internal _TokenName ;\n    string internal _TokenSymbol;\n\n    uint8 internal  CREATION_GEN_LIMIT = 10 ;\n    \n}",
   "sourcePath": "/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaStorage.sol",
   "ast": {
     "absolutePath": "/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaStorage.sol",
     "exportedSymbols": {
       "PandaStorage": [
-        482
+        498
       ]
     },
-    "id": 483,
+    "id": 499,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 450,
+        "id": 466,
         "literals": [
           "solidity",
           "^",
@@ -35,23 +35,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 482,
+        "id": 498,
         "linearizedBaseContracts": [
-          482
+          498
         ],
         "name": "PandaStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "PandaStorage.Panda",
-            "id": 461,
+            "id": 477,
             "members": [
               {
                 "constant": false,
-                "id": 452,
+                "id": 468,
                 "name": "genes",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "81:13:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -60,7 +60,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 451,
+                  "id": 467,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "81:7:5",
@@ -74,10 +74,10 @@
               },
               {
                 "constant": false,
-                "id": 454,
+                "id": 470,
                 "name": "birthTime",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "104:16:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -86,7 +86,7 @@
                   "typeString": "uint64"
                 },
                 "typeName": {
-                  "id": 453,
+                  "id": 469,
                   "name": "uint64",
                   "nodeType": "ElementaryTypeName",
                   "src": "104:6:5",
@@ -100,10 +100,10 @@
               },
               {
                 "constant": false,
-                "id": 456,
+                "id": 472,
                 "name": "mumId",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "130:12:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -112,7 +112,7 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 455,
+                  "id": 471,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
                   "src": "130:6:5",
@@ -126,10 +126,10 @@
               },
               {
                 "constant": false,
-                "id": 458,
+                "id": 474,
                 "name": "dadId",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "152:12:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -138,7 +138,7 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 457,
+                  "id": 473,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
                   "src": "152:6:5",
@@ -152,10 +152,10 @@
               },
               {
                 "constant": false,
-                "id": 460,
+                "id": 476,
                 "name": "generation",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "174:17:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -164,7 +164,7 @@
                   "typeString": "uint16"
                 },
                 "typeName": {
-                  "id": 459,
+                  "id": 475,
                   "name": "uint16",
                   "nodeType": "ElementaryTypeName",
                   "src": "174:6:5",
@@ -179,42 +179,42 @@
             ],
             "name": "Panda",
             "nodeType": "StructDefinition",
-            "scope": 482,
+            "scope": 498,
             "src": "59:139:5",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 464,
+            "id": 480,
             "name": "_pandas",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "204:24:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Panda_$461_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
               "typeString": "struct PandaStorage.Panda[]"
             },
             "typeName": {
               "baseType": {
                 "contractScope": null,
-                "id": 462,
+                "id": 478,
                 "name": "Panda",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 461,
+                "referencedDeclaration": 477,
                 "src": "204:5:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Panda_$461_storage_ptr",
+                  "typeIdentifier": "t_struct$_Panda_$477_storage_ptr",
                   "typeString": "struct PandaStorage.Panda"
                 }
               },
-              "id": 463,
+              "id": 479,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "204:7:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Panda_$461_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage_ptr",
                 "typeString": "struct PandaStorage.Panda[]"
               }
             },
@@ -223,10 +223,10 @@
           },
           {
             "constant": false,
-            "id": 466,
+            "id": 482,
             "name": "gen0Counter",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "235:17:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -235,7 +235,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 465,
+              "id": 481,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "235:5:5",
@@ -249,10 +249,10 @@
           },
           {
             "constant": false,
-            "id": 470,
+            "id": 486,
             "name": "_OwnerAnimalCount",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "283:55:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -261,9 +261,9 @@
               "typeString": "mapping(address => uint256)"
             },
             "typeName": {
-              "id": 469,
+              "id": 485,
               "keyType": {
-                "id": 467,
+                "id": 483,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "292:7:5",
@@ -279,7 +279,7 @@
                 "typeString": "mapping(address => uint256)"
               },
               "valueType": {
-                "id": 468,
+                "id": 484,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "303:7:5",
@@ -294,10 +294,10 @@
           },
           {
             "constant": false,
-            "id": 474,
+            "id": 490,
             "name": "_PandaOwner",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "344:48:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -306,9 +306,9 @@
               "typeString": "mapping(uint256 => address)"
             },
             "typeName": {
-              "id": 473,
+              "id": 489,
               "keyType": {
-                "id": 471,
+                "id": 487,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "352:7:5",
@@ -324,7 +324,7 @@
                 "typeString": "mapping(uint256 => address)"
               },
               "valueType": {
-                "id": 472,
+                "id": 488,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "363:7:5",
@@ -340,10 +340,10 @@
           },
           {
             "constant": false,
-            "id": 476,
+            "id": 492,
             "name": "_TokenName",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "398:27:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -352,7 +352,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 475,
+              "id": 491,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "398:6:5",
@@ -366,10 +366,10 @@
           },
           {
             "constant": false,
-            "id": 478,
+            "id": 494,
             "name": "_TokenSymbol",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "432:28:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -378,7 +378,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 477,
+              "id": 493,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "432:6:5",
@@ -392,11 +392,11 @@
           },
           {
             "constant": false,
-            "id": 481,
+            "id": 497,
             "name": "CREATION_GEN_LIMIT",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
-            "src": "467:40:5",
+            "scope": 498,
+            "src": "467:39:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -404,7 +404,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 479,
+              "id": 495,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "467:5:5",
@@ -415,43 +415,43 @@
             },
             "value": {
               "argumentTypes": null,
-              "hexValue": "313030",
-              "id": 480,
+              "hexValue": "3130",
+              "id": 496,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "504:3:5",
+              "src": "504:2:5",
               "subdenomination": null,
               "typeDescriptions": {
-                "typeIdentifier": "t_rational_100_by_1",
-                "typeString": "int_const 100"
+                "typeIdentifier": "t_rational_10_by_1",
+                "typeString": "int_const 10"
               },
-              "value": "100"
+              "value": "10"
             },
             "visibility": "internal"
           }
         ],
-        "scope": 483,
-        "src": "26:490:5"
+        "scope": 499,
+        "src": "26:489:5"
       }
     ],
-    "src": "0:516:5"
+    "src": "0:515:5"
   },
   "legacyAST": {
     "absolutePath": "/home/ismael/Documents/Blockchain Bootcamp/GIT/CryptoKitties-clone/contracts/PandaStorage.sol",
     "exportedSymbols": {
       "PandaStorage": [
-        482
+        498
       ]
     },
-    "id": 483,
+    "id": 499,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 450,
+        "id": 466,
         "literals": [
           "solidity",
           "^",
@@ -467,23 +467,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 482,
+        "id": 498,
         "linearizedBaseContracts": [
-          482
+          498
         ],
         "name": "PandaStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "PandaStorage.Panda",
-            "id": 461,
+            "id": 477,
             "members": [
               {
                 "constant": false,
-                "id": 452,
+                "id": 468,
                 "name": "genes",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "81:13:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -492,7 +492,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 451,
+                  "id": 467,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "81:7:5",
@@ -506,10 +506,10 @@
               },
               {
                 "constant": false,
-                "id": 454,
+                "id": 470,
                 "name": "birthTime",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "104:16:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -518,7 +518,7 @@
                   "typeString": "uint64"
                 },
                 "typeName": {
-                  "id": 453,
+                  "id": 469,
                   "name": "uint64",
                   "nodeType": "ElementaryTypeName",
                   "src": "104:6:5",
@@ -532,10 +532,10 @@
               },
               {
                 "constant": false,
-                "id": 456,
+                "id": 472,
                 "name": "mumId",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "130:12:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -544,7 +544,7 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 455,
+                  "id": 471,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
                   "src": "130:6:5",
@@ -558,10 +558,10 @@
               },
               {
                 "constant": false,
-                "id": 458,
+                "id": 474,
                 "name": "dadId",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "152:12:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -570,7 +570,7 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 457,
+                  "id": 473,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
                   "src": "152:6:5",
@@ -584,10 +584,10 @@
               },
               {
                 "constant": false,
-                "id": 460,
+                "id": 476,
                 "name": "generation",
                 "nodeType": "VariableDeclaration",
-                "scope": 461,
+                "scope": 477,
                 "src": "174:17:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -596,7 +596,7 @@
                   "typeString": "uint16"
                 },
                 "typeName": {
-                  "id": 459,
+                  "id": 475,
                   "name": "uint16",
                   "nodeType": "ElementaryTypeName",
                   "src": "174:6:5",
@@ -611,42 +611,42 @@
             ],
             "name": "Panda",
             "nodeType": "StructDefinition",
-            "scope": 482,
+            "scope": 498,
             "src": "59:139:5",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 464,
+            "id": 480,
             "name": "_pandas",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "204:24:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Panda_$461_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
               "typeString": "struct PandaStorage.Panda[]"
             },
             "typeName": {
               "baseType": {
                 "contractScope": null,
-                "id": 462,
+                "id": 478,
                 "name": "Panda",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 461,
+                "referencedDeclaration": 477,
                 "src": "204:5:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Panda_$461_storage_ptr",
+                  "typeIdentifier": "t_struct$_Panda_$477_storage_ptr",
                   "typeString": "struct PandaStorage.Panda"
                 }
               },
-              "id": 463,
+              "id": 479,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "204:7:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Panda_$461_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage_ptr",
                 "typeString": "struct PandaStorage.Panda[]"
               }
             },
@@ -655,10 +655,10 @@
           },
           {
             "constant": false,
-            "id": 466,
+            "id": 482,
             "name": "gen0Counter",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "235:17:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -667,7 +667,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 465,
+              "id": 481,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "235:5:5",
@@ -681,10 +681,10 @@
           },
           {
             "constant": false,
-            "id": 470,
+            "id": 486,
             "name": "_OwnerAnimalCount",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "283:55:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -693,9 +693,9 @@
               "typeString": "mapping(address => uint256)"
             },
             "typeName": {
-              "id": 469,
+              "id": 485,
               "keyType": {
-                "id": 467,
+                "id": 483,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "292:7:5",
@@ -711,7 +711,7 @@
                 "typeString": "mapping(address => uint256)"
               },
               "valueType": {
-                "id": 468,
+                "id": 484,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "303:7:5",
@@ -726,10 +726,10 @@
           },
           {
             "constant": false,
-            "id": 474,
+            "id": 490,
             "name": "_PandaOwner",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "344:48:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -738,9 +738,9 @@
               "typeString": "mapping(uint256 => address)"
             },
             "typeName": {
-              "id": 473,
+              "id": 489,
               "keyType": {
-                "id": 471,
+                "id": 487,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "352:7:5",
@@ -756,7 +756,7 @@
                 "typeString": "mapping(uint256 => address)"
               },
               "valueType": {
-                "id": 472,
+                "id": 488,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "363:7:5",
@@ -772,10 +772,10 @@
           },
           {
             "constant": false,
-            "id": 476,
+            "id": 492,
             "name": "_TokenName",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "398:27:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -784,7 +784,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 475,
+              "id": 491,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "398:6:5",
@@ -798,10 +798,10 @@
           },
           {
             "constant": false,
-            "id": 478,
+            "id": 494,
             "name": "_TokenSymbol",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
+            "scope": 498,
             "src": "432:28:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -810,7 +810,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 477,
+              "id": 493,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "432:6:5",
@@ -824,11 +824,11 @@
           },
           {
             "constant": false,
-            "id": 481,
+            "id": 497,
             "name": "CREATION_GEN_LIMIT",
             "nodeType": "VariableDeclaration",
-            "scope": 482,
-            "src": "467:40:5",
+            "scope": 498,
+            "src": "467:39:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -836,7 +836,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 479,
+              "id": 495,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "467:5:5",
@@ -847,30 +847,30 @@
             },
             "value": {
               "argumentTypes": null,
-              "hexValue": "313030",
-              "id": 480,
+              "hexValue": "3130",
+              "id": 496,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "504:3:5",
+              "src": "504:2:5",
               "subdenomination": null,
               "typeDescriptions": {
-                "typeIdentifier": "t_rational_100_by_1",
-                "typeString": "int_const 100"
+                "typeIdentifier": "t_rational_10_by_1",
+                "typeString": "int_const 10"
               },
-              "value": "100"
+              "value": "10"
             },
             "visibility": "internal"
           }
         ],
-        "scope": 483,
-        "src": "26:490:5"
+        "scope": 499,
+        "src": "26:489:5"
       }
     ],
-    "src": "0:516:5"
+    "src": "0:515:5"
   },
   "compiler": {
     "name": "solc",
@@ -878,7 +878,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-10-19T13:05:51.365Z",
+  "updatedAt": "2020-10-20T11:17:51.674Z",
   "devdoc": {
     "methods": {}
   },

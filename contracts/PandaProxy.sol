@@ -4,32 +4,13 @@ import "./Ownable.sol";
 
 contract PandaProxy is Ownable , PandaStorage{
      
-    // struct Panda{
-    //     uint256 genes;
-    //     uint64 birthTime;
-    //     uint32 mumId;
-    //     uint32 dadId;
-    //     uint16 generation;
-    // }
-
-    // Panda[] internal _pandas;
-
-    // //private variables
-    // mapping (address => uint256) internal _OwnerAnimalCount;
-    // mapping(uint256 => address) internal _PandaOwner;
-    // string  internal _TokenName;
-    // string internal _TokenSymbol;
-
-    // uint8 internal constant CREATION_GEN_LIMIT =100; 
-     
-     
-    address currentAddress;
+  address currentAddress;
 
   constructor(address _currentAddress) public {
     currentAddress = _currentAddress;
-     _TokenName= "ProxyCryptoPanda";
-     _TokenSymbol = "CP";
-    // Ownable.initialize();
+    _TokenName= "ProxyCryptoPanda";
+    _TokenSymbol = "CP";
+    Ownable.initialize();
   }
   function upgrade(address _newAddress) public onlyOwner {
     currentAddress = _newAddress;
