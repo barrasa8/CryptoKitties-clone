@@ -34,7 +34,7 @@ class App extends Component {
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = PandaProxy.networks[networkId];//PandaContract.networks[networkId];
       const instance = new web3.eth.Contract(
-        PandaProxy.abi,//PandaContract.abi,
+        PandaContract.abi,
         deployedNetwork && deployedNetwork.address
       );
 

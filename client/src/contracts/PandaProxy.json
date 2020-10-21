@@ -1743,14 +1743,77 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "approved",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        },
+        "0x0a5311bd2a6608f08a180df2ee7c5946819a649b204b554bb8e39825b2c50ad5": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "PandaId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "mumId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "dadId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "genes",
+              "type": "uint256"
+            }
+          ],
+          "name": "Birth",
+          "type": "event"
+        }
+      },
       "links": {},
       "address": "0x4e5c374d8cbe272b16a58904F471180f71338c7e",
       "transactionHash": "0x3bf0203ddb0f8bd0dd5db6000a819426147d1956523a4acba79539856d96ef1a"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-10-20T11:55:39.494Z",
+  "updatedAt": "2020-10-21T11:15:34.111Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
