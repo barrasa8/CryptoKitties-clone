@@ -111,9 +111,6 @@ class PandaSettings extends Component {
     })
     );
 
- 
-
-
   setDefaultPandaDna = () => {
     this.setState({
       dna: defaultDna.dna,
@@ -190,7 +187,7 @@ class PandaSettings extends Component {
                 Random Panda
               </button>
           {/* </Col> */}
-          <Col md={{ span: 2, offset: 2 }}>
+          <Col md={{ span: 2, offset: 3 }}>
           <button
               type="button"
               className="btn btn-danger"
