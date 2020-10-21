@@ -13,9 +13,7 @@ const animations = allAnimations()
 
 
 class PandaCard extends Component {
-    constructor(props) {
-        super(props);
-      }
+    
     render() { 
         return ( 
             <div className="pandaBox">

@@ -61,7 +61,7 @@ class App extends Component {
           <h1 className="c-black">Pandas-Factory</h1>
           <p className="c-black">Create your custom Panda</p>
           <br />
-          <h4 id="panda-created-message"></h4>
+          <h4 id="panda-created-message"> </h4>
         </div>
           <PandaSettings contract ={this.state.contract} accounts={this.state.accounts}/>
       </div>

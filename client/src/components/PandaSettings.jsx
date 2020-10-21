@@ -171,28 +171,25 @@ class PandaSettings extends Component {
           />
         </Row>
         <br />
-        <Row>
-          <Col md={{ span: 2 ,offset:2}}>
+        <Row className="justify-content-md-center">
             <button
               type="button"
-              className="btn btn-success"
+              className="btn btn-success m-1"
               id="default-panda-button"
               onClick={this.setDefaultPandaDna}
             >
               Default Panda
             </button>
 
-          </Col>
-          <Col md={{ span: 2 }}>
             <button
                 type="button"
-                className="btn btn-success"
+                className="btn btn-success m-1"
                 id="random-panda-button"
                 onClick={this.randomPanda}
               >
                 Random Panda
               </button>
-          </Col>
+          {/* </Col> */}
           <Col md={{ span: 2, offset: 2 }}>
           <button
               type="button"

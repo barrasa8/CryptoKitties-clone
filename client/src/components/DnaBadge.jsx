@@ -3,10 +3,6 @@ import "../assets/css/DnaBadge.css";
 
 class DnaBadge extends Component {
 
-    constructor(props) {
-        super(props);
-      }
-
   render() {
     return (
       <div className="dnaDiv" id="catDNA">

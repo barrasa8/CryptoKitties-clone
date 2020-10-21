@@ -3,9 +3,6 @@ import { Tab, Nav } from "react-bootstrap";
 import "../assets/css/PandaAttributes.css";
 
 class PandaAttributes extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   HandleSliderChange = ({ target }) => {
     this.props.SliderChange(target.name, target.value);
