@@ -3,7 +3,7 @@ import "./PandaStorage.sol";
 import "./Ownable.sol";
 
 contract PandaProxy is Ownable , PandaStorage{
-     
+
   address currentAddress;
 
   constructor(address _currentAddress) public {

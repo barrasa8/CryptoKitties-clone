@@ -357,7 +357,7 @@
         "id": 120,
         "nodeType": "ImportDirective",
         "scope": 397,
-        "sourceUnit": 679,
+        "sourceUnit": 699,
         "src": "26:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -368,7 +368,7 @@
         "id": 121,
         "nodeType": "ImportDirective",
         "scope": 397,
-        "sourceUnit": 935,
+        "sourceUnit": 955,
         "src": "54:60:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -382,10 +382,10 @@
               "id": 122,
               "name": "Initializable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 934,
+              "referencedDeclaration": 954,
               "src": "142:13:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Initializable_$934",
+                "typeIdentifier": "t_contract$_Initializable_$954",
                 "typeString": "contract Initializable"
               }
             },
@@ -400,10 +400,10 @@
               "id": 124,
               "name": "PandaToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 678,
+              "referencedDeclaration": 698,
               "src": "158:10:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_PandaToken_$678",
+                "typeIdentifier": "t_contract$_PandaToken_$698",
                 "typeString": "contract PandaToken"
               }
             },
@@ -415,9 +415,9 @@
         "contractDependencies": [
           54,
           117,
-          498,
-          678,
-          934
+          518,
+          698,
+          954
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -425,11 +425,11 @@
         "id": 396,
         "linearizedBaseContracts": [
           396,
-          678,
-          498,
+          698,
+          518,
           117,
           54,
-          934
+          954
         ],
         "name": "PandaContract",
         "nodeType": "ContractDefinition",
@@ -747,10 +747,10 @@
                         "name": "PandaToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 678,
+                        "referencedDeclaration": 698,
                         "src": "417:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_PandaToken_$678_$",
+                          "typeIdentifier": "t_type$_t_contract$_PandaToken_$698_$",
                           "typeString": "type(contract PandaToken)"
                         }
                       },
@@ -761,7 +761,7 @@
                       "lValueRequested": false,
                       "memberName": "initialize",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 535,
+                      "referencedDeclaration": 555,
                       "src": "417:21:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
@@ -800,7 +800,7 @@
                       "name": "gen0Counter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 482,
+                      "referencedDeclaration": 502,
                       "src": "468:11:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -853,7 +853,7 @@
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 909,
+                  "referencedDeclaration": 929,
                   "src": "396:11:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -911,7 +911,7 @@
                           "name": "gen0Counter",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 482,
+                          "referencedDeclaration": 502,
                           "src": "590:11:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint8",
@@ -926,7 +926,7 @@
                           "name": "CREATION_GEN_LIMIT",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 497,
+                          "referencedDeclaration": 517,
                           "src": "604:18:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint8",
@@ -973,10 +973,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        952,
-                        953
+                        972,
+                        973
                       ],
-                      "referencedDeclaration": 953,
+                      "referencedDeclaration": 973,
                       "src": "581:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1019,7 +1019,7 @@
                       "name": "gen0Counter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 482,
+                      "referencedDeclaration": 502,
                       "src": "673:11:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -1295,7 +1295,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Panda_$477_memory_ptr",
+                        "typeIdentifier": "t_struct$_Panda_$497_memory_ptr",
                         "typeString": "struct PandaStorage.Panda"
                       },
                       "typeName": {
@@ -1303,10 +1303,10 @@
                         "id": 205,
                         "name": "Panda",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 477,
+                        "referencedDeclaration": 497,
                         "src": "883:5:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage_ptr",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage_ptr",
                           "typeString": "struct PandaStorage.Panda"
                         }
                       },
@@ -1340,7 +1340,7 @@
                             "name": "now",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 951,
+                            "referencedDeclaration": 971,
                             "src": "969:3:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -1563,10 +1563,10 @@
                       "name": "Panda",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 477,
+                      "referencedDeclaration": 497,
                       "src": "905:5:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_Panda_$477_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_Panda_$497_storage_ptr_$",
                         "typeString": "type(struct PandaStorage.Panda storage pointer)"
                       }
                     },
@@ -1586,7 +1586,7 @@
                     "nodeType": "FunctionCall",
                     "src": "905:191:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Panda_$477_memory",
+                      "typeIdentifier": "t_struct$_Panda_$497_memory",
                       "typeString": "struct PandaStorage.Panda memory"
                     }
                   },
@@ -1649,7 +1649,7 @@
                           "referencedDeclaration": 206,
                           "src": "1141:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Panda_$477_memory_ptr",
+                            "typeIdentifier": "t_struct$_Panda_$497_memory_ptr",
                             "typeString": "struct PandaStorage.Panda memory"
                           }
                         }
@@ -1657,7 +1657,7 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_struct$_Panda_$477_memory_ptr",
+                            "typeIdentifier": "t_struct$_Panda_$497_memory_ptr",
                             "typeString": "struct PandaStorage.Panda memory"
                           }
                         ],
@@ -1667,10 +1667,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1128:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -1684,7 +1684,7 @@
                         "referencedDeclaration": null,
                         "src": "1128:12:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Panda_$477_storage_$returns$_t_uint256_$",
+                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Panda_$497_storage_$returns$_t_uint256_$",
                           "typeString": "function (struct PandaStorage.Panda storage ref) returns (uint256)"
                         }
                       },
@@ -1837,7 +1837,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 677,
+                      "referencedDeclaration": 697,
                       "src": "1161:9:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -2218,10 +2218,10 @@
                             "name": "_pandas",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 480,
+                            "referencedDeclaration": 500,
                             "src": "1462:7:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                               "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                             }
                           },
@@ -2272,10 +2272,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        952,
-                        953
+                        972,
+                        973
                       ],
-                      "referencedDeclaration": 952,
+                      "referencedDeclaration": 972,
                       "src": "1454:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2333,10 +2333,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1511:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -2361,7 +2361,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1511:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -2372,7 +2372,7 @@
                       "lValueRequested": false,
                       "memberName": "genes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 468,
+                      "referencedDeclaration": 488,
                       "src": "1511:22:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2422,10 +2422,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1556:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -2450,7 +2450,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1556:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -2461,7 +2461,7 @@
                       "lValueRequested": false,
                       "memberName": "birthTime",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 470,
+                      "referencedDeclaration": 490,
                       "src": "1556:26:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint64",
@@ -2511,10 +2511,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1605:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -2539,7 +2539,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1605:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -2550,7 +2550,7 @@
                       "lValueRequested": false,
                       "memberName": "mumId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 472,
+                      "referencedDeclaration": 492,
                       "src": "1605:22:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint32",
@@ -2600,10 +2600,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1650:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -2628,7 +2628,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1650:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -2639,7 +2639,7 @@
                       "lValueRequested": false,
                       "memberName": "dadId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 474,
+                      "referencedDeclaration": 494,
                       "src": "1650:22:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint32",
@@ -2689,10 +2689,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1695:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -2717,7 +2717,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1695:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -2728,7 +2728,7 @@
                       "lValueRequested": false,
                       "memberName": "generation",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 476,
+                      "referencedDeclaration": 496,
                       "src": "1695:27:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint16",
@@ -3085,7 +3085,7 @@
                       "name": "balanceOf",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 555,
+                      "referencedDeclaration": 575,
                       "src": "1924:9:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
@@ -3323,7 +3323,7 @@
                             "name": "totalSupply",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 564,
+                            "referencedDeclaration": 584,
                             "src": "2155:11:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
@@ -3464,7 +3464,7 @@
                                     "name": "_PandaOwner",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 490,
+                                    "referencedDeclaration": 510,
                                     "src": "2320:11:3",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
@@ -4011,7 +4011,7 @@
         "id": 120,
         "nodeType": "ImportDirective",
         "scope": 397,
-        "sourceUnit": 679,
+        "sourceUnit": 699,
         "src": "26:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -4022,7 +4022,7 @@
         "id": 121,
         "nodeType": "ImportDirective",
         "scope": 397,
-        "sourceUnit": 935,
+        "sourceUnit": 955,
         "src": "54:60:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -4036,10 +4036,10 @@
               "id": 122,
               "name": "Initializable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 934,
+              "referencedDeclaration": 954,
               "src": "142:13:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Initializable_$934",
+                "typeIdentifier": "t_contract$_Initializable_$954",
                 "typeString": "contract Initializable"
               }
             },
@@ -4054,10 +4054,10 @@
               "id": 124,
               "name": "PandaToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 678,
+              "referencedDeclaration": 698,
               "src": "158:10:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_PandaToken_$678",
+                "typeIdentifier": "t_contract$_PandaToken_$698",
                 "typeString": "contract PandaToken"
               }
             },
@@ -4069,9 +4069,9 @@
         "contractDependencies": [
           54,
           117,
-          498,
-          678,
-          934
+          518,
+          698,
+          954
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -4079,11 +4079,11 @@
         "id": 396,
         "linearizedBaseContracts": [
           396,
-          678,
-          498,
+          698,
+          518,
           117,
           54,
-          934
+          954
         ],
         "name": "PandaContract",
         "nodeType": "ContractDefinition",
@@ -4401,10 +4401,10 @@
                         "name": "PandaToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 678,
+                        "referencedDeclaration": 698,
                         "src": "417:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_PandaToken_$678_$",
+                          "typeIdentifier": "t_type$_t_contract$_PandaToken_$698_$",
                           "typeString": "type(contract PandaToken)"
                         }
                       },
@@ -4415,7 +4415,7 @@
                       "lValueRequested": false,
                       "memberName": "initialize",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 535,
+                      "referencedDeclaration": 555,
                       "src": "417:21:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
@@ -4454,7 +4454,7 @@
                       "name": "gen0Counter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 482,
+                      "referencedDeclaration": 502,
                       "src": "468:11:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -4507,7 +4507,7 @@
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 909,
+                  "referencedDeclaration": 929,
                   "src": "396:11:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4565,7 +4565,7 @@
                           "name": "gen0Counter",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 482,
+                          "referencedDeclaration": 502,
                           "src": "590:11:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint8",
@@ -4580,7 +4580,7 @@
                           "name": "CREATION_GEN_LIMIT",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 497,
+                          "referencedDeclaration": 517,
                           "src": "604:18:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint8",
@@ -4627,10 +4627,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        952,
-                        953
+                        972,
+                        973
                       ],
-                      "referencedDeclaration": 953,
+                      "referencedDeclaration": 973,
                       "src": "581:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4673,7 +4673,7 @@
                       "name": "gen0Counter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 482,
+                      "referencedDeclaration": 502,
                       "src": "673:11:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -4949,7 +4949,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Panda_$477_memory_ptr",
+                        "typeIdentifier": "t_struct$_Panda_$497_memory_ptr",
                         "typeString": "struct PandaStorage.Panda"
                       },
                       "typeName": {
@@ -4957,10 +4957,10 @@
                         "id": 205,
                         "name": "Panda",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 477,
+                        "referencedDeclaration": 497,
                         "src": "883:5:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage_ptr",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage_ptr",
                           "typeString": "struct PandaStorage.Panda"
                         }
                       },
@@ -4994,7 +4994,7 @@
                             "name": "now",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 951,
+                            "referencedDeclaration": 971,
                             "src": "969:3:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -5217,10 +5217,10 @@
                       "name": "Panda",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 477,
+                      "referencedDeclaration": 497,
                       "src": "905:5:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_Panda_$477_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_Panda_$497_storage_ptr_$",
                         "typeString": "type(struct PandaStorage.Panda storage pointer)"
                       }
                     },
@@ -5240,7 +5240,7 @@
                     "nodeType": "FunctionCall",
                     "src": "905:191:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Panda_$477_memory",
+                      "typeIdentifier": "t_struct$_Panda_$497_memory",
                       "typeString": "struct PandaStorage.Panda memory"
                     }
                   },
@@ -5303,7 +5303,7 @@
                           "referencedDeclaration": 206,
                           "src": "1141:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Panda_$477_memory_ptr",
+                            "typeIdentifier": "t_struct$_Panda_$497_memory_ptr",
                             "typeString": "struct PandaStorage.Panda memory"
                           }
                         }
@@ -5311,7 +5311,7 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_struct$_Panda_$477_memory_ptr",
+                            "typeIdentifier": "t_struct$_Panda_$497_memory_ptr",
                             "typeString": "struct PandaStorage.Panda memory"
                           }
                         ],
@@ -5321,10 +5321,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1128:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -5338,7 +5338,7 @@
                         "referencedDeclaration": null,
                         "src": "1128:12:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Panda_$477_storage_$returns$_t_uint256_$",
+                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Panda_$497_storage_$returns$_t_uint256_$",
                           "typeString": "function (struct PandaStorage.Panda storage ref) returns (uint256)"
                         }
                       },
@@ -5491,7 +5491,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 677,
+                      "referencedDeclaration": 697,
                       "src": "1161:9:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -5872,10 +5872,10 @@
                             "name": "_pandas",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 480,
+                            "referencedDeclaration": 500,
                             "src": "1462:7:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                               "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                             }
                           },
@@ -5926,10 +5926,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        952,
-                        953
+                        972,
+                        973
                       ],
-                      "referencedDeclaration": 952,
+                      "referencedDeclaration": 972,
                       "src": "1454:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5987,10 +5987,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1511:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -6015,7 +6015,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1511:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -6026,7 +6026,7 @@
                       "lValueRequested": false,
                       "memberName": "genes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 468,
+                      "referencedDeclaration": 488,
                       "src": "1511:22:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -6076,10 +6076,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1556:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -6104,7 +6104,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1556:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -6115,7 +6115,7 @@
                       "lValueRequested": false,
                       "memberName": "birthTime",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 470,
+                      "referencedDeclaration": 490,
                       "src": "1556:26:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint64",
@@ -6165,10 +6165,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1605:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -6193,7 +6193,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1605:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -6204,7 +6204,7 @@
                       "lValueRequested": false,
                       "memberName": "mumId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 472,
+                      "referencedDeclaration": 492,
                       "src": "1605:22:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint32",
@@ -6254,10 +6254,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1650:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -6282,7 +6282,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1650:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -6293,7 +6293,7 @@
                       "lValueRequested": false,
                       "memberName": "dadId",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 474,
+                      "referencedDeclaration": 494,
                       "src": "1650:22:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint32",
@@ -6343,10 +6343,10 @@
                           "name": "_pandas",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 480,
+                          "referencedDeclaration": 500,
                           "src": "1695:7:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Panda_$477_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Panda_$497_storage_$dyn_storage",
                             "typeString": "struct PandaStorage.Panda storage ref[] storage ref"
                           }
                         },
@@ -6371,7 +6371,7 @@
                         "nodeType": "IndexAccess",
                         "src": "1695:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Panda_$477_storage",
+                          "typeIdentifier": "t_struct$_Panda_$497_storage",
                           "typeString": "struct PandaStorage.Panda storage ref"
                         }
                       },
@@ -6382,7 +6382,7 @@
                       "lValueRequested": false,
                       "memberName": "generation",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 476,
+                      "referencedDeclaration": 496,
                       "src": "1695:27:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint16",
@@ -6739,7 +6739,7 @@
                       "name": "balanceOf",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 555,
+                      "referencedDeclaration": 575,
                       "src": "1924:9:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
@@ -6977,7 +6977,7 @@
                             "name": "totalSupply",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 564,
+                            "referencedDeclaration": 584,
                             "src": "2155:11:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
@@ -7118,7 +7118,7 @@
                                     "name": "_PandaOwner",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 490,
+                                    "referencedDeclaration": 510,
                                     "src": "2320:11:3",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
@@ -7739,7 +7739,7 @@
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-10-21T11:15:34.106Z",
+  "updatedAt": "2020-10-22T10:54:13.297Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {

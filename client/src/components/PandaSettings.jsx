@@ -63,7 +63,8 @@ class PandaSettings extends Component {
   }
 
   componentDidMount(){
-    this.eventBirth()
+    this.eventBirth();
+    console.log("Component did mount");
   }
 
   getDna = ()=>{
@@ -87,6 +88,7 @@ class PandaSettings extends Component {
     if(error){
         console.log(error)
     }else{
+      console.log("inside the birth event");
         this.setState((prevState) => ({
           BirthEvent: {
             ...prevState.BirthEvent,
@@ -106,7 +108,7 @@ class PandaSettings extends Component {
         if(error){
           console.log(error)
         }else{
-            console.log(txHash)   
+            console.log(txHash)  
         }
     })
     );
@@ -154,7 +156,7 @@ class PandaSettings extends Component {
         <h5 id="panda-created-message">
               {this.state.BirthEvent.genes>0 ? 
               "Your Panda is Alive: Owner:"+this.state.BirthEvent.owner+", PandaID:"+this.state.BirthEvent.PandaId+" , Genes:"+this.state.BirthEvent.genes 
-              :""}
+              :"No birth event captured"}
         </h5>
         </Row>
         <Row className="justify-content-md-center">
