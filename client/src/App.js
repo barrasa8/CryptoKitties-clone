@@ -5,8 +5,10 @@ import getWeb3 from "./getWeb3";
 
 
 import PandaSettings from "./components/PandaSettings";
+import Header from "./components/Header";
 
 import "./App.css";
+import PandaGallery from "./components/PandaGallery";
 
 
 class App extends Component {
@@ -57,13 +59,9 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <div align="center">
-          <h1 className="c-black">Pandas-Factory</h1>
-          <p className="c-black">Create your custom Panda</p>
-          <br />
-          <h4 id="panda-created-message"> </h4>
-        </div>
-          <PandaSettings contract ={this.state.contract} accounts={this.state.accounts}/>
+        <Header/>
+        {/* <PandaSettings contract ={this.state.contract} accounts={this.state.accounts}/> */}
+        <PandaGallery></PandaGallery>
       </div>
     );
   }
