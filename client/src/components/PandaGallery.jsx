@@ -5,6 +5,7 @@ import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import PandaCard from './PandaCard';
 
+
 class PandaGallery extends Component {
     constructor() {
         super();
@@ -21,9 +22,27 @@ class PandaGallery extends Component {
             decorationSidescolor: 8,
             animation: 1,
             lastNum: 9,
-          }
+          },
+          pandaList:[]
         };
       }
+
+    getPandaOfOwner = async ()=>{
+      const result =  await this.props.contract.methods
+      ._pandasOfOwner(this.props.accounts[0]);
+
+      return result;
+    }
+    
+    componentDidMount(){
+      this.setState((prevState) => ({
+        pandaList: [1,2,5]//this.getPandaOfOwner()
+      }));
+
+      const x =   this.getPandaOfOwner();
+
+      console.log ("this is the result of getPandaOfOwner-->" + x);
+    }
 
     render() { 
         return ( 

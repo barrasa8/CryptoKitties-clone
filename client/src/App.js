@@ -61,7 +61,7 @@ class App extends Component {
       <div className="App">
         <Header/>
         {/* <PandaSettings contract ={this.state.contract} accounts={this.state.accounts}/> */}
-        <PandaGallery></PandaGallery>
+        <PandaGallery contract ={this.state.contract} accounts={this.state.accounts}></PandaGallery>
       </div>
     );
   }
