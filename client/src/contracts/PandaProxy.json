@@ -1808,12 +1808,12 @@
         }
       },
       "links": {},
-      "address": "0x4e5c374d8cbe272b16a58904F471180f71338c7e",
+      "address": "0xa490f52a2fa94ecf1b0e17b99b51aba2966ab8c9",
       "transactionHash": "0x3bf0203ddb0f8bd0dd5db6000a819426147d1956523a4acba79539856d96ef1a"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-10-25T10:55:12.276Z",
+  "updatedAt": "2020-10-26T11:29:34.001Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

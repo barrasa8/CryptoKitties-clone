@@ -62,7 +62,6 @@ class PandaSettings extends Component {
 
   componentDidMount() {
     this.eventBirth();
-    console.log("Component did mount");
   }
 
   getDna = () => {
@@ -82,13 +81,10 @@ class PandaSettings extends Component {
   };
 
   eventBirth = () => {
-    console.log("in the eventlistener function");
-
     this.props.contract.events.Birth({}, (error, event) => {
       if (error) {
         console.log(error);
       } else {
-        console.log("inside the birth event");
         this.setState((prevState) => ({
           BirthEvent: {
             ...prevState.BirthEvent,
@@ -112,7 +108,7 @@ class PandaSettings extends Component {
         } else {
           console.log(txHash);
         }
-      });
+      });  
 
   setDefaultPandaDna = () => {
     this.setState({
@@ -170,7 +166,7 @@ class PandaSettings extends Component {
                 this.state.BirthEvent.PandaId +
                 " , Genes:" +
                 this.state.BirthEvent.genes
-              : "No birth event captured"}
+              : ""}
           </h5>
         </Row>
         <Row className="justify-content-md-center">

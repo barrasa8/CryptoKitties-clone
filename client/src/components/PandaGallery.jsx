@@ -34,14 +34,14 @@ class PandaGallery extends Component {
       return result;
     }
     
-    componentDidMount(){
-      this.setState((prevState) => ({
-        pandaList: [1,2,5]//this.getPandaOfOwner()
+    async componentDidMount(){
+      this.setState(async (prevState) => ({
+        pandaList: await this.getPandaOfOwner()
       }));
 
-      const x =   this.getPandaOfOwner();
+      const x =  await  this.getPandaOfOwner();//this.props.contract.methods.name();
 
-      console.log ("this is the result of getPandaOfOwner-->" + x);
+      console.log ("this is the result of getPandaOfOwner-->" , x);
     }
 
     render() { 
