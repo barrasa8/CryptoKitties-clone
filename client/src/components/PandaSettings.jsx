@@ -7,8 +7,7 @@ import { Container } from "react-bootstrap";
 import PandaCard from "./PandaCard";
 import PandaAttributes from "./PandaAttributes";
 
-import { allEyeVariations } from "../assets/js/shapes";
-import { allMouthVariations } from "../assets/js/shapes";
+import { allEyeVariations, allMouthVariations } from "../assets/js/shapes";
 import { allAnimations } from "../assets/js/animations";
 
 import "../assets/css/factory.css";

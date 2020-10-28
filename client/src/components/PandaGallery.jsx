@@ -5,6 +5,9 @@ import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import PandaCard from './PandaCard';
 
+import {genesToDNA} from "../assets/js/utils";
+
+
 
 class PandaGallery extends Component {
     constructor() {
@@ -27,14 +30,45 @@ class PandaGallery extends Component {
         };
       }
     
-     async componentDidMount(){
+    async componentDidMount(){
+
+      let pandaTokenList;
+      let pandaItem;
+      
       const PandaTokenIdArray =   await this.props.contract.methods._pandasOfOwner(this.props.accounts[0]).call({from:this.props.accounts[0]});
+      const PandaToken = await this.props.contract.methods.getPanda(1).call({from:this.props.accounts[0]});
 
       console.log ("this is the result of getPandaOfOwner-->" , PandaTokenIdArray);
+      console.log ("this is the result of getPandaOfOwner-->" , PandaToken);
+
+      console.log ("this is panda 2--> ",genesToDNA(PandaToken.genes));
+
+      // pandaTokenList = [{
+      //   pandaTokenId: PandaTokenIdArray[1],
+      //   mumId:PandaToken.mumId,
+      //   dadId: PandaToken.dadId,
+      //   birthTime:PandaToken.birthTime,
+      //   generation:PandaToken.generation,
+      //   dna:genesToDNA(PandaToken.genes)
+      // }]
+
+      const pandaTokenList2 =  await PandaTokenIdArray.map(tokenId =>{
+        pandaItem={
+          pandaTokenId: PandaTokenIdArray[tokenId],
+          mumId:PandaToken.mumId,
+          dadId: PandaToken.dadId,
+          birthTime:PandaToken.birthTime,
+          generation:PandaToken.generation//,
+          //dna:genesToDNA(PandaToken.genes)
+        }
+      })
 
       this.setState((prevState) => ({
-        pandaList: PandaTokenIdArray
+        pandaList: pandaTokenList2
       }));
+      
+      console.log("this is the list of pandas=>",pandaTokenList2);
+      
     }
 
     render() { 
