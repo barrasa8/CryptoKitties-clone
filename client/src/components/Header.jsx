@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Navbar,Nav} from "react-bootstrap";
+import {Navbar,Nav} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 class  Header extends Component {
     state = {  }
@@ -9,9 +10,9 @@ class  Header extends Component {
                 <Navbar.Brand href="#home">CryptoPanda</Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#pandaFactory">Panda Factory</Nav.Link>
-                    <Nav.Link href="#myCollection">My Collection</Nav.Link>
+                        <Link to="" className= "nav-link">Home</Link>
+                        <Link to="factory" className= "nav-link">Panda Factory</Link>
+                        <Link to="gallery" className= "nav-link">My Collection</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

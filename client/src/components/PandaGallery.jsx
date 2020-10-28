@@ -26,22 +26,15 @@ class PandaGallery extends Component {
           pandaList:[]
         };
       }
-
-    getPandaOfOwner = async ()=>{
-      const result =  await this.props.contract.methods
-      ._pandasOfOwner(this.props.accounts[0]);
-
-      return result;
-    }
     
-    async componentDidMount(){
-      this.setState(async (prevState) => ({
-        pandaList: await this.getPandaOfOwner()
+     async componentDidMount(){
+      const PandaTokenIdArray =   await this.props.contract.methods._pandasOfOwner(this.props.accounts[0]).call({from:this.props.accounts[0]});
+
+      console.log ("this is the result of getPandaOfOwner-->" , PandaTokenIdArray);
+
+      this.setState((prevState) => ({
+        pandaList: PandaTokenIdArray
       }));
-
-      const x =  await  this.getPandaOfOwner();//this.props.contract.methods.name();
-
-      console.log ("this is the result of getPandaOfOwner-->" , x);
     }
 
     render() { 
