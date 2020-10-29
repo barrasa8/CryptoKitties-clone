@@ -2,17 +2,17 @@ var gene1= 8749414632491931;
 
 export const  genesToDNA=(gene)=> {
     let dna = {
-        dnaarmleg: gene.slice(0,2),
-        dnaeyepatch: gene.slice(2,4),
-        dnainnerearfoot: gene.slice(4,6),
-        dnaheadbody: gene.slice(6,8),
+        dnaarmleg: parseInt(gene.slice(0,2)),
+        dnaeyepatch: parseInt(gene.slice(2,4)),
+        dnainnerearfoot: parseInt(gene.slice(4,6)),
+        dnaheadbody: parseInt(gene.slice(6,8)),
         //Pandatributes
-        dnaeyeshape: gene.slice(8,9),
-        dnamouthshape: gene.slice(9,10),
-        decorationMidcolor: gene.slice(10,12),
-        decorationSidescolor: gene.slice(12,13),
-        animation: gene.slice(14,15),
-        lastNum: gene.slice(15,16),
+        dnaeyeshape: parseInt(gene.slice(8,9)),
+        dnamouthshape: parseInt(gene.slice(9,10)),
+        decorationMidcolor: parseInt(gene.slice(10,12)),
+        decorationSidescolor: parseInt(gene.slice(12,13)),
+        animation: parseInt(gene.slice(14,15)),
+        lastNum: parseInt(gene.slice(15,16)),
     }
     return dna;
 }

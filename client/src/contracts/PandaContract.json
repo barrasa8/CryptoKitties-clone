@@ -7771,12 +7771,12 @@
         }
       },
       "links": {},
-      "address": "0x1529a7c5339c0ed5f4259dadc1da23d68b947d58",
+      "address": "0x8b0bae7131e5ef2b48b0ec7e0071a37ffd110383",
       "transactionHash": "0xebcd00de774f13c4c3edaab3a73809bac80ed21484143ae430aa4aa28c64de7b"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-10-29T11:51:02.579Z",
+  "updatedAt": "2020-10-29T13:07:24.527Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {

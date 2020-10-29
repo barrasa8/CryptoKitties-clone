@@ -7,67 +7,42 @@ import PandaCard from './PandaCard';
 
 import {genesToDNA} from "../assets/js/utils";
 
-
+let pandaList=[];
+let pandaItem ;
+let genesList=[];
 
 class PandaGallery extends Component {
     constructor() {
         super();
         this.state = {
-          dna: {
-            dnaarmleg: 51,
-            dnaeyepatch: 53,
-            dnainnerearfoot: 54,
-            dnaheadbody: 10,
-            //Pandatributes
-            dnaeyeshape: 1,
-            dnamouthshape: 1,
-            decorationMidcolor: 19,
-            decorationSidescolor: 8,
-            animation: 1,
-            lastNum: 9,
-          },
           pandaList:[]
         };
       }
     
     async componentDidMount(){
-
-      let pandaTokenList;
-      let pandaItem;
-      
       const PandaTokenIdArray =   await this.props.contract.methods._pandasOfOwner(this.props.accounts[0]).call({from:this.props.accounts[0]});
-      // const PandaToken = await this.props.contract.methods.getPanda(1).call({from:this.props.accounts[0]});
 
-      //console.log ("this is the result of getPandaOfOwner-->" , PandaTokenIdArray);
-      // console.log ("this is the result of getPandaOfOwner-->" , PandaToken);
+      for (let i=0 ;i<PandaTokenIdArray.length;i++){
+        let genes = await this.props.contract.methods.getPanda(i).call({from:this.props.accounts[0]});
+        genesList.push(genes);
 
-      // console.log ("this is panda 2--> ",genesToDNA(PandaToken.genes));
+        pandaItem={
+          pandaTokenId: parseInt(i),
+          mumId:parseInt(genes.mumId),
+          dadId:parseInt(genes.dadId),
+          birthTime:parseInt(genes.birthTime),
+          generation:parseInt(genes.generation),
+          dna:genesToDNA(genes.genes)
+        }
 
-      // pandaTokenList = [{
-      //   pandaTokenId: PandaTokenIdArray[1],
-      //   mumId:PandaToken.mumId,
-      //   dadId: PandaToken.dadId,
-      //   birthTime:PandaToken.birthTime,
-      //   generation:PandaToken.generation,
-      //   dna:genesToDNA(PandaToken.genes)
-      // }]
+        pandaList.push(pandaItem);
+      }
 
-      // const pandaTokenList2 =   PandaTokenIdArray.map(tokenId =>{
-      //   pandaItem={
-      //     pandaTokenId: tokenId,
-      //     mumId:PandaToken.mumId,
-      //     dadId: PandaToken.dadId,
-      //     birthTime:PandaToken.birthTime,
-      //     generation:PandaToken.generation//,
-      //     //dna:genesToDNA(PandaToken.genes)
-      //   }
-      // })
-
-      // this.setState((prevState) => ({
-      //   pandaList: pandaTokenList2
-      // }));
+      this.setState((prevState) => ({
+        pandaList: pandaList
+      }));
       
-      // console.log("this is the list of pandas=>",pandaTokenList2);
+      console.log("this is the list of pandas=>",this.state.pandaList);
       
     }
 
@@ -75,9 +50,9 @@ class PandaGallery extends Component {
         return ( 
             <Container fluid>
                 <Row className="justify-content-md-center">
-                    <Col><PandaCard dna={this.state.dna}></PandaCard></Col>
-                    <Col><PandaCard dna={this.state.dna}></PandaCard></Col>
-                    <Col><PandaCard dna={this.state.dna}></PandaCard></Col>
+                   {this.state.pandaList.map(panda => (
+                      <Col key={panda.pandaTokenId}><PandaCard key={panda.pandaTokenId} dna={panda.dna}></PandaCard></Col>
+                    ))} 
                 </Row>
             </Container>
         
