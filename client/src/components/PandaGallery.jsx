@@ -36,12 +36,12 @@ class PandaGallery extends Component {
       let pandaItem;
       
       const PandaTokenIdArray =   await this.props.contract.methods._pandasOfOwner(this.props.accounts[0]).call({from:this.props.accounts[0]});
-      const PandaToken = await this.props.contract.methods.getPanda(1).call({from:this.props.accounts[0]});
+      // const PandaToken = await this.props.contract.methods.getPanda(1).call({from:this.props.accounts[0]});
 
-      console.log ("this is the result of getPandaOfOwner-->" , PandaTokenIdArray);
-      console.log ("this is the result of getPandaOfOwner-->" , PandaToken);
+      //console.log ("this is the result of getPandaOfOwner-->" , PandaTokenIdArray);
+      // console.log ("this is the result of getPandaOfOwner-->" , PandaToken);
 
-      console.log ("this is panda 2--> ",genesToDNA(PandaToken.genes));
+      // console.log ("this is panda 2--> ",genesToDNA(PandaToken.genes));
 
       // pandaTokenList = [{
       //   pandaTokenId: PandaTokenIdArray[1],
@@ -52,22 +52,22 @@ class PandaGallery extends Component {
       //   dna:genesToDNA(PandaToken.genes)
       // }]
 
-      const pandaTokenList2 =  await PandaTokenIdArray.map(tokenId =>{
-        pandaItem={
-          pandaTokenId: PandaTokenIdArray[tokenId],
-          mumId:PandaToken.mumId,
-          dadId: PandaToken.dadId,
-          birthTime:PandaToken.birthTime,
-          generation:PandaToken.generation//,
-          //dna:genesToDNA(PandaToken.genes)
-        }
-      })
+      // const pandaTokenList2 =   PandaTokenIdArray.map(tokenId =>{
+      //   pandaItem={
+      //     pandaTokenId: tokenId,
+      //     mumId:PandaToken.mumId,
+      //     dadId: PandaToken.dadId,
+      //     birthTime:PandaToken.birthTime,
+      //     generation:PandaToken.generation//,
+      //     //dna:genesToDNA(PandaToken.genes)
+      //   }
+      // })
 
-      this.setState((prevState) => ({
-        pandaList: pandaTokenList2
-      }));
+      // this.setState((prevState) => ({
+      //   pandaList: pandaTokenList2
+      // }));
       
-      console.log("this is the list of pandas=>",pandaTokenList2);
+      // console.log("this is the list of pandas=>",pandaTokenList2);
       
     }
 
