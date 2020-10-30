@@ -1,7 +1,9 @@
 .pandattributes {
     padding: 25px;
     background-color: #ededed;
+    box-shadow: 5px 5px #888888;
     border-radius: 10px;
+    height: 490px;
   }
   
   

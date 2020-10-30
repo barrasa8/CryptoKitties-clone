@@ -21,6 +21,11 @@ class DnaBadge extends Component {
           <span id="dnaanimation">{this.props.dna.animation}</span>
           <span id="dnaspecial">{this.props.dna.lastNum}</span>
         </b>
+        <br/>
+        <b>Birth:</b> {this.props.birthTime} <br/>
+        <b>MumID:</b> {this.props.mumId}
+        <b> | DadID:</b> {this.props.dadId}
+        <b> | Generation:</b> {this.props.generation}
       </div>
     );
   }

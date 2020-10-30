@@ -1,4 +1,4 @@
-var gene1= 8749414632491931;
+
 
 export const  genesToDNA=(gene)=> {
     let dna = {
@@ -15,4 +15,10 @@ export const  genesToDNA=(gene)=> {
         lastNum: parseInt(gene.slice(15,16)),
     }
     return dna;
+}
+
+export const  epochToUTCDate=(epochTime)=> {
+    
+    let date = new Date(epochTime*1000);
+    return date.toUTCString();
 }

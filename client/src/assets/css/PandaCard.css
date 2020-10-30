@@ -1,6 +1,8 @@
 .pandaBox {
     background-color: #e2efff;
     border-radius: 10px;
+    box-shadow: 5px 5px #888888;
     width: 400px;
-    height: 470px;
+    height: 490px;
+    margin-bottom: 20px;
 }

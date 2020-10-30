@@ -169,7 +169,13 @@ class PandaSettings extends Component {
           </h5>
         </Row>
         <Row className="justify-content-md-center">
-          <PandaCard dna={this.state.dna} />
+          <PandaCard dna={this.state.dna} 
+                    mumId="0"
+                    dadId="0"
+                    generation="0"
+                    birthTime=""
+          />
+          <span className="space-between-elements"/>
           <PandaAttributes
             dna={this.state.dna}
             SliderChange={this.SliderChange}
