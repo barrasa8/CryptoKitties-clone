@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import PandaCard from "./PandaCard";
 
 import { genesToDNA, epochToUTCDate } from "../assets/js/utils";
