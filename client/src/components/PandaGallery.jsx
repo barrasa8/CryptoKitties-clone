@@ -57,7 +57,7 @@ class PandaGallery extends Component {
         <br />
         <Row className="justify-content-md-center">
           {this.state.pandaList.map((panda) => (
-            <React.Fragment key={"ract-fragment-" + panda.genes.toString()}>
+            <div key={"div-" + panda.genes.toString()}>
               <Col key={"col-" + panda.genes.toString()} md={3}>
                 <PandaCard
                   key={"panda-card-" + panda.genes.toString()}
@@ -69,7 +69,7 @@ class PandaGallery extends Component {
                 />
               </Col>
               <Col md={1}></Col>
-            </React.Fragment>
+            </div>
           ))}
         </Row>
       </Container>
