@@ -44,8 +44,6 @@ class PandaGallery extends Component {
     this.setState((prevState) => ({
       pandaList: _pandaList,
     }));
-
-    console.log("this is the list of pandas=>", this.state.pandaList);
   };
 
   componentDidMount() {
@@ -59,7 +57,7 @@ class PandaGallery extends Component {
         <br />
         <Row className="justify-content-md-center">
           {this.state.pandaList.map((panda) => (
-            <div>
+            <React.Fragment key={"ract-fragment-" + panda.genes.toString()}>
               <Col key={"col-" + panda.genes.toString()} md={3}>
                 <PandaCard
                   key={"panda-card-" + panda.genes.toString()}
@@ -71,7 +69,7 @@ class PandaGallery extends Component {
                 />
               </Col>
               <Col md={1}></Col>
-            </div>
+            </React.Fragment>
           ))}
         </Row>
       </Container>
