@@ -7,9 +7,7 @@ import PandaCard from './PandaCard';
 
 import {genesToDNA} from "../assets/js/utils";
 
-let pandaList=[];
-let pandaItem ;
-let genesList=[];
+
 
 class PandaGallery extends Component {
     constructor() {
@@ -18,32 +16,39 @@ class PandaGallery extends Component {
           pandaList:[]
         };
       }
-    
-    async componentDidMount(){
+
+    getPanda = async () => {  
+      let _pandaList=[];
+      let _pandaItem ; 
+      
       const PandaTokenIdArray =   await this.props.contract.methods._pandasOfOwner(this.props.accounts[0]).call({from:this.props.accounts[0]});
 
       for (let i=0 ;i<PandaTokenIdArray.length;i++){
-        let genes = await this.props.contract.methods.getPanda(i).call({from:this.props.accounts[0]});
-        genesList.push(genes);
-
-        pandaItem={
+        let _panda = await this.props.contract.methods.getPanda(i).call({from:this.props.accounts[0]});
+        
+        _pandaItem={
           pandaTokenId: parseInt(i),
-          mumId:parseInt(genes.mumId),
-          dadId:parseInt(genes.dadId),
-          birthTime:parseInt(genes.birthTime),
-          generation:parseInt(genes.generation),
-          dna:genesToDNA(genes.genes)
+          mumId:parseInt(_panda.mumId),
+          dadId:parseInt(_panda.dadId),
+          birthTime:parseInt(_panda.birthTime),
+          generation:parseInt(_panda.generation),
+          genes:parseInt(_panda.genes),
+          dna:genesToDNA(_panda.genes)
         }
 
-        pandaList.push(pandaItem);
+        _pandaList.push(_pandaItem);
       }
 
       this.setState((prevState) => ({
-        pandaList: pandaList
+        pandaList: _pandaList
       }));
       
       console.log("this is the list of pandas=>",this.state.pandaList);
       
+    }
+    
+    componentDidMount(){
+      this.getPanda();
     }
 
     render() { 
@@ -51,7 +56,7 @@ class PandaGallery extends Component {
             <Container fluid>
                 <Row className="justify-content-md-center">
                    {this.state.pandaList.map(panda => (
-                      <Col key={panda.pandaTokenId}><PandaCard key={panda.pandaTokenId} dna={panda.dna}></PandaCard></Col>
+                      <Col key={"col-" +panda.genes.toString()}><PandaCard key={"panda-card-"+panda.genes.toString()} dna={panda.dna}></PandaCard></Col>
                     ))} 
                 </Row>
             </Container>
