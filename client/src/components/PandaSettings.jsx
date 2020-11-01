@@ -75,8 +75,8 @@ class PandaSettings extends Component {
     dna += this.state.dna.decorationSidescolor;
     dna += this.state.dna.animation;
     dna += this.state.dna.lastNum;
-
-    return parseInt(dna);
+ 
+    return dna;
   };
 
   eventBirth = () => {
