@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+.home-text{
+    font-family: 'Rock Salt', cursive;
+}
+
+#home-img{
+    border: dotted 5px rgb(95, 152, 204);
+    border-radius: 1%;
+    margin-top: 50px;
+}

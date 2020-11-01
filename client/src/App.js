@@ -4,11 +4,10 @@ import PandaProxy from "./contracts/PandaProxy.json";
 import getWeb3 from "./getWeb3";
 
 import Header from "./components/Header";
-import PandaSettings from "./components/PandaSettings";
-import PandaGallery from "./components/PandaGallery";
-import Home from "./components/Home";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 import "./App.css";
 
@@ -64,9 +63,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header/>
-          <Route path='/' exact component={Home}/>
-          <Route path='/factory' component={()=> <PandaSettings contract ={this.state.contract} accounts={this.state.accounts}/>}/>
-          <Route path='/gallery'component={() =>  <PandaGallery contract ={this.state.contract} accounts={this.state.accounts}></PandaGallery>} />
+          <Body contract ={this.state.contract} accounts={this.state.accounts}/>
+          <Footer/>
         </div>
       </Router>
     );

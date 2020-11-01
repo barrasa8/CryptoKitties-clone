@@ -9,10 +9,9 @@ class  Header extends Component {
     render() { 
         return ( 
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#home" id="nav-bar-title">Crypto Panda</Navbar.Brand>
+                <Navbar.Brand id="nav-bar-title"><Link to="" className= "nav-link">Crypto Panda</Link></Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link to="" className= "nav-link">Home</Link>
                         <Link to="factory" className= "nav-link">Panda Factory</Link>
                         <Link to="gallery" className= "nav-link">My Collection</Link>
                     </Nav>
