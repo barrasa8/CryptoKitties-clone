@@ -10,10 +10,8 @@ class Home extends Component {
     render() { 
         return (  
             <Container fluid >
-                <br/>
-                <br/>
-                <Row className="justify-content-md-center">
-                    <h1 className="home-text">Collect , breed and trade Crypto Panda collectables</h1>
+                <Row className="justify-content-md-center body-title">
+                    <h1>Collect , breed and trade Crypto Panda collectables</h1>
                 </Row>
                 <Row className="justify-content-md-center">
                     <img className="gradient-border" id="home-img" src={PandaGalleryImage} alt=""/>

@@ -51,8 +51,9 @@ class PandaGallery extends Component {
   render() {
     return (
       <Container fluid>
-        <br />
-        <br />
+        <Row className="justify-content-md-center body-title">
+                    <h1>My Collection</h1>
+        </Row>
         <Row className="justify-content-md-center">
           {this.state.pandaList.map((panda) => (
             <div key={"div-" + panda.genes.toString()}>
