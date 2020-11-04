@@ -10,6 +10,7 @@ module.exports = async function(deployer,networks,accounts) {
 
   instance = await PandaContract.at(instanceOfProxy.address);
 
+
 //------------------------------------------------------------------------------  
 //////////////////////////// TEST //////////////////////////////////////////////
 //------------------------------------------------------------------------------
@@ -29,10 +30,10 @@ module.exports = async function(deployer,networks,accounts) {
   // let totalSupply2 = await instance.totalSupply();
   // console.log("TotalSupply is after createPandaGen0 --> "+totalSupply2)
   
-  // await instance.createPandaGen0(1111111111111111);
-  // await instance.createPandaGen0(5555555555555555);
-  // await instance.createPandaGen0(4444444444444444);
-  // await instance.createPandaGen0(7777777777777777);
+  // await instance.createPandaGen0(7259267741713121);
+  // await instance.createPandaGen0(2039544313449131);
+  // await instance.createPandaGen0(4659376442874121);
+
   
   // let result = await instance._pandasOfOwner(accounts[0]);
   
