@@ -72,5 +72,46 @@ contract PandaContract is Initializable , PandaToken {
             return result;
         }
     }
+
+    
+    /// @dev Throws unless `msg.sender` is the current owner of both NFT
+    /// @param _dadId The Dad NFT Id
+    /// @param _mumId The Mum NFT Id
+    function breed(uint32 _dadId, uint32 _mumId) external returns (uint256){
+        //Require that msg.sender owns both NFT
+        require(_PandaOwner[_dadId] == msg.sender && _PandaOwner[_mumId] == msg.sender);
+
+        return _breed(msg.sender, _dadId, _mumId);
+      
+    }
+
+    function _breed(address _owner, uint32 _dadId, uint32 _mumId) internal returns (uint256){
+
+        uint256 dadGenes = _pandas[_dadId].genes;
+        uint256 mumGenes = _pandas[_mumId].genes;
+        uint256 newGenes =  _mixDna(dadGenes, mumGenes);
+
+        //calculate generation
+        uint16 DadGeneration =  _pandas[_dadId].generation;
+        uint16 MumGeneration =  _pandas[_mumId].generation; 
+        uint16 NewGeneration;
+
+        if (DadGeneration==MumGeneration){
+            NewGeneration = DadGeneration+1;
+        }else if(DadGeneration<MumGeneration){
+            NewGeneration = MumGeneration;
+        }else{
+            NewGeneration = DadGeneration;
+        }
+
+        return _CreatePanda(_mumId, _dadId, newGenes, NewGeneration,_owner);        
+    }
+
+    function _mixDna(uint256 _dadDna, uint256 _mumDna) internal pure returns (uint256){
+        uint256 firsthalf = _dadDna /100000000;
+        uint256 secondhalf = _mumDna % 100000000;
+
+        return ((firsthalf *100000000 ) + secondhalf);
+    }
 }
 

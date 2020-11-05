@@ -246,4 +246,12 @@ contract PandaToken is Initializable, IERC721, Ownable, PandaStorage{
                  );
     }
 
+     /**
+    @dev checks if interfaceId supports IERC721 or IERC165
+    */
+    function supportsInterface(bytes4 interfaceId) external pure returns (bool)
+    {
+        return (interfaceId == _INTERFACE_ID_ERC721 || interfaceId == _INTERFACE_ID_ERC165);
+    }
+
 }
