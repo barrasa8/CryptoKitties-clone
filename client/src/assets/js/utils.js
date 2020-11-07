@@ -10,7 +10,7 @@ export const  genesToDNA=(gene)=> {
         dnaeyeshape: parseInt(gene.slice(8,9)),
         dnamouthshape: parseInt(gene.slice(9,10)),
         decorationMidcolor: parseInt(gene.slice(10,12)),
-        decorationSidescolor: parseInt(gene.slice(12,13)),
+        decorationSidescolor: parseInt(gene.slice(12,14)),
         animation: parseInt(gene.slice(14,15)),
         lastNum: parseInt(gene.slice(15,16)),
     }

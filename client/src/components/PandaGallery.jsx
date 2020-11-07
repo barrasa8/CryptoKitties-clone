@@ -21,7 +21,7 @@ class PandaGallery extends Component {
       ._pandasOfOwner(this.props.accounts[0])
       .call({ from: this.props.accounts[0] });
 
-    for (let i = 0; i < PandaTokenIdArray.length; i++) {
+    for (let i = 1; i < PandaTokenIdArray.length; i++) {
       let _panda = await this.props.contract.methods
         .getPanda(i)
         .call({ from: this.props.accounts[0] });

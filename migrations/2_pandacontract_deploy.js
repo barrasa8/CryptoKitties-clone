@@ -10,6 +10,9 @@ module.exports = async function(deployer,networks,accounts) {
 
   instance = await PandaContract.at(instanceOfProxy.address);
 
+  //Create pandaId 0 , not to be displayed.
+  await instance.createPandaGen0(7259267741713121);
+  
 
 //------------------------------------------------------------------------------  
 //////////////////////////// TEST //////////////////////////////////////////////
