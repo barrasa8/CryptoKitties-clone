@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PandaSettings from "./PandaSettings";
+import PandaFactory from "./PandaFactory";
 import PandaGallery from "./PandaGallery";
 import Home from "./Home";
 
@@ -15,8 +15,9 @@ class Body extends Component {
             <div  className="app-body">
                 <Switch>
                     <Route path='/' exact component={Home}/>
-                    <Route path='/factory' component={()=> <PandaSettings contract ={this.props.contract} accounts={this.props.accounts}/>}/>
+                    <Route path='/factory' component={()=> <PandaFactory contract ={this.props.contract} accounts={this.props.accounts}/>}/>
                     <Route path='/gallery'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts}></PandaGallery>} />
+                    <Route path='/breed'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts}></PandaGallery>} />
                 </Switch>
             </div>
          );

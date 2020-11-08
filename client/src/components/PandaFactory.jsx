@@ -32,7 +32,7 @@ const defaultDna = {
   },
 };
 
-class PandaSettings extends Component {
+class PandaFactory extends Component {
   constructor() {
     super();
     this.state = {
@@ -220,4 +220,4 @@ class PandaSettings extends Component {
   }
 }
 
-export default PandaSettings;
+export default PandaFactory;
