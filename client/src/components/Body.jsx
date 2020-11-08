@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import PandaFactory from "./PandaFactory";
 import PandaGallery from "./PandaGallery";
+import BreedRoom from "./BreedRoom";
 import Home from "./Home";
 
 import {Route,Switch} from 'react-router-dom'
@@ -17,7 +18,7 @@ class Body extends Component {
                     <Route path='/' exact component={Home}/>
                     <Route path='/factory' component={()=> <PandaFactory contract ={this.props.contract} accounts={this.props.accounts}/>}/>
                     <Route path='/gallery'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts}></PandaGallery>} />
-                    <Route path='/breed'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts}></PandaGallery>} />
+                    <Route path='/breed'component={() =>  <BreedRoom contract ={this.props.contract} accounts={this.props.accounts}></BreedRoom>} />
                 </Switch>
             </div>
          );

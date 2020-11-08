@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import PandaCard from "./PandaCard";
 
-import { genesToDNA, epochToUTCDate } from "../assets/js/utils";
+import {epochToUTCDate ,getPanda} from "../assets/js/utils";
 
 class PandaGallery extends Component {
   constructor() {
@@ -13,39 +13,12 @@ class PandaGallery extends Component {
     };
   }
 
-  getPanda = async () => {
-    let _pandaList = [];
-    let _pandaItem;
+  async componentDidMount() {
+    let _pandaList = await getPanda(this.props.contract, this.props.accounts);
 
-    const PandaTokenIdArray = await this.props.contract.methods
-      ._pandasOfOwner(this.props.accounts[0])
-      .call({ from: this.props.accounts[0] });
-
-    for (let i = 1; i < PandaTokenIdArray.length; i++) {
-      let _panda = await this.props.contract.methods
-        .getPanda(i)
-        .call({ from: this.props.accounts[0] });
-
-      _pandaItem = {
-        pandaTokenId: parseInt(i),
-        mumId: parseInt(_panda.mumId),
-        dadId: parseInt(_panda.dadId),
-        birthTime: parseInt(_panda.birthTime),
-        generation: parseInt(_panda.generation),
-        genes: parseInt(_panda.genes),
-        dna: genesToDNA(_panda.genes),
-      };
-
-      _pandaList.push(_pandaItem);
-    }
-
-    this.setState((prevState) => ({
-      pandaList: _pandaList,
-    }));
-  };
-
-  componentDidMount() {
-    this.getPanda();
+    this.setState(() => ({
+          pandaList: _pandaList
+        }));
   }
 
   render() {

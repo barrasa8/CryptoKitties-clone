@@ -1,5 +1,3 @@
-
-
 export const  genesToDNA=(gene)=> {
     let dna = {
         dnaarmleg: parseInt(gene.slice(0,2)),
@@ -22,3 +20,32 @@ export const  epochToUTCDate=(epochTime)=> {
     let date = new Date(epochTime*1000);
     return date.toUTCString();
 }
+
+export  const getPanda = async (contract, accounts) => {
+    let _pandaList = [];
+    let _pandaItem;
+
+    const PandaTokenIdArray = await contract.methods
+      ._pandasOfOwner(accounts[0])
+      .call({ from: accounts[0] });
+
+    for (let i = 1; i < PandaTokenIdArray.length; i++) {
+      let _panda = await contract.methods
+        .getPanda(i)
+        .call({ from: accounts[0] });
+
+      _pandaItem = {
+        pandaTokenId: parseInt(i),
+        mumId: parseInt(_panda.mumId),
+        dadId: parseInt(_panda.dadId),
+        birthTime: parseInt(_panda.birthTime),
+        generation: parseInt(_panda.generation),
+        genes: parseInt(_panda.genes),
+        dna: genesToDNA(_panda.genes),
+      };
+
+      _pandaList.push(_pandaItem);
+    }
+
+    return _pandaList;
+};
