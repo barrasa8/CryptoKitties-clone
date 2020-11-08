@@ -45,7 +45,7 @@ class PandaSettings extends Component {
         dnaeyeshape: 1,
         dnamouthshape: 1,
         decorationMidcolor: 19,
-        decorationSidescolor: 8,
+        decorationSidescolor: 10,
         animation: 1,
         lastNum: 9,
       },
