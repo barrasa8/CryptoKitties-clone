@@ -5,7 +5,21 @@ import { Container, Row, Col, Form } from "react-bootstrap";
 import {epochToUTCDate ,getPanda} from "../assets/js/utils";
 
 class BreedRoom extends Component {
-  state = {};
+
+  constructor() {
+    super();
+    this.state = {
+      pandaList: [],
+    };
+  }
+
+  async componentDidMount() {
+    let _pandaList = await getPanda(this.props.contract, this.props.accounts);
+
+    this.setState(() => ({
+          pandaList: _pandaList
+        }));
+  }
   render() {
     return (
       <Container fluid>
@@ -17,31 +31,27 @@ class BreedRoom extends Component {
             <h4 id="panda-created-message"> </h4>
           </div>
         </Row>
-        <Row>
-          <Col>
+        <Row className="justify-content-md-center">
+          <Col md={{span:3}}>
             <Form>
               <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                <Form.Label>Mum</Form.Label>
+                <Form.Label>Select Panda Mum</Form.Label>
                 <Form.Control as="select" size="sm" custom>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  {this.state.pandaList.map((panda) => (
+                    <option key={"mum-" + panda.pandaTokenId.toString()}>{panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()}</option>
+                  ))}
                 </Form.Control>
               </Form.Group>
             </Form>
           </Col>
-          <Col>
+          <Col md={{span:3}}>
             <Form>
               <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                <Form.Label>Dad</Form.Label>
+                <Form.Label>Select Panda Dad</Form.Label>
                 <Form.Control as="select" size="sm" custom>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  {this.state.pandaList.map((panda) => (
+                      <option key={"dad-" + panda.pandaTokenId.toString()}>{panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()}</option>
+                    ))}
                 </Form.Control>
               </Form.Group>
             </Form>
