@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form ,Button} from "react-bootstrap";
 
 import {epochToUTCDate ,getPanda} from "../assets/js/utils";
 import PandaCard from "./PandaCard";
@@ -58,9 +58,24 @@ class BreedRoom extends Component {
     };
   }
 
+  handleChange = (e) => {
+    let optionId = parseInt(e.target.value) ;
+    let optionName = e.target.options[optionId].getAttribute('data-key');
+    
+    if(e.target.options[0].getAttribute('data-key')=="mum"){
+      this.setState(() => ({
+        MumPanda: this.state.pandaList[optionId],
+      }));
+    }else{
+      this.setState(() => ({
+        DadPanda: this.state.pandaList[optionId]
+      }));
+    }
+  }
+
   async componentDidMount() {
     let _pandaList = await getPanda(this.props.contract, this.props.accounts);
-console.log(_pandaList[0]);
+// console.log(_pandaList[0]);
     this.setState(() => ({
           pandaList: _pandaList,
           MumPanda: _pandaList[0],
@@ -72,7 +87,7 @@ console.log(_pandaList[0]);
 
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row className="justify-content-md-center body-title">
           <div align="center">
             <h1 className="c-black">Breeding Room</h1>
@@ -86,9 +101,9 @@ console.log(_pandaList[0]);
             <Form>
               <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                 <Form.Label>Select Panda Mum</Form.Label>
-                <Form.Control as="select" size="sm" custom>
-                  {this.state.pandaList.map((panda) => (
-                    <option key={"mum-" + panda.pandaTokenId.toString()} value={panda.dna}>{panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()}</option>
+                <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
+                  {this.state.pandaList.map((panda,index) => (
+                    <option key={"mum-" + panda.pandaTokenId.toString()} value={index} data-key="mum"> {"TokenId: "+ panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()} </option>
                   ))}
                 </Form.Control>
               </Form.Group>
@@ -102,14 +117,16 @@ console.log(_pandaList[0]);
               birthTime={epochToUTCDate(this.state.MumPanda.birthTime)}
             />
           </Col>
-          <Col md={{span:1}}></Col>
+          <Col md={{span:2}} >
+            <Button>Breed</Button>
+          </Col>
           <Col md={{span:5}}>
             <Form>
               <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                 <Form.Label>Select Panda Dad</Form.Label>
-                <Form.Control as="select" size="sm" custom>
-                  {this.state.pandaList.map((panda) => (
-                      <option key={"dad-" + panda.pandaTokenId.toString()}>{panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()}</option>
+                <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
+                  {this.state.pandaList.map((panda,index) => (
+                      <option key={"dad-" + panda.pandaTokenId.toString()} value={index} data-key="dad"> {"TokenId: "+ panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()} </option>
                     ))}
                 </Form.Control>
               </Form.Group>
