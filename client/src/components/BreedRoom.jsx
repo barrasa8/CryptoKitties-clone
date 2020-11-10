@@ -75,15 +75,12 @@ class BreedRoom extends Component {
 
   async componentDidMount() {
     let _pandaList = await getPanda(this.props.contract, this.props.accounts);
-// console.log(_pandaList[0]);
     this.setState(() => ({
           pandaList: _pandaList,
           MumPanda: _pandaList[0],
           DadPanda: _pandaList[0]
         }));
   }
-
-  
 
   render() {
     return (
@@ -96,51 +93,64 @@ class BreedRoom extends Component {
             <h4 id="panda-created-message"> </h4>
           </div>
         </Row>
-        <Row className="justify-content-md-center">
-          <Col md={{span:5}}>
-            <Form>
-              <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                <Form.Label>Select Panda Mum</Form.Label>
-                <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
-                  {this.state.pandaList.map((panda,index) => (
-                    <option key={"mum-" + panda.pandaTokenId.toString()} value={index} data-key="mum"> {"TokenId: "+ panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()} </option>
-                  ))}
-                </Form.Control>
-              </Form.Group>
-            </Form>
-            <PandaCard
-              key={"panda-card-mum" + this.state.MumPanda.genes.toString()}
-              dna={this.state.MumPanda.dna}
-              mumId={this.state.MumPanda.mumId}
-              dadId={this.state.MumPanda.dadId}
-              generation={this.state.MumPanda.generation}
-              birthTime={epochToUTCDate(this.state.MumPanda.birthTime)}
-            />
-          </Col>
-          <Col md={{span:2}} >
-            <Button>Breed</Button>
-          </Col>
-          <Col md={{span:5}}>
-            <Form>
-              <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                <Form.Label>Select Panda Dad</Form.Label>
-                <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
-                  {this.state.pandaList.map((panda,index) => (
-                      <option key={"dad-" + panda.pandaTokenId.toString()} value={index} data-key="dad"> {"TokenId: "+ panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()} </option>
-                    ))}
-                </Form.Control>
-              </Form.Group>
-            </Form>
-            <PandaCard
-              key={"panda-card-mum" + this.state.DadPanda.genes.toString()}
-              dna={this.state.DadPanda.dna}
-              mumId={this.state.DadPanda.mumId}
-              dadId={this.state.DadPanda.dadId}
-              generation={this.state.DadPanda.generation}
-              birthTime={epochToUTCDate(this.state.DadPanda.birthTime)}
-            />
-          </Col>
-        </Row>
+        {(() => {
+            if (this.state.pandaList.length > 1) {
+              return (
+                    <Row className="justify-content-md-center">
+                      <Col md={{span:5}}>
+                        <Form>
+                          <Form.Group controlId="exampleForm.SelectCustomSizeSm">
+                            <Form.Label>Select Panda Mum</Form.Label>
+                            <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
+                              {this.state.pandaList.map((panda,index) => (
+                                <option key={"mum-" + panda.pandaTokenId.toString()} value={index} data-key="mum"> {"TokenId: "+ panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()} </option>
+                              ))}
+                            </Form.Control>
+                          </Form.Group>
+                        </Form>
+                        <PandaCard
+                          key={"panda-card-mum" + this.state.MumPanda.genes.toString()}
+                          dna={this.state.MumPanda.dna}
+                          mumId={this.state.MumPanda.mumId}
+                          dadId={this.state.MumPanda.dadId}
+                          generation={this.state.MumPanda.generation}
+                          birthTime={epochToUTCDate(this.state.MumPanda.birthTime)}
+                        />
+                      </Col>
+                      <Col md={{span:2}} >
+                        <Button>Breed</Button>
+                      </Col>
+                      <Col md={{span:5}}>
+                        <Form>
+                          <Form.Group controlId="exampleForm.SelectCustomSizeSm">
+                            <Form.Label>Select Panda Dad</Form.Label>
+                            <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
+                              {this.state.pandaList.map((panda,index) => (
+                                  <option key={"dad-" + panda.pandaTokenId.toString()} value={index} data-key="dad"> {"TokenId: "+ panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()} </option>
+                                ))}
+                            </Form.Control>
+                          </Form.Group>
+                        </Form>
+                        <PandaCard
+                          key={"panda-card-mum" + this.state.DadPanda.genes.toString()}
+                          dna={this.state.DadPanda.dna}
+                          mumId={this.state.DadPanda.mumId}
+                          dadId={this.state.DadPanda.dadId}
+                          generation={this.state.DadPanda.generation}
+                          birthTime={epochToUTCDate(this.state.DadPanda.birthTime)}
+                        />
+                      </Col>
+                    </Row>
+              )
+            }else {
+              return (
+                <Row className="justify-content-md-center">
+                  <h3> You need 2 pandas to be able to breed</h3>
+                </Row>
+              )
+            }
+        })()}
+        
       </Container>
     );
   }
