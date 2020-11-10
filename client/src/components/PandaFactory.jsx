@@ -10,6 +10,8 @@ import PandaAttributes from "./PandaAttributes";
 import { allEyeVariations, allMouthVariations } from "../assets/js/shapes";
 import { allAnimations } from "../assets/js/animations";
 
+import {createPandaGen0} from "../assets/js/utils";
+
 import "../assets/css/factory.css";
 
 const eyeShapes = allEyeVariations();
@@ -98,22 +100,15 @@ class PandaFactory extends Component {
     });
   };
 
-  createPandaGen0 = () =>
-    this.props.contract.methods
-      .createPandaGen0(this.getDna())
-      .send({ from: this.props.accounts[0] }, (error, txHash) => {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log(txHash);
-        }
-      });  
+  _createPandaGen0 = () => {
+    let _dna = this.getDna();
+    createPandaGen0(this.props.contract, this.props.accounts,_dna);
+  };
 
   setDefaultPandaDna = () => {
     this.setState({
       dna: defaultDna.dna,
     });
-    // console.log(JSON.stringify(this.state.dna))
   };
 
   SliderChange = (_dnaProperty, _dna) => {
@@ -209,7 +204,7 @@ class PandaFactory extends Component {
               type="button"
               className="btn btn-danger"
               id="random-panda-button"
-              onClick={this.createPandaGen0}
+              onClick={this._createPandaGen0}
             >
               Create Panda
             </button>

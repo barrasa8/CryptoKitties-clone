@@ -1,3 +1,15 @@
 .form-group{
     width: fit-content;
 }
+.scale:hover{
+    transform: scale(1.05);
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }

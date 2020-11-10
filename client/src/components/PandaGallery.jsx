@@ -5,6 +5,8 @@ import PandaCard from "./PandaCard";
 
 import {epochToUTCDate ,getPanda} from "../assets/js/utils";
 
+import "../assets/css/PandaGallery.css"
+
 class PandaGallery extends Component {
   constructor() {
     super();

@@ -49,3 +49,19 @@ export  const getPanda = async (contract, accounts) => {
 
     return _pandaList;
 };
+
+export const createPandaGen0 = (contract,accounts,dna) =>{
+  contract.methods
+  .createPandaGen0(dna)
+  .send({ from: accounts[0] }, (error, txHash) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(txHash);
+    }
+  })
+};  
+
+export const Breed = () =>{
+  
+};

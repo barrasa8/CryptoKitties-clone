@@ -1,0 +1,5 @@
+.hightlight:hover{
+    background:linear-gradient(to left , orange, tomato);
+    transition:0.5s;
+}
+

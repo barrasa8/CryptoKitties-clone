@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Container, Row, Col, Form ,Button} from "react-bootstrap";
 
-import {epochToUTCDate ,getPanda} from "../assets/js/utils";
+import {epochToUTCDate, getPanda, Breed} from "../assets/js/utils";
 import PandaCard from "./PandaCard";
 
 import "../assets/css/breedRoom.css";
@@ -73,6 +73,15 @@ class BreedRoom extends Component {
     }
   }
 
+  Breed=()=>{
+    if(this.state.MumPanda.pandaTokenId == this.state.DadPanda.pandaTokenId){
+      alert("Dad and Mum have to be different");
+    }else{
+      console.log("dsa")
+    }
+      
+  }
+
   async componentDidMount() {
     let _pandaList = await getPanda(this.props.contract, this.props.accounts);
     this.setState(() => ({
@@ -117,8 +126,8 @@ class BreedRoom extends Component {
                           birthTime={epochToUTCDate(this.state.MumPanda.birthTime)}
                         />
                       </Col>
-                      <Col md={{span:2}} >
-                        <Button>Breed</Button>
+                      <Col md={{span:2}}>
+                        <Button className="scale vertical-center" onClick={this.Breed}>Breed</Button>
                       </Col>
                       <Col md={{span:5}}>
                         <Form>
