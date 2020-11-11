@@ -50,19 +50,8 @@ class PandaFactory extends Component {
         decorationSidescolor: 10,
         animation: 1,
         lastNum: 9,
-      },
-      BirthEvent: {
-        owner: 0,
-        PandaId: 0,
-        mumId: 0,
-        dadId: 0,
-        genes: 0,
-      },
+      }
     };
-  }
-
-  componentDidMount() {
-    this.eventBirth();
   }
 
   getDna = () => {
@@ -79,25 +68,6 @@ class PandaFactory extends Component {
     dna += this.state.dna.lastNum;
  
     return dna;
-  };
-
-  eventBirth = () => {
-    this.props.contract.events.Birth({}, (error, event) => {
-      if (error) {
-        console.log(error);
-      } else {
-        this.setState((prevState) => ({
-          BirthEvent: {
-            ...prevState.BirthEvent,
-            owner: event.returnValues._owner,
-            PandaId: event.returnValues.PandaId,
-            mumId: 0,
-            dadId: 0,
-            genes: event.returnValues.genes,
-          },
-        }));
-      }
-    });
   };
 
   _createPandaGen0 = () => {
@@ -153,13 +123,13 @@ class PandaFactory extends Component {
         </Row>
         <Row className="justify-content-md-center">
           <h5 id="panda-created-message">
-            {this.state.BirthEvent.genes > 0
+            {this.props.birthEvent.genes > 0
               ? "Your Panda is Alive: Owner:" +
-                this.state.BirthEvent.owner +
+              this.props.birthEvent.owner +
                 ", PandaID:" +
-                this.state.BirthEvent.PandaId +
+                this.props.birthEvent.PandaId +
                 " , Genes:" +
-                this.state.BirthEvent.genes
+                this.props.birthEvent.genes
               : ""}
           </h5>
         </Row>
