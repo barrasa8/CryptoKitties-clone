@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 
-import {BrowserRouter as Router, useHistory} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 import "./App.css";
 
@@ -25,8 +25,6 @@ class App extends Component {
       { id: 3, value: 0 },
     ],
   };
-
-  history = () =>   { useHistory()};
 
   componentDidMount = async () => {
     try {
@@ -65,7 +63,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header/>
-          <Body contract ={this.state.contract} accounts={this.state.accounts} browserHistory={this.history}/>
+          <Body contract ={this.state.contract} accounts={this.state.accounts}/>
           <Footer/>
         </div>
       </Router>

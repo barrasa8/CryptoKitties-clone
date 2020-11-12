@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { Container, Row, Col, Form ,Button} from "react-bootstrap";
 
+import {Redirect} from 'react-router-dom';
+
 import {epochToUTCDate, getPanda, Breed} from "../assets/js/utils";
 import PandaCard from "./PandaCard";
 
@@ -11,6 +13,7 @@ class BreedRoom extends Component {
 
   constructor() {
     super();
+    this._isMounted = false;
     this.state = {
       pandaList: [],
       MumPanda: {
@@ -55,6 +58,7 @@ class BreedRoom extends Component {
           lastNum: 9
         }
       },
+      isRedirect:0
     };
   }
 
@@ -83,28 +87,41 @@ class BreedRoom extends Component {
           console.log(error);
         } else {
           console.log(txHash);
-           
+          this.setState(() => ({
+            isRedirect: 1
+          }));
         }
       });
     }
-    // console.log("in the breed function before redirect",this.props.browserHistory());
-
-    
-    
   }
 
   async componentDidMount() {
+    this._isMounted=true;
     let _pandaList = await getPanda(this.props.contract, this.props.accounts);
-    this.setState(() => ({
+    this._isMounted && this.setState(() => ({
           pandaList: _pandaList,
           MumPanda: _pandaList[0],
           DadPanda: _pandaList[0]
         }));
   }
 
+  componentWillUnmount(){
+    this._isMounted = false;
+    this.setState.isRedirect=0;
+  }
+
+  componentDidUpdate(){
+    console.info("did update");
+  }
+
+  componentWillUnmount(){
+    console.info("will unmount")
+  }
+
   render() {
     return (
       <Container>
+        {this.state.isRedirect ? <Redirect to="/gallery" />: ""}
         <Row className="justify-content-md-center body-title">
           <div align="center">
             <h1 className="c-black">Breeding Room</h1>
@@ -112,18 +129,6 @@ class BreedRoom extends Component {
             <br />
             <h4 id="panda-created-message"> </h4>
           </div>
-        </Row>
-        <Row className="justify-content-md-center">
-          <h5 id="panda-created-message">
-            {this.props.birthEvent.genes > 0
-              ? "A new Panda is Alive: Owner:" +
-              this.props.birthEvent.owner +
-                ", PandaID:" +
-                this.props.birthEvent.PandaId +
-                " , Genes:" +
-                this.props.birthEvent.genes
-              : ""}
-          </h5>
         </Row>
         {(() => {
             if (this.state.pandaList.length > 1) {
