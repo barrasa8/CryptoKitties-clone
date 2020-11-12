@@ -62,7 +62,7 @@ class BreedRoom extends Component {
     let optionId = parseInt(e.target.value) ;
     let optionName = e.target.options[optionId].getAttribute('data-key');
     
-    if(e.target.options[0].getAttribute('data-key')=="mum"){
+    if(e.target.options[0].getAttribute('data-key')==="mum"){
       this.setState(() => ({
         MumPanda: this.state.pandaList[optionId],
       }));
@@ -73,13 +73,24 @@ class BreedRoom extends Component {
     }
   }
 
-  Breed=()=>{
-    if(this.state.MumPanda.pandaTokenId == this.state.DadPanda.pandaTokenId){
+  Breed= async ()=>{
+    if(this.state.MumPanda.pandaTokenId === this.state.DadPanda.pandaTokenId){
       alert("Dad and Mum have to be different");
     }else{
-      console.log("dsa")
+      await this.props.contract.methods.breed(this.state.MumPanda.pandaTokenId,this.state.DadPanda.pandaTokenId)
+      .send({ from: this.props.accounts[0] }, (error, txHash) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(txHash);
+           
+        }
+      });
     }
-      
+    // console.log("in the breed function before redirect",this.props.browserHistory());
+
+    
+    
   }
 
   async componentDidMount() {
@@ -101,6 +112,18 @@ class BreedRoom extends Component {
             <br />
             <h4 id="panda-created-message"> </h4>
           </div>
+        </Row>
+        <Row className="justify-content-md-center">
+          <h5 id="panda-created-message">
+            {this.props.birthEvent.genes > 0
+              ? "A new Panda is Alive: Owner:" +
+              this.props.birthEvent.owner +
+                ", PandaID:" +
+                this.props.birthEvent.PandaId +
+                " , Genes:" +
+                this.props.birthEvent.genes
+              : ""}
+          </h5>
         </Row>
         {(() => {
             if (this.state.pandaList.length > 1) {
@@ -159,7 +182,6 @@ class BreedRoom extends Component {
               )
             }
         })()}
-        
       </Container>
     );
   }

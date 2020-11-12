@@ -54,6 +54,7 @@ class PandaFactory extends Component {
     };
   }
 
+
   getDna = () => {
     var dna = "";
     dna += this.state.dna.dnaarmleg;

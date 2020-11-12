@@ -31,10 +31,10 @@ class PandaGallery extends Component {
         </Row>
         <Row className="justify-content-md-center">
           {this.state.pandaList.map((panda) => (
-            <div key={"div-" + panda.genes.toString()}>
-              <Col key={"col-" + panda.genes.toString()} md={3}>
+            <div key={"div-" + panda.pandaTokenId.toString()}>
+              <Col key={"col-" + panda.pandaTokenId.toString()} md={3}>
                 <PandaCard
-                  key={"panda-card-" + panda.genes.toString()}
+                  key={"panda-card-" + panda.pandaTokenId.toString()}
                   dna={panda.dna}
                   mumId={panda.mumId}
                   dadId={panda.dadId}
