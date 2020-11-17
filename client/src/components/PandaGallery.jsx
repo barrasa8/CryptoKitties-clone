@@ -23,6 +23,10 @@ class PandaGallery extends Component {
         }));
   }
 
+  componentDidUpdate(){
+    console.log("pandaGAllery will update");
+  }
+
   render() {
     return (
       <Container fluid>

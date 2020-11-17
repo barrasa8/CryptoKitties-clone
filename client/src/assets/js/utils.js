@@ -62,6 +62,13 @@ export const createPandaGen0 = (contract,accounts,dna) =>{
   })
 };  
 
-export const Breed = () =>{
-  
+export const breed = (contract,accounts,mumTokenId, dadTokenId) =>{
+  contract.methods.breed(mumTokenId,dadTokenId)
+      .send({ from: accounts[0] }, (error, txHash) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(txHash);
+        }
+      });
 };

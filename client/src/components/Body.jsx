@@ -28,6 +28,9 @@ class Body extends Component {
         this.eventBirth();
     }
 
+    componentDidUpdate(){
+        console.log("body did update");
+    }
 
     eventBirth = () => {
         this.props.contract.events.Birth({}, (error, event) => {
@@ -55,7 +58,7 @@ class Body extends Component {
                     <Route path='/' exact component={Home}/>
                     <Route path='/factory' component={()=> <PandaFactory contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/gallery'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts}/>}/>
-                    <Route path='/breed'component={() =>  <BreedRoom contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
+                    <Route path='/breed'component={() =>  <BreedRoom contract ={this.props.contract} accounts={this.props.accounts} />}/>
                 </Switch>
             </div>
          );

@@ -89,7 +89,7 @@ contract PandaContract is Initializable , PandaToken {
 
         uint256 dadGenes = _pandas[_dadId].genes;
         uint256 mumGenes = _pandas[_mumId].genes;
-        uint256 newGenes =  _mixDna(dadGenes, mumGenes);
+        uint256 newGenes =  _mixDna_Advanced(dadGenes, mumGenes);
 
         //calculate generation
         uint16 DadGeneration =  _pandas[_dadId].generation;
@@ -113,5 +113,60 @@ contract PandaContract is Initializable , PandaToken {
 
         return ((firsthalf *100000000 ) + secondhalf);
     }
+
+    function _mixDna_Advanced(uint256 _dadDna, uint256 _mumDna) internal view returns (uint256){
+        uint256 [8] memory geneArray;
+        uint8 random = uint8 (now % 255);
+        uint8 randomGenePosition = uint8 (now % 8);
+        uint8 randomGene = uint8( now % 100);
+        uint8 index =7;
+        uint256 i = 1;
+        uint256 newGene;
+
+        if(randomGenePosition<=3 || (randomGenePosition>=5 && randomGenePosition <=6)){
+            if(randomGene > 98){
+                randomGene=98;
+            }else if(randomGene<10){
+                randomGene = 10;
+            }
+        }else if(randomGenePosition==4){
+            if(randomGene > 44){
+                randomGene=44;
+            }else if(randomGene<11){
+                randomGene = 11;
+            }
+        }
+        else if(randomGenePosition==7){
+            if(randomGene > 69){
+                randomGene=69;
+            }else if(randomGene<11){
+                randomGene = 11;
+            }
+        }
+
+        for (i=1 ; i<=128 ; i=i*2){
+            if(index==randomGenePosition){
+                geneArray[index]= randomGene;
+            }else if(random & i != 0 ){
+                geneArray[index]  = _mumDna %  100;
+            }else{
+                geneArray[index]  = _dadDna %  100;
+            }
+
+            _mumDna = _mumDna/100;
+            _dadDna = _dadDna/100;
+
+            index--;
+        }
+
+        for ( i=0 ; i<8;i++){
+            newGene =newGene +geneArray[i];
+            if(i != 7){
+                newGene = newGene * 100;
+            }            
+        }
+
+        return newGene;
+    }    
 }
 

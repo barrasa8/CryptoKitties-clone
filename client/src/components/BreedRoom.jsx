@@ -4,7 +4,7 @@ import { Container, Row, Col, Form ,Button} from "react-bootstrap";
 
 import {Redirect} from 'react-router-dom';
 
-import {epochToUTCDate, getPanda, Breed} from "../assets/js/utils";
+import {epochToUTCDate, getPanda, breed} from "../assets/js/utils";
 import PandaCard from "./PandaCard";
 
 import "../assets/css/breedRoom.css";
@@ -58,7 +58,8 @@ class BreedRoom extends Component {
           lastNum: 9
         }
       },
-      isRedirect:0
+      isRedirect:0,
+      birthPandaId:0
     };
   }
 
@@ -66,7 +67,7 @@ class BreedRoom extends Component {
     let optionId = parseInt(e.target.value) ;
     let optionName = e.target.options[optionId].getAttribute('data-key');
     
-    if(e.target.options[0].getAttribute('data-key')==="mum"){
+    if(optionName==="mum"){
       this.setState(() => ({
         MumPanda: this.state.pandaList[optionId],
       }));
@@ -77,21 +78,14 @@ class BreedRoom extends Component {
     }
   }
 
-  Breed= async ()=>{
+  _Breed=  ()=>{
     if(this.state.MumPanda.pandaTokenId === this.state.DadPanda.pandaTokenId){
       alert("Dad and Mum have to be different");
     }else{
-      await this.props.contract.methods.breed(this.state.MumPanda.pandaTokenId,this.state.DadPanda.pandaTokenId)
-      .send({ from: this.props.accounts[0] }, (error, txHash) => {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log(txHash);
-          this.setState(() => ({
-            isRedirect: 1
-          }));
-        }
-      });
+      breed(this.props.contract, this.props.accounts,this.state.MumPanda.pandaTokenId,this.state.DadPanda.pandaTokenId)
+      this.setState(() => ({
+          isRedirect: 1
+        }));  
     }
   }
 
@@ -108,10 +102,12 @@ class BreedRoom extends Component {
   componentWillUnmount(){
     this._isMounted = false;
     this.setState.isRedirect=0;
+    this.setState.birthPandaId=0;
   }
 
   componentDidUpdate(){
-    console.info("did update");
+    // this.state.birthPandaId = this.props.birthEvent.PandaId;
+    console.info("BreedRoom did update--> ", this.state.birthPandaId);
   }
 
   componentWillUnmount(){
@@ -121,7 +117,7 @@ class BreedRoom extends Component {
   render() {
     return (
       <Container>
-        {this.state.isRedirect ? <Redirect to="/gallery" />: ""}
+        {/* {this.state.isRedirect>0 ? <Redirect to="/gallery" />: ""} */}
         <Row className="justify-content-md-center body-title">
           <div align="center">
             <h1 className="c-black">Breeding Room</h1>
@@ -155,7 +151,7 @@ class BreedRoom extends Component {
                         />
                       </Col>
                       <Col md={{span:2}}>
-                        <Button className="scale vertical-center" onClick={this.Breed}>Breed</Button>
+                        <Button className="scale vertical-center" onClick={this._Breed}>Breed</Button>
                       </Col>
                       <Col md={{span:5}}>
                         <Form>
