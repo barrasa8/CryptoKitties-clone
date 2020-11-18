@@ -7,7 +7,7 @@ import "@openzeppelin/upgrades/contracts/Initializable.sol";
 contract PandaContract is Initializable , PandaToken {
 
     event Approval(address indexed owner, address indexed approved, uint256 indexed PandaId);
-    event Birth(address _owner,uint256 PandaId, uint32 mumId, uint32 dadId, uint256 genes); 
+    event Birth(address _owner,uint256 PandaId, uint32 mumId, uint32 dadId, uint256 genes,uint16 generation); 
 
 
     function initialize() public initializer{
@@ -34,7 +34,7 @@ contract PandaContract is Initializable , PandaToken {
 
         _transfer(address(0), _owner, newPandaId);
 
-        emit Birth(_owner, newPandaId, _mumId, _dadId, _genes);
+        emit Birth(_owner, newPandaId, _mumId, _dadId, _genes,_generation);
 
         return newPandaId;
     }

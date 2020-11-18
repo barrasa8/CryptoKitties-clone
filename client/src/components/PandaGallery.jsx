@@ -33,6 +33,26 @@ class PandaGallery extends Component {
         <Row className="justify-content-md-center body-title">
                     <h1>My Collection</h1>
         </Row>
+        {this.props.birthEvent.generation > 0 ? 
+        <Row className="justify-content-md-center">
+          <h5 id="panda-created-message">
+            {this.props.birthEvent.genes > 0
+              ? "Your Panda is Alive: Owner:" +
+              this.props.birthEvent.owner +
+              ", PandaID:" +
+              this.props.birthEvent.PandaId +
+              " , Genes:" +
+              this.props.birthEvent.genes +
+              " , DadId:" +
+              this.props.birthEvent.dadId +
+              " , MumId:" +
+              this.props.birthEvent.mumId +
+              " , Generation:" +
+              this.props.birthEvent.generation
+              : ""}
+          </h5>
+        </Row>
+        : ""}
         <Row className="justify-content-md-center">
           {this.state.pandaList.map((panda) => (
             <div key={"div-" + panda.pandaTokenId.toString()}>

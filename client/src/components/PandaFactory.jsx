@@ -50,7 +50,8 @@ class PandaFactory extends Component {
         decorationSidescolor: 10,
         animation: 1,
         lastNum: 9,
-      }
+      },
+      isMounted:0
     };
   }
 
@@ -111,6 +112,20 @@ class PandaFactory extends Component {
     });
   };
 
+  componentDidMount(){
+    this.setState({
+      isMounted: 1,
+    });
+    console.log("Did mount -->is it mounted?",this.state.isMounted);
+  }
+
+  componentWillUnmount(){
+    this.setState({
+      isMounted: 0,
+    });
+    console.log("will unmount--> is it mounted?",this.state.isMounted);
+  }
+
   render() {
     return (
       <Container fluid>
@@ -122,18 +137,27 @@ class PandaFactory extends Component {
             <h4 id="panda-created-message"> </h4>
           </div>
         </Row>
+        {this.props.birthEvent.generation == 0 && this.state.isMounted ? 
         <Row className="justify-content-md-center">
           <h5 id="panda-created-message">
             {this.props.birthEvent.genes > 0
               ? "Your Panda is Alive: Owner:" +
               this.props.birthEvent.owner +
-                ", PandaID:" +
-                this.props.birthEvent.PandaId +
-                " , Genes:" +
-                this.props.birthEvent.genes
+              ", PandaID:" +
+              this.props.birthEvent.PandaId +
+              " , Genes:" +
+              this.props.birthEvent.genes +
+              " , DadId:" +
+              this.props.birthEvent.dadId +
+              " , MumId:" +
+              this.props.birthEvent.mumId +
+              " , Generation:" +
+              this.props.birthEvent.generation
               : ""}
           </h5>
         </Row>
+        : ""}
+       
         <Row className="justify-content-md-center">
           <PandaCard dna={this.state.dna} 
                     mumId="0"

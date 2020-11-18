@@ -13,7 +13,6 @@ class BreedRoom extends Component {
 
   constructor() {
     super();
-    this._isMounted = false;
     this.state = {
       pandaList: [],
       MumPanda: {
@@ -59,7 +58,6 @@ class BreedRoom extends Component {
         }
       },
       isRedirect:0,
-      birthPandaId:0
     };
   }
 
@@ -90,9 +88,8 @@ class BreedRoom extends Component {
   }
 
   async componentDidMount() {
-    this._isMounted=true;
     let _pandaList = await getPanda(this.props.contract, this.props.accounts);
-    this._isMounted && this.setState(() => ({
+    this.setState(() => ({
           pandaList: _pandaList,
           MumPanda: _pandaList[0],
           DadPanda: _pandaList[0]
@@ -100,24 +97,13 @@ class BreedRoom extends Component {
   }
 
   componentWillUnmount(){
-    this._isMounted = false;
     this.setState.isRedirect=0;
-    this.setState.birthPandaId=0;
-  }
-
-  componentDidUpdate(){
-    // this.state.birthPandaId = this.props.birthEvent.PandaId;
-    console.info("BreedRoom did update--> ", this.state.birthPandaId);
-  }
-
-  componentWillUnmount(){
-    console.info("will unmount")
   }
 
   render() {
     return (
       <Container>
-        {/* {this.state.isRedirect>0 ? <Redirect to="/gallery" />: ""} */}
+        {this.state.isRedirect>0 ? <Redirect to="/gallery" />: ""}
         <Row className="justify-content-md-center body-title">
           <div align="center">
             <h1 className="c-black">Breeding Room</h1>
