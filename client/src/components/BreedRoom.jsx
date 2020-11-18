@@ -6,6 +6,7 @@ import {Redirect} from 'react-router-dom';
 
 import {epochToUTCDate, getPanda, breed} from "../assets/js/utils";
 import PandaCard from "./PandaCard";
+import BreedModal from "./BreedModal";
 
 import "../assets/css/breedRoom.css";
 
@@ -58,6 +59,7 @@ class BreedRoom extends Component {
         }
       },
       isRedirect:0,
+      modalShow:true,
     };
   }
 
@@ -112,6 +114,9 @@ class BreedRoom extends Component {
             <h4 id="panda-created-message"> </h4>
           </div>
         </Row>
+
+      <BreedModal contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.props.birthEvent}/>
+
         {(() => {
             if (this.state.pandaList.length > 1) {
               return (
