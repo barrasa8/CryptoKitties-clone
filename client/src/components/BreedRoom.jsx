@@ -115,7 +115,7 @@ class BreedRoom extends Component {
           </div>
         </Row>
 
-      <BreedModal contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.props.birthEvent}/>
+      <BreedModal contract ={this.props.contract} accounts={this.props.accounts} />
 
         {(() => {
             if (this.state.pandaList.length > 1) {
