@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Modal, Button, ButtonToolbar , Col , Form } from "react-bootstrap";
+import { Modal, Button, ButtonToolbar , Col } from "react-bootstrap";
 
 import PandaCard from "./PandaCard";
 
@@ -22,23 +22,6 @@ class BreedModal extends Component {
     };
   }
 
-  handleChange = (e) => {
-    let optionId = parseInt(e.target.value) ;
-    //let optionName = e.target.options[optionId].getAttribute('data-key');
-    
-console.log("inside the handleChange-->",e.target);
-
-    // if(optionName==="mum"){
-    //   this.setState(() => ({
-    //     MumPanda: this.state.pandaList[optionId],
-    //   }));
-    // }else{
-    //   this.setState(() => ({
-    //     DadPanda: this.state.pandaList[optionId]
-    //   }));
-    // }
-  }
-
   handleShow() {
     this.setState({ show: true });
   }
@@ -58,8 +41,8 @@ console.log("inside the handleChange-->",e.target);
   render() {
     return (
       <ButtonToolbar>
-        <Button className="primary" onClick={this.handleShow}>
-          Launch demo modal
+        <Button variant="warning" onClick={this.handleShow}>
+           {"Select " + this.props.parentType}
           </Button>
 
         <Modal
@@ -75,7 +58,7 @@ console.log("inside the handleChange-->",e.target);
           </Modal.Header>
           <Modal.Body>
             {this.state.pandaList.map((panda,index) => (
-                <div className="panda-col-wrapper" key={"div-" + panda.pandaTokenId.toString()} value={index} data-key="mum" onClick={this.handleChange}>
+                <div className="panda-col-wrapper" key={"div-" + panda.pandaTokenId.toString()} value={index} data-key="mum" onClick={()=>this.props.handleclick(index.toString(),this.props.parentType)}>
                   <Col key={"col-" + panda.pandaTokenId.toString()} md={3}>
                     <PandaCard
                       key={"panda-card-" + panda.pandaTokenId.toString()}

@@ -22,11 +22,7 @@ class PandaGallery extends Component {
           pandaList: _pandaList
         }));
   }
-
-  componentDidUpdate(){
-    console.log("pandaGAllery will update");
-  }
-
+  
   render() {
     return (
       <Container fluid>

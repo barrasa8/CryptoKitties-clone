@@ -24,13 +24,8 @@ class Body extends Component {
         };
       }
 
-
     componentDidMount() {
         this.eventBirth();
-    }
-
-    componentDidUpdate(){
-        console.log("body did update");
     }
 
     eventBirth = () => {

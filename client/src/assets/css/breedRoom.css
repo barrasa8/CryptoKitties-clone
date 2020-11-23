@@ -2,14 +2,20 @@
     width: fit-content;
 }
 .scale:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .vertical-center {
-    margin: 0;
     position: absolute;
     top: 50%;
-    left:50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
+}
+
+.btn{
+    margin:20px;
+}
+
+.btn-breed{ 
+    height: 70px;
+    width: 160px;
+    left:-20px;
+} 

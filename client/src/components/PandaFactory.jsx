@@ -116,14 +116,12 @@ class PandaFactory extends Component {
     this.setState({
       isMounted: 1,
     });
-    console.log("Did mount -->is it mounted?",this.state.isMounted);
   }
 
   componentWillUnmount(){
     this.setState({
       isMounted: 0,
     });
-    console.log("will unmount--> is it mounted?",this.state.isMounted);
   }
 
   render() {

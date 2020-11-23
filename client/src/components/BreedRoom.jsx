@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col, Form ,Button} from "react-bootstrap";
+import { Container, Row, Col ,Button} from "react-bootstrap";
 
 import {Redirect} from 'react-router-dom';
 
@@ -17,45 +17,45 @@ class BreedRoom extends Component {
     this.state = {
       pandaList: [],
       MumPanda: {
-        pandaTokenId:1,
-        genes:9535304831437132,
-        birthTime:1604830614,
+        pandaTokenId:0,
+        genes:0,
+        birthTime:0,
         mumId:0,
         dadId:0,
         generation:0,
         dna:{
-          dnaarmleg: 51,
-          dnaeyepatch: 53,
-          dnainnerearfoot: 54,
-          dnaheadbody: 10,
+          dnaarmleg: 0,
+          dnaeyepatch: 0,
+          dnainnerearfoot: 0,
+          dnaheadbody: 0,
           //Pandatributes
-          dnaeyeshape: 1,
-          dnamouthshape: 1,
-          decorationMidcolor: 19,
-          decorationSidescolor: 10,
-          animation: 1,
-          lastNum: 9
+          dnaeyeshape: 0,
+          dnamouthshape: 0,
+          decorationMidcolor: 0,
+          decorationSidescolor: 0,
+          animation: 0,
+          lastNum: 0
         }
       },
       DadPanda: {
-        pandaTokenId:1,
-        genes:9535304831437132,
-        birthTime:1604830614,
+        pandaTokenId:0,
+        genes:0,
+        birthTime:0,
         mumId:0,
         dadId:0,
         generation:0,
         dna:{
-          dnaarmleg: 51,
-          dnaeyepatch: 53,
-          dnainnerearfoot: 54,
-          dnaheadbody: 10,
+          dnaarmleg: 0,
+          dnaeyepatch: 0,
+          dnainnerearfoot: 0,
+          dnaheadbody: 0,
           //Pandatributes
-          dnaeyeshape: 1,
-          dnamouthshape: 1,
-          decorationMidcolor: 19,
-          decorationSidescolor: 10,
-          animation: 1,
-          lastNum: 9
+          dnaeyeshape: 0,
+          dnamouthshape: 0,
+          decorationMidcolor: 0,
+          decorationSidescolor: 0,
+          animation: 0,
+          lastNum: 0
         }
       },
       isRedirect:0,
@@ -78,7 +78,22 @@ class BreedRoom extends Component {
     }
   }
 
-  _Breed=  ()=>{
+  handleClick = (index,parentType) => {
+    
+    // console.log("inside the handleChange-->",index);
+
+    if(parentType==="mum"){
+      this.setState(() => ({
+        MumPanda: this.state.pandaList[index],
+      }));
+    }else{
+      this.setState(() => ({
+        DadPanda: this.state.pandaList[index]
+      }));
+    }
+  }
+
+  _Breed=  ()=>  {
     if(this.state.MumPanda.pandaTokenId === this.state.DadPanda.pandaTokenId){
       alert("Dad and Mum have to be different");
     }else{
@@ -114,24 +129,20 @@ class BreedRoom extends Component {
             <h4 id="panda-created-message"> </h4>
           </div>
         </Row>
-
-      <BreedModal contract ={this.props.contract} accounts={this.props.accounts} />
-
+        <Row className="justify-content-md-center">
+          <Col md={{span:5}}>
+            <BreedModal contract ={this.props.contract} accounts={this.props.accounts} handleclick={this.handleClick} parentType="mum"/>
+          </Col>
+          <Col md={{span:2}}></Col>
+          <Col md={{span:5}}>
+            <BreedModal contract ={this.props.contract} accounts={this.props.accounts} handleclick={this.handleClick} parentType="dad"/>
+          </Col>
+        </Row>
         {(() => {
             if (this.state.pandaList.length > 1) {
               return (
                     <Row className="justify-content-md-center">
                       <Col md={{span:5}}>
-                        <Form>
-                          <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                            <Form.Label>Select Panda Mum</Form.Label>
-                            <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
-                              {this.state.pandaList.map((panda,index) => (
-                                <option key={"mum-" + panda.pandaTokenId.toString()} value={index} data-key="mum"> {"TokenId: "+ panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()} </option>
-                              ))}
-                            </Form.Control>
-                          </Form.Group>
-                        </Form>
                         <PandaCard
                           key={"panda-card-mum" + this.state.MumPanda.genes.toString()}
                           dna={this.state.MumPanda.dna}
@@ -142,19 +153,9 @@ class BreedRoom extends Component {
                         />
                       </Col>
                       <Col md={{span:2}}>
-                        <Button className="scale vertical-center" onClick={this._Breed}>Breed</Button>
+                        <Button className="scale vertical-center btn-breed" onClick={this._Breed}>Breed</Button>
                       </Col>
                       <Col md={{span:5}}>
-                        <Form>
-                          <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                            <Form.Label>Select Panda Dad</Form.Label>
-                            <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
-                              {this.state.pandaList.map((panda,index) => (
-                                  <option key={"dad-" + panda.pandaTokenId.toString()} value={index} data-key="dad"> {"TokenId: "+ panda.pandaTokenId.toString()+" | DNA: " +panda.genes.toString()} </option>
-                                ))}
-                            </Form.Control>
-                          </Form.Group>
-                        </Form>
                         <PandaCard
                           key={"panda-card-mum" + this.state.DadPanda.genes.toString()}
                           dna={this.state.DadPanda.dna}
