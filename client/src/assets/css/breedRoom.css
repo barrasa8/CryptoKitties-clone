@@ -12,10 +12,11 @@
 
 .btn{
     margin:20px;
+    font-size: x-large;
 }
 
 .btn-breed{ 
     height: 70px;
-    width: 160px;
-    left:-20px;
+    width: 150px;
+    left:-10px;    
 } 
