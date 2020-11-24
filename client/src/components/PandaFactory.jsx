@@ -124,11 +124,7 @@ class PandaFactory extends Component {
       isMounted: 0,
     });
   }
-
-  componentDidUpdate(){
-    console.log("didupdate-->" , this.props.birthEvent.generation);
-  }
-
+  
   render() {
     return (
       <Container fluid>

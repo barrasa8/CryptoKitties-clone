@@ -63,24 +63,7 @@ class BreedRoom extends Component {
     };
   }
 
-  handleChange = (e) => {
-    let optionId = parseInt(e.target.value) ;
-    let optionName = e.target.options[optionId].getAttribute('data-key');
-    
-    if(optionName==="mum"){
-      this.setState(() => ({
-        MumPanda: this.state.pandaList[optionId],
-      }));
-    }else{
-      this.setState(() => ({
-        DadPanda: this.state.pandaList[optionId]
-      }));
-    }
-  }
-
   handleClick = (index,parentType) => {
-    
-    // console.log("inside the handleChange-->",index);
 
     if(parentType==="mum"){
       this.setState(() => ({
