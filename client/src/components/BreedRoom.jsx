@@ -60,6 +60,8 @@ class BreedRoom extends Component {
       },
       isRedirect:0,
       modalShow:true,
+      mumPandaShow:0,
+      dadPandaShow:0
     };
   }
 
@@ -68,10 +70,12 @@ class BreedRoom extends Component {
     if(parentType==="mum"){
       this.setState(() => ({
         MumPanda: this.state.pandaList[index],
+        mumPandaShow: 1
       }));
     }else{
       this.setState(() => ({
-        DadPanda: this.state.pandaList[index]
+        DadPanda: this.state.pandaList[index],
+        dadPandaShow:1
       }));
     }
   }
@@ -94,6 +98,7 @@ class BreedRoom extends Component {
           MumPanda: _pandaList[0],
           DadPanda: _pandaList[0]
         }));
+    
   }
 
   componentWillUnmount(){
@@ -104,7 +109,7 @@ class BreedRoom extends Component {
     return (
       <Container>
         {this.state.isRedirect>0 ? <Redirect to="/gallery" />: ""}
-        <Row className="justify-content-md-center body-title">
+        <Row className="justify-content-md-center body-title body-title-font">
           <div align="center">
             <h1 className="c-black">Breeding Room</h1>
             <p className="c-black">Please give the pandas some privacy</p>
@@ -126,27 +131,31 @@ class BreedRoom extends Component {
               return (
                     <Row className="justify-content-md-center">
                       <Col md={{span:5}}>
+                      {this.state.mumPandaShow===1 ? 
                         <PandaCard
-                          key={"panda-card-mum" + this.state.MumPanda.genes.toString()}
-                          dna={this.state.MumPanda.dna}
-                          mumId={this.state.MumPanda.mumId}
-                          dadId={this.state.MumPanda.dadId}
-                          generation={this.state.MumPanda.generation}
-                          birthTime={epochToUTCDate(this.state.MumPanda.birthTime)}
+                        key={"panda-card-mum" + this.state.MumPanda.genes.toString()}
+                        dna={this.state.MumPanda.dna}
+                        mumId={this.state.MumPanda.mumId}
+                        dadId={this.state.MumPanda.dadId}
+                        generation={this.state.MumPanda.generation}
+                        birthTime={epochToUTCDate(this.state.MumPanda.birthTime)}
                         />
+                      : <div className="empty-box body-title-font">Pick Mum</div>}                        
                       </Col>
                       <Col md={{span:2}}>
-                        <Button className="scale vertical-center btn-breed" onClick={this._Breed}>BREED</Button>
+                        <Button className="scale vertical-center" id="btn-breed" onClick={this._Breed}>BREED</Button>
                       </Col>
                       <Col md={{span:5}}>
+                        {this.state.dadPandaShow===1 ?
                         <PandaCard
-                          key={"panda-card-mum" + this.state.DadPanda.genes.toString()}
-                          dna={this.state.DadPanda.dna}
-                          mumId={this.state.DadPanda.mumId}
-                          dadId={this.state.DadPanda.dadId}
-                          generation={this.state.DadPanda.generation}
-                          birthTime={epochToUTCDate(this.state.DadPanda.birthTime)}
-                        />
+                        key={"panda-card-mum" + this.state.DadPanda.genes.toString()}
+                        dna={this.state.DadPanda.dna}
+                        mumId={this.state.DadPanda.mumId}
+                        dadId={this.state.DadPanda.dadId}
+                        generation={this.state.DadPanda.generation}
+                        birthTime={epochToUTCDate(this.state.DadPanda.birthTime)}
+                      />
+                      : <div className="empty-box body-title-font">Pick Dad</div>}
                       </Col>
                     </Row>
               )

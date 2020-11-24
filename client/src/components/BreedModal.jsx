@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Modal, Button, ButtonToolbar , Col } from "react-bootstrap";
+import { Modal, Button, ButtonToolbar, Row, Col } from "react-bootstrap";
 
 import PandaCard from "./PandaCard";
 
@@ -50,13 +50,15 @@ class BreedModal extends Component {
           show={this.state.show}
           onHide={this.handleHide}
           dialogClassName="custom-modal"
+          onClick={this.handleHide}         
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-lg">
               Mum Panda
               </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body >
+            <Row>
             {this.state.pandaList.map((panda,index) => (
                 <div className="panda-col-wrapper" key={"div-" + panda.pandaTokenId.toString()} value={index} data-key="mum" onClick={()=>this.props.handleclick(index.toString(),this.props.parentType)}>
                   <Col key={"col-" + panda.pandaTokenId.toString()} md={3}>
@@ -72,6 +74,7 @@ class BreedModal extends Component {
                   <Col md={1}></Col>
                 </div>
             ))}
+            </Row>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleHide}>Close</Button>

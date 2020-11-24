@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
-.body-title{
+.body-title-font{
     font-family: 'Rock Salt', cursive;
+}
+
+.body-title{    
     margin:50px;
 }
 

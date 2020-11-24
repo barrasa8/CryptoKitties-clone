@@ -26,7 +26,7 @@ class PandaGallery extends Component {
   render() {
     return (
       <Container fluid>
-        <Row className="justify-content-md-center body-title">
+        <Row className="justify-content-md-center body-title body-title-font">
                     <h1>My Collection</h1>
         </Row>
         {this.props.birthEvent.generation > 0 ? 

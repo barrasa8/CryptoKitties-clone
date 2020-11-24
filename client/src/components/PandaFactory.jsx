@@ -124,11 +124,11 @@ class PandaFactory extends Component {
       isMounted: 0,
     });
   }
-  
+
   render() {
     return (
       <Container fluid>
-        <Row className="justify-content-md-center body-title">
+        <Row className="justify-content-md-center body-title body-title-font">
           <div align="center">
             <h1 className="c-black">Pandas Factory</h1>
             <p className="c-black">Create your custom Panda</p>
