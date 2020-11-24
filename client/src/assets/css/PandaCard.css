@@ -6,3 +6,7 @@
     height: 490px;
     margin-bottom: 20px;
 }
+
+.cursor-pointer{
+    cursor: pointer;
+}

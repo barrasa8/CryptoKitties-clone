@@ -14,7 +14,7 @@ const animations = allAnimations();
 class PandaCard extends Component {
   render() {
     return (
-      <div className="pandaBox hightlight">
+      <div className={"pandaBox hightlight " + this.props.className}>
         <Panda
           dna={this.props.dna}
           eyeShape={eyeShapes[this.props.dna.dnaeyeshape].toLowerCase()}

@@ -69,6 +69,7 @@ class BreedModal extends Component {
                       dadId={panda.dadId}
                       generation={panda.generation}
                       birthTime={epochToUTCDate(panda.birthTime)}
+                      className="cursor-pointer"
                     />
                   </Col>
                   <Col md={1}></Col>
