@@ -116,12 +116,17 @@ class PandaFactory extends Component {
     this.setState({
       isMounted: 1,
     });
+    console.log("didMount, is mounted-->", this.state.isMounted);
   }
 
   componentWillUnmount(){
     this.setState({
       isMounted: 0,
     });
+  }
+
+  componentDidUpdate(){
+    console.log("didupdate-->" , this.props.birthEvent.generation);
   }
 
   render() {
@@ -135,7 +140,7 @@ class PandaFactory extends Component {
             <h4 id="panda-created-message"> </h4>
           </div>
         </Row>
-        {this.props.birthEvent.generation === 0 && this.state.isMounted ? 
+        {this.props.birthEvent.generation == 0 && this.state.isMounted ? 
         <Row className="justify-content-md-center">
           <h5 id="panda-created-message">
             {this.props.birthEvent.genes > 0

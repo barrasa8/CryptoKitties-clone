@@ -10,9 +10,8 @@
     top: 50%;
 }
 
-.btn{
+.btn-parent{
     margin:20px;
-    font-size: x-large;
 }
 
 .btn-breed{ 

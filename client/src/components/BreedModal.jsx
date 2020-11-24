@@ -41,7 +41,7 @@ class BreedModal extends Component {
   render() {
     return (
       <ButtonToolbar>
-        <Button variant="warning" onClick={this.handleShow}>
+        <Button className="btn-parent" variant="warning" onClick={this.handleShow}>
            {"Select " + this.props.parentType}
           </Button>
 

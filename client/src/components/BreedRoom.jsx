@@ -153,7 +153,7 @@ class BreedRoom extends Component {
                         />
                       </Col>
                       <Col md={{span:2}}>
-                        <Button className="scale vertical-center btn-breed" onClick={this._Breed}>Breed</Button>
+                        <Button className="scale vertical-center btn-breed" onClick={this._Breed}>BREED</Button>
                       </Col>
                       <Col md={{span:5}}>
                         <PandaCard
