@@ -13,5 +13,6 @@ code {
 }
 
 .modal-content{
-  width:1500px;
+  width: 1000px;
+  right: 250px;
 }

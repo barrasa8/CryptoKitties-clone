@@ -54,7 +54,7 @@ class BreedModal extends Component {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-lg">
-              Mum Panda
+              {this.props.parentType +" Panda"}
               </Modal.Title>
           </Modal.Header>
           <Modal.Body >
