@@ -42,7 +42,7 @@ class BreedModal extends Component {
     return (
       <ButtonToolbar>
         <Button className="btn-parent" variant="warning" onClick={this.handleShow}>
-           {"Select " + this.props.parentType}
+           {"Select " + this.props.parenttype}
           </Button>
 
         <Modal
@@ -54,13 +54,13 @@ class BreedModal extends Component {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-lg">
-              {this.props.parentType +" Panda"}
+              {this.props.parenttype +" Panda"}
               </Modal.Title>
           </Modal.Header>
           <Modal.Body >
             <Row>
             {this.state.pandaList.map((panda,index) => (
-                <div className="panda-col-wrapper" key={"div-" + panda.pandaTokenId.toString()} value={index} data-key="mum" onClick={()=>this.props.handleclick(index.toString(),this.props.parentType)}>
+                <div className="panda-col-wrapper" key={"div-" + panda.pandaTokenId.toString()} value={index} data-key="mum" onClick={()=>this.props.handleclick(index.toString(),this.props.parenttype)}>
                   <Col key={"col-" + panda.pandaTokenId.toString()} md={3}>
                     <PandaCard
                       key={"panda-card-" + panda.pandaTokenId.toString()}

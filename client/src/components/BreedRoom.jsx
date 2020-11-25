@@ -119,11 +119,11 @@ class BreedRoom extends Component {
         </Row>
         <Row className="justify-content-md-center">
           <Col md={{span:5}}>
-            <BreedModal contract ={this.props.contract} accounts={this.props.accounts} handleclick={this.handleClick} parentType="mum"/>
+            <BreedModal contract ={this.props.contract} accounts={this.props.accounts} handleclick={this.handleClick} parenttype="mum"/>
           </Col>
           <Col md={{span:2}}></Col>
           <Col md={{span:5}}>
-            <BreedModal contract ={this.props.contract} accounts={this.props.accounts} handleclick={this.handleClick} parentType="dad"/>
+            <BreedModal contract ={this.props.contract} accounts={this.props.accounts} handleclick={this.handleClick} parenttype="dad"/>
           </Col>
         </Row>
         {(() => {
