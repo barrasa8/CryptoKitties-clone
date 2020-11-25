@@ -60,8 +60,8 @@ class BreedModal extends Component {
           <Modal.Body >
             <Row>
             {this.state.pandaList.map((panda,index) => (
-                <div className="panda-col-wrapper" key={"div-" + panda.pandaTokenId.toString()} value={index} data-key="mum" onClick={()=>this.props.handleclick(index.toString(),this.props.parenttype)}>
-                  <Col key={"col-" + panda.pandaTokenId.toString()} md={3}>
+                <div className="panda-col-wrapper" key={"div-" + panda.pandaTokenId.toString()} value={index}>
+                  <Col key={"col-" + panda.pandaTokenId.toString()} md={3} onClick={()=>this.props.handleclick(index.toString(),this.props.parenttype)}>
                     <PandaCard
                       key={"panda-card-" + panda.pandaTokenId.toString()}
                       dna={panda.dna}
