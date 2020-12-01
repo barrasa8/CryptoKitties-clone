@@ -16,5 +16,7 @@ contract PandaMarketPlaceStorage is Ownable, PandaContract{
 
     Offer[] internal Offers;
 
+    uint256 internal _activeOfferCount = 0;
+
     mapping(uint256 => Offer) internal tokenIdToOffer;
 }

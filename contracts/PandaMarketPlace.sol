@@ -7,9 +7,9 @@ import "@openzeppelin/upgrades/contracts/Initializable.sol";
 
 contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlaceStorage {
 
-    function initialize(address pandaContractAddress) public onlyOwner initializer{
+    function initialize(address _pandaContractAddress) public onlyOwner initializer{
         Ownable.initialize();
-        setPandaContract(pandaContractAddress);
+        setPandaContract(_pandaContractAddress);
     }
 
     /***************************************************
@@ -30,7 +30,7 @@ contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlac
      */
     function getOffer(uint256 _tokenId) external view returns ( address seller, uint256 price, uint256 index, uint256 tokenId, bool active){
         
-        require (tokenIdToOffer[_tokenId].tokenId > 0 && tokenIdToOffer[_tokenId].active == true);
+        require (tokenIdToOffer[_tokenId].tokenId > 0 && tokenIdToOffer[_tokenId].active == true,"No active offer for the tokenID");
         
         seller  = tokenIdToOffer[tokenId].seller;
         price   = tokenIdToOffer[tokenId].price;
@@ -42,9 +42,27 @@ contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlac
     }
 
     /**
-    * Get all tokenId's that are currently for sale. Returns an empty arror if none exist.
+    * Get all tokenId's that are currently for sale. Returns an empty error if none exist.
      */
-    function getAllTokenOnSale() external view  returns(uint256[] memory listOfOffers);
+    function getAllTokenOnSale() external view  returns(uint256[] memory listOfOffers){
+        require(Offers.length > 0 && _activeOfferCount > 0,"No Offers");
+        return _getAllActiveTokens();
+    }
+
+    function _getAllActiveTokens() internal view  returns(uint256[] memory listOfOffers){
+        uint256 i = 0;
+        uint256 index=0;
+        
+        for ( i=0 ; i< Offers.length && index < _activeOfferCount  ; i++){
+            
+            if(Offers[i].active == true){
+                listOfOffers[index]=Offers[i].tokenId;
+                index++;
+            }           
+        }
+
+        return listOfOffers;
+    }
 
     /**
     * Creates a new offer for _tokenId for the price _price.
@@ -53,14 +71,49 @@ contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlac
     * Requirement: There can only be one active offer for a token at a time.
     * Requirement: Marketplace contract (this) needs to be an approved operator when the offer is created.
      */
-    function setOffer(uint256 _price, uint256 _tokenId) external;
+    function setOffer(uint256 _price, uint256 _tokenId) external{
+        require(_pandaContract.ownerOf(_tokenId) == msg.sender,"Not the owner of the token");
+        require(tokenIdToOffer[_tokenId].active==false,"Already an offer exist");
+        require(_pandaContract.isApprovedForAll(msg.sender,address(this)),"Not an operator for the tokenId");
+
+        if(tokenIdToOffer[_tokenId].tokenId==_tokenId){
+            uint256 index = tokenIdToOffer[_tokenId].index;
+
+            Offers[index].seller =  msg.sender;
+            Offers[index].price= _price;
+            Offers[index].active= true;
+        }else{
+             Offer memory newOffer = Offer({
+                seller: msg.sender,
+                price: _price,
+                index: Offers.length-1,
+                tokenId: _tokenId,
+                active: true
+            });
+
+            tokenIdToOffer[_tokenId] = newOffer;
+            Offers.push(newOffer);            
+        }
+
+        _activeOfferCount++;
+
+        emit MarketTransaction("Create offer", msg.sender,  _tokenId);
+    }
 
     /**
     * Removes an existing offer.
     * Emits the MarketTransaction event with txType "Remove offer"
     * Requirement: Only the seller of _tokenId can remove an offer.
      */
-    function removeOffer(uint256 _tokenId) external;
+    function removeOffer(uint256 _tokenId) external{
+        require(tokenIdToOffer[_tokenId].seller == msg.sender,"Only seller of the token can remove the offer");
+
+        tokenIdToOffer[_tokenId].active = false;
+        Offers[tokenIdToOffer[_tokenId].index].active =  false;
+        _activeOfferCount--;
+
+        emit MarketTransaction("Remove offer", msg.sender,  _tokenId);
+    }
 
     /**
     * Executes the purchase of _tokenId.
@@ -69,5 +122,24 @@ contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlac
     * Requirement: The msg.value needs to equal the price of _tokenId
     * Requirement: There must be an active offer for _tokenId
      */
-    function buyPanda(uint256 _tokenId) external payable;
+    function buyPanda(uint256 _tokenId) external payable{
+        Offer memory offer = tokenIdToOffer[_tokenId];
+        require(tokenIdToOffer[_tokenId].price == msg.value,"Transaction value does not match the price of the token");
+        require(tokenIdToOffer[_tokenId].active == true);
+
+        // Important: remove offer before paying, to avoid reentry attack
+        tokenIdToOffer[_tokenId].active=false;
+        Offers[tokenIdToOffer[_tokenId].index].active = false;
+
+        //transfer funds to the seller
+        if(offer.price>0){
+            offer.seller.transfer(offer.price);
+        }
+
+        //Transfer ownership of the token
+        _pandaContract.transferFrom(tokenIdToOffer[_tokenId].seller,msg.sender, _tokenId);
+
+
+        emit MarketTransaction("Buy", msg.sender,  _tokenId);
+    }
 }
