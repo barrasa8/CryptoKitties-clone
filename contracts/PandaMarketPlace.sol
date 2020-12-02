@@ -137,7 +137,7 @@ contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlac
         }
 
         //Transfer ownership of the token
-        _pandaContract.transferFrom(tokenIdToOffer[_tokenId].seller,msg.sender, _tokenId);
+        _pandaContract.safeTransferFrom(tokenIdToOffer[_tokenId].seller,msg.sender, _tokenId);
 
 
         emit MarketTransaction("Buy", msg.sender,  _tokenId);
