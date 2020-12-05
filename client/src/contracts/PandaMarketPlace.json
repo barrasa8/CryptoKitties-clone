@@ -12812,12 +12812,12 @@
         }
       },
       "links": {},
-      "address": "0x8411FEb3b5165ca0505B133257f234F8f5919eA3",
-      "transactionHash": "0x330d60e6813887c21087db7e7ecddcbb61dd61eaef8052a3ab5ff9f0cfa159d1"
+      "address": "0xA896b476cba4C26Ca840b48966931059fDbB8719",
+      "transactionHash": "0x8af90357b1be25f01efae256b30fae04b4bc394b3b60b8233f37555de552273f"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-02T12:06:19.364Z",
+  "updatedAt": "2020-12-05T03:37:00.842Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {

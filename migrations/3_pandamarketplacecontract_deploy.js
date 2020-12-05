@@ -4,6 +4,6 @@ const PandaMarketPlaceContract = artifacts.require("PandaMarketPlace");
 // const PandaMarketPlaceProxy = artifacts.require("PandaProxy");
 
 module.exports = function(deployer) {
-  deployer.deploy(PandaMarketPlaceContract, PandaProxy.address);
+  //deployer.deploy(PandaMarketPlaceContract, PandaProxy.address);
 };
 
