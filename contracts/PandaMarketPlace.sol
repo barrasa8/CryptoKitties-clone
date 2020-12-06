@@ -9,7 +9,7 @@ contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlac
 
     function initialize(address _pandaContractAddress) public onlyOwner initializer{
         Ownable.initialize();
-        setPandaContract(_pandaContractAddress);
+        setPandaContract(_pandaContractAddress);        
     }
 
     /***************************************************
