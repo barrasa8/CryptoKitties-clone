@@ -72,3 +72,30 @@ export const breed = (contract,accounts,mumTokenId, dadTokenId) =>{
         }
       });
 };
+
+export  const getMarketOffers = async (contract, accounts) => {
+  let _marketOfferList = [];
+  let _marketOfferItem;
+
+  const marketOffersArray = await contract.methods
+    .getAllTokenOnSale()
+    .call({ from: accounts[0] });
+
+  for (let i = 1; i < marketOffersArray.length; i++) {
+    let _offer = await contract.methods
+      .getOffer(marketOffersArray[i].tokenId)
+      .call({ from: accounts[0] });
+
+      _marketOfferItem = {
+        seller:_offer.seller,
+        price:_offer.price,
+        index:_offer.index,
+        tokenId:_offer.tokenId,
+         active:_offer.active
+      };
+
+    _marketOfferList.push(_marketOfferItem);
+  }
+
+  return _marketOfferList;
+};
