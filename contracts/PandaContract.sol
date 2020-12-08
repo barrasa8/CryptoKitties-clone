@@ -2,8 +2,6 @@ pragma solidity ^0.5.12;
 
 import "./PandaToken.sol";
 
-import "@openzeppelin/upgrades/contracts/Initializable.sol";
-
 contract PandaContract is Initializable , PandaToken {
 
     event Approval(address indexed owner, address indexed approved, uint256 indexed PandaId);

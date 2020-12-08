@@ -5,9 +5,8 @@ import "./IERC721.sol";
 import "./IRC721Receiver.sol";
 import "./PandaStorage.sol";
 
-import "@openzeppelin/upgrades/contracts/Initializable.sol";
 
-contract PandaToken is Initializable, IERC721, Ownable, PandaStorage{
+contract PandaToken is IERC721, Ownable, PandaStorage{
 
     function initialize(string memory _tName, string memory _tSymbol) public initializer{
         Ownable.initialize();

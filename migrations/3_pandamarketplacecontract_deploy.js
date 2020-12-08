@@ -9,11 +9,7 @@ module.exports = async function(deployer) {
   await deployer.deploy(PandaMarketPlaceContract);
   instanceOfLogic = await PandaMarketPlaceContract.deployed();
   
-  // console.log("instnace of logic--> ",instanceOfLogic);
-
-  // console.log("contract--> ",PandaMarketPlaceContract);
-
-  // console.log("isntance of logic",instanceOfLogic);
+  console.log("OWNER OF instnace of logic--> ",instanceOfLogic.owner);
 
   await deployer.deploy(PandaMarketPlaceProxy,instanceOfLogic.address);
   instanceOfProxy =  await PandaMarketPlaceProxy.deployed();

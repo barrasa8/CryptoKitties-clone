@@ -4,15 +4,19 @@ const PandaProxy = artifacts.require("PandaProxy");
 module.exports = async function(deployer,networks,accounts) {
   let instanceOfLogic, instanceOfProxy, instance;
 
-  instanceOfLogic = await PandaContract.new();
+  await deployer.deploy(PandaContract);
+  instanceOfLogic = await PandaContract.deployed();
 
-  instanceOfProxy = await PandaProxy.new(instanceOfLogic.address);
+  await deployer.deploy(PandaProxy,instanceOfLogic.address);
+  instanceOfProxy = await PandaProxy.deployed();
 
   instance = await PandaContract.at(instanceOfProxy.address);
 
   console.log("contract --> ", instanceOfLogic.address);
 
   console.log("proxy --> ", instanceOfProxy.address);
+
+  console.log("contract Owner 123456--> ", PandaContract.owner);
 
   //Create pandaId 0 , not to be displayed.
   await instance.createPandaGen0(7259267741713121);

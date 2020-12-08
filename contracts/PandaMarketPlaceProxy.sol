@@ -1,6 +1,6 @@
 pragma solidity ^0.5.12;
 import "./PandaMarketPlaceStorage.sol";
-import "./Ownable.sol";
+//import "./Ownable.sol";
 
 contract PandaMarketPlaceProxy is Ownable,PandaMarketPlaceStorage{
 
@@ -9,6 +9,7 @@ contract PandaMarketPlaceProxy is Ownable,PandaMarketPlaceStorage{
   constructor(address _currentAddress) public {
     currentAddress = _currentAddress;
     //Ownable.initialize();
+     owner = msg.sender;
   }
   function upgrade(address _newAddress) public onlyOwner {
     currentAddress = _newAddress;
