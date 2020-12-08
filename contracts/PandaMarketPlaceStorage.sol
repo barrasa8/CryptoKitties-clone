@@ -1,9 +1,8 @@
 pragma solidity ^0.5.12;
 
 import "./PandaContract.sol";
-import "./Ownable.sol";
 
-contract PandaMarketPlaceStorage is Ownable, PandaContract{
+contract PandaMarketPlaceStorage is PandaContract{
     PandaContract internal _pandaContract;
 
     struct Offer{

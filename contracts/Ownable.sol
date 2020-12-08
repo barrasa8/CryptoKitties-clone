@@ -6,7 +6,7 @@ contract Ownable is Initializable{
     address public owner;
 
     modifier onlyOwner(){
-        require(msg.sender == owner);
+        require(msg.sender == owner,"error: onlyOwner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         _; //Continue execution
     }
 

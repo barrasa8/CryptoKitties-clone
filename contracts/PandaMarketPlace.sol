@@ -2,13 +2,15 @@ pragma solidity ^0.5.12;
 
 import "./IPandaMarketPlace.sol";
 import "./PandaMarketPlaceStorage.sol";
+import "./Ownable.sol";
 
 import "@openzeppelin/upgrades/contracts/Initializable.sol";
 
-contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlaceStorage {
+contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarketPlaceStorage {
+   
 
-    function initialize(address _pandaContractAddress) public onlyOwner initializer{
-        Ownable.initialize();
+    function initialize(address _pandaContractAddress) public  initializer{
+        //Ownable.initialize();
         setPandaContract(_pandaContractAddress);        
     }
 
@@ -21,7 +23,7 @@ contract PandaMarketPlace is  Initializable, IPandaMarketPlace , PandaMarketPlac
     * Set the current PandaContract address and initialize the instance of PandaContract.
     * Requirement: Only the contract owner can call.
      */
-    function setPandaContract(address _pandaContractAddress) onlyOwner public {
+    function setPandaContract(address _pandaContractAddress)  public  {
         _pandaContract =  PandaContract(_pandaContractAddress) ;
     }
 
