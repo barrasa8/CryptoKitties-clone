@@ -148,12 +148,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"TxType\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"MarketTransaction\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"buyPanda\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getAllTokenOnSale\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"listOfOffers\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"getOffer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"seller\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"active\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"removeOffer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"setOffer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_PandaContractAddress\",\"type\":\"address\"}],\"name\":\"setPandaContract\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{\"buyPanda(uint256)\":{\"notice\":\"Executes the purchase of _tokenId. Sends the funds to the seller and transfers the token using transferFrom in Pandacontract. Emits the MarketTransaction event with txType \\\"Buy\\\". Requirement: The msg.value needs to equal the price of _tokenId Requirement: There must be an active offer for _tokenId\"},\"getAllTokenOnSale()\":{\"notice\":\"Get all tokenId's that are currently for sale. Returns an empty arror if none exist.\"},\"getOffer(uint256)\":{\"notice\":\"Get the details about a offer for _tokenId. Throws an error if there is no active offer for _tokenId.\"},\"removeOffer(uint256)\":{\"notice\":\"Removes an existing offer. Emits the MarketTransaction event with txType \\\"Remove offer\\\" Requirement: Only the seller of _tokenId can remove an offer.\"},\"setOffer(uint256,uint256)\":{\"notice\":\"Creates a new offer for _tokenId for the price _price. Emits the MarketTransaction event with txType \\\"Create offer\\\" Requirement: Only the owner of _tokenId can create an offer. Requirement: There can only be one active offer for a token at a time. Requirement: Marketplace contract (this) needs to be an approved operator when the offer is created.\"},\"setPandaContract(address)\":{\"notice\":\"Set the current PandaContract address and initialize the instance of Pandacontract. Requirement: Only the contract owner can call.\"}}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IPandaMarketPlace.sol\":\"IPandaMarketPlace\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IPandaMarketPlace.sol\":{\"keccak256\":\"0x97fbe15375017240c0642dc8fcd1ad2cbc7d49fe53c09224ed32b86ef4f91579\",\"urls\":[\"bzz-raw://a6a93c1516c9471f564473f0f7f5276c9bc633202a2969a5a2015f2c71b04ce0\",\"dweb:/ipfs/QmbKvhyeTb9W8PYeLxveRgWUxmdZYCuAKEBdCpUXrADVkF\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"TxType\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"MarketTransaction\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"buyPanda\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getAllTokenOnSale\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"listOfOffers\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"getOffer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"seller\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"active\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"removeOffer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"setOffer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_PandaContractAddress\",\"type\":\"address\"}],\"name\":\"setPandaContract\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{\"buyPanda(uint256)\":{\"notice\":\"Executes the purchase of _tokenId. Sends the funds to the seller and transfers the token using transferFrom in Pandacontract. Emits the MarketTransaction event with txType \\\"Buy\\\". Requirement: The msg.value needs to equal the price of _tokenId Requirement: There must be an active offer for _tokenId\"},\"getAllTokenOnSale()\":{\"notice\":\"Get all tokenId's that are currently for sale. Returns an empty arror if none exist.\"},\"getOffer(uint256)\":{\"notice\":\"Get the details about a offer for _tokenId. Throws an error if there is no active offer for _tokenId.\"},\"removeOffer(uint256)\":{\"notice\":\"Removes an existing offer. Emits the MarketTransaction event with txType \\\"Remove offer\\\" Requirement: Only the seller of _tokenId can remove an offer.\"},\"setOffer(uint256,uint256)\":{\"notice\":\"Creates a new offer for _tokenId for the price _price. Emits the MarketTransaction event with txType \\\"Create offer\\\" Requirement: Only the owner of _tokenId can create an offer. Requirement: There can only be one active offer for a token at a time. Requirement: Marketplace contract (this) needs to be an approved operator when the offer is created.\"},\"setPandaContract(address)\":{\"notice\":\"Set the current PandaContract address and initialize the instance of Pandacontract. Requirement: Only the contract owner can call.\"}}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IPandaMarketPlace.sol\":\"IPandaMarketPlace\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IPandaMarketPlace.sol\":{\"keccak256\":\"0x2caa0280a19dc276d593bd1054b44cb5aff8d8d3c58feac7ba30807acc6e351d\",\"urls\":[\"bzz-raw://ff510ae1f8439300122f7d691da7ed05d97736b5bce214d62ab3ffab57a950eb\",\"dweb:/ipfs/QmQKAGcF8xMHNSEAsoXGsxGCjap5dEYubwEQtRwy7XPVnY\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.0;\r\n\r\n//import \"./PandaContract.sol\";\r\n// import \"./Ownable.sol\";\r\n\r\n/*\r\n * Market place to trade kitties (should **in theory** be used for any ERC721 token)\r\n * It needs an existing Panda contract to interact with\r\n * Note: it does not inherit from the Panda contracts\r\n * Note: The contract needs to be an operator for everyone who is selling through this contract.\r\n */\r\ninterface IPandaMarketPlace {\r\n\r\n    event MarketTransaction(string TxType, address owner, uint256 tokenId);\r\n\r\n    /**\r\n    * Set the current PandaContract address and initialize the instance of Pandacontract.\r\n    * Requirement: Only the contract owner can call.\r\n     */\r\n    function setPandaContract(address _PandaContractAddress) external;\r\n\r\n    /**\r\n    * Get the details about a offer for _tokenId. Throws an error if there is no active offer for _tokenId.\r\n     */\r\n    function getOffer(uint256 _tokenId) external view returns ( address seller, uint256 price, uint256 index, uint256 tokenId, bool active);\r\n\r\n    /**\r\n    * Get all tokenId's that are currently for sale. Returns an empty arror if none exist.\r\n     */\r\n    function getAllTokenOnSale() external view  returns(uint256[] memory listOfOffers);\r\n\r\n    /**\r\n    * Creates a new offer for _tokenId for the price _price.\r\n    * Emits the MarketTransaction event with txType \"Create offer\"\r\n    * Requirement: Only the owner of _tokenId can create an offer.\r\n    * Requirement: There can only be one active offer for a token at a time.\r\n    * Requirement: Marketplace contract (this) needs to be an approved operator when the offer is created.\r\n     */\r\n    function setOffer(uint256 _price, uint256 _tokenId) external;\r\n\r\n    /**\r\n    * Removes an existing offer.\r\n    * Emits the MarketTransaction event with txType \"Remove offer\"\r\n    * Requirement: Only the seller of _tokenId can remove an offer.\r\n     */\r\n    function removeOffer(uint256 _tokenId) external;\r\n\r\n    /**\r\n    * Executes the purchase of _tokenId.\r\n    * Sends the funds to the seller and transfers the token using transferFrom in Pandacontract.\r\n    * Emits the MarketTransaction event with txType \"Buy\".\r\n    * Requirement: The msg.value needs to equal the price of _tokenId\r\n    * Requirement: There must be an active offer for _tokenId\r\n     */\r\n    function buyPanda(uint256 _tokenId) external payable;\r\n}\r\n",
+  "source": "pragma solidity ^0.5.0;\r\n\r\n/*\r\n * Market place to trade kitties (should **in theory** be used for any ERC721 token)\r\n * It needs an existing Panda contract to interact with\r\n * Note: it does not inherit from the Panda contracts\r\n * Note: The contract needs to be an operator for everyone who is selling through this contract.\r\n */\r\ninterface IPandaMarketPlace {\r\n\r\n    event MarketTransaction(string TxType, address owner, uint256 tokenId);\r\n\r\n    /**\r\n    * Set the current PandaContract address and initialize the instance of Pandacontract.\r\n    * Requirement: Only the contract owner can call.\r\n     */\r\n    function setPandaContract(address _PandaContractAddress) external;\r\n\r\n    /**\r\n    * Get the details about a offer for _tokenId. Throws an error if there is no active offer for _tokenId.\r\n     */\r\n    function getOffer(uint256 _tokenId) external view returns ( address seller, uint256 price, uint256 index, uint256 tokenId, bool active);\r\n\r\n    /**\r\n    * Get all tokenId's that are currently for sale. Returns an empty arror if none exist.\r\n     */\r\n    function getAllTokenOnSale() external view  returns(uint256[] memory listOfOffers);\r\n\r\n    /**\r\n    * Creates a new offer for _tokenId for the price _price.\r\n    * Emits the MarketTransaction event with txType \"Create offer\"\r\n    * Requirement: Only the owner of _tokenId can create an offer.\r\n    * Requirement: There can only be one active offer for a token at a time.\r\n    * Requirement: Marketplace contract (this) needs to be an approved operator when the offer is created.\r\n     */\r\n    function setOffer(uint256 _price, uint256 _tokenId) external;\r\n\r\n    /**\r\n    * Removes an existing offer.\r\n    * Emits the MarketTransaction event with txType \"Remove offer\"\r\n    * Requirement: Only the seller of _tokenId can remove an offer.\r\n     */\r\n    function removeOffer(uint256 _tokenId) external;\r\n\r\n    /**\r\n    * Executes the purchase of _tokenId.\r\n    * Sends the funds to the seller and transfers the token using transferFrom in Pandacontract.\r\n    * Emits the MarketTransaction event with txType \"Buy\".\r\n    * Requirement: The msg.value needs to equal the price of _tokenId\r\n    * Requirement: There must be an active offer for _tokenId\r\n     */\r\n    function buyPanda(uint256 _tokenId) external payable;\r\n}\r\n",
   "sourcePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IPandaMarketPlace.sol",
   "ast": {
     "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IPandaMarketPlace.sol",
@@ -206,7 +206,7 @@
                   "name": "TxType",
                   "nodeType": "VariableDeclaration",
                   "scope": 131,
-                  "src": "456:13:1",
+                  "src": "393:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -217,7 +217,7 @@
                     "id": 124,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "456:6:1",
+                    "src": "393:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -233,7 +233,7 @@
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
                   "scope": 131,
-                  "src": "471:13:1",
+                  "src": "408:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -244,7 +244,7 @@
                     "id": 126,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "471:7:1",
+                    "src": "408:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -261,7 +261,7 @@
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 131,
-                  "src": "486:15:1",
+                  "src": "423:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -272,7 +272,7 @@
                     "id": 128,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "486:7:1",
+                    "src": "423:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -282,9 +282,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "455:47:1"
+              "src": "392:47:1"
             },
-            "src": "432:71:1"
+            "src": "369:71:1"
           },
           {
             "body": null,
@@ -305,7 +305,7 @@
                   "name": "_PandaContractAddress",
                   "nodeType": "VariableDeclaration",
                   "scope": 136,
-                  "src": "700:29:1",
+                  "src": "637:29:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -316,7 +316,7 @@
                     "id": 132,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "700:7:1",
+                    "src": "637:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -327,16 +327,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "699:31:1"
+              "src": "636:31:1"
             },
             "returnParameters": {
               "id": 135,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "739:0:1"
+              "src": "676:0:1"
             },
             "scope": 175,
-            "src": "674:66:1",
+            "src": "611:66:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -360,7 +360,7 @@
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "893:16:1",
+                  "src": "830:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -371,7 +371,7 @@
                     "id": 137,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "893:7:1",
+                    "src": "830:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -381,7 +381,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "892:18:1"
+              "src": "829:18:1"
             },
             "returnParameters": {
               "id": 150,
@@ -393,7 +393,7 @@
                   "name": "seller",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "935:14:1",
+                  "src": "872:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -404,7 +404,7 @@
                     "id": 140,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "935:7:1",
+                    "src": "872:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -420,7 +420,7 @@
                   "name": "price",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "951:13:1",
+                  "src": "888:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -431,7 +431,7 @@
                     "id": 142,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "951:7:1",
+                    "src": "888:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -446,7 +446,7 @@
                   "name": "index",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "966:13:1",
+                  "src": "903:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -457,7 +457,7 @@
                     "id": 144,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "966:7:1",
+                    "src": "903:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -472,7 +472,7 @@
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "981:15:1",
+                  "src": "918:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -483,7 +483,7 @@
                     "id": 146,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "981:7:1",
+                    "src": "918:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -498,7 +498,7 @@
                   "name": "active",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "998:11:1",
+                  "src": "935:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -509,7 +509,7 @@
                     "id": 148,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "998:4:1",
+                    "src": "935:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -519,10 +519,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "933:77:1"
+              "src": "870:77:1"
             },
             "scope": 175,
-            "src": "875:136:1",
+            "src": "812:136:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -540,7 +540,7 @@
               "id": 152,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1155:2:1"
+              "src": "1092:2:1"
             },
             "returnParameters": {
               "id": 156,
@@ -552,7 +552,7 @@
                   "name": "listOfOffers",
                   "nodeType": "VariableDeclaration",
                   "scope": 157,
-                  "src": "1181:29:1",
+                  "src": "1118:29:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -564,7 +564,7 @@
                       "id": 153,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1181:7:1",
+                      "src": "1118:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -573,7 +573,7 @@
                     "id": 154,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1181:9:1",
+                    "src": "1118:9:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -583,10 +583,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1180:31:1"
+              "src": "1117:31:1"
             },
             "scope": 175,
-            "src": "1129:83:1",
+            "src": "1066:83:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -610,7 +610,7 @@
                   "name": "_price",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
-                  "src": "1640:14:1",
+                  "src": "1577:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -621,7 +621,7 @@
                     "id": 158,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1640:7:1",
+                    "src": "1577:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -636,7 +636,7 @@
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
-                  "src": "1656:16:1",
+                  "src": "1593:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -647,7 +647,7 @@
                     "id": 160,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1656:7:1",
+                    "src": "1593:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -657,16 +657,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1639:34:1"
+              "src": "1576:34:1"
             },
             "returnParameters": {
               "id": 163,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1682:0:1"
+              "src": "1619:0:1"
             },
             "scope": 175,
-            "src": "1622:61:1",
+            "src": "1559:61:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -690,7 +690,7 @@
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 169,
-                  "src": "1901:16:1",
+                  "src": "1838:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -701,7 +701,7 @@
                     "id": 165,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1901:7:1",
+                    "src": "1838:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -711,16 +711,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1900:18:1"
+              "src": "1837:18:1"
             },
             "returnParameters": {
               "id": 168,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1927:0:1"
+              "src": "1864:0:1"
             },
             "scope": 175,
-            "src": "1880:48:1",
+            "src": "1817:48:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -744,7 +744,7 @@
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 174,
-                  "src": "2306:16:1",
+                  "src": "2243:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -755,7 +755,7 @@
                     "id": 170,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2306:7:1",
+                    "src": "2243:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -765,26 +765,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2305:18:1"
+              "src": "2242:18:1"
             },
             "returnParameters": {
               "id": 173,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2340:0:1"
+              "src": "2277:0:1"
             },
             "scope": 175,
-            "src": "2288:53:1",
+            "src": "2225:53:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
         "scope": 176,
-        "src": "395:1949:1"
+        "src": "332:1949:1"
       }
     ],
-    "src": "0:2346:1"
+    "src": "0:2283:1"
   },
   "legacyAST": {
     "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IPandaMarketPlace.sol",
@@ -837,7 +837,7 @@
                   "name": "TxType",
                   "nodeType": "VariableDeclaration",
                   "scope": 131,
-                  "src": "456:13:1",
+                  "src": "393:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -848,7 +848,7 @@
                     "id": 124,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "456:6:1",
+                    "src": "393:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -864,7 +864,7 @@
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
                   "scope": 131,
-                  "src": "471:13:1",
+                  "src": "408:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -875,7 +875,7 @@
                     "id": 126,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "471:7:1",
+                    "src": "408:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -892,7 +892,7 @@
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 131,
-                  "src": "486:15:1",
+                  "src": "423:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -903,7 +903,7 @@
                     "id": 128,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "486:7:1",
+                    "src": "423:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -913,9 +913,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "455:47:1"
+              "src": "392:47:1"
             },
-            "src": "432:71:1"
+            "src": "369:71:1"
           },
           {
             "body": null,
@@ -936,7 +936,7 @@
                   "name": "_PandaContractAddress",
                   "nodeType": "VariableDeclaration",
                   "scope": 136,
-                  "src": "700:29:1",
+                  "src": "637:29:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -947,7 +947,7 @@
                     "id": 132,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "700:7:1",
+                    "src": "637:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -958,16 +958,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "699:31:1"
+              "src": "636:31:1"
             },
             "returnParameters": {
               "id": 135,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "739:0:1"
+              "src": "676:0:1"
             },
             "scope": 175,
-            "src": "674:66:1",
+            "src": "611:66:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -991,7 +991,7 @@
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "893:16:1",
+                  "src": "830:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1002,7 +1002,7 @@
                     "id": 137,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "893:7:1",
+                    "src": "830:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1012,7 +1012,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "892:18:1"
+              "src": "829:18:1"
             },
             "returnParameters": {
               "id": 150,
@@ -1024,7 +1024,7 @@
                   "name": "seller",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "935:14:1",
+                  "src": "872:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1035,7 +1035,7 @@
                     "id": 140,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "935:7:1",
+                    "src": "872:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1051,7 +1051,7 @@
                   "name": "price",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "951:13:1",
+                  "src": "888:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1062,7 +1062,7 @@
                     "id": 142,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "951:7:1",
+                    "src": "888:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1077,7 +1077,7 @@
                   "name": "index",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "966:13:1",
+                  "src": "903:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1088,7 +1088,7 @@
                     "id": 144,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "966:7:1",
+                    "src": "903:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1103,7 +1103,7 @@
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "981:15:1",
+                  "src": "918:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1114,7 +1114,7 @@
                     "id": 146,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "981:7:1",
+                    "src": "918:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1129,7 +1129,7 @@
                   "name": "active",
                   "nodeType": "VariableDeclaration",
                   "scope": 151,
-                  "src": "998:11:1",
+                  "src": "935:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1140,7 +1140,7 @@
                     "id": 148,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "998:4:1",
+                    "src": "935:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1150,10 +1150,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "933:77:1"
+              "src": "870:77:1"
             },
             "scope": 175,
-            "src": "875:136:1",
+            "src": "812:136:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1171,7 +1171,7 @@
               "id": 152,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1155:2:1"
+              "src": "1092:2:1"
             },
             "returnParameters": {
               "id": 156,
@@ -1183,7 +1183,7 @@
                   "name": "listOfOffers",
                   "nodeType": "VariableDeclaration",
                   "scope": 157,
-                  "src": "1181:29:1",
+                  "src": "1118:29:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1195,7 +1195,7 @@
                       "id": 153,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1181:7:1",
+                      "src": "1118:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1204,7 +1204,7 @@
                     "id": 154,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1181:9:1",
+                    "src": "1118:9:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -1214,10 +1214,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1180:31:1"
+              "src": "1117:31:1"
             },
             "scope": 175,
-            "src": "1129:83:1",
+            "src": "1066:83:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1241,7 +1241,7 @@
                   "name": "_price",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
-                  "src": "1640:14:1",
+                  "src": "1577:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1252,7 +1252,7 @@
                     "id": 158,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1640:7:1",
+                    "src": "1577:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1267,7 +1267,7 @@
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
-                  "src": "1656:16:1",
+                  "src": "1593:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1278,7 +1278,7 @@
                     "id": 160,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1656:7:1",
+                    "src": "1593:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1288,16 +1288,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1639:34:1"
+              "src": "1576:34:1"
             },
             "returnParameters": {
               "id": 163,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1682:0:1"
+              "src": "1619:0:1"
             },
             "scope": 175,
-            "src": "1622:61:1",
+            "src": "1559:61:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -1321,7 +1321,7 @@
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 169,
-                  "src": "1901:16:1",
+                  "src": "1838:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1332,7 +1332,7 @@
                     "id": 165,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1901:7:1",
+                    "src": "1838:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1342,16 +1342,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1900:18:1"
+              "src": "1837:18:1"
             },
             "returnParameters": {
               "id": 168,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1927:0:1"
+              "src": "1864:0:1"
             },
             "scope": 175,
-            "src": "1880:48:1",
+            "src": "1817:48:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -1375,7 +1375,7 @@
                   "name": "_tokenId",
                   "nodeType": "VariableDeclaration",
                   "scope": 174,
-                  "src": "2306:16:1",
+                  "src": "2243:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1386,7 +1386,7 @@
                     "id": 170,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2306:7:1",
+                    "src": "2243:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1396,26 +1396,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2305:18:1"
+              "src": "2242:18:1"
             },
             "returnParameters": {
               "id": 173,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2340:0:1"
+              "src": "2277:0:1"
             },
             "scope": 175,
-            "src": "2288:53:1",
+            "src": "2225:53:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
         "scope": 176,
-        "src": "395:1949:1"
+        "src": "332:1949:1"
       }
     ],
-    "src": "0:2346:1"
+    "src": "0:2283:1"
   },
   "compiler": {
     "name": "solc",
@@ -1423,7 +1423,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-08T11:43:48.759Z",
+  "updatedAt": "2020-12-09T11:21:45.216Z",
   "devdoc": {
     "methods": {}
   },

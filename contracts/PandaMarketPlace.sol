@@ -2,9 +2,6 @@ pragma solidity ^0.5.12;
 
 import "./IPandaMarketPlace.sol";
 import "./PandaMarketPlaceStorage.sol";
-//import "./Ownable.sol";
-
-//import "@openzeppelin/upgrades/contracts/Initializable.sol";
 
 contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarketPlaceStorage {
    

@@ -1,8 +1,5 @@
 pragma solidity ^0.5.0;
 
-//import "./PandaContract.sol";
-// import "./Ownable.sol";
-
 /*
  * Market place to trade kitties (should **in theory** be used for any ERC721 token)
  * It needs an existing Panda contract to interact with
