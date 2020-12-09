@@ -15,6 +15,7 @@ class  Header extends Component {
                         <Link to="factory" className= "nav-link">Panda Factory</Link>
                         <Link to="gallery" className= "nav-link">My Collection</Link>
                         <Link to="breed" className= "nav-link">Breed Room</Link>
+                        <Link to="market" className= "nav-link">Market Place</Link>
                     </Nav>
                     <Button variant="danger">Start</Button>
                 </Navbar.Collapse>

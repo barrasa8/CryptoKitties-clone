@@ -77,6 +77,8 @@ export  const getMarketOffers = async (contract, accounts) => {
   let _marketOfferList = [];
   let _marketOfferItem;
 
+console.log("martket methods..... ",contract.methods)
+
   const marketOffersArray = await contract.methods
     .getAllTokenOnSale()
     .call({ from: accounts[0] });
@@ -86,12 +88,22 @@ export  const getMarketOffers = async (contract, accounts) => {
       .getOffer(marketOffersArray[i].tokenId)
       .call({ from: accounts[0] });
 
+    let _panda = await contract.methods
+      .getPanda(_offer.tokenId)
+      .call({ from: accounts[0] });
+
       _marketOfferItem = {
         seller:_offer.seller,
-        price:_offer.price,
+        price:parseInt(_offer.price),
         index:_offer.index,
-        tokenId:_offer.tokenId,
-         active:_offer.active
+        tokenId:parseInt(_offer.tokenId),
+        active:_offer.active,    
+        mumId: parseInt(_panda.mumId),
+        dadId: parseInt(_panda.dadId),
+        birthTime: parseInt(_panda.birthTime),
+        generation: parseInt(_panda.generation),
+        genes: parseInt(_panda.genes),
+        dna: genesToDNA(_panda.genes),
       };
 
     _marketOfferList.push(_marketOfferItem);

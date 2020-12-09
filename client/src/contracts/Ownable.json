@@ -23,12 +23,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol\":\"Ownable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol\":{\"keccak256\":\"0x38233e17d76e41a6d6970bbd8e375df18caba1a35b5f849666effafe1d56b8ae\",\"urls\":[\"bzz-raw://66a5cc1030bc4c5dba3f622cae7be6516a34299987a1617751d53b77f4daafb5\",\"dweb:/ipfs/QmSq1UNLS7F7kNfa6S4hSg7wCGUWVVfP29ZrHahPrv1mJ5\"]},\"@openzeppelin/upgrades/contracts/Initializable.sol\":{\"keccak256\":\"0x9bfec92e36234ecc99b5d37230acb6cd1f99560233753162204104a4897e8721\",\"urls\":[\"bzz-raw://5cf7c208583d4d046d75bd99f5507412ab01cce9dd9f802ce9768a416d93ea2f\",\"dweb:/ipfs/QmcQS1BBMPpVEkXP3qzwSjxHNrqDek8YeR7xbVWDC9ApC7\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060cf8061005f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80638da5cb5b14602d575b600080fd5b60336075565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158209bc41cf31ea206d9971df6c99f32a76f29be9fa4e02e7633a078ff1afee91cba64736f6c634300050c0032",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80638da5cb5b14602d575b600080fd5b60336075565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158209bc41cf31ea206d9971df6c99f32a76f29be9fa4e02e7633a078ff1afee91cba64736f6c634300050c0032",
-  "sourceMap": "87:351:4:-;;;380:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;380:56:4;419:10;411:5;;:18;;;;;;;;;;;;;;;;;;87:351;;;;;;",
-  "deployedSourceMap": "87:351:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;87:351:4;;;;;;;;;;;;;;;;;;;110:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity 0.5.12;\n\nimport \"@openzeppelin/upgrades/contracts/Initializable.sol\";\n\ncontract Ownable {\n    address public owner;\n\n    modifier onlyOwner(){\n        require(msg.sender == owner,\"error: onlyOwner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\");\n        _; //Continue execution\n    }\n\n    // function initialize() public  initializer {\n    //     owner = msg.sender;\n    // }\n\n    constructor() public {\n        owner = msg.sender;\n    }\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol\":\"Ownable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol\":{\"keccak256\":\"0x30e22fd3c0d69eed57de9e9afa81660d2b095329fbaf4b57e797ea948e656396\",\"urls\":[\"bzz-raw://63ab92dd4c78b34f97127651b5b0cff9197b38dca86cde869074247a7234d780\",\"dweb:/ipfs/QmfKts5jz28e8kTth1hkyX2AML197rzsyj8gsmvhw6pQQv\"]},\"@openzeppelin/upgrades/contracts/Initializable.sol\":{\"keccak256\":\"0x9bfec92e36234ecc99b5d37230acb6cd1f99560233753162204104a4897e8721\",\"urls\":[\"bzz-raw://5cf7c208583d4d046d75bd99f5507412ab01cce9dd9f802ce9768a416d93ea2f\",\"dweb:/ipfs/QmcQS1BBMPpVEkXP3qzwSjxHNrqDek8YeR7xbVWDC9ApC7\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060cf8061005f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80638da5cb5b14602d575b600080fd5b60336075565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a7231582028a688f5b687cc6c5b7c55ed8878d6e36ebada2ba855ac4b97d229e3aca0014064736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80638da5cb5b14602d575b600080fd5b60336075565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a7231582028a688f5b687cc6c5b7c55ed8878d6e36ebada2ba855ac4b97d229e3aca0014064736f6c634300050c0032",
+  "sourceMap": "87:231:4:-;;;260:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;260:56:4;299:10;291:5;;:18;;;;;;;;;;;;;;;;;;87:231;;;;;;",
+  "deployedSourceMap": "87:231:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;87:231:4;;;;;;;;;;;;;;;;;;;110:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity 0.5.12;\n\nimport \"@openzeppelin/upgrades/contracts/Initializable.sol\";\n\ncontract Ownable {\n    address public owner;\n\n    modifier onlyOwner(){\n        require(msg.sender == owner,\"error: onlyOwner!\");\n        _; //Continue execution\n    }\n\n    constructor() public {\n        owner = msg.sender;\n    }\n}",
   "sourcePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol",
   "ast": {
     "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol",
@@ -105,7 +105,7 @@
             "body": {
               "id": 240,
               "nodeType": "Block",
-              "src": "157:125:4",
+              "src": "157:97:4",
               "statements": [
                 {
                   "expression": {
@@ -174,7 +174,7 @@
                       },
                       {
                         "argumentTypes": null,
-                        "hexValue": "6572726f723a206f6e6c794f776e65722121212121212121212121212121212121212121212121212121212121",
+                        "hexValue": "6572726f723a206f6e6c794f776e657221",
                         "id": 236,
                         "isConstant": false,
                         "isLValue": false,
@@ -182,13 +182,13 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "195:47:4",
+                        "src": "195:19:4",
                         "subdenomination": null,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_c9fc1554383db3d592b2c849d2130130e516018ecee2e9189d1edb9a3a456cb4",
-                          "typeString": "literal_string \"error: onlyOwner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\""
+                          "typeIdentifier": "t_stringliteral_8141e2154cbde191ad71f7a2f56bc6c42fc244b4fd38a9e9ccb9ba4810ffbb3c",
+                          "typeString": "literal_string \"error: onlyOwner!\""
                         },
-                        "value": "error: onlyOwner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                        "value": "error: onlyOwner!"
                       }
                     ],
                     "expression": {
@@ -198,8 +198,8 @@
                           "typeString": "bool"
                         },
                         {
-                          "typeIdentifier": "t_stringliteral_c9fc1554383db3d592b2c849d2130130e516018ecee2e9189d1edb9a3a456cb4",
-                          "typeString": "literal_string \"error: onlyOwner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\""
+                          "typeIdentifier": "t_stringliteral_8141e2154cbde191ad71f7a2f56bc6c42fc244b4fd38a9e9ccb9ba4810ffbb3c",
+                          "typeString": "literal_string \"error: onlyOwner!\""
                         }
                       ],
                       "id": 231,
@@ -224,7 +224,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "167:76:4",
+                    "src": "167:48:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -232,12 +232,12 @@
                   },
                   "id": 238,
                   "nodeType": "ExpressionStatement",
-                  "src": "167:76:4"
+                  "src": "167:48:4"
                 },
                 {
                   "id": 239,
                   "nodeType": "PlaceholderStatement",
-                  "src": "253:1:4"
+                  "src": "225:1:4"
                 }
               ]
             },
@@ -251,14 +251,14 @@
               "parameters": [],
               "src": "155:2:4"
             },
-            "src": "137:145:4",
+            "src": "137:117:4",
             "visibility": "internal"
           },
           {
             "body": {
               "id": 249,
               "nodeType": "Block",
-              "src": "401:35:4",
+              "src": "281:35:4",
               "statements": [
                 {
                   "expression": {
@@ -275,7 +275,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 229,
-                      "src": "411:5:4",
+                      "src": "291:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -292,7 +292,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 2452,
-                        "src": "419:3:4",
+                        "src": "299:3:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
@@ -306,13 +306,13 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "419:10:4",
+                      "src": "299:10:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       }
                     },
-                    "src": "411:18:4",
+                    "src": "291:18:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -320,7 +320,7 @@
                   },
                   "id": 248,
                   "nodeType": "ExpressionStatement",
-                  "src": "411:18:4"
+                  "src": "291:18:4"
                 }
               ]
             },
@@ -335,26 +335,26 @@
               "id": 242,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "391:2:4"
+              "src": "271:2:4"
             },
             "returnParameters": {
               "id": 243,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "401:0:4"
+              "src": "281:0:4"
             },
             "scope": 251,
-            "src": "380:56:4",
+            "src": "260:56:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 252,
-        "src": "87:351:4"
+        "src": "87:231:4"
       }
     ],
-    "src": "0:438:4"
+    "src": "0:318:4"
   },
   "legacyAST": {
     "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol",
@@ -431,7 +431,7 @@
             "body": {
               "id": 240,
               "nodeType": "Block",
-              "src": "157:125:4",
+              "src": "157:97:4",
               "statements": [
                 {
                   "expression": {
@@ -500,7 +500,7 @@
                       },
                       {
                         "argumentTypes": null,
-                        "hexValue": "6572726f723a206f6e6c794f776e65722121212121212121212121212121212121212121212121212121212121",
+                        "hexValue": "6572726f723a206f6e6c794f776e657221",
                         "id": 236,
                         "isConstant": false,
                         "isLValue": false,
@@ -508,13 +508,13 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "195:47:4",
+                        "src": "195:19:4",
                         "subdenomination": null,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_c9fc1554383db3d592b2c849d2130130e516018ecee2e9189d1edb9a3a456cb4",
-                          "typeString": "literal_string \"error: onlyOwner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\""
+                          "typeIdentifier": "t_stringliteral_8141e2154cbde191ad71f7a2f56bc6c42fc244b4fd38a9e9ccb9ba4810ffbb3c",
+                          "typeString": "literal_string \"error: onlyOwner!\""
                         },
-                        "value": "error: onlyOwner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                        "value": "error: onlyOwner!"
                       }
                     ],
                     "expression": {
@@ -524,8 +524,8 @@
                           "typeString": "bool"
                         },
                         {
-                          "typeIdentifier": "t_stringliteral_c9fc1554383db3d592b2c849d2130130e516018ecee2e9189d1edb9a3a456cb4",
-                          "typeString": "literal_string \"error: onlyOwner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\""
+                          "typeIdentifier": "t_stringliteral_8141e2154cbde191ad71f7a2f56bc6c42fc244b4fd38a9e9ccb9ba4810ffbb3c",
+                          "typeString": "literal_string \"error: onlyOwner!\""
                         }
                       ],
                       "id": 231,
@@ -550,7 +550,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "167:76:4",
+                    "src": "167:48:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -558,12 +558,12 @@
                   },
                   "id": 238,
                   "nodeType": "ExpressionStatement",
-                  "src": "167:76:4"
+                  "src": "167:48:4"
                 },
                 {
                   "id": 239,
                   "nodeType": "PlaceholderStatement",
-                  "src": "253:1:4"
+                  "src": "225:1:4"
                 }
               ]
             },
@@ -577,14 +577,14 @@
               "parameters": [],
               "src": "155:2:4"
             },
-            "src": "137:145:4",
+            "src": "137:117:4",
             "visibility": "internal"
           },
           {
             "body": {
               "id": 249,
               "nodeType": "Block",
-              "src": "401:35:4",
+              "src": "281:35:4",
               "statements": [
                 {
                   "expression": {
@@ -601,7 +601,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 229,
-                      "src": "411:5:4",
+                      "src": "291:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -618,7 +618,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 2452,
-                        "src": "419:3:4",
+                        "src": "299:3:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
@@ -632,13 +632,13 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "419:10:4",
+                      "src": "299:10:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       }
                     },
-                    "src": "411:18:4",
+                    "src": "291:18:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -646,7 +646,7 @@
                   },
                   "id": 248,
                   "nodeType": "ExpressionStatement",
-                  "src": "411:18:4"
+                  "src": "291:18:4"
                 }
               ]
             },
@@ -661,26 +661,26 @@
               "id": 242,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "391:2:4"
+              "src": "271:2:4"
             },
             "returnParameters": {
               "id": 243,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "401:0:4"
+              "src": "281:0:4"
             },
             "scope": 251,
-            "src": "380:56:4",
+            "src": "260:56:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 252,
-        "src": "87:351:4"
+        "src": "87:231:4"
       }
     ],
-    "src": "0:438:4"
+    "src": "0:318:4"
   },
   "compiler": {
     "name": "solc",
@@ -688,7 +688,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-09T12:07:10.372Z",
+  "updatedAt": "2020-12-09T12:51:03.975Z",
   "devdoc": {
     "methods": {}
   },

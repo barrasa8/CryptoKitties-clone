@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import PandaFactory from "./PandaFactory";
 import PandaGallery from "./PandaGallery";
+import PandaMarket from "./PandaMarket";
 import BreedRoom from "./BreedRoom";
 import Home from "./Home";
 
@@ -56,6 +57,7 @@ class Body extends Component {
                     <Route path='/factory' component={()=> <PandaFactory contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/gallery'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/breed'component={() =>  <BreedRoom contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
+                    <Route path='/market'component={() =>  <PandaMarket contract ={this.props.contract} accounts={this.props.accounts}/>}/>
                 </Switch>
             </div>
          );
