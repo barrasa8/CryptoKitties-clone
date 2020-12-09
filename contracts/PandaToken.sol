@@ -1,15 +1,13 @@
 pragma solidity ^0.5.12;
 
-import "./Ownable.sol";
 import "./IERC721.sol";
 import "./IRC721Receiver.sol";
 import "./PandaStorage.sol";
 
 
-contract PandaToken is IERC721, Ownable, PandaStorage{
+contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
 
     function initialize(string memory _tName, string memory _tSymbol) public initializer{
-        Ownable.initialize();
         _TokenName= _tName;
         _TokenSymbol = _tSymbol;
     }

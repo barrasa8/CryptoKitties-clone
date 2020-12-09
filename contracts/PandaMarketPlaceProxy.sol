@@ -7,8 +7,6 @@ contract PandaMarketPlaceProxy is Ownable,PandaMarketPlaceStorage{
 
   constructor(address _currentAddress) public {
     currentAddress = _currentAddress;
-    //Ownable.initialize();
-     owner = msg.sender; // This is a HACK!! 
   }
   function upgrade(address _newAddress) public onlyOwner {
     currentAddress = _newAddress;

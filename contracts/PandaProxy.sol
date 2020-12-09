@@ -1,6 +1,5 @@
 pragma solidity ^0.5.12;
 import "./PandaStorage.sol";
-import "./Ownable.sol";
 
 contract PandaProxy is Ownable , PandaStorage{
 
@@ -10,7 +9,6 @@ contract PandaProxy is Ownable , PandaStorage{
     currentAddress = _currentAddress;
     _TokenName= "CryptoPanda";
     _TokenSymbol = "CP";
-    Ownable.initialize();
   }
   function upgrade(address _newAddress) public onlyOwner {
     currentAddress = _newAddress;
