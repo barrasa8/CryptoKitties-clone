@@ -17370,7 +17370,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-09T12:51:04.013Z",
+  "updatedAt": "2020-12-11T12:31:39.095Z",
   "devdoc": {
     "methods": {
       "approve(address,uint256)": {

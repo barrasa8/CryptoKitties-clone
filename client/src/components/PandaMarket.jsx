@@ -17,8 +17,9 @@ class PandaMarket extends Component {
   }
 
   async componentDidMount() {
-    let _pandaList = await getMarketOffers(this.props.contract, this.props.accounts);
-
+    //console.log(this.props.marketContract.methods);
+    let _pandaList = await getMarketOffers(this.props.marketContract, this.props.accounts);
+    
     this.setState(() => ({
           OfferList: _pandaList
         }));
@@ -51,7 +52,7 @@ class PandaMarket extends Component {
         </Row>
         : ""} */}
         <Row className="justify-content-md-center">
-          {this.state.OfferList.map((Offer) => (
+          {/* {this.state.OfferList.map((Offer) => (
             <div key={"div-" + Offer.pandaTokenId.toString()}>
               <Col key={"col-" + Offer.pandaTokenId.toString()} md={3}>
                 <PandaCard
@@ -65,7 +66,7 @@ class PandaMarket extends Component {
               </Col>
               <Col md={1}></Col>
             </div>
-          ))}
+          ))} */}
         </Row>
       </Container>
     );

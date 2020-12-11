@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PandaContract from "./contracts/PandaContract.json";
 import PandaProxy from "./contracts/PandaProxy.json";
+import PandaMarketPlaceContract from "./contracts/PandaMarketPlace.json";
+import PandaMarketPlaceProxy from "./contracts/PandaMarketPlaceProxy.json";
+
 import getWeb3 from "./getWeb3";
 
 import Header from "./components/Header";
@@ -19,6 +22,7 @@ class App extends Component {
     web3: null,
     accounts: null,
     contract: null,
+    marketContract:null,
     items: [
       { id: 1, value: 0 },
       { id: 2, value: 0 },
@@ -41,10 +45,15 @@ class App extends Component {
         PandaContract.abi,
         deployedNetwork && deployedNetwork.address
       );
+      const marketDeployedNetwork = PandaMarketPlaceProxy.networks[networkId];//PandaContract.networks[networkId];
+      const marketInstance = new web3.eth.Contract(
+        PandaMarketPlaceContract.abi,
+        deployedNetwork && deployedNetwork.address
+      );
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      this.setState({ web3, accounts, contract: instance }, this.runExample);
+      this.setState({ web3, accounts, contract: instance , marketContract: marketInstance }, this.runExample);
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -63,7 +72,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header/>
-          <Body contract ={this.state.contract} accounts={this.state.accounts}/>
+          <Body contract ={this.state.contract} accounts={this.state.accounts} marketContract = {this.state.marketContract}/>
           <Footer/>
         </div>
       </Router>

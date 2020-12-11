@@ -77,11 +77,12 @@ export  const getMarketOffers = async (contract, accounts) => {
   let _marketOfferList = [];
   let _marketOfferItem;
 
-console.log("martket methods..... ",contract.methods)
-
+  console.log("before calling contract method");
   const marketOffersArray = await contract.methods
     .getAllTokenOnSale()
     .call({ from: accounts[0] });
+
+  console.log("after calling contract method");  
 
   for (let i = 1; i < marketOffersArray.length; i++) {
     let _offer = await contract.methods

@@ -42,14 +42,14 @@ module.exports = async function(deployer,networks,accounts) {
   // console.log("TotalSupply is after createPandaGen0 --> "+totalSupply2)
   
   // await instance.createPandaGen0(7259267741713121);
-  // await instance.createPandaGen0(2039544313449131);
-  // await instance.createPandaGen0(4659376442874121);
+  await instance.createPandaGen0(2039544313449131);
+  await instance.createPandaGen0(4659376442874121);
 
   
-  // let result = await instance._pandasOfOwner(accounts[0]);
+  let result = await instance._pandasOfOwner(accounts[0]);
   
-  // supply = await instance.totalSupply();
-  // console.log("***\n TEST : supply after 5 creations : " + supply.toString() + "\n***");
-  // console.log("***\n TEST : list of token for acc0 after gen0 creation : " + result.toString() + "\n***");
+  supply = await instance.totalSupply();
+  console.log("***\n TEST : supply after 5 creations : " + supply.toString() + "\n***");
+  console.log("***\n TEST : list of token for acc0 after gen0 creation : " + result.toString() + "\n***");
 };
 
