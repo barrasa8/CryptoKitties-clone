@@ -15,7 +15,7 @@ contract PandaMarketPlaceProxy is Ownable,PandaMarketPlaceStorage{
   //FALLBACK FUNCTION.
   function () payable external {
     address implementation = currentAddress;
-    require(currentAddress != address(0));
+    require(currentAddress != address(0),"kicked by the proxy!!!!! ");
     bytes memory data = msg.data;
 
     //DELEGATECALL EVERY FUNCTION CALL

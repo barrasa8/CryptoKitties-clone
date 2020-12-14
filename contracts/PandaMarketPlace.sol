@@ -30,11 +30,11 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
         
         require (tokenIdToOffer[_tokenId].tokenId > 0 && tokenIdToOffer[_tokenId].active == true,"No active offer for the tokenID");
         
-        seller  = tokenIdToOffer[tokenId].seller;
-        price   = tokenIdToOffer[tokenId].price;
-        index   = tokenIdToOffer[tokenId].index;
-        tokenId = tokenIdToOffer[tokenId].tokenId;
-        active  = tokenIdToOffer[tokenId].active;
+        seller  = tokenIdToOffer[_tokenId].seller;
+        price   = tokenIdToOffer[_tokenId].price;
+        index   = tokenIdToOffer[_tokenId].index;
+        tokenId = tokenIdToOffer[_tokenId].tokenId;
+        active  = tokenIdToOffer[_tokenId].active;
 
         return (seller,price,index,tokenId,active);
     }
@@ -51,15 +51,18 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
         uint256 i = 0;
         uint256 index=0;
         
+        uint256 totalOffers = Offers.length;
+        uint256[] memory result = new uint256[](totalOffers);
+        
         for ( i=0 ; i< Offers.length && index < _activeOfferCount  ; i++){
             
             if(Offers[i].active == true){
-                listOfOffers[index]=Offers[i].tokenId;
+                result[index]=Offers[i].tokenId;
                 index++;
             }           
         }
 
-        return listOfOffers;
+        return result;
     }
 
     /**
@@ -84,7 +87,7 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
              Offer memory newOffer = Offer({
                 seller: msg.sender,
                 price: _price,
-                index: Offers.length-1,
+                index: Offers.length,
                 tokenId: _tokenId,
                 active: true
             });
@@ -139,5 +142,9 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
 
 
         emit MarketTransaction("Buy", msg.sender,  _tokenId);
+    }
+
+    function getActiveAccount()  public  view returns (uint256){
+        return _activeOfferCount;
     }
 }
