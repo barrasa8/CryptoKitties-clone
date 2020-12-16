@@ -23,11 +23,6 @@ class App extends Component {
     accounts: null,
     contract: null,
     marketContract:null,
-    items: [
-      { id: 1, value: 0 },
-      { id: 2, value: 0 },
-      { id: 3, value: 0 },
-    ],
   };
 
   componentDidMount = async () => {
@@ -40,15 +35,15 @@ class App extends Component {
 
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = PandaProxy.networks[networkId];//PandaContract.networks[networkId];
+      const deployedNetwork = PandaProxy.networks[networkId];
       const instance = new web3.eth.Contract(
         PandaContract.abi,
         deployedNetwork && deployedNetwork.address
       );
-      const marketDeployedNetwork = PandaMarketPlaceProxy.networks[networkId];//PandaContract.networks[networkId];
+      const marketDeployedNetwork = PandaMarketPlaceProxy.networks[networkId];
       const marketInstance = new web3.eth.Contract(
         PandaMarketPlaceContract.abi,
-        deployedNetwork && deployedNetwork.address
+        marketDeployedNetwork && marketDeployedNetwork.address
       );
 
       // Set web3, accounts, and contract to the state, and then proceed with an

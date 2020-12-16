@@ -17,12 +17,14 @@ class PandaMarket extends Component {
   }
 
   async componentDidMount() {
-    //console.log(this.props.marketContract.methods);
-    let _pandaList = await getMarketOffers(this.props.marketContract, this.props.accounts);
+    // let isApprovedForAll = this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.address).call({ from: this.props.accounts.accounts[0] });
+    // console.log("is market place approved ?",isApprovedForAll);
+    console.log(this.props.accounts[0],this.props.marketContract.address);
+    // let _pandaList = await getMarketOffers(this.props.marketContract, this.props.accounts);
     
-    this.setState(() => ({
-          OfferList: _pandaList
-        }));
+    // this.setState(() => ({
+    //       OfferList: _pandaList
+    //     }));
   }
   
   render() {

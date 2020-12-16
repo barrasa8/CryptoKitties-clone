@@ -144,7 +144,4 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
         emit MarketTransaction("Buy", msg.sender,  _tokenId);
     }
 
-    function getActiveAccount()  public  view returns (uint256){
-        return _activeOfferCount;
-    }
 }
