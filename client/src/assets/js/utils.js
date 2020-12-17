@@ -77,13 +77,12 @@ export  const getMarketOffers = async (contract, accounts) => {
   let _marketOfferList = [];
   let _marketOfferItem;
 
-  console.log("before calling contract method");
+  // console.log("before calling contract method");
   const marketOffersArray = await contract.methods
     .getAllTokenOnSale()
     .call({ from: accounts[0] });
-
-  console.log("after calling contract method");  
-
+console.log("before the forloop for marketOffersarray-->", marketOffersArray[0].price);
+// console.log("_activeOfferCount--> ",_activeOfferCount);
   for (let i = 1; i < marketOffersArray.length; i++) {
     let _offer = await contract.methods
       .getOffer(marketOffersArray[i].tokenId)
@@ -111,4 +110,15 @@ export  const getMarketOffers = async (contract, accounts) => {
   }
 
   return _marketOfferList;
+};
+
+export const setApprovalForAll = async (contract,marketContract,accounts,approvalFlag) =>{
+  await contract.methods.setApprovalForAll(marketContract.options.address,approvalFlag)
+      .send({ from: accounts[0] }, (error, txHash) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(txHash);
+        }
+      });
 };

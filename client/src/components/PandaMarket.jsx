@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col ,Button} from "react-bootstrap";
 import PandaCard from "./PandaCard";
 
-import {epochToUTCDate ,getMarketOffers} from "../assets/js/utils";
+import {epochToUTCDate ,getMarketOffers,setApprovalForAll} from "../assets/js/utils";
 
 import "../assets/css/PandaGallery.css"
 
@@ -17,14 +17,23 @@ class PandaMarket extends Component {
   }
 
   async componentDidMount() {
-    // let isApprovedForAll = this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.address).call({ from: this.props.accounts.accounts[0] });
-    // console.log("is market place approved ?",isApprovedForAll);
-    console.log(this.props.accounts[0],this.props.marketContract.address);
-    // let _pandaList = await getMarketOffers(this.props.marketContract, this.props.accounts);
-    
-    // this.setState(() => ({
-    //       OfferList: _pandaList
-    //     }));
+    let _isApprovedForAll,_pandaList;
+    _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
+    console.log("is market place approved ?",_isApprovedForAll);
+    console.log(this.props.accounts[0],this.props.marketContract.options.address);
+
+    //await this.props.marketContract.methods.setOffer(20022,2).call({from: this.props.accounts[0]});
+
+    this.setState(() => ({
+      IsMarketOpperator: _isApprovedForAll
+    }));
+  }
+
+  _setApprovalForAll =  ()=>  {
+      setApprovalForAll(this.props.contract,this.props.marketContract,this.props.accounts,true);
+      this.setState(() => ({
+        IsMarketOpperator: true
+      }));
   }
   
   render() {
@@ -33,6 +42,12 @@ class PandaMarket extends Component {
         <Row className="justify-content-md-center body-title body-title-font">
                     <h1>Market Place</h1>
         </Row>
+        {this.state.IsMarketOpperator == false ?
+          <Row className="justify-content-md-center">
+            <Button id="btn-permissions" onClick={this._setApprovalForAll}>Delegate Operator rights</Button>
+          </Row>
+          :""
+        }
         {/* {this.props.birthEvent.generation > 0 ? 
         <Row className="justify-content-md-center">
           <h5 id="panda-created-message">

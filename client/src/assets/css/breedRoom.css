@@ -14,13 +14,6 @@
     margin:20px;
 }
 
-#btn-breed{ 
-    height: 70px;
-    width: 150px;
-    left:-10px; 
-    border-radius: 50px;   
-} 
-
 .empty-box{
     background-color: #e2efff;
     border-radius: 10px;
