@@ -1,28 +1,12 @@
 {
   "contractName": "PandaMarketPlaceStorage",
-  "abi": [
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "_activeOfferCount",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    }
-  ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"_activeOfferCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol\":\"PandaMarketPlaceStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IERC721.sol\":{\"keccak256\":\"0x14630fc9ba5463ef2184620f1f7574ce3a3c9f3567c354b14ca2882289cd5ecb\",\"urls\":[\"bzz-raw://1c2c5de26ae773d6b289872c66ef8cf2a6d9bce38cd5d7b2b0ea52b6abe64f73\",\"dweb:/ipfs/QmTyyLjoEzqAuJAyfHtGhwg8NsofWLHyDQaHvBGHvaoNBd\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IRC721Receiver.sol\":{\"keccak256\":\"0xb56664f6c5f955e392904b3d9c2a7458ea987a0041cfc868b7510f8a19b649e0\",\"urls\":[\"bzz-raw://d9e27acca3d0df46187e34b6204de3bf67155f4f075478dc5d58cf82f60c44b0\",\"dweb:/ipfs/QmYsvbnuXHE7PAByG8zZizQtucqLHSJoJEdn22BJFbzjQa\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol\":{\"keccak256\":\"0x30e22fd3c0d69eed57de9e9afa81660d2b095329fbaf4b57e797ea948e656396\",\"urls\":[\"bzz-raw://63ab92dd4c78b34f97127651b5b0cff9197b38dca86cde869074247a7234d780\",\"dweb:/ipfs/QmfKts5jz28e8kTth1hkyX2AML197rzsyj8gsmvhw6pQQv\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaContract.sol\":{\"keccak256\":\"0x3896da581fed89d7056f3c2372c28a9418283812411c9abb53c6d91884a548c5\",\"urls\":[\"bzz-raw://4861ef3c9b4038fe752f22b7b58a102b8120b10222cf486005ad317046ef0853\",\"dweb:/ipfs/QmUqJck1qtZWdgZkNG9TVTUfAb588XtLyS2gpaYy5M9gZV\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol\":{\"keccak256\":\"0x306c0209b073aca5ae9b0ccaf5ea988d77865fac0996c0aa3a67bb0fe1a46b3d\",\"urls\":[\"bzz-raw://5c3629a5f77b1372f7f7d7d210e8ec964d663847789bc8ddd5ed1f9034174fff\",\"dweb:/ipfs/QmVzSyPPCHPqKaFxPkSdGcuavGq2aes6tXHjeChXv6R4Ka\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaStorage.sol\":{\"keccak256\":\"0x0e1a140cd76292fa796558ce570f3d3363c9d816521fe5cb03f2164e010394bb\",\"urls\":[\"bzz-raw://0ddc5e05e3a74724952dfb152130b4dedf08744c6338b482491b9230d4979071\",\"dweb:/ipfs/QmSUFssAZsCvX8SBA7nC6WbSYFCmAn1VbVG819bSoq6rpG\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaToken.sol\":{\"keccak256\":\"0x7d77a587e8c1a73dd42f73b2d993ab7aa15782d1bb31a0b660fb9dc7758ad91e\",\"urls\":[\"bzz-raw://9c4df7427a26ccf26b9aa839857d2be708a8572bba315a3fe7f60620419807b8\",\"dweb:/ipfs/QmdGKUDVMBQArCM3sXEiBfrKLJUqW4YFseJqSfQvAFmkmq\"]},\"@openzeppelin/upgrades/contracts/Initializable.sol\":{\"keccak256\":\"0x9bfec92e36234ecc99b5d37230acb6cd1f99560233753162204104a4897e8721\",\"urls\":[\"bzz-raw://5cf7c208583d4d046d75bd99f5507412ab01cce9dd9f802ce9768a416d93ea2f\",\"dweb:/ipfs/QmcQS1BBMPpVEkXP3qzwSjxHNrqDek8YeR7xbVWDC9ApC7\"]}},\"version\":1}",
-  "bytecode": "0x60806040526000600255348015601457600080fd5b506084806100236000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80630bc1331514602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6002548156fea265627a7a723158200080538f50ca399e63ea5fb581d0434b6bd77ab626e566a5550792e0568190f664736f6c634300050c0032",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80630bc1331514602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6002548156fea265627a7a723158200080538f50ca399e63ea5fb581d0434b6bd77ab626e566a5550792e0568190f664736f6c634300050c0032",
-  "sourceMap": "81:357:8:-;;;378:1;343:36;;81:357;8:9:-1;5:2;;;30:1;27;20:12;5:2;81:357:8;;;;;;;",
-  "deployedSourceMap": "81:357:8:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;81:357:8;;;;;;;;;;;;;;;;;;;343:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.12;\n\nimport \"./Ownable.sol\";\nimport \"./PandaContract.sol\";\n\ncontract PandaMarketPlaceStorage {\n    PandaContract internal _pandaContract;\n\n    struct Offer{\n        address payable seller;\n        uint256 price;\n        uint256 index;\n        uint256 tokenId;\n        bool active;\n    }\n\n    Offer[] internal Offers;\n\n    uint256 public _activeOfferCount = 0;\n\n    mapping(uint256 => Offer) internal tokenIdToOffer;\n}",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol\":\"PandaMarketPlaceStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IERC721.sol\":{\"keccak256\":\"0x14630fc9ba5463ef2184620f1f7574ce3a3c9f3567c354b14ca2882289cd5ecb\",\"urls\":[\"bzz-raw://1c2c5de26ae773d6b289872c66ef8cf2a6d9bce38cd5d7b2b0ea52b6abe64f73\",\"dweb:/ipfs/QmTyyLjoEzqAuJAyfHtGhwg8NsofWLHyDQaHvBGHvaoNBd\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IRC721Receiver.sol\":{\"keccak256\":\"0xb56664f6c5f955e392904b3d9c2a7458ea987a0041cfc868b7510f8a19b649e0\",\"urls\":[\"bzz-raw://d9e27acca3d0df46187e34b6204de3bf67155f4f075478dc5d58cf82f60c44b0\",\"dweb:/ipfs/QmYsvbnuXHE7PAByG8zZizQtucqLHSJoJEdn22BJFbzjQa\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol\":{\"keccak256\":\"0x30e22fd3c0d69eed57de9e9afa81660d2b095329fbaf4b57e797ea948e656396\",\"urls\":[\"bzz-raw://63ab92dd4c78b34f97127651b5b0cff9197b38dca86cde869074247a7234d780\",\"dweb:/ipfs/QmfKts5jz28e8kTth1hkyX2AML197rzsyj8gsmvhw6pQQv\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaContract.sol\":{\"keccak256\":\"0x3896da581fed89d7056f3c2372c28a9418283812411c9abb53c6d91884a548c5\",\"urls\":[\"bzz-raw://4861ef3c9b4038fe752f22b7b58a102b8120b10222cf486005ad317046ef0853\",\"dweb:/ipfs/QmUqJck1qtZWdgZkNG9TVTUfAb588XtLyS2gpaYy5M9gZV\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol\":{\"keccak256\":\"0x4ed82208e02267c9c75bb25819dfd73d28557d4fb6f21d50d6b2e6bfb2f3fb9f\",\"urls\":[\"bzz-raw://ed69eb40998ca939afd93d664b68a92077407ee24568ea39eecd3622926ba58d\",\"dweb:/ipfs/QmPLgkJqQBnW3QP7mjQqtmoKU8qJUapf1AabSmx5JFjizF\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaStorage.sol\":{\"keccak256\":\"0x0e1a140cd76292fa796558ce570f3d3363c9d816521fe5cb03f2164e010394bb\",\"urls\":[\"bzz-raw://0ddc5e05e3a74724952dfb152130b4dedf08744c6338b482491b9230d4979071\",\"dweb:/ipfs/QmSUFssAZsCvX8SBA7nC6WbSYFCmAn1VbVG819bSoq6rpG\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaToken.sol\":{\"keccak256\":\"0x7d77a587e8c1a73dd42f73b2d993ab7aa15782d1bb31a0b660fb9dc7758ad91e\",\"urls\":[\"bzz-raw://9c4df7427a26ccf26b9aa839857d2be708a8572bba315a3fe7f60620419807b8\",\"dweb:/ipfs/QmdGKUDVMBQArCM3sXEiBfrKLJUqW4YFseJqSfQvAFmkmq\"]},\"@openzeppelin/upgrades/contracts/Initializable.sol\":{\"keccak256\":\"0x9bfec92e36234ecc99b5d37230acb6cd1f99560233753162204104a4897e8721\",\"urls\":[\"bzz-raw://5cf7c208583d4d046d75bd99f5507412ab01cce9dd9f802ce9768a416d93ea2f\",\"dweb:/ipfs/QmcQS1BBMPpVEkXP3qzwSjxHNrqDek8YeR7xbVWDC9ApC7\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000600255348015601457600080fd5b50603e8060226000396000f3fe6080604052600080fdfea265627a7a72315820031fb9703ff9a84d3467bf23b38b779e996da4a53d7c769ddba5932ab841737864736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820031fb9703ff9a84d3467bf23b38b779e996da4a53d7c769ddba5932ab841737864736f6c634300050c0032",
+  "sourceMap": "81:359:8:-;;;380:1;343:38;;81:359;8:9:-1;5:2;;;30:1;27;20:12;5:2;81:359:8;;;;;;;",
+  "deployedSourceMap": "81:359:8:-;;;;;",
+  "source": "pragma solidity ^0.5.12;\n\nimport \"./Ownable.sol\";\nimport \"./PandaContract.sol\";\n\ncontract PandaMarketPlaceStorage {\n    PandaContract internal _pandaContract;\n\n    struct Offer{\n        address payable seller;\n        uint256 price;\n        uint256 index;\n        uint256 tokenId;\n        bool active;\n    }\n\n    Offer[] internal Offers;\n\n    uint256 internal _activeOfferCount = 0;\n\n    mapping(uint256 => Offer) internal tokenIdToOffer;\n}",
   "sourcePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol",
   "ast": {
     "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol",
@@ -294,7 +278,7 @@
             "name": "_activeOfferCount",
             "nodeType": "VariableDeclaration",
             "scope": 1439,
-            "src": "343:36:8",
+            "src": "343:38:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -321,7 +305,7 @@
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "378:1:8",
+              "src": "380:1:8",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -329,7 +313,7 @@
               },
               "value": "0"
             },
-            "visibility": "public"
+            "visibility": "internal"
           },
           {
             "constant": false,
@@ -337,7 +321,7 @@
             "name": "tokenIdToOffer",
             "nodeType": "VariableDeclaration",
             "scope": 1439,
-            "src": "386:49:8",
+            "src": "388:49:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -350,14 +334,14 @@
                 "id": 1435,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "394:7:8",
+                "src": "396:7:8",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "386:25:8",
+              "src": "388:25:8",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1428_storage_$",
                 "typeString": "mapping(uint256 => struct PandaMarketPlaceStorage.Offer)"
@@ -368,7 +352,7 @@
                 "name": "Offer",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 1428,
-                "src": "405:5:8",
+                "src": "407:5:8",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Offer_$1428_storage_ptr",
                   "typeString": "struct PandaMarketPlaceStorage.Offer"
@@ -380,10 +364,10 @@
           }
         ],
         "scope": 1440,
-        "src": "81:357:8"
+        "src": "81:359:8"
       }
     ],
-    "src": "0:438:8"
+    "src": "0:440:8"
   },
   "legacyAST": {
     "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol",
@@ -655,7 +639,7 @@
             "name": "_activeOfferCount",
             "nodeType": "VariableDeclaration",
             "scope": 1439,
-            "src": "343:36:8",
+            "src": "343:38:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -682,7 +666,7 @@
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "378:1:8",
+              "src": "380:1:8",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -690,7 +674,7 @@
               },
               "value": "0"
             },
-            "visibility": "public"
+            "visibility": "internal"
           },
           {
             "constant": false,
@@ -698,7 +682,7 @@
             "name": "tokenIdToOffer",
             "nodeType": "VariableDeclaration",
             "scope": 1439,
-            "src": "386:49:8",
+            "src": "388:49:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -711,14 +695,14 @@
                 "id": 1435,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "394:7:8",
+                "src": "396:7:8",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "386:25:8",
+              "src": "388:25:8",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1428_storage_$",
                 "typeString": "mapping(uint256 => struct PandaMarketPlaceStorage.Offer)"
@@ -729,7 +713,7 @@
                 "name": "Offer",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 1428,
-                "src": "405:5:8",
+                "src": "407:5:8",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Offer_$1428_storage_ptr",
                   "typeString": "struct PandaMarketPlaceStorage.Offer"
@@ -741,10 +725,10 @@
           }
         ],
         "scope": 1440,
-        "src": "81:357:8"
+        "src": "81:359:8"
       }
     ],
-    "src": "0:438:8"
+    "src": "0:440:8"
   },
   "compiler": {
     "name": "solc",
@@ -752,7 +736,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-17T11:24:20.535Z",
+  "updatedAt": "2020-12-17T13:14:56.513Z",
   "devdoc": {
     "methods": {}
   },

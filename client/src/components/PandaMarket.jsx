@@ -12,17 +12,22 @@ class PandaMarket extends Component {
     super();
     this.state = {
       OfferList: [],
-      IsMarketOpperator:false
+      IsMarketOpperator:false,
+      offerCount:0
     };
   }
 
   async componentDidMount() {
-    let _isApprovedForAll,_pandaList;
+    let _isApprovedForAll,_activeOfferCount;
     _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
-    console.log("is market place approved ?",_isApprovedForAll);
-    console.log(this.props.accounts[0],this.props.marketContract.options.address);
+    // console.log("is market place approved ?",_isApprovedForAll);
+    // console.log(this.props.accounts[0],this.props.marketContract.options.address);
+    
+    _activeOfferCount = await this.props.marketContract.methods.getActiveOfferCount().call();
 
-    //await this.props.marketContract.methods.setOffer(20022,2).call({from: this.props.accounts[0]});
+    this.setState(() => ({
+      offerCount: _activeOfferCount
+    }));
 
     this.setState(() => ({
       IsMarketOpperator: _isApprovedForAll
@@ -69,6 +74,10 @@ class PandaMarket extends Component {
         </Row>
         : ""} */}
         <Row className="justify-content-md-center">
+          {this.state.offerCount==0 && this.state.IsMarketOpperator==true?
+          <h4 class="body-title-font">There are no offers right now</h4>
+          :""
+          }
           {/* {this.state.OfferList.map((Offer) => (
             <div key={"div-" + Offer.pandaTokenId.toString()}>
               <Col key={"col-" + Offer.pandaTokenId.toString()} md={3}>
