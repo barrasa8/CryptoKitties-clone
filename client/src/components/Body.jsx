@@ -5,6 +5,7 @@ import PandaGallery from "./PandaGallery";
 import PandaMarket from "./PandaMarket";
 import BreedRoom from "./BreedRoom";
 import Home from "./Home";
+import PandaDetail from "./PandaDetail";
 
 import {Route,Switch} from 'react-router-dom'
 
@@ -58,6 +59,7 @@ class Body extends Component {
                     <Route path='/gallery'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/breed'component={() =>  <BreedRoom contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/market'component={() =>  <PandaMarket contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract}/>}/>
+                    <Route path='/pandaDetail'component={() =>  <PandaDetail contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract}/>}/>
                 </Switch>
             </div>
          );

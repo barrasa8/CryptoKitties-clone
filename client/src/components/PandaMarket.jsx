@@ -18,7 +18,7 @@ class PandaMarket extends Component {
   }
 
   async componentDidMount() {
-    let _isApprovedForAll,_activeOfferCount;
+    let _isApprovedForAll, _activeOfferCount;
     _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
     // console.log("is market place approved ?",_isApprovedForAll);
     // console.log(this.props.accounts[0],this.props.marketContract.options.address);
@@ -47,7 +47,7 @@ class PandaMarket extends Component {
         <Row className="justify-content-md-center body-title body-title-font">
                     <h1>Market Place</h1>
         </Row>
-        {this.state.IsMarketOpperator == false ?
+        {this.state.IsMarketOpperator === false ?
           <Row className="justify-content-md-center">
             <Button id="btn-permissions" onClick={this._setApprovalForAll}>Delegate Operator rights</Button>
           </Row>
@@ -74,8 +74,8 @@ class PandaMarket extends Component {
         </Row>
         : ""} */}
         <Row className="justify-content-md-center">
-          {this.state.offerCount==0 && this.state.IsMarketOpperator==true?
-          <h4 class="body-title-font">There are no offers right now</h4>
+          {parseInt(this.state.offerCount) === 0 && this.state.IsMarketOpperator===true?
+          <h4 className="body-title-font">There are no offers right now</h4>
           :""
           }
           {/* {this.state.OfferList.map((Offer) => (

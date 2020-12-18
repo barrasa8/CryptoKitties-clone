@@ -5,6 +5,8 @@ import PandaCard from "./PandaCard";
 
 import {epochToUTCDate ,getPanda} from "../assets/js/utils";
 
+import {Redirect} from 'react-router-dom';
+
 import "../assets/css/PandaGallery.css"
 
 class PandaGallery extends Component {
@@ -12,6 +14,7 @@ class PandaGallery extends Component {
     super();
     this.state = {
       pandaList: [],
+      isRedirect:0
     };
   }
 
@@ -22,10 +25,18 @@ class PandaGallery extends Component {
           pandaList: _pandaList
         }));
   }
+
+  handleClick = () => {
+    console.log("inside handle click");
+    this.setState(() => ({
+      isRedirect: 1
+    }));
+  }
   
   render() {
     return (
       <Container fluid>
+        {this.state.isRedirect>0 ? <Redirect to="/pandaDetail"/>: ""}
         <Row className="justify-content-md-center body-title body-title-font">
                     <h1>My Collection</h1>
         </Row>
@@ -53,14 +64,17 @@ class PandaGallery extends Component {
           {this.state.pandaList.map((panda) => (
             <div key={"div-" + panda.pandaTokenId.toString()}>
               <Col key={"col-" + panda.pandaTokenId.toString()} md={3}>
-                <PandaCard
-                  key={"panda-card-" + panda.pandaTokenId.toString()}
-                  dna={panda.dna}
-                  mumId={panda.mumId}
-                  dadId={panda.dadId}
-                  generation={panda.generation}
-                  birthTime={epochToUTCDate(panda.birthTime)}
-                />
+                <div onClick={this.handleClick}>
+                  <PandaCard
+                    key={"panda-card-" + panda.pandaTokenId.toString()}
+                    dna={panda.dna}
+                    mumId={panda.mumId}
+                    dadId={panda.dadId}
+                    generation={panda.generation}
+                    birthTime={epochToUTCDate(panda.birthTime)}
+                    className="cursor-pointer"
+                  />
+                </div>
               </Col>
               <Col md={1}></Col>
             </div>
