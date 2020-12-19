@@ -5,7 +5,7 @@ import PandaCard from "./PandaCard";
 
 import {epochToUTCDate ,getPanda} from "../assets/js/utils";
 
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 
 import "../assets/css/PandaGallery.css"
 
@@ -14,7 +14,7 @@ class PandaGallery extends Component {
     super();
     this.state = {
       pandaList: [],
-      isRedirect:0
+      //isRedirect:0
     };
   }
 
@@ -26,17 +26,20 @@ class PandaGallery extends Component {
         }));
   }
 
-  handleClick = () => {
-    console.log("inside handle click");
-    this.setState(() => ({
-      isRedirect: 1
-    }));
-  }
+  // handleClick = (index) => {
+  //   console.log("inside handle click");
+  //   this.setState(() => ({
+  //     isRedirect: 1
+  //   }));
+  // }
   
   render() {
     return (
       <Container fluid>
-        {this.state.isRedirect>0 ? <Redirect to="/pandaDetail"/>: ""}
+        {/* {this.state.isRedirect>0 ? <Redirect to={{pathname: '/pandaDetail',
+                                                  state: { id: '1' }
+                                                }}
+        />: ""} */}
         <Row className="justify-content-md-center body-title body-title-font">
                     <h1>My Collection</h1>
         </Row>
@@ -64,7 +67,7 @@ class PandaGallery extends Component {
           {this.state.pandaList.map((panda) => (
             <div key={"div-" + panda.pandaTokenId.toString()}>
               <Col key={"col-" + panda.pandaTokenId.toString()} md={3}>
-                <div onClick={this.handleClick}>
+                <Link to={"/pandaDetail/"+panda.pandaTokenId.toString()}>
                   <PandaCard
                     key={"panda-card-" + panda.pandaTokenId.toString()}
                     dna={panda.dna}
@@ -74,7 +77,7 @@ class PandaGallery extends Component {
                     birthTime={epochToUTCDate(panda.birthTime)}
                     className="cursor-pointer"
                   />
-                </div>
+                </Link>
               </Col>
               <Col md={1}></Col>
             </div>
