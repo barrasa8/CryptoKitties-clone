@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import PandaCard from "./PandaCard";
 
-import {epochToUTCDate ,getPanda} from "../assets/js/utils";
+import {epochToUTCDate ,getPandas} from "../assets/js/utils";
 
-import {Redirect, Link} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 import "../assets/css/PandaGallery.css"
 
@@ -19,27 +19,16 @@ class PandaGallery extends Component {
   }
 
   async componentDidMount() {
-    let _pandaList = await getPanda(this.props.contract, this.props.accounts);
+    let _pandaList = await getPandas(this.props.contract, this.props.accounts);
 
     this.setState(() => ({
           pandaList: _pandaList
         }));
   }
 
-  // handleClick = (index) => {
-  //   console.log("inside handle click");
-  //   this.setState(() => ({
-  //     isRedirect: 1
-  //   }));
-  // }
-  
   render() {
     return (
       <Container fluid>
-        {/* {this.state.isRedirect>0 ? <Redirect to={{pathname: '/pandaDetail',
-                                                  state: { id: '1' }
-                                                }}
-        />: ""} */}
         <Row className="justify-content-md-center body-title body-title-font">
                     <h1>My Collection</h1>
         </Row>

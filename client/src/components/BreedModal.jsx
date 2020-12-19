@@ -4,7 +4,7 @@ import { Modal, Button, ButtonToolbar, Row, Col } from "react-bootstrap";
 
 import PandaCard from "./PandaCard";
 
-import {epochToUTCDate ,getPanda} from "../assets/js/utils";
+import {epochToUTCDate ,getPandas} from "../assets/js/utils";
 
 import "../assets/css/breedModal.css"
 
@@ -31,7 +31,7 @@ class BreedModal extends Component {
   }
 
   async componentDidMount() {
-    let _pandaList = await getPanda(this.props.contract, this.props.accounts);
+    let _pandaList = await getPandas(this.props.contract, this.props.accounts);
 
     this.setState(() => ({
           pandaList: _pandaList

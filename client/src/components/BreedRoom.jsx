@@ -4,7 +4,7 @@ import { Container, Row, Col ,Button} from "react-bootstrap";
 
 import {Redirect} from 'react-router-dom';
 
-import {epochToUTCDate, getPanda, breed} from "../assets/js/utils";
+import {epochToUTCDate, getPandas, breed} from "../assets/js/utils";
 import PandaCard from "./PandaCard";
 import BreedModal from "./BreedModal";
 
@@ -92,7 +92,7 @@ class BreedRoom extends Component {
   }
 
   async componentDidMount() {
-    let _pandaList = await getPanda(this.props.contract, this.props.accounts);
+    let _pandaList = await getPandas(this.props.contract, this.props.accounts);
     this.setState(() => ({
           pandaList: _pandaList,
           MumPanda: _pandaList[0],

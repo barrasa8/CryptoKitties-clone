@@ -21,7 +21,27 @@ export const  epochToUTCDate=(epochTime)=> {
     return date.toUTCString();
 }
 
-export  const getPanda = async (contract, accounts) => {
+export  const getPanda = async (contract, accounts, tokenId) => {
+  let _pandaItem, _panda;
+
+  _panda = await contract.methods
+    .getPanda(tokenId)
+    .call({ from: accounts[0] });
+
+  _pandaItem = {
+    pandaTokenId: parseInt(tokenId),
+    mumId: parseInt(_panda.mumId),
+    dadId: parseInt(_panda.dadId),
+    birthTime: parseInt(_panda.birthTime),
+    generation: parseInt(_panda.generation),
+    genes: parseInt(_panda.genes),
+    dna: genesToDNA(_panda.genes),
+  };
+
+  return _pandaItem;
+}
+
+export  const getPandas = async (contract, accounts) => {
     let _pandaList = [];
     let _pandaItem;
 
@@ -30,20 +50,7 @@ export  const getPanda = async (contract, accounts) => {
       .call({ from: accounts[0] });
 
     for (let i = 1; i < PandaTokenIdArray.length; i++) {
-      let _panda = await contract.methods
-        .getPanda(i)
-        .call({ from: accounts[0] });
-
-      _pandaItem = {
-        pandaTokenId: parseInt(i),
-        mumId: parseInt(_panda.mumId),
-        dadId: parseInt(_panda.dadId),
-        birthTime: parseInt(_panda.birthTime),
-        generation: parseInt(_panda.generation),
-        genes: parseInt(_panda.genes),
-        dna: genesToDNA(_panda.genes),
-      };
-
+      _pandaItem = await getPanda(contract, accounts, i);
       _pandaList.push(_pandaItem);
     }
 
