@@ -12,10 +12,10 @@ class  Header extends Component {
                 <Navbar.Brand id="nav-bar-title"><Link to="" className= "nav-link">Crypto Panda</Link></Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link to="factory" className= "nav-link">Panda Factory</Link>
-                        <Link to="gallery" className= "nav-link">My Collection</Link>
-                        <Link to="breed" className= "nav-link">Breed Room</Link>
-                        <Link to="market" className= "nav-link">Market Place</Link>
+                        <Link to="/factory" className= "nav-link">Panda Factory</Link>
+                        <Link to="/gallery" className= "nav-link">My Collection</Link>
+                        <Link to="/breed" className= "nav-link">Breed Room</Link>
+                        <Link to="/market" className= "nav-link">Market Place</Link>
                     </Nav>
                     <Button variant="danger">Start</Button>
                 </Navbar.Collapse>
