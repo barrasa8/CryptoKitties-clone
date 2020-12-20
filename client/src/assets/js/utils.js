@@ -129,3 +129,14 @@ export const setApprovalForAll = async (contract,marketContract,accounts,approva
         }
       });
 };
+
+export const setOffer = async (marketContract,accounts,price,tokenId) =>{
+  await marketContract.methods.setOffer(price,tokenId)
+      .call({ from: accounts[0] }, (error, txHash) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(txHash);
+        }
+      });
+};
