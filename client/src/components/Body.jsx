@@ -23,11 +23,17 @@ class Body extends Component {
             genes: 0,
             generation:0
           },
+          MarketContract:{
+            TxType:"",
+            owner:0, 
+            tokenId:0
+          }
         };
       }
 
     componentDidMount() {
         this.eventBirth();
+       // this.MarketTransactionEvent();
     }
 
     eventBirth = () => {
@@ -50,6 +56,24 @@ class Body extends Component {
         });
     };
 
+
+    MarketTransactionEvent = () => {
+        this.props.marketContract.events.MarketTransaction({}, (error, event) => {
+            if (error) {
+            console.log(error);
+            } else {
+            this.setState((prevState) => ({
+                MarketContract: {
+                ...prevState.MarketContract,
+                TxType: event.returnValues.TxType,
+                owner: event.returnValues.owner,
+                tokenId: event.returnValues.tokenId
+                },
+            }));
+            }
+        });
+    };
+
     render() { 
         return ( 
             <div  className="app-body">
@@ -59,7 +83,7 @@ class Body extends Component {
                     <Route path='/gallery'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/breed'component={() =>  <BreedRoom contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/market'component={() =>  <PandaMarket contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract}/>}/>
-                    <Route path='/pandaDetail/:id' component={({match}) => <PandaDetail contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract} match={match}/>}/>
+                    <Route path='/pandaDetail/:id' component={({match}) => <PandaDetail contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract} match={match} marketTransactionEvent={this.state.MarketTransactionEvent}/>}/>
                 </Switch>
             </div>
          );

@@ -156,3 +156,21 @@ export const getActiveOfferCount = async (marketContract,accounts) =>{
   await marketContract.methods.getActiveOfferCount()
       .call({ from: accounts[0] });
 };
+
+export  const getOffer = async (contract, accounts, tokenId) => {
+  let _offer,_offerItem;
+
+  _offer = await contract.methods
+    .getOffer(tokenId)
+    .call({ from: accounts[0] });
+
+  _offerItem = {
+      seller : parseInt(_offer.seller),
+      price  : parseInt(_offer.price),
+      index  : parseInt(_offer.index),
+      tokenId: parseInt(_offer.tokenId),
+      active : _offer.active,
+  };
+
+  return _offerItem;
+}
