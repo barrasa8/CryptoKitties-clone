@@ -31,6 +31,7 @@ class PandaDetail extends Component {
         console.log("BEFORE CREATE OFFER -- Active offers count = ",ActiveOfferCount);
         console.log("addresses market and account[0]",this.props.marketContract, this.props.accounts[0]);
         let r =await setOffer(this.props.marketContract, this.props.accounts,this.state.amount,this.props.match.params.id);
+        console.log("Before the GET OFFER--> ",this.props.marketContract, this.props.accounts,this.props.match.params.id);
         let offer = await getOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
         console.log("this is the offer",offer,r);
         ActiveOfferCount = await getActiveOfferCount(this.props.marketContract, this.props.accounts);

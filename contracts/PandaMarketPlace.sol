@@ -83,6 +83,11 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
             Offers[index].seller =  msg.sender;
             Offers[index].price= _price;
             Offers[index].active= true;
+
+            tokenIdToOffer[_tokenId].seller = msg.sender;
+            tokenIdToOffer[_tokenId].price = _price;
+            tokenIdToOffer[_tokenId].active = true;
+
         }else{
              Offer memory newOffer = Offer({
                 seller: msg.sender,

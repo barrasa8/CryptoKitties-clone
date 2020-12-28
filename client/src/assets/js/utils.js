@@ -133,6 +133,7 @@ export const setApprovalForAll = async (contract,marketContract,accounts,approva
 export const setOffer = async (marketContract,accounts,price,tokenId) =>{
   await marketContract.methods.setOffer(price,tokenId)
       .send({ from: accounts[0] }, (error, txHash) => {
+
         if (error) {
           console.log(error);
         } else {
@@ -153,8 +154,9 @@ export const removeOffer = async (marketContract,accounts,tokenId) =>{
 };
 
 export const getActiveOfferCount = async (marketContract,accounts) =>{
-  await marketContract.methods.getActiveOfferCount()
+  let numberOfOffers = await marketContract.methods.getActiveOfferCount()
       .call({ from: accounts[0] });
+  return numberOfOffers;
 };
 
 export  const getOffer = async (contract, accounts, tokenId) => {
