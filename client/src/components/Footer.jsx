@@ -9,7 +9,7 @@ class Footer extends Component {
       <Container fluid>
           <br/>
         <Row className="justify-content-md-center">
-            <b>© 2020-2020: </b>by Ismael Oltra Barrasa for Ivan on Tech Bootcamp project
+            <b>© 2020-2020: </b> by Ismael Oltra Barrasa for Ivan on Tech Bootcamp project
         </Row>
       </Container>
     );

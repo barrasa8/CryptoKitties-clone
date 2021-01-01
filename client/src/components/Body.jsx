@@ -23,7 +23,7 @@ class Body extends Component {
             genes: 0,
             generation:0
           },
-          MarketContract:{
+          MarketTransaction:{
             TxType:"",
             owner:0, 
             tokenId:0
@@ -63,8 +63,8 @@ class Body extends Component {
             console.log(error);
             } else {
             this.setState((prevState) => ({
-                MarketContract: {
-                ...prevState.MarketContract,
+                MarketTransaction: {
+                ...prevState.MarketTransaction,
                 TxType: event.returnValues.TxType,
                 owner: event.returnValues.owner,
                 tokenId: event.returnValues.tokenId
@@ -83,7 +83,7 @@ class Body extends Component {
                     <Route path='/gallery'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/breed'component={() =>  <BreedRoom contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/market'component={() =>  <PandaMarket contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract}/>}/>
-                    <Route path='/pandaDetail/:id' component={({match}) => <PandaDetail contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract} match={match} marketTransactionEvent={this.state.MarketTransactionEvent}/>}/>
+                    <Route path='/pandaDetail/:id' component={({match}) => <PandaDetail contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract} match={match} marketTransactionEvent={this.state.MarketTransaction}/>}/>
                 </Switch>
             </div>
          );
