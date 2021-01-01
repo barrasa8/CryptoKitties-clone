@@ -33,7 +33,7 @@ class Body extends Component {
 
     componentDidMount() {
         this.eventBirth();
-       // this.MarketTransactionEvent();
+        this.MarketTransactionEvent();
     }
 
     eventBirth = () => {
