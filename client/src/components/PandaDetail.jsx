@@ -10,24 +10,42 @@ class PandaDetail extends Component {
         super();
         this.state = {
             pandaItem:null,
-            amount:0
+            amount:0,
+            offer:{
+                seller: "",
+                price: 0, 
+                index: 0, 
+                tokenId: 0, 
+                active: false
+            }
         };
     }
 
     async componentDidMount(){
-        let _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
+        let _pandaItem,_offer;
+
+        try {
+            _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
+            _offer = await getOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
+        } catch (e) {
+            console.log("Hello Catch");
+        }
 
         this.setState(() => ({
-            pandaItem: _pandaItem
+            pandaItem: _pandaItem,
+            offer: _offer
           }));
+        //console.log("offer-->",this.state.offer);  
     }
 
     handleSubmit= async (event) => {
         event.preventDefault();
-        await setOffer(this.props.marketContract, this.props.accounts,this.state.amount,this.props.match.params.id);
-
-        //let offer = await getOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
-        console.log(this.props.marketTransactionEvent);
+        if(this.state.offer===undefined){
+            await setOffer(this.props.marketContract, this.props.accounts,this.state.amount,this.props.match.params.id);
+        }else{
+            await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
+        }        
+        //console.log(this.props.marketTransactionEvent);
     }
 
     handleChange= (event) => {
@@ -40,9 +58,10 @@ class PandaDetail extends Component {
 
     handleRemove =  async (event) =>{
         event.preventDefault();
-        console.log(event);
-        console.log(this.props.match.params.id);
+        // console.log(event);
+        // console.log(this.props.match.params.id);
         await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
+        //console.log("market event from the REMOVE",this.props.marketTransactionEvent);
     }
 
     render() { 
@@ -51,6 +70,16 @@ class PandaDetail extends Component {
                 <Row className="justify-content-md-center body-title body-title-font">
                     <h1>Set your offer</h1>
                 </Row>
+                {this.state.offer !== undefined ?
+                    <Row className="justify-content-md-center" >
+                        <h4 id="panda-created-offer-message">Active Offer -- 
+                            SELLER:  {" " +this.state.offer.seller+" "} 
+                            TOKENID: {" " +this.state.offer.tokenId+" "}
+                            PRICE:   {" " +this.state.offer.price +" ETH"}
+                        </h4>
+                    </Row>
+                :""
+                }
                 {this.state.pandaItem != null ?
                     <Row className="justify-content-md-center">
                         <PandaCard
@@ -73,10 +102,9 @@ class PandaDetail extends Component {
                                 </InputGroup>
                                 
                                 <span className="space-between-elements"/>
-                                <Button variant="success" type="submit"> Create Offer </Button>
-                            </form>
-                            <form onSubmit={this.handleRemove}>
-                                <Button variant="danger" type="submit"> Remove Offer </Button>
+                                <Button variant={this.state.offer===undefined?"success":"danger"} type="submit">
+                                         {this.state.offer===undefined?"Create":"Remove"} Offer 
+                                </Button>
                             </form>
                         </div>
                     </Row>

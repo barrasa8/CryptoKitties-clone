@@ -167,7 +167,7 @@ export  const getOffer = async (contract, accounts, tokenId) => {
     .call({ from: accounts[0] });
 
   _offerItem = {
-      seller : parseInt(_offer.seller),
+      seller : _offer.seller,
       price  : parseInt(_offer.price),
       index  : parseInt(_offer.index),
       tokenId: parseInt(_offer.tokenId),
