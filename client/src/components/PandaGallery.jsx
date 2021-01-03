@@ -14,7 +14,6 @@ class PandaGallery extends Component {
     super();
     this.state = {
       pandaList: [],
-      //isRedirect:0
     };
   }
 

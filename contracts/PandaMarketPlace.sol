@@ -51,8 +51,7 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
         uint256 i = 0;
         uint256 index=0;
         
-        uint256 totalOffers = Offers.length;
-        uint256[] memory result = new uint256[](totalOffers);
+        uint256[] memory result = new uint256[](_activeOfferCount);
         
         for ( i=0 ; i< Offers.length && index < _activeOfferCount  ; i++){
             

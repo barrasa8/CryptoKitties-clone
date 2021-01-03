@@ -80,22 +80,20 @@ export const breed = (contract,accounts,mumTokenId, dadTokenId) =>{
       });
 };
 
-export  const getMarketOffers = async (contract, accounts) => {
+export  const getMarketOffers = async (pandaContract,marketContract, accounts) => {
   let _marketOfferList = [];
   let _marketOfferItem;
 
-  // console.log("before calling contract method");
-  const marketOffersArray = await contract.methods
+  let marketOffersArray = await marketContract.methods
     .getAllTokenOnSale()
     .call({ from: accounts[0] });
-console.log("before the forloop for marketOffersarray-->", marketOffersArray[0].price);
-// console.log("_activeOfferCount--> ",_activeOfferCount);
-  for (let i = 1; i < marketOffersArray.length; i++) {
-    let _offer = await contract.methods
-      .getOffer(marketOffersArray[i].tokenId)
+
+  for (let i =0; i < marketOffersArray.length; i++) {
+    let _offer = await marketContract.methods
+      .getOffer(marketOffersArray[i])
       .call({ from: accounts[0] });
 
-    let _panda = await contract.methods
+    let _panda = await pandaContract.methods
       .getPanda(_offer.tokenId)
       .call({ from: accounts[0] });
 
@@ -115,7 +113,6 @@ console.log("before the forloop for marketOffersarray-->", marketOffersArray[0].
 
     _marketOfferList.push(_marketOfferItem);
   }
-
   return _marketOfferList;
 };
 

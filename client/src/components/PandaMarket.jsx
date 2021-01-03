@@ -18,19 +18,17 @@ class PandaMarket extends Component {
   }
 
   async componentDidMount() {
-    let _isApprovedForAll, _activeOfferCount;
+    let _isApprovedForAll, _activeOfferCount, _offerList;
     _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
-    // console.log("is market place approved ?",_isApprovedForAll);
-    // console.log(this.props.accounts[0],this.props.marketContract.options.address);
     
     _activeOfferCount = await this.props.marketContract.methods.getActiveOfferCount().call();
 
-    this.setState(() => ({
-      offerCount: _activeOfferCount
-    }));
+    _offerList =await getMarketOffers(this.props.contract,this.props.marketContract,this.props.accounts);
 
     this.setState(() => ({
-      IsMarketOpperator: _isApprovedForAll
+      offerCount: _activeOfferCount,
+      IsMarketOpperator: _isApprovedForAll,
+      OfferList: _offerList
     }));
   }
 
@@ -78,21 +76,22 @@ class PandaMarket extends Component {
           <h4 className="body-title-font">There are no offers right now</h4>
           :""
           }
-          {/* {this.state.OfferList.map((Offer) => (
-            <div key={"div-" + Offer.pandaTokenId.toString()}>
-              <Col key={"col-" + Offer.pandaTokenId.toString()} md={3}>
+          {this.state.OfferList.map((Offer) => (
+            <div key={"div-" + Offer.tokenId.toString()}>
+              <Col key={"col-" + Offer.tokenId.toString()} md={3}>
                 <PandaCard
-                  key={"panda-card-" + Offer.pandaTokenId.toString()}
+                  key={"panda-card-" + Offer.tokenId.toString()}
                   dna={Offer.dna}
                   mumId={Offer.mumId}
                   dadId={Offer.dadId}
                   generation={Offer.generation}
                   birthTime={epochToUTCDate(Offer.birthTime)}
                 />
+                <Button>Buy Me</Button>
               </Col>
               <Col md={1}></Col>
             </div>
-          ))} */}
+          ))}
         </Row>
       </Container>
     );

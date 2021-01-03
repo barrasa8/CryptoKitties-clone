@@ -35,7 +35,6 @@ class PandaDetail extends Component {
             pandaItem: _pandaItem,
             offer: _offer
           }));
-        //console.log("offer-->",this.state.offer);  
     }
 
     handleSubmit= async (event) => {
@@ -45,7 +44,6 @@ class PandaDetail extends Component {
         }else{
             await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
         }        
-        //console.log(this.props.marketTransactionEvent);
     }
 
     handleChange= (event) => {
