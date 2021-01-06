@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { Container, Row, Col ,Button} from "react-bootstrap";
 import PandaCard from "./PandaCard";
 
+import { Link} from 'react-router-dom';
+
 import {epochToUTCDate ,getMarketOffers,setApprovalForAll} from "../assets/js/utils";
 
 import "../assets/css/PandaGallery.css"
@@ -79,15 +81,17 @@ class PandaMarket extends Component {
           {this.state.OfferList.map((Offer) => (
             <div key={"div-" + Offer.tokenId.toString()}>
               <Col key={"col-" + Offer.tokenId.toString()} md={3}>
-                <PandaCard
-                  key={"panda-card-" + Offer.tokenId.toString()}
-                  dna={Offer.dna}
-                  mumId={Offer.mumId}
-                  dadId={Offer.dadId}
-                  generation={Offer.generation}
-                  birthTime={epochToUTCDate(Offer.birthTime)}
-                />
-                <Button>Buy Me</Button>
+                <Link to={"/pandaDetail/"+Offer.tokenId.toString()}>
+                  <PandaCard
+                    key={"panda-card-" + Offer.tokenId.toString()}
+                    dna={Offer.dna}
+                    mumId={Offer.mumId}
+                    dadId={Offer.dadId}
+                    generation={Offer.generation}
+                    birthTime={epochToUTCDate(Offer.birthTime)}
+                  />
+                </Link>
+                <h3>{Offer.price} ETH</h3>
               </Col>
               <Col md={1}></Col>
             </div>
