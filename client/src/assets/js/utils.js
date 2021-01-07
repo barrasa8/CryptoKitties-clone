@@ -173,3 +173,7 @@ export  const getOffer = async (contract, accounts, tokenId) => {
 
   return _offerItem;
 }
+
+export const buyPanda = async (marketContract,accounts,tokenId,amunt)=>{
+  await marketContract.buyPanda(tokenId).send({ from: accounts[0] });
+}

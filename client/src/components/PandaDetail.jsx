@@ -41,9 +41,12 @@ class PandaDetail extends Component {
         event.preventDefault();
         if(this.state.offer===undefined){
             await setOffer(this.props.marketContract, this.props.accounts,this.state.amount,this.props.match.params.id);
-        }else{
+        }else if(this.props.accounts[0]==this.state.offer.seller){
             await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
-        }        
+        }else{
+console.log("inside the BUY SECTION");
+            await this.props.marketContract.buyPanda(this.props.match.params.id).send({ from: this.props.accounts[0] });
+        }       
     }
 
     handleChange= (event) => {
@@ -99,14 +102,26 @@ class PandaDetail extends Component {
                             :""}
                             <form id="panda-detail-offer" onSubmit={this.handleSubmit}>
                                 {this.state.offer == undefined ?
-                                    <InputGroup className="mb-3">
-                                        <FormControl aria-label="Amount" name="amount" onChange={this.handleChange}/>
-                                        <InputGroup.Append>
-                                            <InputGroup.Text>ETH</InputGroup.Text>
-                                        </InputGroup.Append>
-                                    </InputGroup>
-                                :""}
-                                <span className="space-between-elements"/>
+                                    <div>
+                                        <InputGroup className="mb-3">
+                                            <FormControl aria-label="Amount" name="amount" onChange={this.handleChange}/>
+                                            <InputGroup.Append>
+                                                <InputGroup.Text>ETH</InputGroup.Text>
+                                            </InputGroup.Append>
+                                        </InputGroup>
+                                        <Button variant="success" type="submit">Sell</Button>
+                                    </div>
+                                :
+                                    <div>
+                                        <span className="space-between-elements"/>
+                                        {this.props.accounts[0]==this.state.offer.seller?
+                                            <Button variant="danger" type="submit">Remove Offer</Button>
+                                        :
+                                            <Button variant="success" type="submit">Buy Me</Button>
+                                        }
+                                    </div>
+                                }
+                                {/* <span className="space-between-elements"/>
                                 {this.props.accounts[0]==this.state.offer.seller?
                                     <Button variant={this.state.offer===undefined?"success":"danger"} type="submit">
                                             {this.state.offer===undefined?"Sell":"Remove Offer"}  
@@ -115,7 +130,7 @@ class PandaDetail extends Component {
                                     <Button variant={this.state.offer===undefined?"success":"danger"} type="submit">
                                      Buy Me
                                     </Button>
-                                }
+                                } */}
                             </form>
                         </div>
                     </Row>

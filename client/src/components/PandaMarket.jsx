@@ -25,8 +25,10 @@ class PandaMarket extends Component {
     
     _activeOfferCount = await this.props.marketContract.methods.getActiveOfferCount().call();
 
-    _offerList =await getMarketOffers(this.props.contract,this.props.marketContract,this.props.accounts);
-
+    if(_activeOfferCount>0){
+      _offerList =await getMarketOffers(this.props.contract,this.props.marketContract,this.props.accounts);
+    }
+    
     this.setState(() => ({
       offerCount: _activeOfferCount,
       IsMarketOpperator: _isApprovedForAll,
@@ -78,24 +80,26 @@ class PandaMarket extends Component {
           <h4 className="body-title-font">There are no offers right now</h4>
           :""
           }
-          {this.state.OfferList.map((Offer) => (
-            <div key={"div-" + Offer.tokenId.toString()}>
-              <Col key={"col-" + Offer.tokenId.toString()} md={3}>
-                <Link to={"/pandaDetail/"+Offer.tokenId.toString()}>
-                  <PandaCard
-                    key={"panda-card-" + Offer.tokenId.toString()}
-                    dna={Offer.dna}
-                    mumId={Offer.mumId}
-                    dadId={Offer.dadId}
-                    generation={Offer.generation}
-                    birthTime={epochToUTCDate(Offer.birthTime)}
-                  />
-                </Link>
-                <h3>{Offer.price} ETH</h3>
-              </Col>
-              <Col md={1}></Col>
-            </div>
-          ))}
+          {this.state.offerCount > 0 ?
+            this.state.OfferList.map((Offer) => (
+              <div key={"div-" + Offer.tokenId.toString()}>
+                <Col key={"col-" + Offer.tokenId.toString()} md={3}>
+                  <Link to={"/pandaDetail/"+Offer.tokenId.toString()}>
+                    <PandaCard
+                      key={"panda-card-" + Offer.tokenId.toString()}
+                      dna={Offer.dna}
+                      mumId={Offer.mumId}
+                      dadId={Offer.dadId}
+                      generation={Offer.generation}
+                      birthTime={epochToUTCDate(Offer.birthTime)}
+                    />
+                  </Link>
+                  <h3>{Offer.price} ETH</h3>
+                </Col>
+                <Col md={1}></Col>
+              </div>
+            ))
+          :""}
         </Row>
       </Container>
     );
