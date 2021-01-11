@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row ,Button, InputGroup,FormControl, Badge} from "react-bootstrap";
 import PandaCard from "./PandaCard";
-import {epochToUTCDate ,getPanda, setOffer, removeOffer,getOffer} from "../assets/js/utils";
+import {epochToUTCDate ,getPanda, setOffer, removeOffer,getOffer, buyPanda} from "../assets/js/utils";
 import "../assets/css/pandaDetail.css";
 
 class PandaDetail extends Component {
@@ -41,11 +41,17 @@ class PandaDetail extends Component {
         event.preventDefault();
         if(this.state.offer===undefined){
             await setOffer(this.props.marketContract, this.props.accounts,this.state.amount,this.props.match.params.id);
-        }else if(this.props.accounts[0]==this.state.offer.seller){
+        }else if(this.props.accounts[0]===this.state.offer.seller){
             await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
         }else{
-console.log("inside the BUY SECTION");
-            await this.props.marketContract.buyPanda(this.props.match.params.id).send({ from: this.props.accounts[0] });
+            console.log("inside the BUY SECTION",this.props.match.params.id,this.props.accounts[0],String(this.state.offer.price));
+            
+            // await this.props.marketContract.methods.buyPanda(this.props.match.params.id)
+            // .send({ from: this.props.accounts[0] ,
+            //     value: this.props.web3.utils.toWei(String(this.state.offer.price), "ether")});
+            await this.props.marketContract.methods.buyPanda(1)
+            .send({ from: this.props.accounts[0] ,
+                value: this.props.web3.utils.toWei("2", "ether")});
         }       
     }
 
@@ -70,6 +76,7 @@ console.log("inside the BUY SECTION");
             <Container fluid>
                 <Row className="justify-content-md-center body-title body-title-font">
                     <h1>Set your offer</h1>
+                    {this.props.accounts[0]}
                 </Row>
                 {/* {this.state.offer !== undefined ?
                     <Row className="justify-content-md-center" >
