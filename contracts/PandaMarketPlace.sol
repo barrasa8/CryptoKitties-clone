@@ -128,7 +128,7 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
     * Requirement: There must be an active offer for _tokenId
      */
     function buyPanda(uint256 _tokenId) external payable{
-        uint256 tokenIndex = _tokenId-1;
+        uint256 tokenIndex = _tokenId;
         Offer memory offer = tokenIdToOffer[tokenIndex];
         require(tokenIdToOffer[tokenIndex].price == msg.value,"Transaction value does not match the price of the token");
         require(offer.active == true);

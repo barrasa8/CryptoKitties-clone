@@ -40,18 +40,20 @@ class PandaDetail extends Component {
     handleSubmit= async (event) => {
         event.preventDefault();
         if(this.state.offer===undefined){
-            await setOffer(this.props.marketContract, this.props.accounts,this.state.amount,this.props.match.params.id);
+            await setOffer(this.props.marketContract, this.props.accounts,this.props.web3.utils.toWei(String(this.state.amount)),this.props.match.params.id);
         }else if(this.props.accounts[0]===this.state.offer.seller){
             await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
         }else{
             console.log("inside the BUY SECTION",this.props.match.params.id,this.props.accounts[0],String(this.state.offer.price));
-            
-            // await this.props.marketContract.methods.buyPanda(this.props.match.params.id)
-            // .send({ from: this.props.accounts[0] ,
-            //     value: this.props.web3.utils.toWei(String(this.state.offer.price), "ether")});
-            await this.props.marketContract.methods.buyPanda(1)
+            let result = await this.props.marketContract.methods.getOffer(1).call();
+            console.log("result getOffer: ",result);
+            console.log("value in ether",this.props.web3.utils.toWei(String(this.state.offer.price), "ether"),this.state.offer.price);
+            await this.props.marketContract.methods.buyPanda(this.props.match.params.id)
             .send({ from: this.props.accounts[0] ,
-                value: this.props.web3.utils.toWei("2", "ether")});
+                value: this.state.offer.price});
+            // await this.props.marketContract.methods.buyPanda(1)
+            // .send({ from: this.props.accounts[0] ,
+            //     value: this.props.web3.utils.toWei("2", "ether")});
         }       
     }
 
