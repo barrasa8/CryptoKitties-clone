@@ -82,7 +82,7 @@ class Body extends Component {
                     <Route path='/factory' component={()=> <PandaFactory contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/gallery'component={() =>  <PandaGallery contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
                     <Route path='/breed'component={() =>  <BreedRoom contract ={this.props.contract} accounts={this.props.accounts} birthEvent={this.state.BirthEvent}/>}/>
-                    <Route path='/market'component={() =>  <PandaMarket contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract}/>}/>
+                    <Route path='/market'component={() =>  <PandaMarket contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract} web3 = {this.props.web3}/>}/>
                     <Route path='/pandaDetail/:id' component={({match}) => <PandaDetail contract ={this.props.contract} accounts={this.props.accounts} marketContract={this.props.marketContract} match={match} marketTransactionEvent={this.state.MarketTransaction} web3 = {this.props.web3}/>}/>
                 </Switch>
             </div>

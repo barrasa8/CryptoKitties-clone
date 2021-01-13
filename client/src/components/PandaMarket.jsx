@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col ,Button} from "react-bootstrap";
+import { Container, Row, Col ,Button, Badge} from "react-bootstrap";
 import PandaCard from "./PandaCard";
 
 import { Link} from 'react-router-dom';
@@ -55,26 +55,6 @@ class PandaMarket extends Component {
           </Row>
           :""
         }
-        {/* {this.props.birthEvent.generation > 0 ? 
-        <Row className="justify-content-md-center">
-          <h5 id="panda-created-message">
-            {this.props.birthEvent.genes > 0
-              ? "Your Panda is Alive: Owner:" +
-              this.props.birthEvent.owner +
-              ", PandaID:" +
-              this.props.birthEvent.PandaId +
-              " , Genes:" +
-              this.props.birthEvent.genes +
-              " , DadId:" +
-              this.props.birthEvent.dadId +
-              " , MumId:" +
-              this.props.birthEvent.mumId +
-              " , Generation:" +
-              this.props.birthEvent.generation
-              : ""}
-          </h5>
-        </Row>
-        : ""} */}
         <Row className="justify-content-md-center">
           {parseInt(this.state.offerCount) === 0 && this.state.IsMarketOpperator===true?
           <h4 className="body-title-font">There are no offers right now</h4>
@@ -93,8 +73,8 @@ class PandaMarket extends Component {
                       generation={Offer.generation}
                       birthTime={epochToUTCDate(Offer.birthTime)}
                     />
-                  </Link>
-                  <h3>{Offer.price} ETH</h3>
+                  </Link>                  
+                  <h3><Badge variant="secondary">{this.props.web3.utils.fromWei(String(Offer.price), 'ether')} ETH</Badge></h3>
                 </Col>
                 <Col md={1}></Col>
               </div>

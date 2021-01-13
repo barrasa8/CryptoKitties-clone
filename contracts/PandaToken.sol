@@ -192,7 +192,7 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     /// @param _tokenId The NFT to transfer
     /// @param data Additional data with no specified format, sent in call to `_to`
     function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes memory data) public{
-        require(_isApprovedOrOwner(msg.sender,_from,_to, _tokenId));
+        require(_isApprovedOrOwner(msg.sender,_from,_to, _tokenId),"safeTransferFrom: Error, not approved");
 
         _safeTransfer(_from, _to, _tokenId, data);
     }
@@ -232,9 +232,9 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     }
 
     function _isApprovedOrOwner(address _spender,  address _from, address _to,uint256 _tokenId) view internal returns(bool){
-        require(_to != address(0)); //_to address is not the zero address
-        require(_from == _PandaOwner[_tokenId]); //_from address is the token owner       
-        require(_tokenId>=0 && _tokenId < totalSupply()); //token must exist
+        require(_to != address(0),"_isApprovedOrOwner: Address 0 is not a valid address"); //_to address is not the zero address
+        require(_from == _PandaOwner[_tokenId],"_isApprovedOrOwner: Not the owner of the Token"); //_from address is the token owner       
+        require(_tokenId>0 && _tokenId <= totalSupply(),"_isApprovedOrOwner: TokenId is greater than totalSupply"); //token must exist
 
         //_spender is the owner or _spender is approved or the operator  
         return (_PandaOwner[_tokenId] == _spender ||

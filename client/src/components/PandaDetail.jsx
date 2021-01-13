@@ -22,11 +22,12 @@ class PandaDetail extends Component {
     }
 
     async componentDidMount(){
-        let _pandaItem,_offer;
+        let _pandaItem,_offer,_OnwerOfTokenId;
 
         try {
             _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
             _offer = await getOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
+            _OnwerOfTokenId = await this.props.contract.ownerOf(this.props.match.params.id).call();
         } catch (e) {
             console.log("Hello Catch");
         }
@@ -35,6 +36,8 @@ class PandaDetail extends Component {
             pandaItem: _pandaItem,
             offer: _offer
           }));
+
+          console.log("this is the owner of the token:",this.props.contract,_OnwerOfTokenId)
     }
 
     handleSubmit= async (event) => {
@@ -45,15 +48,12 @@ class PandaDetail extends Component {
             await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
         }else{
             console.log("inside the BUY SECTION",this.props.match.params.id,this.props.accounts[0],String(this.state.offer.price));
-            let result = await this.props.marketContract.methods.getOffer(1).call();
+            let result = await this.props.marketContract.methods.getOffer(this.props.match.params.id).call();
             console.log("result getOffer: ",result);
             console.log("value in ether",this.props.web3.utils.toWei(String(this.state.offer.price), "ether"),this.state.offer.price);
             await this.props.marketContract.methods.buyPanda(this.props.match.params.id)
             .send({ from: this.props.accounts[0] ,
                 value: this.state.offer.price});
-            // await this.props.marketContract.methods.buyPanda(1)
-            // .send({ from: this.props.accounts[0] ,
-            //     value: this.props.web3.utils.toWei("2", "ether")});
         }       
     }
 
@@ -106,7 +106,7 @@ class PandaDetail extends Component {
                             {this.state.offer !== undefined ?
                             <div>
                                 <h4><Badge variant="secondary">Owner: {this.state.offer.seller}</Badge></h4>
-                                <h4><Badge variant="secondary">Price: {this.state.offer.price}</Badge></h4>
+                                <h4><Badge variant="secondary">Price: {this.props.web3.utils.fromWei(String(this.state.offer.price), 'ether')} ETH</Badge></h4>
                             </div>
                             :""}
                             <form id="panda-detail-offer" onSubmit={this.handleSubmit}>
@@ -130,16 +130,6 @@ class PandaDetail extends Component {
                                         }
                                     </div>
                                 }
-                                {/* <span className="space-between-elements"/>
-                                {this.props.accounts[0]==this.state.offer.seller?
-                                    <Button variant={this.state.offer===undefined?"success":"danger"} type="submit">
-                                            {this.state.offer===undefined?"Sell":"Remove Offer"}  
-                                    </Button>
-                                :
-                                    <Button variant={this.state.offer===undefined?"success":"danger"} type="submit">
-                                     Buy Me
-                                    </Button>
-                                } */}
                             </form>
                         </div>
                     </Row>
