@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row ,Button, InputGroup,FormControl, Badge} from "react-bootstrap";
 import PandaCard from "./PandaCard";
-import {epochToUTCDate ,getPanda, setOffer, removeOffer,getOffer, buyPanda} from "../assets/js/utils";
+import {epochToUTCDate ,getPanda, setOffer, removeOffer,getOffer, getTotalSupply , getPandas} from "../assets/js/utils";
 import "../assets/css/pandaDetail.css";
 
 class PandaDetail extends Component {
@@ -22,12 +22,16 @@ class PandaDetail extends Component {
     }
 
     async componentDidMount(){
-        let _pandaItem,_offer,_OnwerOfTokenId;
+        let _pandaItem,_offer,_OnwerOfTokenId,_totalSupply,_panda,_pandaList;
 
         try {
             _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
             _offer = await getOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
-            _OnwerOfTokenId = await this.props.contract.ownerOf(this.props.match.params.id).call();
+            // -- test 
+           // _OnwerOfTokenId = await this.props.contract.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] });
+            _totalSupply = await getTotalSupply(this.props.contract, this.props.accounts);
+            //_panda = await this.props.contract.methods.getPanda(this.props.match.params.id).call({ from: this.props.accounts[0] });
+            _pandaList = await getPandas(this.props.contract, this.props.accounts);
         } catch (e) {
             console.log("Hello Catch");
         }
@@ -37,7 +41,10 @@ class PandaDetail extends Component {
             offer: _offer
           }));
 
-          console.log("this is the owner of the token:",this.props.contract,_OnwerOfTokenId)
+          console.log("this is the owner of the token:",_OnwerOfTokenId)
+          console.log("this is the total supply:",_totalSupply)
+          console.log("this is the panda:",_panda)
+          console.log("from pandaDetail, pandas owned = ", _pandaList);
     }
 
     handleSubmit= async (event) => {

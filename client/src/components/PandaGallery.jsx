@@ -23,6 +23,8 @@ class PandaGallery extends Component {
     this.setState(() => ({
           pandaList: _pandaList
         }));
+
+    console.log("number of pandas owned:",this.state.pandaList.length);        
   }
 
   render() {

@@ -34,6 +34,9 @@ class PandaMarket extends Component {
       IsMarketOpperator: _isApprovedForAll,
       OfferList: _offerList
     }));
+
+    console.log("OfferCount: ",this.state.offerCount);
+    console.log("IsMarketOpperator: ",this.state.IsMarketOpperator);
   }
 
   _setApprovalForAll =  ()=>  {
