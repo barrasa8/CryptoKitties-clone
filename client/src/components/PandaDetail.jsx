@@ -23,17 +23,37 @@ class PandaDetail extends Component {
 
     async componentDidMount(){
         let _pandaItem,_offer,_OnwerOfTokenId,_totalSupply,_panda,_pandaList;
+        try{
+            _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
+        } catch(e){
+            console.log("No Pandas");
+        }
+        
+        try{
+            _offer = await getOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
+        } catch(e){
+            console.log("No offer",e);
+        }
+
+        try{
+            _totalSupply = await getTotalSupply(this.props.contract, this.props.accounts);
+        } catch(e){
+            console.log("Error getting total supply");
+        }
 
         try {
-            _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
-            _offer = await getOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
+            console.log("before getPanda");
+            
+            
+            
             // -- test 
            // _OnwerOfTokenId = await this.props.contract.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] });
-            _totalSupply = await getTotalSupply(this.props.contract, this.props.accounts);
+            
             //_panda = await this.props.contract.methods.getPanda(this.props.match.params.id).call({ from: this.props.accounts[0] });
+            console.log("panda DETAIL contract and accoutns --> ",this.props.contract, this.props.accounts);
             _pandaList = await getPandas(this.props.contract, this.props.accounts);
         } catch (e) {
-            console.log("Hello Catch");
+            console.log("Error getting Pandassss");
         }
 
         this.setState(() => ({
@@ -43,7 +63,7 @@ class PandaDetail extends Component {
 
           console.log("this is the owner of the token:",_OnwerOfTokenId)
           console.log("this is the total supply:",_totalSupply)
-          console.log("this is the panda:",_panda)
+          console.log("this is the panda:",_pandaItem)
           console.log("from pandaDetail, pandas owned = ", _pandaList);
     }
 

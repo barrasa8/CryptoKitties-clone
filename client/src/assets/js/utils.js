@@ -181,7 +181,7 @@ export const buyPanda = async (marketContract,accounts,tokenId)=>{
 export  const getTotalSupply = async (contract, accounts, tokenId) => {
   let _totalSupply;
 
-  _totalSupply = await contract.methods.getOffer(tokenId).call({ from: accounts[0] });
+  _totalSupply = await contract.methods.totalSupply().call({ from: accounts[0] });
 
   return _totalSupply;
 }

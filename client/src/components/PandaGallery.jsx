@@ -23,7 +23,7 @@ class PandaGallery extends Component {
     this.setState(() => ({
           pandaList: _pandaList
         }));
-
+        console.log("panda gallery contract and accoutns --> ",this.props.contract, this.props.accounts);
     console.log("number of pandas owned:",this.state.pandaList.length);        
   }
 
