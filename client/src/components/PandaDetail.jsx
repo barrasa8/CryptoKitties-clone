@@ -22,7 +22,12 @@ class PandaDetail extends Component {
     }
 
     async componentDidMount(){
-        let _pandaItem,_offer,_OnwerOfTokenId,_totalSupply,_panda,_pandaList;
+        let _pandaItem,_offer,_OnwerOfTokenId,_totalSupply,_panda,_pandaList,_PandaOwner;
+
+        _OnwerOfTokenId = await this.props.contract.methods.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] });
+        _panda= await this.props.contract.methods.getPanda(1).call({ from: this.props.accounts[0] });
+        console.log("@@@@ pandas Array",_panda);
+
         try{
             _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
         } catch(e){
@@ -43,12 +48,8 @@ class PandaDetail extends Component {
 
         try {
             console.log("before getPanda");
-            
-            
-            
             // -- test 
-           // _OnwerOfTokenId = await this.props.contract.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] });
-            
+            // _OnwerOfTokenId = await this.props.contract.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] });
             //_panda = await this.props.contract.methods.getPanda(this.props.match.params.id).call({ from: this.props.accounts[0] });
             console.log("panda DETAIL contract and accoutns --> ",this.props.contract, this.props.accounts);
             _pandaList = await getPandas(this.props.contract, this.props.accounts);
@@ -65,6 +66,9 @@ class PandaDetail extends Component {
           console.log("this is the total supply:",_totalSupply)
           console.log("this is the panda:",_pandaItem)
           console.log("from pandaDetail, pandas owned = ", _pandaList);
+          console.log("from pandaDetail, panda offer = ", _offer);
+          console.log("this is the marketTransactionEvent--> ",this.props.marketTransactionEvent);
+          console.log("this is the TransferEvent--> ",this.props.TransferEvent);          
     }
 
     handleSubmit= async (event) => {

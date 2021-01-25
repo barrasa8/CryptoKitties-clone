@@ -12,7 +12,7 @@ contract PandaStorage {
         uint16 generation;
     }
 
-    Panda[] internal _pandas;
+    Panda[] internal _pandas; 
 
     uint8 gen0Counter;
 
@@ -41,7 +41,7 @@ contract PandaStorage {
 
     //private variables
     mapping (address => uint256) internal _OwnerAnimalCount;
-    mapping(uint256 => address) internal _PandaOwner;
+    mapping(uint256 => address) internal _PandaOwner; 
     mapping(uint256 => address) internal _PandaIndexToApproved;
     mapping(address => mapping(address => bool)) internal _operatorApproval;
 

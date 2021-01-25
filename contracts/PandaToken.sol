@@ -208,8 +208,8 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     }
 
     function _safeTransfer(address _from, address _to, uint256 _tokenId, bytes memory _data) internal{
-        _transfer(_from, _to, _tokenId);
         require(_checkERC721Suppport(_from,_to,_tokenId, _data));
+        _transfer(_from, _to, _tokenId);
     }
 
     function _checkERC721Suppport(address _from, address _to, uint256 _tokenId, bytes memory _data) internal returns (bool){
@@ -250,5 +250,4 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     {
         return (interfaceId == _INTERFACE_ID_ERC721 || interfaceId == _INTERFACE_ID_ERC165);
     }
-
 }

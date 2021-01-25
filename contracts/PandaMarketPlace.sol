@@ -128,14 +128,14 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
     * Requirement: There must be an active offer for _tokenId
      */
     function buyPanda(uint256 _tokenId) external payable{
-        uint256 tokenIndex = _tokenId;
-        Offer memory offer = tokenIdToOffer[tokenIndex];
-        require(tokenIdToOffer[tokenIndex].price == msg.value,"Transaction value does not match the price of the token");
+        // uint256 tokenIndex = _tokenId;
+        Offer memory offer = tokenIdToOffer[_tokenId];
+        require(tokenIdToOffer[_tokenId].price == msg.value,"Transaction value does not match the price of the token");
         require(offer.active == true);
 
         // Important: remove offer before paying, to avoid reentry attack
-        tokenIdToOffer[tokenIndex].active=false;
-        Offers[tokenIdToOffer[tokenIndex].index].active = false;
+        tokenIdToOffer[_tokenId].active=false;
+        Offers[tokenIdToOffer[_tokenId].index].active = false;
 
         //transfer funds to the seller
         if(offer.price>0){
@@ -144,7 +144,6 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
 
         //Transfer ownership of the token
         _pandaContract.safeTransferFrom(offer.seller,msg.sender, _tokenId);
-
 
         emit MarketTransaction("Buy", msg.sender,  _tokenId);
     }
