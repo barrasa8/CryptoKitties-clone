@@ -22,8 +22,10 @@ class PandaDetail extends Component {
     }
 
     async componentDidMount(){
-        let _pandaItem,_offer,_OnwerOfTokenId,_totalSupply,_panda,_pandaList,_PandaOwner;
+        let _pandaItem,_offer,_OnwerOfTokenId,_totalSupply,_panda,_pandaList,_PandaOwner,_pandasOfOwner;
 
+//         _pandasOfOwner= await this.props.contract.methods._pandasOfOwner(this.props.accounts[0]).call({ from: this.props.accounts[0] });
+// console.log("pandasOfOwner!!!!----> ",_pandasOfOwner);
         _OnwerOfTokenId = await this.props.contract.methods.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] });
         _panda= await this.props.contract.methods.getPanda(1).call({ from: this.props.accounts[0] });
         console.log("@@@@ pandas Array",_panda);

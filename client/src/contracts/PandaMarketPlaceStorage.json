@@ -1,9 +1,9 @@
 {
   "contractName": "PandaMarketPlaceStorage",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol\":\"PandaMarketPlaceStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IERC721.sol\":{\"keccak256\":\"0x14630fc9ba5463ef2184620f1f7574ce3a3c9f3567c354b14ca2882289cd5ecb\",\"urls\":[\"bzz-raw://1c2c5de26ae773d6b289872c66ef8cf2a6d9bce38cd5d7b2b0ea52b6abe64f73\",\"dweb:/ipfs/QmTyyLjoEzqAuJAyfHtGhwg8NsofWLHyDQaHvBGHvaoNBd\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IRC721Receiver.sol\":{\"keccak256\":\"0xb56664f6c5f955e392904b3d9c2a7458ea987a0041cfc868b7510f8a19b649e0\",\"urls\":[\"bzz-raw://d9e27acca3d0df46187e34b6204de3bf67155f4f075478dc5d58cf82f60c44b0\",\"dweb:/ipfs/QmYsvbnuXHE7PAByG8zZizQtucqLHSJoJEdn22BJFbzjQa\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol\":{\"keccak256\":\"0x30e22fd3c0d69eed57de9e9afa81660d2b095329fbaf4b57e797ea948e656396\",\"urls\":[\"bzz-raw://63ab92dd4c78b34f97127651b5b0cff9197b38dca86cde869074247a7234d780\",\"dweb:/ipfs/QmfKts5jz28e8kTth1hkyX2AML197rzsyj8gsmvhw6pQQv\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaContract.sol\":{\"keccak256\":\"0x3896da581fed89d7056f3c2372c28a9418283812411c9abb53c6d91884a548c5\",\"urls\":[\"bzz-raw://4861ef3c9b4038fe752f22b7b58a102b8120b10222cf486005ad317046ef0853\",\"dweb:/ipfs/QmUqJck1qtZWdgZkNG9TVTUfAb588XtLyS2gpaYy5M9gZV\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol\":{\"keccak256\":\"0x4ed82208e02267c9c75bb25819dfd73d28557d4fb6f21d50d6b2e6bfb2f3fb9f\",\"urls\":[\"bzz-raw://ed69eb40998ca939afd93d664b68a92077407ee24568ea39eecd3622926ba58d\",\"dweb:/ipfs/QmPLgkJqQBnW3QP7mjQqtmoKU8qJUapf1AabSmx5JFjizF\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaStorage.sol\":{\"keccak256\":\"0xe93f3675030f1096d6da153427cbc682e35c5060a6c021a38dc4c3d2f69d4e50\",\"urls\":[\"bzz-raw://7f2eed165fcdc8f46b9e0f12752f00c7c7fa19178229d81d7df6ebce014f85df\",\"dweb:/ipfs/QmP2uRNemZHZzs2JrdvKsE7cHMSaNNPZJzQUBj3abTneP1\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaToken.sol\":{\"keccak256\":\"0x18410db5e5335b88ab41f86e0587c41b4cead1b2c5341b946590b192b976deb5\",\"urls\":[\"bzz-raw://ec3c841ca1493b9be40e4e93891637d80a5b11e4189d88104aab1db64848dd3d\",\"dweb:/ipfs/QmTffmuJLYz44bMAjZux8frjBf5mvAtoFWdCEj7p8y2Ewd\"]},\"@openzeppelin/upgrades/contracts/Initializable.sol\":{\"keccak256\":\"0x9bfec92e36234ecc99b5d37230acb6cd1f99560233753162204104a4897e8721\",\"urls\":[\"bzz-raw://5cf7c208583d4d046d75bd99f5507412ab01cce9dd9f802ce9768a416d93ea2f\",\"dweb:/ipfs/QmcQS1BBMPpVEkXP3qzwSjxHNrqDek8YeR7xbVWDC9ApC7\"]}},\"version\":1}",
-  "bytecode": "0x60806040526000600255348015601457600080fd5b50603e8060226000396000f3fe6080604052600080fdfea265627a7a7231582027419117b27d8d147af76e18e31083b2420015851e14b289e50772a4c29c8c0164736f6c634300050c0032",
-  "deployedBytecode": "0x6080604052600080fdfea265627a7a7231582027419117b27d8d147af76e18e31083b2420015851e14b289e50772a4c29c8c0164736f6c634300050c0032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol\":\"PandaMarketPlaceStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IERC721.sol\":{\"keccak256\":\"0x14630fc9ba5463ef2184620f1f7574ce3a3c9f3567c354b14ca2882289cd5ecb\",\"urls\":[\"bzz-raw://1c2c5de26ae773d6b289872c66ef8cf2a6d9bce38cd5d7b2b0ea52b6abe64f73\",\"dweb:/ipfs/QmTyyLjoEzqAuJAyfHtGhwg8NsofWLHyDQaHvBGHvaoNBd\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/IRC721Receiver.sol\":{\"keccak256\":\"0xb56664f6c5f955e392904b3d9c2a7458ea987a0041cfc868b7510f8a19b649e0\",\"urls\":[\"bzz-raw://d9e27acca3d0df46187e34b6204de3bf67155f4f075478dc5d58cf82f60c44b0\",\"dweb:/ipfs/QmYsvbnuXHE7PAByG8zZizQtucqLHSJoJEdn22BJFbzjQa\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol\":{\"keccak256\":\"0x30e22fd3c0d69eed57de9e9afa81660d2b095329fbaf4b57e797ea948e656396\",\"urls\":[\"bzz-raw://63ab92dd4c78b34f97127651b5b0cff9197b38dca86cde869074247a7234d780\",\"dweb:/ipfs/QmfKts5jz28e8kTth1hkyX2AML197rzsyj8gsmvhw6pQQv\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaContract.sol\":{\"keccak256\":\"0xd44f583a1bdeac8bce77bad8d4e1c219d57a0a8ba373e3fe056406496017bc14\",\"urls\":[\"bzz-raw://2958a0cd56be39bed06d5cd4b1c84837316447ec5f6850e02bfd3fc79b03003e\",\"dweb:/ipfs/QmYJFB3NseuxUa8zwYNGtBkeGS3Ntd7JVWLx9smdY6sXGo\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol\":{\"keccak256\":\"0x4ed82208e02267c9c75bb25819dfd73d28557d4fb6f21d50d6b2e6bfb2f3fb9f\",\"urls\":[\"bzz-raw://ed69eb40998ca939afd93d664b68a92077407ee24568ea39eecd3622926ba58d\",\"dweb:/ipfs/QmPLgkJqQBnW3QP7mjQqtmoKU8qJUapf1AabSmx5JFjizF\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaStorage.sol\":{\"keccak256\":\"0xe93f3675030f1096d6da153427cbc682e35c5060a6c021a38dc4c3d2f69d4e50\",\"urls\":[\"bzz-raw://7f2eed165fcdc8f46b9e0f12752f00c7c7fa19178229d81d7df6ebce014f85df\",\"dweb:/ipfs/QmP2uRNemZHZzs2JrdvKsE7cHMSaNNPZJzQUBj3abTneP1\"]},\"/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaToken.sol\":{\"keccak256\":\"0x18410db5e5335b88ab41f86e0587c41b4cead1b2c5341b946590b192b976deb5\",\"urls\":[\"bzz-raw://ec3c841ca1493b9be40e4e93891637d80a5b11e4189d88104aab1db64848dd3d\",\"dweb:/ipfs/QmTffmuJLYz44bMAjZux8frjBf5mvAtoFWdCEj7p8y2Ewd\"]},\"@openzeppelin/upgrades/contracts/Initializable.sol\":{\"keccak256\":\"0x9bfec92e36234ecc99b5d37230acb6cd1f99560233753162204104a4897e8721\",\"urls\":[\"bzz-raw://5cf7c208583d4d046d75bd99f5507412ab01cce9dd9f802ce9768a416d93ea2f\",\"dweb:/ipfs/QmcQS1BBMPpVEkXP3qzwSjxHNrqDek8YeR7xbVWDC9ApC7\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000600255348015601457600080fd5b50603e8060226000396000f3fe6080604052600080fdfea265627a7a72315820bd04b4e244da1d423c2f06a56216a67e0d8b7206633fe5ea8ebca77bc8452ffa64736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820bd04b4e244da1d423c2f06a56216a67e0d8b7206633fe5ea8ebca77bc8452ffa64736f6c634300050c0032",
   "sourceMap": "81:359:8:-;;;380:1;343:38;;81:359;8:9:-1;5:2;;;30:1;27;20:12;5:2;81:359:8;;;;;;;",
   "deployedSourceMap": "81:359:8:-;;;;;",
   "source": "pragma solidity ^0.5.12;\n\nimport \"./Ownable.sol\";\nimport \"./PandaContract.sol\";\n\ncontract PandaMarketPlaceStorage {\n    PandaContract internal _pandaContract;\n\n    struct Offer{\n        address payable seller;\n        uint256 price;\n        uint256 index;\n        uint256 tokenId;\n        bool active;\n    }\n\n    Offer[] internal Offers;\n\n    uint256 internal _activeOfferCount = 0;\n\n    mapping(uint256 => Offer) internal tokenIdToOffer;\n}",
@@ -12,14 +12,14 @@
     "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol",
     "exportedSymbols": {
       "PandaMarketPlaceStorage": [
-        1460
+        1470
       ]
     },
-    "id": 1461,
+    "id": 1471,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1434,
+        "id": 1444,
         "literals": [
           "solidity",
           "^",
@@ -32,9 +32,9 @@
       {
         "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 1435,
+        "id": 1445,
         "nodeType": "ImportDirective",
-        "scope": 1461,
+        "scope": 1471,
         "sourceUnit": 252,
         "src": "26:23:8",
         "symbolAliases": [],
@@ -43,10 +43,10 @@
       {
         "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaContract.sol",
         "file": "./PandaContract.sol",
-        "id": 1436,
+        "id": 1446,
         "nodeType": "ImportDirective",
-        "scope": 1461,
-        "sourceUnit": 906,
+        "scope": 1471,
+        "sourceUnit": 916,
         "src": "50:29:8",
         "symbolAliases": [],
         "unitAlias": ""
@@ -57,35 +57,35 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1460,
+        "id": 1470,
         "linearizedBaseContracts": [
-          1460
+          1470
         ],
         "name": "PandaMarketPlaceStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1438,
+            "id": 1448,
             "name": "_pandaContract",
             "nodeType": "VariableDeclaration",
-            "scope": 1460,
+            "scope": 1470,
             "src": "120:37:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_PandaContract_$905",
+              "typeIdentifier": "t_contract$_PandaContract_$915",
               "typeString": "contract PandaContract"
             },
             "typeName": {
               "contractScope": null,
-              "id": 1437,
+              "id": 1447,
               "name": "PandaContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 905,
+              "referencedDeclaration": 915,
               "src": "120:13:8",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_PandaContract_$905",
+                "typeIdentifier": "t_contract$_PandaContract_$915",
                 "typeString": "contract PandaContract"
               }
             },
@@ -94,14 +94,14 @@
           },
           {
             "canonicalName": "PandaMarketPlaceStorage.Offer",
-            "id": 1449,
+            "id": 1459,
             "members": [
               {
                 "constant": false,
-                "id": 1440,
+                "id": 1450,
                 "name": "seller",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "186:22:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -110,7 +110,7 @@
                   "typeString": "address payable"
                 },
                 "typeName": {
-                  "id": 1439,
+                  "id": 1449,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "186:15:8",
@@ -125,10 +125,10 @@
               },
               {
                 "constant": false,
-                "id": 1442,
+                "id": 1452,
                 "name": "price",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "218:13:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -137,7 +137,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1441,
+                  "id": 1451,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "218:7:8",
@@ -151,10 +151,10 @@
               },
               {
                 "constant": false,
-                "id": 1444,
+                "id": 1454,
                 "name": "index",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "241:13:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -163,7 +163,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1443,
+                  "id": 1453,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "241:7:8",
@@ -177,10 +177,10 @@
               },
               {
                 "constant": false,
-                "id": 1446,
+                "id": 1456,
                 "name": "tokenId",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "264:15:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -189,7 +189,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1445,
+                  "id": 1455,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "264:7:8",
@@ -203,10 +203,10 @@
               },
               {
                 "constant": false,
-                "id": 1448,
+                "id": 1458,
                 "name": "active",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "289:11:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -215,7 +215,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1447,
+                  "id": 1457,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "289:4:8",
@@ -230,42 +230,42 @@
             ],
             "name": "Offer",
             "nodeType": "StructDefinition",
-            "scope": 1460,
+            "scope": 1470,
             "src": "164:143:8",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1452,
+            "id": 1462,
             "name": "Offers",
             "nodeType": "VariableDeclaration",
-            "scope": 1460,
+            "scope": 1470,
             "src": "313:23:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Offer_$1449_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Offer_$1459_storage_$dyn_storage",
               "typeString": "struct PandaMarketPlaceStorage.Offer[]"
             },
             "typeName": {
               "baseType": {
                 "contractScope": null,
-                "id": 1450,
+                "id": 1460,
                 "name": "Offer",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1449,
+                "referencedDeclaration": 1459,
                 "src": "313:5:8",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Offer_$1449_storage_ptr",
+                  "typeIdentifier": "t_struct$_Offer_$1459_storage_ptr",
                   "typeString": "struct PandaMarketPlaceStorage.Offer"
                 }
               },
-              "id": 1451,
+              "id": 1461,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "313:7:8",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Offer_$1449_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Offer_$1459_storage_$dyn_storage_ptr",
                 "typeString": "struct PandaMarketPlaceStorage.Offer[]"
               }
             },
@@ -274,10 +274,10 @@
           },
           {
             "constant": false,
-            "id": 1455,
+            "id": 1465,
             "name": "_activeOfferCount",
             "nodeType": "VariableDeclaration",
-            "scope": 1460,
+            "scope": 1470,
             "src": "343:38:8",
             "stateVariable": true,
             "storageLocation": "default",
@@ -286,7 +286,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1453,
+              "id": 1463,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "343:7:8",
@@ -298,7 +298,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 1454,
+              "id": 1464,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -317,21 +317,21 @@
           },
           {
             "constant": false,
-            "id": 1459,
+            "id": 1469,
             "name": "tokenIdToOffer",
             "nodeType": "VariableDeclaration",
-            "scope": 1460,
+            "scope": 1470,
             "src": "388:49:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1449_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1459_storage_$",
               "typeString": "mapping(uint256 => struct PandaMarketPlaceStorage.Offer)"
             },
             "typeName": {
-              "id": 1458,
+              "id": 1468,
               "keyType": {
-                "id": 1456,
+                "id": 1466,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "396:7:8",
@@ -343,18 +343,18 @@
               "nodeType": "Mapping",
               "src": "388:25:8",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1449_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1459_storage_$",
                 "typeString": "mapping(uint256 => struct PandaMarketPlaceStorage.Offer)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 1457,
+                "id": 1467,
                 "name": "Offer",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1449,
+                "referencedDeclaration": 1459,
                 "src": "407:5:8",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Offer_$1449_storage_ptr",
+                  "typeIdentifier": "t_struct$_Offer_$1459_storage_ptr",
                   "typeString": "struct PandaMarketPlaceStorage.Offer"
                 }
               }
@@ -363,7 +363,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1461,
+        "scope": 1471,
         "src": "81:359:8"
       }
     ],
@@ -373,14 +373,14 @@
     "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaMarketPlaceStorage.sol",
     "exportedSymbols": {
       "PandaMarketPlaceStorage": [
-        1460
+        1470
       ]
     },
-    "id": 1461,
+    "id": 1471,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1434,
+        "id": 1444,
         "literals": [
           "solidity",
           "^",
@@ -393,9 +393,9 @@
       {
         "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 1435,
+        "id": 1445,
         "nodeType": "ImportDirective",
-        "scope": 1461,
+        "scope": 1471,
         "sourceUnit": 252,
         "src": "26:23:8",
         "symbolAliases": [],
@@ -404,10 +404,10 @@
       {
         "absolutePath": "/home/ismael/Documents/Projects/GIT/CryptoKitties-clone/contracts/PandaContract.sol",
         "file": "./PandaContract.sol",
-        "id": 1436,
+        "id": 1446,
         "nodeType": "ImportDirective",
-        "scope": 1461,
-        "sourceUnit": 906,
+        "scope": 1471,
+        "sourceUnit": 916,
         "src": "50:29:8",
         "symbolAliases": [],
         "unitAlias": ""
@@ -418,35 +418,35 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1460,
+        "id": 1470,
         "linearizedBaseContracts": [
-          1460
+          1470
         ],
         "name": "PandaMarketPlaceStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1438,
+            "id": 1448,
             "name": "_pandaContract",
             "nodeType": "VariableDeclaration",
-            "scope": 1460,
+            "scope": 1470,
             "src": "120:37:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_PandaContract_$905",
+              "typeIdentifier": "t_contract$_PandaContract_$915",
               "typeString": "contract PandaContract"
             },
             "typeName": {
               "contractScope": null,
-              "id": 1437,
+              "id": 1447,
               "name": "PandaContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 905,
+              "referencedDeclaration": 915,
               "src": "120:13:8",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_PandaContract_$905",
+                "typeIdentifier": "t_contract$_PandaContract_$915",
                 "typeString": "contract PandaContract"
               }
             },
@@ -455,14 +455,14 @@
           },
           {
             "canonicalName": "PandaMarketPlaceStorage.Offer",
-            "id": 1449,
+            "id": 1459,
             "members": [
               {
                 "constant": false,
-                "id": 1440,
+                "id": 1450,
                 "name": "seller",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "186:22:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -471,7 +471,7 @@
                   "typeString": "address payable"
                 },
                 "typeName": {
-                  "id": 1439,
+                  "id": 1449,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "186:15:8",
@@ -486,10 +486,10 @@
               },
               {
                 "constant": false,
-                "id": 1442,
+                "id": 1452,
                 "name": "price",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "218:13:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -498,7 +498,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1441,
+                  "id": 1451,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "218:7:8",
@@ -512,10 +512,10 @@
               },
               {
                 "constant": false,
-                "id": 1444,
+                "id": 1454,
                 "name": "index",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "241:13:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -524,7 +524,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1443,
+                  "id": 1453,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "241:7:8",
@@ -538,10 +538,10 @@
               },
               {
                 "constant": false,
-                "id": 1446,
+                "id": 1456,
                 "name": "tokenId",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "264:15:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -550,7 +550,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1445,
+                  "id": 1455,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "264:7:8",
@@ -564,10 +564,10 @@
               },
               {
                 "constant": false,
-                "id": 1448,
+                "id": 1458,
                 "name": "active",
                 "nodeType": "VariableDeclaration",
-                "scope": 1449,
+                "scope": 1459,
                 "src": "289:11:8",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -576,7 +576,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1447,
+                  "id": 1457,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "289:4:8",
@@ -591,42 +591,42 @@
             ],
             "name": "Offer",
             "nodeType": "StructDefinition",
-            "scope": 1460,
+            "scope": 1470,
             "src": "164:143:8",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1452,
+            "id": 1462,
             "name": "Offers",
             "nodeType": "VariableDeclaration",
-            "scope": 1460,
+            "scope": 1470,
             "src": "313:23:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Offer_$1449_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Offer_$1459_storage_$dyn_storage",
               "typeString": "struct PandaMarketPlaceStorage.Offer[]"
             },
             "typeName": {
               "baseType": {
                 "contractScope": null,
-                "id": 1450,
+                "id": 1460,
                 "name": "Offer",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1449,
+                "referencedDeclaration": 1459,
                 "src": "313:5:8",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Offer_$1449_storage_ptr",
+                  "typeIdentifier": "t_struct$_Offer_$1459_storage_ptr",
                   "typeString": "struct PandaMarketPlaceStorage.Offer"
                 }
               },
-              "id": 1451,
+              "id": 1461,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "313:7:8",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Offer_$1449_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Offer_$1459_storage_$dyn_storage_ptr",
                 "typeString": "struct PandaMarketPlaceStorage.Offer[]"
               }
             },
@@ -635,10 +635,10 @@
           },
           {
             "constant": false,
-            "id": 1455,
+            "id": 1465,
             "name": "_activeOfferCount",
             "nodeType": "VariableDeclaration",
-            "scope": 1460,
+            "scope": 1470,
             "src": "343:38:8",
             "stateVariable": true,
             "storageLocation": "default",
@@ -647,7 +647,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1453,
+              "id": 1463,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "343:7:8",
@@ -659,7 +659,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 1454,
+              "id": 1464,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -678,21 +678,21 @@
           },
           {
             "constant": false,
-            "id": 1459,
+            "id": 1469,
             "name": "tokenIdToOffer",
             "nodeType": "VariableDeclaration",
-            "scope": 1460,
+            "scope": 1470,
             "src": "388:49:8",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1449_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1459_storage_$",
               "typeString": "mapping(uint256 => struct PandaMarketPlaceStorage.Offer)"
             },
             "typeName": {
-              "id": 1458,
+              "id": 1468,
               "keyType": {
-                "id": 1456,
+                "id": 1466,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "396:7:8",
@@ -704,18 +704,18 @@
               "nodeType": "Mapping",
               "src": "388:25:8",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1449_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Offer_$1459_storage_$",
                 "typeString": "mapping(uint256 => struct PandaMarketPlaceStorage.Offer)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 1457,
+                "id": 1467,
                 "name": "Offer",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1449,
+                "referencedDeclaration": 1459,
                 "src": "407:5:8",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Offer_$1449_storage_ptr",
+                  "typeIdentifier": "t_struct$_Offer_$1459_storage_ptr",
                   "typeString": "struct PandaMarketPlaceStorage.Offer"
                 }
               }
@@ -724,7 +724,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1461,
+        "scope": 1471,
         "src": "81:359:8"
       }
     ],
@@ -736,7 +736,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-01-26T10:14:01.919Z",
+  "updatedAt": "2021-01-26T10:57:03.242Z",
   "devdoc": {
     "methods": {}
   },

@@ -19,7 +19,7 @@ module.exports = async function(deployer,networks,accounts) {
   console.log("contract Owner 123456--> ", PandaContract.owner);
 
   //Create pandaId 0 , not to be displayed.
-  await instance.createPandaGen0(7259267741713121);
+  // await instance.createPandaGen0(7259267741713121);
   
 
 //------------------------------------------------------------------------------  

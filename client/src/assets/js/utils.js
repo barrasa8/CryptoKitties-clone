@@ -45,12 +45,16 @@ export  const getPandas = async (contract, accounts) => {
     let _pandaList = [];
     let _pandaItem;
 
+    
     const PandaTokenIdArray = await contract.methods
       ._pandasOfOwner(accounts[0])
       .call({ from: accounts[0] });
 
-    for (let i = 1; i < PandaTokenIdArray.length; i++) {
-      _pandaItem = await getPanda(contract, accounts, i);
+      console.log("pandaTokenIdArray----> ",PandaTokenIdArray);
+
+    for (let i = 0; i < PandaTokenIdArray.length; i++) {
+      console.log("pandatokenidarray--> elements:",PandaTokenIdArray[i]);
+      _pandaItem = await getPanda(contract, accounts, parseInt(PandaTokenIdArray[i]));
       _pandaList.push(_pandaItem);
     }
 
