@@ -87,6 +87,7 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     }
 
     function _transfer(address _from,address _to, uint256 _tokenId) internal {
+         //require(_from != address(0) ,"from address is different from address 0 !!!!!");
         _OwnerAnimalCount[_to]++;
         _PandaOwner[_tokenId]=_to;
 
@@ -208,7 +209,7 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     }
 
     function _safeTransfer(address _from, address _to, uint256 _tokenId, bytes memory _data) internal{
-        require(_checkERC721Suppport(_from,_to,_tokenId, _data));
+        require(_checkERC721Suppport(_from,_to,_tokenId, _data),"CheckERC721Support error in _safeTransfer!!");
         _transfer(_from, _to, _tokenId);
     }
 

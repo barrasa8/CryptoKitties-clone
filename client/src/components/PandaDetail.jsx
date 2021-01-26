@@ -78,13 +78,25 @@ class PandaDetail extends Component {
         }else if(this.props.accounts[0]===this.state.offer.seller){
             await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
         }else{
+            let panda0Owner,panda1Owner,panda2Owner;
             console.log("inside the BUY SECTION",this.props.match.params.id,this.props.accounts[0],String(this.state.offer.price));
             let result = await this.props.marketContract.methods.getOffer(this.props.match.params.id).call();
             console.log("result getOffer: ",result);
             console.log("value in ether",this.props.web3.utils.toWei(String(this.state.offer.price), "ether"),this.state.offer.price);
-            await this.props.marketContract.methods.buyPanda(this.props.match.params.id)
+            panda0Owner= await this.props.contract.methods.ownerOf(0).call();
+            panda1Owner= await this.props.contract.methods.ownerOf(1).call();
+            panda2Owner= await this.props.contract.methods.ownerOf(2).call();
+            console.log("BEFORE BUY panda owner from 0 to 2:",panda0Owner,panda1Owner,panda2Owner);
+            let response = await this.props.marketContract.methods.buyPanda(this.props.match.params.id)
             .send({ from: this.props.accounts[0] ,
                 value: this.state.offer.price});
+
+            panda0Owner= await this.props.contract.methods.ownerOf(0).call();
+            panda1Owner= await this.props.contract.methods.ownerOf(1).call();
+            panda2Owner= await this.props.contract.methods.ownerOf(2).call();
+            console.log("AFTER BUY panda owner from 0 to 2:",panda0Owner,panda1Owner,panda2Owner);
+
+            console.log("Buy panda response",response);
         }       
     }
 

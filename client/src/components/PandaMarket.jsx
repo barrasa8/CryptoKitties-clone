@@ -21,19 +21,39 @@ class PandaMarket extends Component {
 
   async componentDidMount() {
     let _isApprovedForAll, _activeOfferCount, _offerList;
-    _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
     
-    _activeOfferCount = await this.props.marketContract.methods.getActiveOfferCount().call();
-
-    if(_activeOfferCount>0){
-      _offerList =await getMarketOffers(this.props.contract,this.props.marketContract,this.props.accounts);
+    try{
+      _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
+    } catch(e){
+      console.log("Not approved for all",e);
     }
     
-    this.setState(() => ({
-      offerCount: _activeOfferCount,
-      IsMarketOpperator: _isApprovedForAll,
-      OfferList: _offerList
-    }));
+    try{
+      _activeOfferCount = await this.props.marketContract.methods.getActiveOfferCount().call();
+    
+      try{      
+        if(_activeOfferCount>0){
+          _offerList =await getMarketOffers(this.props.contract,this.props.marketContract,this.props.accounts);
+          
+          this.setState(() => ({
+            offerCount: _activeOfferCount,
+            IsMarketOpperator: _isApprovedForAll,
+            OfferList: _offerList
+          }));
+        }
+      } catch(e){
+        console.log("No Market offers",e);
+      }
+      
+     
+  
+    } catch(e){
+      console.log("no actove offer count--> ",e);
+    }
+
+    
+
+    
 
     console.log("OfferCount: ",this.state.offerCount);
     console.log("IsMarketOpperator: ",this.state.IsMarketOpperator);
