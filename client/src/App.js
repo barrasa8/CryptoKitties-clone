@@ -49,6 +49,15 @@ class App extends Component {
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       this.setState({ web3, accounts, contract: instance , marketContract: marketInstance }, this.runExample);
+
+      // Handle page reload on Network or user account changes
+      window.ethereum.on('chainChanged', chainId => {
+        document.location.reload()
+      })
+      window.ethereum.on('accountsChanged', () => {
+        document.location.reload()
+      })
+
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
