@@ -50,10 +50,7 @@ export  const getPandas = async (contract, accounts) => {
       ._pandasOfOwner(accounts[0])
       .call({ from: accounts[0] });
 
-      console.log("pandaTokenIdArray----> ",PandaTokenIdArray);
-
     for (let i = 0; i < PandaTokenIdArray.length; i++) {
-      console.log("pandatokenidarray--> elements:",PandaTokenIdArray[i]);
       _pandaItem = await getPanda(contract, accounts, parseInt(PandaTokenIdArray[i]));
       _pandaList.push(_pandaItem);
     }
@@ -178,8 +175,8 @@ export  const getOffer = async (contract, accounts, tokenId) => {
   return _offerItem;
 }
 
-export const buyPanda = async (marketContract,accounts,tokenId)=>{
-  await marketContract.methods.buyPanda(tokenId).send({ from: accounts[0] });
+export const buyPanda = async (marketContract,accounts,tokenId,value)=>{
+  await marketContract.methods.buyPanda(tokenId).send({ from: accounts[0] ,value: value});
 }
 
 export  const getTotalSupply = async (contract, accounts) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row ,Button, InputGroup,FormControl, Badge} from "react-bootstrap";
 import PandaCard from "./PandaCard";
-import {epochToUTCDate ,getPanda, setOffer, removeOffer,getOffer, getTotalSupply , getPandas} from "../assets/js/utils";
+import {epochToUTCDate ,getPanda, setOffer, removeOffer,getOffer, getTotalSupply , getPandas, buyPanda} from "../assets/js/utils";
 import "../assets/css/pandaDetail.css";
 
 class PandaDetail extends Component {
@@ -22,14 +22,7 @@ class PandaDetail extends Component {
     }
 
     async componentDidMount(){
-        let _pandaItem,_offer,_OnwerOfTokenId,_totalSupply,_panda,_pandaList,_PandaOwner,_pandasOfOwner;
-
-//         _pandasOfOwner= await this.props.contract.methods._pandasOfOwner(this.props.accounts[0]).call({ from: this.props.accounts[0] });
-// console.log("pandasOfOwner!!!!----> ",_pandasOfOwner);
-        _OnwerOfTokenId = await this.props.contract.methods.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] });
-        _panda= await this.props.contract.methods.getPanda(1).call({ from: this.props.accounts[0] });
-        console.log("@@@@ pandas Array",_panda);
-
+        let _pandaItem,_offer;
         try{
             _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
         } catch(e){
@@ -42,35 +35,10 @@ class PandaDetail extends Component {
             console.log("No offer",e);
         }
 
-        try{
-            _totalSupply = await getTotalSupply(this.props.contract, this.props.accounts);
-        } catch(e){
-            console.log("Error getting total supply");
-        }
-
-        try {
-            console.log("before getPanda");
-            // -- test 
-            // _OnwerOfTokenId = await this.props.contract.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] });
-            //_panda = await this.props.contract.methods.getPanda(this.props.match.params.id).call({ from: this.props.accounts[0] });
-            console.log("panda DETAIL contract and accoutns --> ",this.props.contract, this.props.accounts);
-            _pandaList = await getPandas(this.props.contract, this.props.accounts);
-        } catch (e) {
-            console.log("Error getting Pandassss");
-        }
-
         this.setState(() => ({
             pandaItem: _pandaItem,
             offer: _offer
           }));
-
-          console.log("this is the owner of the token:",_OnwerOfTokenId)
-          console.log("this is the total supply:",_totalSupply)
-          console.log("this is the panda:",_pandaItem)
-          console.log("from pandaDetail, pandas owned = ", _pandaList);
-          console.log("from pandaDetail, panda offer = ", _offer);
-          console.log("this is the marketTransactionEvent--> ",this.props.marketTransactionEvent);
-          console.log("this is the TransferEvent--> ",this.props.TransferEvent);          
     }
 
     handleSubmit= async (event) => {
@@ -79,26 +47,8 @@ class PandaDetail extends Component {
             await setOffer(this.props.marketContract, this.props.accounts,this.props.web3.utils.toWei(String(this.state.amount)),this.props.match.params.id);
         }else if(this.props.accounts[0]===this.state.offer.seller){
             await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
-        }else{
-            let panda0Owner,panda1Owner,panda2Owner;
-            console.log("inside the BUY SECTION",this.props.match.params.id,this.props.accounts[0],String(this.state.offer.price));
-            let result = await this.props.marketContract.methods.getOffer(this.props.match.params.id).call();
-            console.log("result getOffer: ",result);
-            console.log("value in ether",this.props.web3.utils.toWei(String(this.state.offer.price), "ether"),this.state.offer.price);
-            panda0Owner= await this.props.contract.methods.ownerOf(0).call();
-            panda1Owner= await this.props.contract.methods.ownerOf(1).call();
-            panda2Owner= await this.props.contract.methods.ownerOf(2).call();
-            console.log("BEFORE BUY panda owner from 0 to 2:",panda0Owner,panda1Owner,panda2Owner);
-            let response = await this.props.marketContract.methods.buyPanda(this.props.match.params.id)
-            .send({ from: this.props.accounts[0] ,
-                value: this.state.offer.price});
-
-            panda0Owner= await this.props.contract.methods.ownerOf(0).call();
-            panda1Owner= await this.props.contract.methods.ownerOf(1).call();
-            panda2Owner= await this.props.contract.methods.ownerOf(2).call();
-            console.log("AFTER BUY panda owner from 0 to 2:",panda0Owner,panda1Owner,panda2Owner);
-
-            console.log("Buy panda response",response);
+        }else{ 
+            await buyPanda(this.props.marketContract, this.props.accounts,this.props.match.params.id,this.state.offer.price);
         }       
     }
 
@@ -112,10 +62,7 @@ class PandaDetail extends Component {
 
     handleRemove =  async (event) =>{
         event.preventDefault();
-        // console.log(event);
-        // console.log(this.props.match.params.id);
         await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
-        //console.log("market event from the REMOVE",this.props.marketTransactionEvent);
     }
 
     render() { 
@@ -125,16 +72,6 @@ class PandaDetail extends Component {
                     <h1>Set your offer</h1>
                     {this.props.accounts[0]}
                 </Row>
-                {/* {this.state.offer !== undefined ?
-                    <Row className="justify-content-md-center" >
-                        <h4 id="panda-created-offer-message">Active Offer -- 
-                            SELLER:  {" " +this.state.offer.seller+" "} 
-                            TOKENID: {" " +this.state.offer.tokenId+" "}
-                            PRICE:   {" " +this.state.offer.price +" ETH"}
-                        </h4>
-                    </Row>
-                :""
-                } */}
                 {this.state.pandaItem != null ?
                     <Row className="justify-content-md-center">
                         <PandaCard

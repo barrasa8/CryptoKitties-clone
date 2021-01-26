@@ -5,8 +5,6 @@ contract PandaProxy is Ownable , PandaStorage{
 
   address currentAddress;
 
-  event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
-
   constructor(address _currentAddress) public {
     currentAddress = _currentAddress;
     _TokenName= "CryptoPanda";

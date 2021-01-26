@@ -11,7 +11,9 @@ contract PandaContract is Initializable , PandaToken {
     function initialize() public initializer{
         PandaToken.initialize("CryptoPanda","CP");
         gen0Counter= 0;
-        _CreatePanda(0,0,7259267741713121,0,address(this));
+        //Creating first panda not owned by anyone, so that ,
+        //first valid Panda tokenId 1 will match position 1 in the PandaArray
+        _CreatePanda(0,0,7259267741713121,0,address(this)); 
     }
 
     function createPandaGen0(uint256 _genes) public onlyOwner returns (uint256) {

@@ -50,13 +50,8 @@ class PandaMarket extends Component {
     } catch(e){
       console.log("no actove offer count--> ",e);
     }
-
-    
-
-    
-
-    console.log("OfferCount: ",this.state.offerCount);
-    console.log("IsMarketOpperator: ",this.state.IsMarketOpperator);
+    // console.log("OfferCount: ",this.state.offerCount);
+    // console.log("IsMarketOpperator: ",this.state.IsMarketOpperator);
   }
 
   _setApprovalForAll =  ()=>  {
