@@ -70,7 +70,6 @@ class PandaDetail extends Component {
             <Container fluid>
                 <Row className="justify-content-md-center body-title body-title-font">
                     <h1>Set your offer</h1>
-                    {this.props.accounts[0]}
                 </Row>
                 {this.state.pandaItem != null ?
                     <Row className="justify-content-md-center">

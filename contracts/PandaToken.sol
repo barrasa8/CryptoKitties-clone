@@ -67,6 +67,13 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     }
 
 
+    /*
+     * @dev Returns the panda contract owner address.
+     */
+    function contractOwner() external view returns (address _owner){
+        return owner;
+    }
+
     /* @dev Transfers `tokenId` token from `msg.sender` to `to`.
      *
      *
@@ -87,7 +94,6 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     }
 
     function _transfer(address _from,address _to, uint256 _tokenId) internal {
-        require(_from != address(0) ,"from address is different from address 0 !!!!!");
         _OwnerAnimalCount[_to]++;
         _PandaOwner[_tokenId]=_to;
 

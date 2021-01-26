@@ -19,6 +19,7 @@ class PandaGallery extends Component {
 
   async componentDidMount() {
     let _pandaList = await getPandas(this.props.contract, this.props.accounts);
+    console.log(_pandaList);
 
     this.setState(() => ({
           pandaList: _pandaList

@@ -3,3 +3,12 @@
 #nav-bar-title{
     font-family: 'Berkshire Swash', cursive;
 }
+
+#btn-connect{ 
+    height: 40px;
+    width: 200px;
+    left:-10px; 
+    border-radius: 50px;
+    font-size: 19px;
+    background-color: red;  
+} 

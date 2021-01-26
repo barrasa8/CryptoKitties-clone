@@ -48,7 +48,7 @@ export  const getPandas = async (contract, accounts) => {
     
     const PandaTokenIdArray = await contract.methods
       ._pandasOfOwner(accounts[0])
-      .call({ from: accounts[0] });
+      .call({ from: accounts[0] }); 
 
     for (let i = 0; i < PandaTokenIdArray.length; i++) {
       _pandaItem = await getPanda(contract, accounts, parseInt(PandaTokenIdArray[i]));
