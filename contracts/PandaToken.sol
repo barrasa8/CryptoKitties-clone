@@ -156,8 +156,8 @@ contract PandaToken is IERC721, Ownable, PandaStorage, Initializable{
     /// @param _operator Address to add to the set of authorized operators
     /// @param _approved True if the operator is approved, false to revoke approval
     function setApprovalForAll(address _operator, bool _approved) external{
-        require( msg.sender != address(0));
-        require(_operatorApproval[msg.sender][_operator] != _approved);
+        require( msg.sender != address(0),"ERROR: it is the 0 address");
+        require(_operatorApproval[msg.sender][_operator] != _approved,"ERROR: Operator flag is the same as sent value");
 
         _operatorApproval[msg.sender][_operator] = _approved;
 

@@ -24,6 +24,10 @@ class PandaMarket extends Component {
     
     try{
       _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
+      console.log("From Did mount, approved for all:",_isApprovedForAll);
+      this.setState(() => ({
+        IsMarketOpperator: _isApprovedForAll   
+      }));
     } catch(e){
       console.log("Not approved for all",e);
     }
@@ -37,7 +41,6 @@ class PandaMarket extends Component {
           
           this.setState(() => ({
             offerCount: _activeOfferCount,
-            IsMarketOpperator: _isApprovedForAll,
             OfferList: _offerList
           }));
         }
@@ -54,10 +57,20 @@ class PandaMarket extends Component {
     // console.log("IsMarketOpperator: ",this.state.IsMarketOpperator);
   }
 
-  _setApprovalForAll =  ()=>  {
+  _setApprovalForAll =  async ()=>  {
+      //console.log("Start of setApprovalForAll: ",this.state.IsMarketOpperator);
+      let _isApprovedForAll;
+      //console.log("before setApprovalForAll: ",this.props.contract.options.address,this.props.marketContract.options.address,this.props.accounts)
+      
       setApprovalForAll(this.props.contract,this.props.marketContract,this.props.accounts,true);
+      
+      //console.log("addressess passed to isApprovedForAll contract function--> ",this.props.accounts[0],this.props.marketContract.options.address);
+     
+      _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
+     
+      //console.log("return value from approvedForAll",_isApprovedForAll)
       this.setState(() => ({
-        IsMarketOpperator: true
+        IsMarketOpperator: _isApprovedForAll
       }));
   }
   

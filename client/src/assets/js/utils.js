@@ -118,14 +118,24 @@ export  const getMarketOffers = async (pandaContract,marketContract, accounts) =
 };
 
 export const setApprovalForAll = async (contract,marketContract,accounts,approvalFlag) =>{
-  await contract.methods.setApprovalForAll(marketContract.options.address,approvalFlag)
-      .send({ from: accounts[0] }, (error, txHash) => {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log(txHash);
-        }
-      });
+  let result;
+  try{
+    
+    result = await contract.methods.setApprovalForAll(marketContract.options.address,approvalFlag)
+      .send({ from: accounts[0]});
+      console.log("result of SetApproval:" ,result);
+  }
+  catch(e){
+    console.log("Error when setting approval",e);
+  }
+  // await contract.methods.setApprovalForAll(marketContract.options.address,approvalFlag)
+  //     .send({ from: accounts[0] }, (error, txHash) => {
+  //       if (error) {
+  //         console.log(error);
+  //       } else {
+  //         console.log(txHash);
+  //       }
+  //     });
 };
 
 export const setOffer = async (marketContract,accounts,price,tokenId) =>{
