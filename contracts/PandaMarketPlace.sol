@@ -28,8 +28,6 @@ contract PandaMarketPlace is Initializable,IPandaMarketPlace, Ownable,PandaMarke
      */
     function getOffer(uint256 _tokenId) external view returns ( address seller, uint256 price, uint256 index, uint256 tokenId, bool active){
         
-        require (tokenIdToOffer[_tokenId].tokenId > 0 && tokenIdToOffer[_tokenId].active == true,"No active offer for the tokenID");
-        
         seller  = tokenIdToOffer[_tokenId].seller;
         price   = tokenIdToOffer[_tokenId].price;
         index   = tokenIdToOffer[_tokenId].index;

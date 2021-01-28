@@ -128,14 +128,6 @@ export const setApprovalForAll = async (contract,marketContract,accounts,approva
   catch(e){
     console.log("Error when setting approval",e);
   }
-  // await contract.methods.setApprovalForAll(marketContract.options.address,approvalFlag)
-  //     .send({ from: accounts[0] }, (error, txHash) => {
-  //       if (error) {
-  //         console.log(error);
-  //       } else {
-  //         console.log(txHash);
-  //       }
-  //     });
 };
 
 export const setOffer = async (marketContract,accounts,price,tokenId) =>{
@@ -167,10 +159,10 @@ export const getActiveOfferCount = async (marketContract,accounts) =>{
   return numberOfOffers;
 };
 
-export  const getOffer = async (contract, accounts, tokenId) => {
+export  const getOffer = async (marketContract, accounts, tokenId) => {
   let _offer,_offerItem;
 
-  _offer = await contract.methods
+  _offer = await marketContract.methods
     .getOffer(tokenId)
     .call({ from: accounts[0] });
 

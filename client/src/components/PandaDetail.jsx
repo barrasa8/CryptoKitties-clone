@@ -17,12 +17,13 @@ class PandaDetail extends Component {
                 index: 0, 
                 tokenId: 0, 
                 active: false
-            }
+            },
+            pandaOwner:0
         };
     }
 
     async componentDidMount(){
-        let _pandaItem,_offer;
+        let _pandaItem,_offer,_ownerOf;
         try{
             _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
         } catch(e){
@@ -31,13 +32,23 @@ class PandaDetail extends Component {
         
         try{
             _offer = await getOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
+            if(_offer.active===false){
+                _offer = undefined;
+            }
         } catch(e){
-            console.log("No offer",e);
+            console.log("No offer");
+        }
+
+        try{
+            _ownerOf=await this.props.contract.methods.ownerOf(this.props.match.params.id).call({ from: this.props.accounts[0] }); 
+        } catch(e){
+            console.log("Error: executing OwnerOf");
         }
 
         this.setState(() => ({
             pandaItem: _pandaItem,
-            offer: _offer
+            offer: _offer,
+            pandaOwner: _ownerOf
           }));
     }
 
@@ -93,14 +104,18 @@ class PandaDetail extends Component {
                             <form id="panda-detail-offer" onSubmit={this.handleSubmit}>
                                 {this.state.offer == undefined ?
                                     <div>
-                                        <InputGroup className="mb-3">
-                                            <FormControl aria-label="Amount" name="amount" onChange={this.handleChange}/>
-                                            <InputGroup.Append>
-                                                <InputGroup.Text>ETH</InputGroup.Text>
-                                            </InputGroup.Append>
-                                        </InputGroup>
-                                        <Button variant="success" type="submit">Sell</Button>
-                                    </div>
+                                        {this.state.pandaOwner ==this.props.accounts[0]?
+                                            <div>
+                                            <InputGroup className="mb-3">
+                                                <FormControl aria-label="Amount" name="amount" onChange={this.handleChange}/>
+                                                <InputGroup.Append>
+                                                    <InputGroup.Text>ETH</InputGroup.Text>
+                                                </InputGroup.Append>
+                                            </InputGroup>
+                                            <Button variant="success" type="submit">Sell</Button>
+                                            </div>
+                                        :""}
+                                    </div>   
                                 :
                                     <div>
                                         <span className="space-between-elements"/>
