@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Navbar,Nav,Button} from 'react-bootstrap';
+import {Navbar,Nav} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 import "../assets/css/header.css";
@@ -31,7 +31,7 @@ class  Header extends Component {
                 <Navbar.Brand id="nav-bar-title"><Link to="" className= "nav-link">Crypto Panda</Link></Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        {this.state.contractOwner != this.props.accounts[0] ? ""
+                        {this.state.contractOwner !== this.props.accounts[0] ? ""
                             :<Link to="/factory" className= "nav-link">Panda Factory</Link>
                         } 
                         <Link to="/gallery" className= "nav-link">My Collection</Link>
