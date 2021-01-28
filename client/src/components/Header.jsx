@@ -38,7 +38,6 @@ class  Header extends Component {
                         <Link to="/breed" className= "nav-link">Breed Room</Link>
                         <Link to="/market" className= "nav-link">Market Place</Link>
                     </Nav>
-                    {/* <Button id="btn-connect" >Connect Wallet</Button> */}
                 </Navbar.Collapse>
                 
             </Navbar>
