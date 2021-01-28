@@ -1,3 +1,4 @@
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 const path = require("path");
 /**
  * Use this file to configure your truffle project. It's seeded with some
@@ -24,6 +25,7 @@ const path = require("path");
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+require('dotenv').config()  // Store environment-specific variable from '.env' to process.env
 
 module.exports = {
   contracts_build_directory: path.join(__dirname, "client/src/contracts"),
@@ -33,6 +35,13 @@ module.exports = {
       port: 7545,
       network_id: "5777",
       gasPrice: 100e9,
+    },
+    ropsten: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, "https://ropsten.infura.io/v3/" + process.env.INFURA_API_KEY),
+      // provider: () => new HDWalletProvider("destroy logic life rookie fortune bleak tube thunder beef silly habit base", "https://ropsten.infura.io/v3/8e4f395a895e49399c44310e92fec67c"),
+      network_id: "3",
+      gas: 3000000,
+      gasPrice: 10000000000
     },
   },
   // Set default mocha options here, use special reporters etc.
@@ -46,10 +55,10 @@ module.exports = {
       version: "0.5.12",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
-      //  optimizer: {
-      //    enabled: false,
-      //    runs: 200
-      //  },
+       optimizer: {
+         enabled: true,
+         runs: 200
+       },
       //  evmVersion: "byzantium"
       // }
     }
