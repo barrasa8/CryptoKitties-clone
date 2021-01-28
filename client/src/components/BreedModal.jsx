@@ -46,7 +46,7 @@ class BreedModal extends Component {
           </Button>
 
         <Modal
-          {...this.props}
+          // {...this.props}
           show={this.state.show}
           onHide={this.handleHide}
           dialogClassName="custom-modal"

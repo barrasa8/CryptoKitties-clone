@@ -64,9 +64,7 @@ export const createPandaGen0 = (contract,accounts,dna) =>{
   .send({ from: accounts[0] }, (error, txHash) => {
     if (error) {
       console.log(error);
-    } else {
-      console.log(txHash);
-    }
+    } 
   })
 };  
 
@@ -75,8 +73,6 @@ export const breed = (contract,accounts,mumTokenId, dadTokenId) =>{
       .send({ from: accounts[0] }, (error, txHash) => {
         if (error) {
           console.log(error);
-        } else {
-          console.log(txHash);
         }
       });
 };
@@ -118,12 +114,10 @@ export  const getMarketOffers = async (pandaContract,marketContract, accounts) =
 };
 
 export const setApprovalForAll = async (contract,marketContract,accounts,approvalFlag) =>{
-  let result;
   try{
     
-    result = await contract.methods.setApprovalForAll(marketContract.options.address,approvalFlag)
+    await contract.methods.setApprovalForAll(marketContract.options.address,approvalFlag)
       .send({ from: accounts[0]});
-      console.log("result of SetApproval:" ,result);
   }
   catch(e){
     console.log("Error when setting approval",e);
@@ -136,9 +130,7 @@ export const setOffer = async (marketContract,accounts,price,tokenId) =>{
 
         if (error) {
           console.log(error);
-        } else {
-          console.log(txHash);
-        }
+        } 
       });
 };
 
@@ -147,9 +139,7 @@ export const removeOffer = async (marketContract,accounts,tokenId) =>{
       .send({ from: accounts[0] }, (error, txHash) => {
         if (error) {
           console.log(error);
-        } else {
-          console.log(txHash);
-        }
+        } 
       });
 };
 
