@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row ,Button, InputGroup,FormControl, Badge} from "react-bootstrap";
 import PandaCard from "./PandaCard";
-import {epochToUTCDate ,getPanda, setOffer, removeOffer,getOffer, getTotalSupply , getPandas, buyPanda} from "../assets/js/utils";
+import {epochToUTCDate ,getPanda, setOffer, removeOffer,getOffer, setApprovalForAll , buyPanda} from "../assets/js/utils";
 import "../assets/css/pandaDetail.css";
 
 class PandaDetail extends Component {
@@ -18,12 +18,23 @@ class PandaDetail extends Component {
                 tokenId: 0, 
                 active: false
             },
-            pandaOwner:0
+            pandaOwner:0,
+            IsMarketOpperator:false
         };
     }
 
     async componentDidMount(){
-        let _pandaItem,_offer,_ownerOf;
+        let _pandaItem,_offer,_ownerOf,_isApprovedForAll;
+
+        try{
+            _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
+            this.setState(() => ({
+              IsMarketOpperator: _isApprovedForAll   
+            }));
+          } catch(e){
+            console.log("Not approved for all",e);
+          }
+
         try{
             _pandaItem = await getPanda(this.props.contract, this.props.accounts,this.props.match.params.id);
         } catch(e){
@@ -76,6 +87,18 @@ class PandaDetail extends Component {
         await removeOffer(this.props.marketContract, this.props.accounts,this.props.match.params.id);
     }
 
+    _setApprovalForAll =  async ()=>  {
+        let _isApprovedForAll;
+        
+        setApprovalForAll(this.props.contract,this.props.marketContract,this.props.accounts,true);
+       
+        _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
+       
+        this.setState(() => ({
+          IsMarketOpperator: _isApprovedForAll
+        }));
+    }
+
     render() { 
         return (  
             <Container fluid>
@@ -101,6 +124,9 @@ class PandaDetail extends Component {
                                 <h4><Badge variant="secondary">Price: {this.props.web3.utils.fromWei(String(this.state.offer.price), 'ether')} ETH</Badge></h4>
                             </div>
                             :""}
+                            {this.state.IsMarketOpperator === false & this.state.pandaOwner ==this.props.accounts[0] ?
+                                        <Button id="btn-permissions" onClick={this._setApprovalForAll}>Delegate Operator rights</Button>
+                            :""}
                             <form id="panda-detail-offer" onSubmit={this.handleSubmit}>
                                 {this.state.offer == undefined ?
                                     <div>
@@ -120,9 +146,9 @@ class PandaDetail extends Component {
                                     <div>
                                         <span className="space-between-elements"/>
                                         {this.props.accounts[0]==this.state.offer.seller?
-                                            <Button variant="danger" type="submit">Remove Offer</Button>
+                                        <Button variant="danger" type="submit">Remove Offer</Button>
                                         :
-                                            <Button variant="success" type="submit">Buy Me</Button>
+                                        <Button variant="success" type="submit">Buy Me</Button>
                                         }
                                     </div>
                                 }

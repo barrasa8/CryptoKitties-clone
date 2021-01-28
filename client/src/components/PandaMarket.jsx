@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col ,Button, Badge} from "react-bootstrap";
+import { Container, Row, Col , Badge} from "react-bootstrap";
 import PandaCard from "./PandaCard";
 
 import { Link} from 'react-router-dom';
 
-import {epochToUTCDate ,getMarketOffers,setApprovalForAll} from "../assets/js/utils";
+import {epochToUTCDate ,getMarketOffers} from "../assets/js/utils";
 
 import "../assets/css/PandaGallery.css"
 
@@ -14,31 +14,20 @@ class PandaMarket extends Component {
     super();
     this.state = {
       OfferList: [],
-      IsMarketOpperator:false,
       offerCount:0
     };
   }
 
   async componentDidMount() {
-    let _isApprovedForAll, _activeOfferCount, _offerList;
-    
-    try{
-      _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
-      console.log("From Did mount, approved for all:",_isApprovedForAll);
-      this.setState(() => ({
-        IsMarketOpperator: _isApprovedForAll   
-      }));
-    } catch(e){
-      console.log("Not approved for all",e);
-    }
+    let _activeOfferCount, _offerList;
     
     try{
       _activeOfferCount = await this.props.marketContract.methods.getActiveOfferCount().call();
-    
+      
       try{      
         if(_activeOfferCount>0){
           _offerList =await getMarketOffers(this.props.contract,this.props.marketContract,this.props.accounts);
-          
+
           this.setState(() => ({
             offerCount: _activeOfferCount,
             OfferList: _offerList
@@ -47,31 +36,10 @@ class PandaMarket extends Component {
       } catch(e){
         console.log("No Market offers",e);
       }
-      
-     
   
     } catch(e){
       console.log("no actove offer count--> ",e);
     }
-    // console.log("OfferCount: ",this.state.offerCount);
-    // console.log("IsMarketOpperator: ",this.state.IsMarketOpperator);
-  }
-
-  _setApprovalForAll =  async ()=>  {
-      //console.log("Start of setApprovalForAll: ",this.state.IsMarketOpperator);
-      let _isApprovedForAll;
-      //console.log("before setApprovalForAll: ",this.props.contract.options.address,this.props.marketContract.options.address,this.props.accounts)
-      
-      setApprovalForAll(this.props.contract,this.props.marketContract,this.props.accounts,true);
-      
-      //console.log("addressess passed to isApprovedForAll contract function--> ",this.props.accounts[0],this.props.marketContract.options.address);
-     
-      _isApprovedForAll = await this.props.contract.methods.isApprovedForAll(this.props.accounts[0],this.props.marketContract.options.address).call();
-     
-      //console.log("return value from approvedForAll",_isApprovedForAll)
-      this.setState(() => ({
-        IsMarketOpperator: _isApprovedForAll
-      }));
   }
   
   render() {
@@ -80,14 +48,8 @@ class PandaMarket extends Component {
         <Row className="justify-content-md-center body-title body-title-font">
                     <h1>Market Place</h1>
         </Row>
-        {this.state.IsMarketOpperator === false ?
-          <Row className="justify-content-md-center">
-            <Button id="btn-permissions" onClick={this._setApprovalForAll}>Delegate Operator rights</Button>
-          </Row>
-          :""
-        }
         <Row className="justify-content-md-center">
-          {parseInt(this.state.offerCount) === 0 && this.state.IsMarketOpperator===true?
+          {parseInt(this.state.offerCount) === 0 ?
           <h4 className="body-title-font">There are no offers right now</h4>
           :""
           }

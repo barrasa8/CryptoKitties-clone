@@ -107,8 +107,9 @@ export  const getMarketOffers = async (pandaContract,marketContract, accounts) =
         genes: parseInt(_panda.genes),
         dna: genesToDNA(_panda.genes),
       };
-
-    _marketOfferList.push(_marketOfferItem);
+      if(_marketOfferItem.active===true){
+        _marketOfferList.push(_marketOfferItem);
+      }
   }
   return _marketOfferList;
 };
@@ -126,7 +127,7 @@ export const setApprovalForAll = async (contract,marketContract,accounts,approva
 
 export const setOffer = async (marketContract,accounts,price,tokenId) =>{
   await marketContract.methods.setOffer(price,tokenId)
-      .send({ from: accounts[0] }, (error, txHash) => {
+      .send({ from: accounts[0] }, (error) => {
 
         if (error) {
           console.log(error);
@@ -136,7 +137,7 @@ export const setOffer = async (marketContract,accounts,price,tokenId) =>{
 
 export const removeOffer = async (marketContract,accounts,tokenId) =>{
   await marketContract.methods.removeOffer(tokenId)
-      .send({ from: accounts[0] }, (error, txHash) => {
+      .send({ from: accounts[0] }, (error) => {
         if (error) {
           console.log(error);
         } 

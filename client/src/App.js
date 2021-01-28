@@ -75,7 +75,6 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <h1>{this.state.accounts[0]}</h1>
           <Header contract ={this.state.contract} accounts={this.state.accounts}/>
           <Body contract ={this.state.contract} accounts={this.state.accounts} marketContract = {this.state.marketContract} web3 = {this.state.web3}/>
           <Footer/>
