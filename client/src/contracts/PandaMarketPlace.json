@@ -2925,7 +2925,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2527,
+                                "referencedDeclaration": 2529,
                                 "src": "2946:4:6",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_PandaMarketPlace_$1370",
@@ -8917,7 +8917,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2527,
+                                "referencedDeclaration": 2529,
                                 "src": "2946:4:6",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_PandaMarketPlace_$1370",
@@ -12336,12 +12336,12 @@
         }
       },
       "links": {},
-      "address": "0xFA6b32BC5efd73a88E854309F4b8A33D905DB53B",
-      "transactionHash": "0x7dde402d1521def2df5913a45eab8885087da1e0533636d7f2754584bd131a45"
+      "address": "0x8411FEb3b5165ca0505B133257f234F8f5919eA3",
+      "transactionHash": "0x1bda7c6ae43693b6b0cde9a04b453853bb51ec5bb96fcb404f6e2488cf4c36b6"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-01-28T05:19:27.359Z",
+  "updatedAt": "2021-01-29T12:13:34.063Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
