@@ -38,7 +38,6 @@ module.exports = {
     },
     ropsten: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, "https://ropsten.infura.io/v3/" + process.env.INFURA_API_KEY),
-      // provider: () => new HDWalletProvider("destroy logic life rookie fortune bleak tube thunder beef silly habit base", "https://ropsten.infura.io/v3/8e4f395a895e49399c44310e92fec67c"),
       network_id: "3",
       gas: 3000000,
       gasPrice: 10000000000
