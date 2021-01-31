@@ -12189,6 +12189,38 @@
     "version": "0.5.12+commit.7709ece9.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {
+        "0xd99e4fad9ad6313b1feb588fa8e605e3a9873172f2024330c35dd2b4041a4386": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "TxType",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "MarketTransaction",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xC5EeD8747BE1F8C4724A70A4e488923ef76C0459",
+      "transactionHash": "0x5798fdb2cee0445da62cfce6ba0ea7497a5fb748de36c61a5e9c93aa8a1f7ab4"
+    },
     "5777": {
       "events": {
         "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
@@ -12341,7 +12373,7 @@
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-01-29T12:13:34.063Z",
+  "updatedAt": "2021-01-31T11:14:55.558Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
