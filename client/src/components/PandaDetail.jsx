@@ -76,9 +76,9 @@ class PandaDetail extends Component {
 
     handleChange= (event) => {
         event.preventDefault();
-        event.persist();
+        event.persist();      
         this.setState(() => ({
-            [event.target.name]: parseInt(event.target.value)
+            [event.target.name]: parseFloat(event.target.value)
           }));
     }
 
@@ -125,34 +125,38 @@ class PandaDetail extends Component {
                             </div>
                             :""}
                             {this.state.IsMarketOpperator === false & this.state.pandaOwner ==this.props.accounts[0] ?
+                                    <div>
+                                        <h2>Do you want to sell?</h2>
                                         <Button id="btn-permissions" onClick={this._setApprovalForAll}>Delegate Operator rights</Button>
-                            :""}
-                            <form id="panda-detail-offer" onSubmit={this.handleSubmit}>
-                                {this.state.offer == undefined ?
-                                    <div>
-                                        {this.state.pandaOwner ==this.props.accounts[0]?
-                                            <div>
-                                            <InputGroup className="mb-3">
-                                                <FormControl aria-label="Amount" name="amount" onChange={this.handleChange}/>
-                                                <InputGroup.Append>
-                                                    <InputGroup.Text>ETH</InputGroup.Text>
-                                                </InputGroup.Append>
-                                            </InputGroup>
-                                            <Button variant="success" type="submit">Sell</Button>
-                                            </div>
-                                        :""}
-                                    </div>   
-                                :
-                                    <div>
-                                        <span className="space-between-elements"/>
-                                        {this.props.accounts[0]==this.state.offer.seller?
-                                        <Button variant="danger" type="submit">Remove Offer</Button>
-                                        :
-                                        <Button variant="success" type="submit">Buy Me</Button>
-                                        }
                                     </div>
-                                }
-                            </form>
+                            :
+                                <form id="panda-detail-offer" onSubmit={this.handleSubmit}>
+                                    {this.state.offer == undefined ?
+                                        <div>
+                                            {this.state.pandaOwner ==this.props.accounts[0]?
+                                                <div>
+                                                <InputGroup className="mb-3">
+                                                    <FormControl aria-label="Amount" name="amount" onChange={this.handleChange}/>
+                                                    <InputGroup.Append>
+                                                        <InputGroup.Text>ETH</InputGroup.Text>
+                                                    </InputGroup.Append>
+                                                </InputGroup>
+                                                <Button variant="success" type="submit">Sell</Button>
+                                                </div>
+                                            :""}
+                                        </div>   
+                                    :
+                                        <div>
+                                            <span className="space-between-elements"/>
+                                            {this.props.accounts[0]==this.state.offer.seller?
+                                            <Button variant="danger" type="submit">Remove Offer</Button>
+                                            :
+                                            <Button variant="success" type="submit">Buy Me</Button>
+                                            }
+                                        </div>
+                                    }
+                                </form>
+                            }
                         </div>
                     </Row>
                 :""}
