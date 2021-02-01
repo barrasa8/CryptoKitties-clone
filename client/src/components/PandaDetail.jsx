@@ -124,16 +124,16 @@ class PandaDetail extends Component {
                                 <h4><Badge variant="secondary">Price: {this.props.web3.utils.fromWei(String(this.state.offer.price), 'ether')} ETH</Badge></h4>
                             </div>
                             :""}
-                            {this.state.IsMarketOpperator === false & this.state.pandaOwner ==this.props.accounts[0] ?
+                            {this.state.IsMarketOpperator === false & this.state.pandaOwner ===this.props.accounts[0] ?
                                     <div>
                                         <h2>Do you want to sell?</h2>
                                         <Button id="btn-permissions" onClick={this._setApprovalForAll}>Delegate Operator rights</Button>
                                     </div>
                             :
                                 <form id="panda-detail-offer" onSubmit={this.handleSubmit}>
-                                    {this.state.offer == undefined ?
+                                    {this.state.offer === undefined ?
                                         <div>
-                                            {this.state.pandaOwner ==this.props.accounts[0]?
+                                            {this.state.pandaOwner ===this.props.accounts[0]?
                                                 <div>
                                                 <InputGroup className="mb-3">
                                                     <FormControl aria-label="Amount" name="amount" onChange={this.handleChange}/>
@@ -148,7 +148,7 @@ class PandaDetail extends Component {
                                     :
                                         <div>
                                             <span className="space-between-elements"/>
-                                            {this.props.accounts[0]==this.state.offer.seller?
+                                            {this.props.accounts[0]===this.state.offer.seller?
                                             <Button variant="danger" type="submit">Remove Offer</Button>
                                             :
                                             <Button variant="success" type="submit">Buy Me</Button>
